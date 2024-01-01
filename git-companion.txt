@@ -1,0 +1,24 @@
+Create a github project mirrored to your local computer.
+
+  go to your github account
+  new repository
+  choose a repository-name
+  set public
+  add a readme file
+  add a .gitignore if the case
+  choose a license
+
+  don't create the folder! it will be created with the repo name on github
+  git clone https://github.com/gustcomer/reponame.git
+
+
+Commit changes to the local git and then push to github
+  create/change some files
+  > git status | check if everything is ok
+  > git add -A | add all files that were changed
+  ou > git add .
+  > git commit -m "git-companion: initial"
+  [once] > git remote add origin https://github.com/gustcomer/big-tech-companions
+    actually it's not necessary because the clone already sets origin
+  [once] > git push -u origin main
+  [after] > git push
