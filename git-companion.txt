@@ -12,6 +12,13 @@ Create a github project mirrored to your local computer.
   git clone https://github.com/gustcomer/reponame.git
 
 
+VS Code can do this process of creating the github repo for you
+
+You can't first create a local repository and then create the github counterpart
+
+You can do all in the command line without entering the github.com website if
+you gave github cli installed in your local machine
+
 Commit changes to the local git and then push to github
   create/change some files
   > git status | check if everything is ok
