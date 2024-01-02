@@ -9,3 +9,4 @@ ctrl+shift+enter -- insert line above
 ctrl+d -- selects the selected downward
 shift+alt+arrow -- copy the line upwards or downward
 alt+selection -- select lines in different places
+ctrl+shift+K -- delete the whole line - think about Kill

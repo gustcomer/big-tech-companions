@@ -30,11 +30,18 @@ console.log(sum2()); // 3 because x=1 and y=2
 console.log(sum2(4)); // 6 because x sent 4, y wasnt passed 2
 
 
+null == undefined // true
+null === undefined // false
+
+### Data Structures
+
+const alunos = ['Luiz', 'Maria', 'João', 1, true, null]; // array
+
 const person1 = {
     name: 'John',
     surname: 'Smith',
     age: 25
-};
+}; // object
 
 // objects with behaviour
 const person5 = {
@@ -50,3 +57,11 @@ const person5 = {
         this.age++;
     }
 };
+
+Javascript in my world has 5 Datatypes,
+
+String, Number, Boolean, Object, Array
+
+actually it has 8 datatypes, but Bigint and Symbol are rarelly useful
+and I don't think of Undefined and Null Datatypes
+and they don't consider Array a Datatype
