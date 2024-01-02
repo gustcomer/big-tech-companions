@@ -1,0 +1,52 @@
+
+console.log('Hello World')
+
+let clientName = 'Joaquim';
+const name = 'John';
+var name = 'name1';
+
+const name = 'Luiz'; // string
+const num1 = 10; // number
+let studentName; // undefined = doesn't point anywhere
+console.log(typeof(studentName)); // undefined too
+const approved = true; // boolean
+const a = [1, 2]; // object
+
+
+const n5 = parseInt('Luiz');
+const n6 = parseFloat('Luiz');
+const n7 = Number('Luiz');
+
+
+[varA, varB, varC] = [varB, varC, varA]; // modern way of swapping value
+
+
+function sum2(x = 1, y = 2) {
+    const result = x + y;
+    return result;
+}
+
+console.log(sum2()); // 3 because x=1 and y=2
+console.log(sum2(4)); // 6 because x sent 4, y wasnt passed 2
+
+
+const person1 = {
+    name: 'John',
+    surname: 'Smith',
+    age: 25
+};
+
+// objects with behaviour
+const person5 = {
+    name: 'Adrian',
+    surname: 'Smith',
+    age: 25,
+
+    speak() { // methods don't need function word
+        console.log(`${this.name} ${this.surname} (${this.age} years) says hello...`);
+    },
+
+    increaseAge() {
+        this.age++;
+    }
+};
