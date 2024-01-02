@@ -1,0 +1,11 @@
+ctrl+shift+L -- selects everything that is equal to the actual selection
+alt+click -- insert cursor
+ctrl+u -- undo last cursor operation
+alt+arrow -- change vscode window
+ctrl+shift+p -- open command pallete
+ctrl+space -- show some suggestion
+alt+up,down -- swap lines upward or downward
+ctrl+shift+enter -- insert line above
+ctrl+d -- selects the selected downward
+shift+alt+arrow -- copy the line upwards or downward
+alt+selection -- select lines in different places
