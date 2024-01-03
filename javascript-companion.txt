@@ -65,3 +65,13 @@ String, Number, Boolean, Object, Array
 actually it has 8 datatypes, but Bigint and Symbol are rarelly useful
 and I don't think of Undefined and Null Datatypes
 and they don't consider Array a Datatype
+
+iterating over an array
+
+arr = ['first', 'second', 'third']
+
+for(i in arr)
+  console.log(i) # in gives the indexes: 0 1 2...
+
+for(i of arr)
+  console.log(i) # of gives the objects: 'first' 'second' 'third'...
