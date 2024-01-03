@@ -1,0 +1,10 @@
+expect - https://jestjs.io/docs/expect
+
+expect(t).toBeDefined()
+  check if the variable is not undefined
+
+expect(bestLaCroixFlavor()).not.toBe('coconut');
+  not is the negation of the assertion
+
+expect(getErrors()).toBeFalsy();
+  false 0, -0 and 0n "", '' (empty strings) null, undefined and NaN document.all
