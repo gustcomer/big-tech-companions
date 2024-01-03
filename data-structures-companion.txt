@@ -1,0 +1,34 @@
+Tree (Traditional)
+
+Tree: consists of nodes with parent-children relationships
+Parent: upper node
+Child: Node below
+Root: the top node of a tree
+Leaf: any node that does not have child nodes
+  aka: Terminal Nodes, Outer Node, Terminal Node, External Node
+Edges: the connection of one node to other nodes
+  aka: Links
+
+Ancestors: parent, grandparent, great-grandparent, etc
+Descendants: children, grandchildren
+Neighbor: parent or child
+Subtree: a node and its descendants
+Internal Node: any node of a tree that has child nodes
+  aka: Inner Node, Inode, Branch Node
+Siblings: children of the same parent
+Forest: set of disjoint trees
+
+Depth of a Node: number of ancestors
+  or: number of edges along the unique path between it and the root node.
+  aka: Level
+Height of the Tree: maximum depth of any node
+Degree of a Node: number of children
+Degree of a Tree: maximum degree of a node in the tree
+Distance between two nodes: number of edges along the shortest path
+Size: number of nodes in the tree
+Breadth of the Tree: the number of leaves
+
+Invariants:
+  each node must be connected to only one parent
+  the root has no parent
+  no node can be its own ancestor (there are no cycles or loops)
