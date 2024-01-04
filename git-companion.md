@@ -1,4 +1,4 @@
-Create a github project mirrored to your local computer.
+### Create a github project mirrored to your local computer.
 
   go to your github account
   new repository
@@ -19,7 +19,7 @@ You can't first create a local repository and then create the github counterpart
 You can do all in the command line without entering the github.com website if
 you gave github cli installed in your local machine
 
-Commit changes to the local git and then push to github
+### Commit changes to the local git and then push to github
   create/change some files
   > git status | check if everything is ok
   > git add -A | add all files that were changed
@@ -30,13 +30,15 @@ Commit changes to the local git and then push to github
   [once] > git push -u origin main
   [after] > git push
 
-.gitignore
+### .gitignore
   / at the begining - the pattern is relative to the .gitignore directory
   node_modules/ - node_modules directory @ root of the git project (absolute)
   /node_modules/ - node_modules directory @ .gitignore folder (relative)
   node_modules - node_modules directory or node_modules file
 
-stash in vscode
+### stash in vscode
   just click Uncommitted Changes with right button and choose a name
   when you stash, the last commit rolls back
 
+#### How to update the windows local version of git
+  > git update-git-for-windows
