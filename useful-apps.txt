@@ -1,0 +1,16 @@
+
+
+- tree-node-cli
+allows you to print the folder structure of some local directory
+https://github.com/yangshun/tree-node-cli
+
+beware of the windows command tree. If you want to use in windows I suggest:
+
+> npx tree-node-cli -I "node_modules"
+  this will list the files
+
+> npx tree-node-cli -d -I "node_modules"
+  only directories
+
+> npx tree-node-cli -L 2 -I "node_modules"
+  print 2 levels
