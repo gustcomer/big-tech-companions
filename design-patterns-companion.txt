@@ -1,0 +1,12 @@
+
+### Strategy
+
+- defines a family of algorithms, encapsulates each one, and makes them 
+interchangeable (via composition)
+- also known as Policy Pattern
+- it's one strategy to implements Open Closed Principle
+- it's one of many ways to implement Dependency Inversion Principle (DIP)
+- Decorators let you change the skin of an object while strategy let you change
+the guts
+- you can change behavior at runtime
+- HAS-A is better than IS-A (favor composition over inheritance)
