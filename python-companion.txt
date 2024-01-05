@@ -1,0 +1,37 @@
+### List
+
+li = [1,2,3,4,5]
+
+
+### Dictionary
+
+dictionary = {
+	'a': [1, 2, 3],
+	'x': 'hello',
+	'b': True
+}
+
+
+### Tuples
+
+my_tuple = (1,2,3,4,5)
+
+
+### Sets
+
+my_set = {1,2,3,4,5,5,4}
+
+
+### Objects
+
+class PlayerCharacter:
+	def __init__(self, name, age): # this is a Dunder method (or magic method)
+		self.name = name # o self indica que player tem um atributo name
+		self.age = age # this is an attribute, or property
+
+	def run(self):
+		print('run')
+
+	def run2(self):
+		print('run')
+		return 'done'
