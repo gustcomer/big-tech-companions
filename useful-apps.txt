@@ -14,3 +14,9 @@ beware of the windows command tree. If you want to use in windows I suggest:
 
 > npx tree-node-cli -L 2 -I "node_modules"
   print 2 levels
+
+- tldraw
+https://www.tldraw.com/
+
+It's a very useful web app to write quick diagrams shuch as
+  - architecture stuff
