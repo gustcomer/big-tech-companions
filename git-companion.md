@@ -43,6 +43,16 @@ node_modules/ - node_modules directory @ root of the git project (absolute)
 /node_modules/ - node_modules directory @ .gitignore folder (relative)
 node_modules - node_modules directory or node_modules file
 
+A leading "**" followed by a slash means match in all directories. For example,
+"**/foo" matches file or directory "foo" anywhere, the same as pattern "foo".
+
+An asterisk "*" matches anything except a slash. Including many characters
+except /.
+
+*.excalidraw - all files ending with .excalidraw in any folder or subfolder.
+
+The character "?" matches any one character except "/".
+
 ### stash in vscode
 
 just click Uncommitted Changes with right button and choose a name
