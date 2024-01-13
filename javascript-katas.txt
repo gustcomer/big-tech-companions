@@ -1,0 +1,15 @@
+create array and some big strings
+  > x = [1,3,5,2,4]
+  > c = ['a', 'b', 'c', 'd', 'e']
+  > w = ['ball', 'dog', 'cat']
+  > s = 'this is a big string but i don\'t know what to say'
+  > ml = 'this is \na multiple \nline string'
+  > bl = [true, true, false]
+apply some list methods
+  > x.length
+  > x.sort()
+  > x_ = [...x] // shallow copy
+  > x.splice(2,1) // removes one element from index 2 on
+  > x.splice(3,0,8) // insert number 8 at third index
+  > x.splice(3,0,[10,20,30]) // insert 10, 20 and 30 at index 3
+  // splice(start, deleteCount, item1, item2) 
