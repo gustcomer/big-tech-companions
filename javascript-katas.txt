@@ -12,4 +12,7 @@ apply some list methods
   > x.splice(2,1) // removes one element from index 2 on
   > x.splice(3,0,8) // insert number 8 at third index
   > x.splice(3,0,[10,20,30]) // insert 10, 20 and 30 at index 3
-  // splice(start, deleteCount, item1, item2) 
+  // splice(start, deleteCount, item1, item2)
+  > x.indexOf(8) // returns the index of the first ocurrence of 8. -1 otherwise
+  > x.push(...[10, 20, 30]) // push the three elements to the array
+  > y = x.concat([10,20,30]) // y will be x with the 3 elements added
