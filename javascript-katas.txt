@@ -16,3 +16,4 @@ apply some list methods
   > x.indexOf(8) // returns the index of the first ocurrence of 8. -1 otherwise
   > x.push(...[10, 20, 30]) // push the three elements to the array
   > y = x.concat([10,20,30]) // y will be x with the 3 elements added
+  > y.reduce((acc,cur) => {return cur==5?acc+1:acc},0) // count number of fives
