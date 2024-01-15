@@ -6,7 +6,7 @@ create array and some big strings
   > ml = 'this is \na multiple \nline string'
   > bl = [true, true, false]
 apply some list methods
-  > x.length
+  > x.length // its a property, not a method
   > x.sort()
   > x_ = [...x] // shallow copy
   > x.splice(2,1) // removes one element from index 2 on
@@ -17,3 +17,9 @@ apply some list methods
   > x.push(...[10, 20, 30]) // push the three elements to the array
   > y = x.concat([10,20,30]) // y will be x with the 3 elements added
   > y.reduce((acc,cur) => {return cur==5?acc+1:acc},0) // count number of fives
+  > x.reverse() //
+  > x.pop() // remove the last array element and return it
+  > x.includes(5) // true if the array includes 5
+  > x.every((cv) => cv < 6) // return true if all elements are less than 6
+  > Math.min(...x) // return minimum element of the array x
+  > Math.max(...x)
