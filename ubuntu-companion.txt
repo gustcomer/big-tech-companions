@@ -1,0 +1,6 @@
+
+go to user directory
+> cd ~
+
+show the partition sizes. the -h option shows in GB, etc
+> df -h
