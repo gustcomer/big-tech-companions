@@ -4,3 +4,16 @@ go to user directory
 
 show the partition sizes. the -h option shows in GB, etc
 > df -h
+
+if you want to install pip in a ubuntu distribution
+> sudo apt update
+> sudo apt install python3-pip
+
+to install ffmpeg in debian
+> sudo apt-get install ffmpeg
+
+to install whisper
+> pip install -U openai-whisper
+
+> ls -a
+list event the hidden files
