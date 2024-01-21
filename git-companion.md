@@ -24,6 +24,11 @@ you gave github cli installed in your local machine
 - just go to the github repository page, and select "use this repository as a
 template"
 
+- or, go and clone as you normally would, specifying a new folder name
+> git clone https://github.com/user/project new_folder
+
+and then you delete the .git folder and start a new git repo.
+
 ### Commit changes to the local git and then push to github
 
 create/change some files
