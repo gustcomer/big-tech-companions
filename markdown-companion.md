@@ -1,4 +1,5 @@
-```# A first-level heading  - the biggest
+```
+# A first-level heading  - the biggest
 ## A second-level heading
 ### A third-level heading
 
@@ -26,6 +27,12 @@ Task List
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
+
+Display a section of plain text
+  - Envolve the text starting with 3 backticks and ending with 3 backticks
+
+Image
+![The San Juan Mountains are beautiful!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
 
 ```
 
