@@ -34,6 +34,11 @@ Display a section of plain text
 Image
 ![The San Juan Mountains are beautiful!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
 
+Show command lines
+  ```bash
+  npm i
+  ```_
+
 ```
 
 ## Usefull Resources

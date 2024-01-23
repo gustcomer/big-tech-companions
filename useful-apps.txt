@@ -26,3 +26,6 @@ diagrams such as Entity-Relationship diagrams.
 
 It's a very useful web app to write quick diagrams shuch as
   - architecture stuff
+
+- getemoji
+https://getemoji.com/
