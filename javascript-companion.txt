@@ -93,3 +93,18 @@ console.log(ClassWithStaticMethod.staticProperty);
 // Expected output: "someValue"
 console.log(ClassWithStaticMethod.staticMethod());
 // Expected output: "static method has been called."
+
+================================================================================
+Browser Structure
+
+BOM - Browser Object Model
+DOM - Document Object Model
+
+window
+  document (DOM)
+  navigator (BOM)
+  screen (BOM)
+  location (BOM)
+  frames (BOM)
+  history (BOM)
+  Javascript
