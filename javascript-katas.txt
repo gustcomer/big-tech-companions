@@ -30,3 +30,6 @@
   x.map((e) => e*e)
   x.map(function (e) {element=e;return element*element})
   w.map(w => w.toUpperCase()) // the lambda arg w may have the same array name w
+
+- filter the list with lambda function
+  x.filter(e => e>2) // 
