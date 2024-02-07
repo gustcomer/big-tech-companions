@@ -108,3 +108,27 @@ window
   frames (BOM)
   history (BOM)
   Javascript
+
+================================================================================
+Browser API
+
+document.querySelector('#root')
+  selects any element in the DOM structure like a css selector
+  example: select the element with id:'root'
+document.createElement('h1')
+  create DOM elements
+  example: create an h1 element
+
+someDOMElement.classList.add('todo-list')
+  adds some class to the list of classes of some DOM element
+  example: adds the class todo-list to the list of classes of some element
+
+someDOMElement.append(...)
+  append elements as children to some DOM element
+
+someDOMElement.addEventListener('someEvent', e => {...})
+  add event listener to events of the type 'someEvent' inside some DOM element
+
+someDomElement.firstChild
+  the first child if there is any.
+  can be used to test if there is any child
