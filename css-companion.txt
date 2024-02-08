@@ -1,0 +1,26 @@
+CSS Simple Selectors
+
+  Element Selectors
+    p {...} - selects all p elements
+  
+  Id Selectors
+    #para1 {...} - applies the rules to all id="para1"
+  
+  Class Selectors
+    .center {} - applies to all elements with class="center"
+
+Intermediate Selectors
+
+  element+class selectors
+    p.center {} - only <p> elements with class="center"
+
+  Universal Selectors
+    * {} - all HTML elements on the page
+  
+  Grouping Selectors
+    h1, h2, p {...}
+
+resources
+  https://www.w3schools.com/css/
+  https://css-tricks.com/
+  https://maujor.com/
