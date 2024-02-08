@@ -9,7 +9,7 @@ CSS Simple Selectors
   Class Selectors
     .center {} - applies to all elements with class="center"
 
-Intermediate Selectors
+Combinator Selectors
 
   element+class selectors
     p.center {} - only <p> elements with class="center"
@@ -19,6 +19,54 @@ Intermediate Selectors
   
   Grouping Selectors
     h1, h2, p {...}
+
+Pseudo-class Selectors
+  selector:pseudo-class { ... }
+  pseudo-classes represent special state of an element
+  
+  :link - unvisited
+  :visited - visited
+  :hover - mouse over
+  :active - selected
+  :first-child
+  :lang - specific languages
+  ...
+
+Pseudo-elements
+  specify parts of an element
+
+  ::after	p::after	Insert something after the content of each <p> element
+  ::before	p::before	Insert something before the content of each <p> element
+  ::first-letter	p::first-letter	Selects the first letter of each <p> element
+  ::first-line	p::first-line	Selects the first line of each <p> element
+  ::marker	::marker	Selects the markers of list items
+  ::selection	p::selection	Selects the portion of an element that is selected by a user
+
+Attribute Selectors
+  have specific attributes or attribute values
+
+  CSS [attribute] Selector
+    a[target] { ... }
+  
+  CSS [attribute="value"] Selector - specified attribute and value
+    a[target="_blank"] { ... }
+  
+  CSS [attribute~="value"] Selector - elements with an attribute value containing a specified word
+    [title~="flower"] { ... }
+  
+  CSS [attribute|="value"] Selector - elements with the specified attribute or followed by a hyphen
+    [class|="top"] { ... }
+  
+  CSS [attribute^="value"] Selector - select elements starting with the specified attribute value
+    [class^="top"] { ... }
+
+  CSS [attribute$="value"] Selector - attribute value ends with a specified value
+    [class$="test"] { ... }
+  
+  CSS [attribute*="value"] Selector - attribute value contains a specified value.
+    [class*="te"] { ... }
+  
+  
 
 resources
   https://www.w3schools.com/css/
