@@ -1,3 +1,6 @@
+to run ubuntu on windows with wsl
+> wsl --list --all
+> wsl -d Ubuntu-22.04
 
 go to user directory
 > cd ~
