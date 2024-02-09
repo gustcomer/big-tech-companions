@@ -20,3 +20,7 @@ to install whisper
 
 > ls -a
 list event the hidden files
+
+$ curl -v --trace out.txt http://google.com
+  -v, --verbose    Make the operation more talkative
+  --trace [filename] saves a full trace in the given filename.
