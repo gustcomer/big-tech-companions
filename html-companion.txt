@@ -224,3 +224,8 @@ topmargin="?"	Top Margin Size in Pixels (Internet Explorer) (*)
 </body>
 
 </html>
+
+================================================================================
+Resources
+
+  https://github.com/bradtraversy/50projects50days
