@@ -25,6 +25,11 @@ $ curl -v --trace out.txt http://google.com
   -v, --verbose    Make the operation more talkative
   --trace [filename] saves a full trace in the given filename.
 
+to monitor resources usage
+  > top
+  you should open a second terminal. in the remote case, open another ssh
+  connection
+
 to uninstall a package
 
   just remove the files, not the configurations
@@ -35,3 +40,11 @@ to uninstall a package
 
   remove the package and any orphan dependencies
   > apt-get autoremove
+
+to reset the password of a wsl distribution
+
+  access the machine as root
+  > wsl -d Ubuntu-22.04 -u root
+
+  now change the password of the user root
+  $ passwd root
