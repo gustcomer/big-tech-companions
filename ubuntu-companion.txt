@@ -24,3 +24,14 @@ list event the hidden files
 $ curl -v --trace out.txt http://google.com
   -v, --verbose    Make the operation more talkative
   --trace [filename] saves a full trace in the given filename.
+
+to uninstall a package
+
+  just remove the files, not the configurations
+  > apt-get remove packagename
+
+  remove the package files and the configuration files
+  > apt-get purge packagename
+
+  remove the package and any orphan dependencies
+  > apt-get autoremove
