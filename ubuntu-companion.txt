@@ -41,6 +41,14 @@ to uninstall a package
   remove the package and any orphan dependencies
   > apt-get autoremove
 
+to copy a file from local machine to remote machine
+  > scp -i projectwideuser projectwideuser@34.68.100.70:/home/projectwideuser/content/oqueeclean.zip /mnt/c/data/content
+  the -i projectwideuser provides the private key corresponding to the public key uploaded on the remote machine
+  the second projectwideuser is the name of the user generated in the key generation process
+
+to run a whisper openai algorithm in a mp3 file
+  whisper oqueecleanarchitecture.mp3 --language Portuguese
+
 to reset the password of a wsl distribution
 
   access the machine as root
