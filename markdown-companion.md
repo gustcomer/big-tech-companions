@@ -39,9 +39,19 @@ Show command lines
   npm i
   ```_
 
+Reference another section of the same document (in github)
+
+  [Custom foo description](#foo)
+
+  # Foo
+
+  [click on this link](#my-multi-word-header)
+
+  ## My Multi Word Header
 ```
 
 ## Usefull Resources
 
 - [Basic Syntax](https://www.markdownguide.org/basic-syntax/) - Basic markdown syntax by markdownguide.org
 - [Extended Syntax](https://www.markdownguide.org/extended-syntax/) - Extended markdown syntax by markdownguide.org
+- [Github Markdown Basic Syntax](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) - Github flavored markdown syntax
