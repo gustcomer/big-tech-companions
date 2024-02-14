@@ -228,4 +228,6 @@ topmargin="?"	Top Margin Size in Pixels (Internet Explorer) (*)
 ================================================================================
 Resources
 
+  https://www.w3schools.com/html/default.asp
+  https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content
   https://github.com/bradtraversy/50projects50days
