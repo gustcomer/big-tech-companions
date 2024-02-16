@@ -1,7 +1,0 @@
-
-## References
-
-https://www.timescale.com/learn/postgres-cheat-sheet/databases
-https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
-https://tomcam.github.io/postgres/
-https://www.postgresqltutorial.com/postgresql-cheat-sheet/

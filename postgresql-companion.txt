@@ -1,0 +1,38 @@
+
+connects to the database command line with user postgres
+  > psql -U postgres
+
+list databases
+  # \l
+
+list databases giving more details
+  # \l+
+
+show all users
+  # select * from pg_user;
+or simply
+  # \du
+
+change password for some user (user postgres in this case)
+  # \password postgres
+
+create a superuser called joe and asks for password
+  # createuser -P -s -e joe
+
+crate a database
+  # create database mydatabase;
+
+create a superuser with some password
+  # CREATE USER [name] SUPERUSER;
+
+to start a postgres server in windows, go to the bin directory (or add the
+folder to the path) and
+  > pg_ctl start -D "C:\Program Files\PostgreSQL\16\data"
+
+
+## References
+
+https://www.timescale.com/learn/postgres-cheat-sheet/databases
+https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
+https://tomcam.github.io/postgres/
+https://www.postgresqltutorial.com/postgresql-cheat-sheet/
