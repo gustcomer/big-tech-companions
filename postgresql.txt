@@ -1,0 +1,5 @@
+
+## References
+
+https://www.timescale.com/learn/postgres-cheat-sheet/databases
+https://www.postgresqltutorial.com/postgresql-cheat-sheet/
