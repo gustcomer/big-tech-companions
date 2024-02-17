@@ -23,12 +23,26 @@ crate a database
   # create database mydatabase;
 
 create a superuser with some password
-  # CREATE USER [name] SUPERUSER;
+  # CREATE USER [name] WITH PASSWORD '[password]'; eg: '1234' to pass 1234
+  # ALTER USER gus WITH SUPERUSER;
+  CREATEDB CREATEROLE INHERIT LOGIN;
 
 to start a postgres server in windows, go to the bin directory (or add the
 folder to the path) and
   > pg_ctl start -D "C:\Program Files\PostgreSQL\16\data"
 
+create a database
+  > CREATE DATABASE databasename
+  > CREATE SCHEMA databasename
+
+drop database
+  > DROP DATABASE databasename;
+
+connect to a database
+  > \connect example
+
+show tables of all catalogs
+  > \dt *.*
 
 ## References
 
