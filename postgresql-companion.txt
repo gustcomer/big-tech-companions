@@ -52,6 +52,10 @@ connect to a database
 show tables of all catalogs
   > \dt *.*
 
+to select rows from the example database, in the ticket table
+  \connect example
+  > SELECT * from example.ticket;
+
 ## References
 
 https://www.timescale.com/learn/postgres-cheat-sheet/databases
