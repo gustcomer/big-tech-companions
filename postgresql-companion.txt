@@ -2,6 +2,14 @@
 connects to the database command line with user postgres
   > psql -U postgres
 
+to connect to postgres without passing user or password as argument you can
+simply edit environment variables
+PGUSER='username'
+PGPASSWORD='123456'
+
+the simplest way to change the password (and not safe) is:
+ALTER USER user_name WITH PASSWORD 'new_password';
+
 list databases
   # \l
 
