@@ -2,3 +2,7 @@ create lists and a big string
   x = [1,2,3,4,5]   c = ['a', 'b', 'c', 'd', 'e']
   w = ['dog', 'cat', 'duck']  s = 'this is a big string'
   ml = 'tis is\na multiline\nstring' bl = [True, True, False]
+apply 11 list methods and 6 dunders
+  x.sort(),x.copy(), x.remove(2), x.index(99), x.extend([1, 2, 3])
+  x.count(3),x.append(2),x.insert(2,99),x.reverse(),x.pop(),x.clear()
+  sorted(x),len(x),any(bl),all([True, True]),min(x), max(x)
