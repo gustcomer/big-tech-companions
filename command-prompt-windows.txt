@@ -1,0 +1,5 @@
+Gives comprehensive information about the system
+  > systeminfo
+
+Open vscode with the specified directory
+  > code foldername

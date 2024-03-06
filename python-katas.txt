@@ -1,0 +1,4 @@
+create lists and a big string
+  x = [1,2,3,4,5]   c = ['a', 'b', 'c', 'd', 'e']
+  w = ['dog', 'cat', 'duck']  s = 'this is a big string'
+  ml = 'tis is\na multiline\nstring' bl = [True, True, False]
