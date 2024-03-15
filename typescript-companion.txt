@@ -1,0 +1,31 @@
+================================================================================
+any vs unknown
+
+any:
+  It allows a variable to be assigned to any value and bypasses most type
+  checking. This means you can perform any operations on values of type any
+  without getting type errors.
+
+  gives you complete freedom but with the cost of losing type safety, making it
+  easier to write code with type errors.
+
+unknown:
+  a type-safe counterpart to any. A variable of type unknown represents any
+  value, just like any, but you cannot perform any operations directly on an
+  unknown variable without first asserting or narrowing its type to a more
+  specific type.
+
+  requires you to work to understand what the type is before you can operate on
+  it, leading to safer, more predictable code.
+
+// Instead of
+function unsafeFunction(param: any): any {
+  // risky operation with 'param'
+}
+
+// Try
+function saferFunction(param: unknown): unknown {
+  if (typeof param === "string") {
+    // now it's safer!
+  }
+}
