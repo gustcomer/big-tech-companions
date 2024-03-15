@@ -1,0 +1,6 @@
+
+================================================================================
+Glossary
+
+Narrowing: refine the type of a variable to be more specific than its initial type.
+  - you can achieve it using 'Type Guards', if statements, 'in' keyword, etc
