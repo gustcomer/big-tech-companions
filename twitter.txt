@@ -1,0 +1,4 @@
+advanced search
+
+(from:adymitruk) min_faves:300
+  find posts from this person with minimum of likes
