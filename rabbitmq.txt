@@ -1,0 +1,23 @@
+================================================================================
+AMQP (Advanced Message Queuing Protocol): The protocol used by RabbitMQ for messaging.
+Broker: check Message Broker
+Consume: receive a message
+Consumer: An application that receives messages. It subscribes to a queue and processes messages coming from RabbitMQ.
+Exchange: routing mechanism in RabbitMQ. It receives messages from producers and pushes them to one or more queues based on routing rules defined by the exchange type.
+  - there is no direct Router concept in RabbitMQ. We say that an exchange is a message routing agent.
+  - there are various types of exchange (direct, topic, fanout, headers). Each one has a routing algorithm.
+Fanout Exchange: routes all incoming messages to all queues that are bound to it
+Message: Data transported between producers and consumers. It can include any kind of information, such as simple text, serialized objects, or JSON.
+Message Broker: decouple the production of a message from its consumption.
+Message Queueing: receive messages from sender applications and places them in queues.
+  - a message broker uses a message queue
+Produce: send a message.
+Producer: a program that sends messages.
+Queue: A buffer that stores messages.
+  - consumers connect to a queue to receive messages.
+  - in the context of Enterprise Integration Patterns, Channels are known as Queues.
+RabbitMQ is a message broker: it accepts and forwards messages.
+  - it accepts, stores, and forwards binary blobs of data ‒ messages.
+Router: routes messages to Queues.
+Topic: key concept in the context of publish/subscribe models. A channel or a specific subject to which messages are published by producers (senders) and from which messages are received by subscribers (listeners).
+Topic Exchange: type of exchange in RabbitMQ that routes messages to queues based on wildcard matches between the routing key and the routing pattern specified by the queue.
