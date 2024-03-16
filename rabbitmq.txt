@@ -1,6 +1,11 @@
 ================================================================================
 AMQP (Advanced Message Queuing Protocol): The protocol used by RabbitMQ for messaging.
+Binding: A link between a queue and an exchange. It defines how messages should be routed to the queue based on routing keys or other attributes.
 Broker: check Message Broker
+Channel: a physical network connection (usually TCP) between the application and the RabbitMQ server.
+  - in the context of EIP book, channels and Queues are the same thing
+Clustering: Connecting multiple RabbitMQ servers together to form a single logical broker. This is used for scalability and redundancy.
+Connection: A TCP connection between your application and the RabbitMQ broker.
 Consume: receive a message
 Consumer: An application that receives messages. It subscribes to a queue and processes messages coming from RabbitMQ.
 Direct Exchange: routes messages to queues based on the exact match of a routing key.
@@ -10,8 +15,10 @@ Exchange: routing mechanism in RabbitMQ. It receives messages from producers and
   - there is no direct Router concept in RabbitMQ. We say that an exchange is a message routing agent.
   - there are various types of exchange (direct, topic, fanout, headers). Each one has a routing algorithm.
 Fanout Exchange: routes all incoming messages to all queues that are bound to it.
+Federation: Linking exchanges or queues across different RabbitMQ brokers, possibly spread across different geographical locations, to share messages.
 Headers Exchange: routes messages based on matching header values rather than the routing key.
 Message: Data transported between producers and consumers. It can include any kind of information, such as simple text, serialized objects, or JSON.
+Message Acknowledgment (Ack): A signal sent from the consumer to RabbitMQ to indicate that a message has been received and processed.
 Message Broker: decouple the production of a message from its consumption.
   - an Exchange is one part of a Message Broker.
   - Brokers encompasses more than just routing, including queue management, message buffering, acknoledgement delivery, etc.
@@ -28,11 +35,13 @@ Publish-Subscribe: allows messages to be published to all interested subscribers
   - Publish-Subscribe Channel according to EIP book.
   - aka Pub/Sub pattern, or even Observer Pattern.
 Queue: A buffer that stores messages.
+Queue: a data structure used to store messages that are waiting to be processes.
   - consumers connect to a queue to receive messages.
   - in the context of Enterprise Integration Patterns, Channels are known as Queues.
 RabbitMQ: a message broker, it accepts and forwards messages.
   - it accepts, stores, and forwards binary blobs of data ‒ messages.
 Router: routes messages to Queues.
   - Exchange and Routers means almost the same thing.
+Routing Key: A key that the exchange looks at to decide how to route the message to queues.
 Topic: key concept in the context of publish/subscribe models. A channel or a specific subject to which messages are published by producers (senders) and from which messages are received by subscribers (listeners).
 Topic Exchange: type of exchange in RabbitMQ that routes messages to queues based on wildcard matches between the routing key and the routing pattern specified by the queue.
