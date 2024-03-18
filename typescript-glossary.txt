@@ -1,22 +1,46 @@
 
+- interfaces, types and type annotations are erasable, they cannot affect the
+runtime behavior of the code. They are a static treaty and part of the
+transpilation process is to remove them from your code
+
 ================================================================================
 Glossary
 
 Assignable: word that appear in error messages. In the context of sets it means either 'member of' or 'subset of'.
 Coalescing Operator: a ?? b returns b if a is null or undefined.
   - it servers as a way to provide default values or fallbacks for potentially null or undefined values.
+Discriminated Unions: aka Tagged Unions.
+instanceOf: used to check if an object is an instance of a specific class or constructed function
+  - it even looks at the prototype chain to see if there anything related in the whole hierarchy.
+  - you can't instanceof types, interfaces and type annotations.
 Literal Types: types whose Type Domain contain only single values.
   > type A = 'A';
 Narrowing: refine the type of a variable to be more specific than its initial type.
   - you can achieve it using 'Type Guards', if statements, 'in' keyword, etc
 Never: type that contains no values. It's Type Domain is the empty set.
   > const x: never = 12; // Not assignable
+noEmitOnError: don't generate any code if the transpiler finds any kind of error.
 Null: represent intentional absence of a meaningful value and must be explicitly assigned.
   - check Undefined to compare the differences
 strictNullChecks: compiler option that, when enabled, makes TypeScript type checking more stringent regarding null and undefined.
   - With strictNullChecks turned on, null and undefined are only assignable to any or their respective types (and undefined is also assignable to void).
+Tagged Union: specifying a common property (the tag) across each type in the union. 
+Transpile: convert your typescript/javascript code to an older version of javascript that works in browsers.
+ts-node: typescript execution engine.
+  - you run your code directly from the .ts file.
+tsc: the typescript transpiler. It also check your code for type errors.
+  - you transpile your code into some /dist folder and then you run node on the javascript code generated.
+type: keyword that declare a Type
+  > > type AB12 = 'A' | 'B' | 12;
 Type: specify Variables so that they can assume a value among a set of possible values (Type Domain).
+Type Annotation: explicitly specify the type of variables, function parameters, return types, and properties.
+  - provided after a colon (:) following the name of the variable, parameter, or property.
+  - Variable Annotation | let userName: string = "John Doe";
+  - Function Parameter and Return Type Annotation | function greet(name: string): string { ... }
+  - Array Type Annotation | let list: number[] = [1, 2, 3]; or let anotherList: Array<number> = [1, 2, 3];
+  - Object Type Annotation: let user: { name: string; age: number } = { ... };
 Type Domain: set of possible values.
+Type Inference: you don't have to explicitly provide type annotations. It works with Implicit Typing, you don't always need Explicit Types.
 Undefined: represent the absence of a meaningful value. It is automatically assigned to a variable that has been declared but not initialized.
 Union Unit Types: use OR operator to create types with Type Domain with two or three values.
   > type AB12 = 'A' | 'B' | 12;
