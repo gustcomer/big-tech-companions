@@ -7,11 +7,14 @@ transpilation process is to remove them from your code.
 ================================================================================
 Glossary
 
+any: tells the TypeScript compiler to disable type checking for a variable, allowing it to hold a value of any type.
+  - it silences the type checker and TypeScript language services.
 as: operator for performing Type Assertion.
   - as is a type operation and hence cannot affect runtime behavior.
 Assignable: word that appear in error messages. In the context of sets it means either 'member of' or 'subset of'.
 Coalescing Operator: a ?? b returns b if a is null or undefined.
   - it servers as a way to provide default values or fallbacks for potentially null or undefined values.
+Compile Time Errors: errors detected by the compiler before the program runs.
 Declared Types: types that are explicitly defined by the programmer in interfaces, type aliases, classes, and enums, among others.
   - these types can be used to annotate variables, function parameters, return types, and more.
   - these types enable Typescript's static type checking.
@@ -24,6 +27,7 @@ Function Overloading: C++ feature that allow you to define multiple versions of 
 instanceOf: used to check if an object is an instance of a specific class or constructed function.
   - it even looks at the prototype chain to see if there anything related in the whole hierarchy.
   - you can't instanceof types, interfaces and type annotations.
+Language Services: set of tools and features provided by the TypeScript compiler (tsc) such as code completions, signature help, type checking, refactoring, and more.
 Literal Types: types whose Type Domain contain only single values.
   > type A = 'A';
 Narrowing: refine the type of a variable to be more specific than its initial type.
@@ -34,11 +38,14 @@ noEmitOnError: transpiler option that don't generate any code if the transpiler 
 noImplicitAny: transpiler option that will require all your variables to be type annotaded. There will be no implicit any type infered.
 noImplicitThis: issue an error if the this keyword is implicitly typed as any.
   - better option to avoid this error is to use arrow functions that inherits 'this' from the surrounding scope.
-Null: represent intentional absence of a meaningful value and must be explicitly assigned.
+null: represent intentional absence of a meaningful value and must be explicitly assigned.
   - check Undefined to compare the differences
+  - oddly enough, in JavaScript typeof null is "object".
 Object Literal:  syntactic construct used to create objects using key-value pairs enclosed in curly braces '{}'.
 Property: named attribute or member of an object or interface or type that holds a value.
 Property Checking: it's a workaround based in Tagged Union to allow type checking in runtime.
+Runtime Exception: error that occurs during the execution of a program, after it has successfully compiled and started running.
+  - it's preferable to have compile-time errors.
 Sealed Type: not supported by typescript. It would assume that functions would be called with arguments having properties you've declared an no others.
   - aka Precise Type.
   - in Typescript's type system the types are 'open'.
@@ -52,12 +59,16 @@ strictNullChecks: compiler option that, when enabled, makes TypeScript type chec
   - With strictNullChecks turned on, null and undefined are only assignable to any or their respective types (and undefined is also assignable to void).
   - If you want to assign null or undefined to a variable, you'll have to make it explicit.
   > const x: number | null = null;
+Structural Typing: check Duck Typing.
 Tagged Union: specifying a common property (the tag) across each type in the union.
 Transpile: convert your typescript/javascript code to an older version of javascript that works in browsers.
 ts-node: typescript execution engine.
   - you run your code directly from the .ts file.
 tsc: the typescript transpiler. It also check your code for type errors.
   - you transpile your code into some /dist folder and then you run node on the javascript code generated.
+tsserver: TypeScript standalone server which provides language services such as autocomplete, inspection, navigation, and refactoring.
+Tuple Type: special type of array with a fixed number of elements whose types are known, but need not be the same.
+  > let user: [number, string] = [1, "John Doe"];
 type: keyword that declare a Type
   > type AB12 = 'A' | 'B' | 12;
 Type: specify Variables so that they can assume a value among a set of possible values (Type Domain).
@@ -76,8 +87,10 @@ Type Check: narrow down the types of some variable by using checks such as if st
   > if (el) { el.textContent = 'Ready'; // OK, null has been excluded }
 Type Checker: core component of the TypeScript compiler (tsc) that analyzes your code to ensure that it adheres to the type rules.
   - it consists of: Type Inference, Type Checking, Error Reporting, Code Analysis.
+Type Declaration: check Type Annotation.
 Type Domain: set of possible values.
 Type Inference: you don't have to explicitly provide type annotations. It works with Implicit Typing, you don't always need Explicit Types.
+Type Safety: enforcement of type constraints during the development process mainly through Compile-Time Type Checking.
 Type System: machinery to describe the shape and behavior of data throughout your application.
   - it consists on things like: Static Type Checking, Type Inference, Generics, Type Guards, etc
 Undefined: represent the absence of a meaningful value. It is automatically assigned to a variable that has been declared but not initialized.
