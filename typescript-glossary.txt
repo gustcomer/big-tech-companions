@@ -33,6 +33,7 @@ Never: type that contains no values. It's Type Domain is the empty set.
 noEmitOnError: don't generate any code if the transpiler finds any kind of error.
 Null: represent intentional absence of a meaningful value and must be explicitly assigned.
   - check Undefined to compare the differences
+Object Literal:  syntactic construct used to create objects using key-value pairs enclosed in curly braces '{}'.
 Property: named attribute or member of an object or interface or type that holds a value.
 Property Checking: it's a workaround based in Tagged Union to allow type checking in runtime.
 Sealed Type: not supported by typescript. It would assume that functions would be called with arguments having properties you've declared an no others.
@@ -62,6 +63,8 @@ Type Assertion: a way to tell the TypeScript compiler that you know more about t
   > let someValue: any = "this is a string";
   > let strLength: number = (someValue as string).length; or
   > let strLength: number = (<string>someValue).length;
+Type Checker: core component of the TypeScript compiler (tsc) that analyzes your code to ensure that it adheres to the type rules.
+  - it consists of: Type Inference, Type Checking, Error Reporting, Code Analysis.
 Type Domain: set of possible values.
 Type Inference: you don't have to explicitly provide type annotations. It works with Implicit Typing, you don't always need Explicit Types.
 Type System: machinery to describe the shape and behavior of data throughout your application.
