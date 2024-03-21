@@ -35,6 +35,9 @@ Identifiable: when the object or interface has an id property.
 instanceOf: used to check if an object is an instance of a specific class or constructed function.
   - it even looks at the prototype chain to see if there anything related in the whole hierarchy.
   - you can't instanceof types, interfaces and type annotations.
+InstanceType: used to obtain the instance type of a class or constructor function type T.
+  - may be useful because 'class' introduces symbols both in the type space and the value space.
+  > type MyInstanceType = InstanceType<typeof MyClass>; const instance: MyInstanceType = new MyClass("Alice");
 Interface: allows for the specification of the types of the properties and methods of objects.
   - as an alternative, you can use Type Alias.
 Intersection Type: & operator computes the intersection of two types.
@@ -58,6 +61,8 @@ null: represent intentional absence of a meaningful value and must be explicitly
 Object Type: is the specification of the types of the properties and methods of objects.
   - You can define the Object Type using Interfaces or Type Alias.
 Object Literal:  syntactic construct used to create objects using key-value pairs enclosed in curly braces '{}'.
+Primitive Types: the basic types that serve as the building blocks of more complex types.
+  - number, string, boolean, symbol, null, undefined, bigint, etc.
 Property: named attribute or member of an object or interface or type that holds a value.
 Property Checking: it's a workaround based in Tagged Union to allow type checking in runtime.
 Runtime Exception: error that occurs during the execution of a program, after it has successfully compiled and started running.
@@ -78,6 +83,8 @@ strictNullChecks: compiler option that, when enabled, makes TypeScript type chec
 Structural Typing: check Duck Typing.
 Subclass: check "extends".
 Subtype: check "extends".
+Symbol: unique variable name. Don't get confused with Symbol().
+  - they exist either in Type Space or in the Value Space.
 Tagged Union: specifying a common property (the tag) across each type in the union.
 Transpile: convert your typescript/javascript code to an older version of javascript that works in browsers.
 ts-node: typescript execution engine.
@@ -98,9 +105,11 @@ Type Annotation: explicitly specify the type of variables, function parameters, 
   - Array Type Annotation | let list: number[] = [1, 2, 3]; or let anotherList: Array<number> = [1, 2, 3];
   - Object Type Annotation: let user: { name: string; age: number } = { ... };
 Type Assertion: a way to tell the TypeScript compiler that you know more about the type of a value than TypeScript can infer on its own.
+  - it could do the same job as type declaration, but be cautious.
   > let someValue: any = "this is a string";
   > let strLength: number = (someValue as string).length; or
   > let strLength: number = (<string>someValue).length;
+  > bob = <Person>{} // this was the original type assertion syntax.
 Type Check: narrow down the types of some variable by using checks such as if statements.
   - the primary use case is to exclude null type.
   > if (el) { el.textContent = 'Ready'; // OK, null has been excluded }
@@ -110,8 +119,11 @@ Type Declaration: check Type Annotation.
 Type Domain: set of possible values.
 Type Inference: you don't have to explicitly provide type annotations. It works with Implicit Typing, you don't always need Explicit Types.
 Type Safety: enforcement of type constraints during the development process mainly through Compile-Time Type Checking.
+Type Space: set of all type names in an application.
+  - generally is the name that occur after a 'type' or an 'interface'.
 Type System: machinery to describe the shape and behavior of data throughout your application.
   - it consists on things like: Static Type Checking, Type Inference, Generics, Type Guards, etc
+typeof: operator that mean different things in a type or value context.
 Undefined: represent the absence of a meaningful value. It is automatically assigned to a variable that has been declared but not initialized.
 Union Types: unions of sets of values.
   - in the case of objects and interfaces, the logic with the keys is the inverse.
@@ -121,3 +133,6 @@ Union Unit Types: use OR operator to create types with Type Domain with two or t
 Unit Type: subtype of one of the primitive types (string, number, boolean, etc.) and can have exactly one value.
 Value: at runtime every variable has a value.
   - before the code runs, each variable only has a Type.
+  - everything after an = is in the Value Space.
+Value Space: set of all names in an Application.
+  - Every value has a type, but types do not have values.
