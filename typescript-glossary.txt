@@ -25,12 +25,18 @@ Discriminated Unions: aka Tagged Unions.
 Duck Typing: type system where an object's compatibility or equivalence with a certain type is determined based on the object's properties and methods.
   - aka Structural Typing.
   - "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck"
+Exclude: type keyword used to exclude some types from some Union Types.
+extends: server inheritance in classes and interfaces.
+  - A extends B basically means that A is a subset of B.
+  - you can also say that A subtypes B. Or A is a subclass of B in the context of classes.
 Function Overloading: C++ feature that allow you to define multiple versions of a function that differ only in the types of their parameters.
   - You can provide multiple declarations for a function in Typescript, but only a single implementation.
 Identifiable: when the object or interface has an id property.
 instanceOf: used to check if an object is an instance of a specific class or constructed function.
   - it even looks at the prototype chain to see if there anything related in the whole hierarchy.
   - you can't instanceof types, interfaces and type annotations.
+Interface: allows for the specification of the types of the properties and methods of objects.
+  - as an alternative, you can use Type Alias.
 Intersection Type: & operator computes the intersection of two types.
   - in the case of objects and interfaces, the logic with the keys is the inverse.
   > keyof (A&B) = (keyof A) | (keyof B)
@@ -49,6 +55,8 @@ noImplicitThis: issue an error if the this keyword is implicitly typed as any.
 null: represent intentional absence of a meaningful value and must be explicitly assigned.
   - check Undefined to compare the differences
   - oddly enough, in JavaScript typeof null is "object".
+Object Type: is the specification of the types of the properties and methods of objects.
+  - You can define the Object Type using Interfaces or Type Alias.
 Object Literal:  syntactic construct used to create objects using key-value pairs enclosed in curly braces '{}'.
 Property: named attribute or member of an object or interface or type that holds a value.
 Property Checking: it's a workaround based in Tagged Union to allow type checking in runtime.
@@ -68,6 +76,8 @@ strictNullChecks: compiler option that, when enabled, makes TypeScript type chec
   - If you want to assign null or undefined to a variable, you'll have to make it explicit.
   > const x: number | null = null;
 Structural Typing: check Duck Typing.
+Subclass: check "extends".
+Subtype: check "extends".
 Tagged Union: specifying a common property (the tag) across each type in the union.
 Transpile: convert your typescript/javascript code to an older version of javascript that works in browsers.
 ts-node: typescript execution engine.
@@ -80,6 +90,7 @@ Tuple Type: special type of array with a fixed number of elements whose types ar
 type: keyword that declare a Type
   > type AB12 = 'A' | 'B' | 12;
 Type: specify Variables so that they can assume a value among a set of possible values (Type Domain).
+Type Alias: specify the types of the properties and methods of objects. It's an alternative to Interfaces.
 Type Annotation: explicitly specify the type of variables, function parameters, return types, and properties.
   - provided after a colon (:) following the name of the variable, parameter, or property.
   - Variable Annotation | let userName: string = "John Doe";
