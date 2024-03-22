@@ -110,6 +110,7 @@ Type Assertion: a way to tell the TypeScript compiler that you know more about t
   > let strLength: number = (someValue as string).length; or
   > let strLength: number = (<string>someValue).length;
   > bob = <Person>{} // this was the original type assertion syntax.
+  - you'll usually know more about the type than typescript does when the flow traverses something that typescript does not have access such as some external resource, api, dom manipulation, etc.
 Type Check: narrow down the types of some variable by using checks such as if statements.
   - the primary use case is to exclude null type.
   > if (el) { el.textContent = 'Ready'; // OK, null has been excluded }
@@ -131,6 +132,7 @@ Union Types: unions of sets of values.
 Union Unit Types: use OR operator to create types with Type Domain with two or three values, union of Unit Types.
   > type AB12 = 'A' | 'B' | 12;
 Unit Type: subtype of one of the primitive types (string, number, boolean, etc.) and can have exactly one value.
+unknown:  a type-safe counterpart of 'any'. You can't access any properties or methods on a variable of type 'unknown', whereas with 'any', you can.
 Value: at runtime every variable has a value.
   - before the code runs, each variable only has a Type.
   - everything after an = is in the Value Space.
