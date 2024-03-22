@@ -61,6 +61,8 @@ null: represent intentional absence of a meaningful value and must be explicitly
 Object Type: is the specification of the types of the properties and methods of objects.
   - You can define the Object Type using Interfaces or Type Alias.
 Object Literal:  syntactic construct used to create objects using key-value pairs enclosed in curly braces '{}'.
+Object Wrapper Types: javascript automatically wraps primitive types to allow them to have methods.
+  - String, Number, Boolean, Symbol, Bigint.
 Primitive Types: the basic types that serve as the building blocks of more complex types.
   - number, string, boolean, symbol, null, undefined, bigint, etc.
 Property: named attribute or member of an object or interface or type that holds a value.
