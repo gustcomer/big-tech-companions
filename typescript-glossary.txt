@@ -25,12 +25,22 @@ Discriminated Unions: aka Tagged Unions.
 Duck Typing: type system where an object's compatibility or equivalence with a certain type is determined based on the object's properties and methods.
   - aka Structural Typing.
   - "If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck"
+Excess Property Checking: check in compile time for any properties that are provided to an object that do not exist in the expected type.
+  - even though the more narrow object type (with more properties) is assignable to the supertype, it cannot be instantiated with a subtype Object Literal.
 Exclude: type keyword used to exclude some types from some Union Types.
 extends: server inheritance in classes and interfaces.
   - A extends B basically means that A is a subset of B.
   - you can also say that A subtypes B. Or A is a subclass of B in the context of classes.
+Function Expression: declare the function and assign it to a variable.
+  - one advantage is that you can reuse the function type.
+  > const rollDice2 = function(sides: number): number { /* ... */ }; or yet
+  > type BinaryFn = (a: number, b: number) => number;
+  > const add: BinaryFn = (a, b) => a + b;
 Function Overloading: C++ feature that allow you to define multiple versions of a function that differ only in the types of their parameters.
   - You can provide multiple declarations for a function in Typescript, but only a single implementation.
+Function Statement: just the function declaration.
+  > function rollDice1(sides: number): number { /* ... */ }
+Function Type: declaration of the name of the function, the types of the parameters and the return type.
 Identifiable: when the object or interface has an id property.
 instanceOf: used to check if an object is an instance of a specific class or constructed function.
   - it even looks at the prototype chain to see if there anything related in the whole hierarchy.
@@ -61,6 +71,11 @@ null: represent intentional absence of a meaningful value and must be explicitly
 Object Type: is the specification of the types of the properties and methods of objects.
   - You can define the Object Type using Interfaces or Type Alias.
 Object Literal:  syntactic construct used to create objects using key-value pairs enclosed in curly braces '{}'.
+  - you can use Object Literals to instanciate objects where the key is the property and the value is the value.
+  > let user = { name: "Alice", age: 30 };
+  - you can also use to declare types, in this case the value represents the type of the property.
+  > interface User { name: string; age: number; } or yet using type alias:
+  > type User = { name: string; age: number; };
 Object Wrapper Types: javascript automatically wraps primitive types to allow them to have methods.
   - String, Number, Boolean, Symbol, Bigint.
 Primitive Types: the basic types that serve as the building blocks of more complex types.
@@ -96,7 +111,8 @@ tsc: the typescript transpiler. It also check your code for type errors.
 tsserver: TypeScript standalone server which provides language services such as autocomplete, inspection, navigation, and refactoring.
 Tuple Type: special type of array with a fixed number of elements whose types are known, but need not be the same.
   > let user: [number, string] = [1, "John Doe"];
-type: keyword that declare a Type
+type: keyword that declare a Type.
+  - it is more efficient that interfaces because it can work with Union Types.
   > type AB12 = 'A' | 'B' | 12;
 Type: specify Variables so that they can assume a value among a set of possible values (Type Domain).
 Type Alias: specify the types of the properties and methods of objects. It's an alternative to Interfaces.
