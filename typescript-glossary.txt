@@ -15,6 +15,7 @@ Assignable: word that appear in error messages. In the context of sets it means 
 Coalescing Operator: a ?? b returns b if a is null or undefined.
   - it servers as a way to provide default values or fallbacks for potentially null or undefined values.
 Compile Time Errors: errors detected by the compiler before the program runs.
+Declaration Merging: allows the combination of two or more separately declared entities (interfaces or namespaces) into a single entity.
 declare: used for declaration statements, especially when dealing with code that does not originate from TypeScript .ts files.
   - useful if you're importing javascript libs.
   - often found in .d.ts (declaration file) contexts.
@@ -49,6 +50,7 @@ InstanceType: used to obtain the instance type of a class or constructor functio
   - may be useful because 'class' introduces symbols both in the type space and the value space.
   > type MyInstanceType = InstanceType<typeof MyClass>; const instance: MyInstanceType = new MyClass("Alice");
 Interface: allows for the specification of the types of the properties and methods of objects.
+  - one advantage over type is that interfaces can be augmented. Check Declaration Merging
   - as an alternative, you can use Type Alias.
 Intersection Type: & operator computes the intersection of two types.
   - in the case of objects and interfaces, the logic with the keys is the inverse.
