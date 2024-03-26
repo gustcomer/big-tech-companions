@@ -1,0 +1,49 @@
+
+run docker compose
+  > docker-compose up -d
+  use -d to detach
+force a brand new build
+  > docker-compose up -d --build
+run docker compose in steps
+  > docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+
+stop docker-compose
+  > docker-compose down -v
+  use -v to erase volumes
+
+
+================================================================================
+Docker Compose File
+
+version: "3"
+  # specify the version of docker-compose
+
+services:
+  # define the containers. Each container is a service
+
+  node-app:
+    # define the name of the container
+
+    build: .
+      # define the location of the Dockerfile
+
+    ports:
+      - "3000:3000"
+      # it will map from local port 3000 to container port 3000
+
+    volumes:
+      - ./:/app # this is a bind mount
+      - /app/node_modules # this is a workaround to not delete node_modules folder
+
+    environment:
+      - PORT=3000
+      # sets an environment variable in the container
+
+    env_file:
+      - ./.env
+
+
+================================================================================
+Docker Compose Glossary
+
+Service: container
