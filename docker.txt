@@ -12,13 +12,19 @@ remove an image
   > docker image rm ab6e14e9e48c
 
 run a container
-  > docker run -d --name node_app node-app-image
+  > docker run -d --name node-app node-app-image
   -d is detached mode so that you can use your prompt
-  node_app is the name of the container
+  node-app is the name of the container
 maps the local port 4000 to the container port 3000
-  > docker run -p 4000:3000 -d --name node_app node-app-image
-run with a bind mount
-  > docker run -v %cd%:/app -p 4000:3000 -d --name node_app node-app-image
+  > docker run -p 4000:3000 -d --name node-app node-app-image
+run with a bind mount - only use it in development mode
+  > docker run -v %cd%:/app -p 4000:3000 -d --name node-app node-app-image
+workaround to preserve the builded node_modules folder in the container
+  > docker run -v %cd%:/app -v /app/node_modules -p 4000:3000 -d --name node-app node-app-image
+use a read only bind mount
+  > docker run -v %cd%:/app:ro -v /app/node_modules -p 4000:3000 -d --name node-app node-app-image
+use environment variable
+  > docker run -v %cd%:/app:ro -v /app/node_modules --env PORT=4000 -p 3000:4000 -d --name node-app node-app-image
 
 shows running containers
   > docker container ls
@@ -32,11 +38,14 @@ stop a running container
 remove a container after it's stopped
   > docker rm traefik
 remove a container even if it's running (force)
-  > docker rm node_app -f
+  > docker rm node-app -f
 
 open bash on or docker file container
-  > docker exec -it node_app bash
+  > docker exec -it node-app bash
   - i: keep STDIN open t: alocate pseudo-TTY
+
+check the logs of a container
+  > docker logs node-app
 
 ================================================================================
 Docker Glossary
@@ -59,6 +68,10 @@ CMD: runs at build time the specified command a container from an image.
   > CMD ["node", "index.js  "]
 COPY: copies new files or directories from local and adds them to the filesystem of the container.
   > COPY package.json .
+ENV: sets the environment variable <key> to the value <value>.
+  > ENV MY_NAME="John Doe" ou > ENV PORT 3000
+  - used for production or default values.
+  - you can set the environment variable via --env flag on the run command.
 EXPOSE: informs Docker that the container listens on the specified network ports at runtime.
   - you can specify whether the port listens on TCP or UDP, and the default is TCP if you don't specify a protocol.
   > EXPOSE 3000
