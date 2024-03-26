@@ -12,9 +12,25 @@ remove an image
   > docker image rm ab6e14e9e48c
 
 run a container
-  > docker run -d --name node_app_container node-app-image
+  > docker run -d --name node_app node-app-image
   -d is detached mode so that you can use your prompt
-  node_app_container is the name of the container
+  node_app is the name of the container
+maps the local port 4000 to the container port 3000
+  > docker run -p 4000:3000 -d --name node_app node-app-image
+
+shows running containers
+  > docker container ls
+  > docker ps
+show both the running and the stopped containers
+  > docker ps -a
+
+stop a running container
+  > docker stop traefik
+
+remove a container after it's stopped
+  > docker rm traefik
+remove a container even if it's running (force)
+  > docker rm node_app -f
 
 ================================================================================
 Docker Glossary
