@@ -1,0 +1,42 @@
+
+build the image. 
+  > docker build .
+
+build the image with some name (don't confuse t with tag)
+  > docker build -t node-app-image .
+
+check for images created
+  > docker image ls
+
+remove an image
+  > docker image rm ab6e14e9e48c
+
+run a container
+  > docker run -d --name node_app_container node-app-image
+  -d is detached mode so that you can use your prompt
+  node_app_container is the name of the container
+
+================================================================================
+Docker Glossary
+
+Container: self-contained, runnable software application or service. It loads an Image like a set of instructions.
+Image: lightweight, standalone, executable software template that includes everything needed to run a piece of software, including the code, runtime, system tools, libraries, and settings.
+Image Id: id to reference some Docker Image, random number.
+Tag: custom, human-readable manifest identifier that's typically a specific version or variant of an image. Usually it is some kind of version.
+  - eg: 1.2 or 8.1-magento2-xdebug3 or 8.0.1-cli
+================================================================================
+Dockerfile Glossary
+
+CMD: runs at build time the specified command a container from an image.
+  - CMD works at build time while RUN works at runtime.
+  > CMD ["node", "index.js  "]
+COPY: copies new files or directories from local and adds them to the filesystem of the container.
+  > COPY package.json .
+EXPOSE: informs Docker that the container listens on the specified network ports at runtime.
+  - you can specify whether the port listens on TCP or UDP, and the default is TCP if you don't specify a protocol.
+  > EXPOSE 3000
+FROM: sets the base image for subsequent instructions
+  > FROM node:21
+RUN: execute at build time any commands to create a new layer on top of the current image.
+  > RUN npm install
+WORKDIR: sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.
