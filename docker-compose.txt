@@ -6,6 +6,11 @@ force a brand new build
   > docker-compose up -d --build
 run docker compose in steps
   > docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  > docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v
+  > docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+  > docker-compose -f docker-compose.yml -f docker-compose.prod.yml down -v
+in production, force build after changing code
+  > docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 
 stop docker-compose
   > docker-compose down -v
@@ -26,6 +31,11 @@ services:
 
     build: .
       # define the location of the Dockerfile
+
+    build:
+      context: . # same as build: .
+      args: # we can pass some args to the dockerfile as if we were passing a variable in the build command
+        NODE_ENV: development
 
     ports:
       - "3000:3000"
