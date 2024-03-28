@@ -50,6 +50,8 @@ open bash on or docker file container
 
 check the logs of a container
   > docker logs node-app
+check the logs and update each time a file changes
+  > docker logs node-app -f
 
 check the docker volumes
   > docker volume -ls

@@ -11,6 +11,10 @@ run docker compose in steps
   > docker-compose -f docker-compose.yml -f docker-compose.prod.yml down -v
 in production, force build after changing code
   > docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+start just some specified service
+  > docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d node-app
+start without starting any dependents
+  > docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --no-deps node-app
 
 stop docker-compose
   > docker-compose down -v
@@ -54,6 +58,9 @@ services:
 
     env_file:
       - ./.env
+
+    depends_on:
+      - mongo # now will start mongo container before this one
 
 
 ================================================================================
