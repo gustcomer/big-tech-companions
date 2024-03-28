@@ -56,7 +56,17 @@ check the docker volumes
 
 remove some docker volume
   > docker volume rm fb8093aa3ec7066c70cd75ef051cb517c4af6dd1049f72a8767450e2d5b20371
-  > docker volume prune
+  > docker volume prune # deprecated
+  > docker volume prune --filter all=1
+
+gets a ton of information about a container
+  > docker inspect docker-experiments-holborn-node-app-1
+
+gets more specific information about the network
+  > docker network inspect docker-experiments-holborn_default
+
+lists all the networks the Engine daemon knows about.
+  > docker network ls
 
 ================================================================================
 Docker Glossary

@@ -43,7 +43,10 @@ services:
 
     volumes:
       - ./:/app # this is a bind mount
-      - /app/node_modules # this is a workaround to not delete node_modules folder
+      - /app/node_modules # workaround to not delete node_modules folder. An anonymous volume.
+
+    volumes:
+      - mondo-db:/data/db # this is a named volume
 
     environment:
       - PORT=3000
