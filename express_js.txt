@@ -20,3 +20,25 @@ check if there is any PORT on environment variables, else set it to 3000
 
 start listening on a port
   app.listen(port, () => console.log(`listening on port ${port}`));
+
+create a router
+  const router = express.Router();
+
+  router
+    .route("/")
+    .get(postController.getAllPosts)
+    .post(postController.createPost);
+
+  router
+    .route("/:id")
+    .get(postController.getOnePost)
+    .patch(postController.updatePost)
+    .delete(postController.deletePost);
+  
+  ...
+
+  const postRouter = require("./routes/postRoutes")
+
+  app.use("/api/v1/posts", postRouter)
+
+================================================================================
