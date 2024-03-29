@@ -39,6 +39,19 @@ create a router
 
   const postRouter = require("./routes/postRoutes")
 
+Apply a router that gets some route and apply more specific routing in that route
+the Router is treated as a middleware
   app.use("/api/v1/posts", postRouter)
 
+get the middleware parser function and apply it as a middleware
+  app.use(express.json());
+  
 ================================================================================
+Glossary
+
+app: an Express Application
+  app.use(): pass a middleware function to it and it will be mounted.
+express: namespace
+  express.json(): middleware function that parses the req and can be passed to the use()
+express(): creates an express application
+  - it is a function that returns a core.Express
