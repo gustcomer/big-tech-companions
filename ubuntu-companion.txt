@@ -12,6 +12,9 @@ if you want to install pip in a ubuntu distribution
 > sudo apt update
 > sudo apt install python3-pip
 
+install unzip
+  $ sudo apt install unzip
+
 to install ffmpeg in debian
 > sudo apt-get install ffmpeg
 
