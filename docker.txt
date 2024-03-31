@@ -5,6 +5,9 @@ build the image with some name and optionally a tag name:tag
   > docker build -t node-app-image .
   -t option stands for tag
 
+pull an image from docker hub to your computer
+  > docker pull mysql
+
 check for images created
   > docker image ls
 
