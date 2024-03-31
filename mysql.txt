@@ -1,0 +1,12 @@
+if you want to access a mysql container from cmd
+  docker exec -it <container_name> bash
+
+to access a mysql database as root
+  $ mysql -u root -p
+  and then enter the password...
+
+show databases
+  $ show databases;
+
+select a database
+  $ use <database_name>

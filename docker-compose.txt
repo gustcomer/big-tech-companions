@@ -62,6 +62,11 @@ services:
     depends_on:
       - mongo # now will start mongo container before this one
 
+    image: mysql # use the latest mysql image
+    
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456 # set password for user root
+      MYSQL_DATABASE: pagebuilder_wurzburg # set database when creating the image
 
 ================================================================================
 Docker Compose Glossary
