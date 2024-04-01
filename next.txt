@@ -1,0 +1,19 @@
+
+================================================================================
+Nextjs glossary
+
+App directory: directory responsible for all the routing.
+Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
+  - created by wrapping a folder's name in square brackets: [folderName]
+Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
+  - use Dynamic Segments for this purpose.
+Layout: special file that is shared between multiple routes and defines UI.
+  - export some component as default and with children props.
+Page: special file that is unique to a route allows you to create UI for it.
+  - put page.tsx exporting some component as default.
+Root Layout: defined at the top level of the app directory and applies to all routes.
+  - you can't get rid of this layout file.
+  - besides a normal Layout, it must contain html and body tags.
+Route Groups: organize your route segments and project files into logical groups without affecting the URL path structure.
+  - wrap a folder's name in parenthesis: (folderName)
+  - you can use layout files specific to the route group.
