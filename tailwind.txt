@@ -1,0 +1,27 @@
+
+make ... be centered along the cross and main axis. being centered right in the middle of the screen.
+  <div className="h-full flex items-center justify-center">...</div>
+
+
+
+================================================================================
+TAILWIND GLOSSARY
+
+Block: 
+Cross Axis: in flexbox runs perpendicular to the main axis.
+  - Your flex-direction is by default row, so Cross Axis by default is column.
+flex: create a flex container.
+  - block means that each element has it's own box.
+Flex Container: 
+Flex Direction: establishes the main-axis whix is the direction flex items are placed in the flex container.
+  - by default de direction is row.
+h-full: set the height of an element to 100% of the height of its parent. height: 100%;
+  - check: h-screen
+h-screen: set the height of an element to 100% of the viewscreen height. height: 100vh;
+  - check: h-full
+Height: related to the height of its parent
+items-center: make flex items be aligned centered around flex container's Cross Axis (by default height).
+justify-center: control how flex and grid items are positioned along a container's main axis.
+Main Axis: 
+Viewport
+w-full: would set the width of an element to 100% of its parent. but usually that's the default, so not necessary.
