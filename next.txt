@@ -3,14 +3,28 @@
 Nextjs glossary
 
 App directory: directory responsible for all the routing.
+Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
+  - add an ellipsis inside the brackets [...folderName]
+  - all segments are passed at the params prop in an array
+  - app/shop/[...slug]/page.js will route /shop/a/b/c and generate params: { slug: ['a', 'b', 'c'] }
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
+  - they are passed as the params prop to layout, page, route, and generateMetadata functions.
 Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
   - use Dynamic Segments for this purpose.
 Layout: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
+Middleware: allows you to run code before on the incoming request. You can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
+  - Use the file middleware.ts (or .js) in the root of your project to define Middleware.
+  - the matcher config property is used to filter Middleware to run on specific paths.
+Nested Dynamic Routes: nested routes with more than one dynamic segment.
+  - all dynamic segments will be passed as properties of Param props.
+Nested Routes: ability to create a hierarchical structure of pages that reflects a path hierarchy in the URL.
+  - just pile up the folders.
 Page: special file that is unique to a route allows you to create UI for it.
   - put page.tsx exporting some component as default.
+Params: prop used to capture the value of dynamic segments.
+  - it is passed as prop to layout, page, route, and generateMetadata functions.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file.
   - besides a normal Layout, it must contain html and body tags.
