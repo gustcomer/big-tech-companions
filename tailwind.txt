@@ -2,16 +2,24 @@
 make ... be centered along the cross and main axis. being centered right in the middle of the screen.
   <div className="h-full flex items-center justify-center">...</div>
 
+centers some text
+  <p className="text-center">Run your agency, in one place</p>
 
 
 ================================================================================
 TAILWIND GLOSSARY
 
+Arbitrary Values: use to break out of design systems values and use a Custom Style.
+bg-black: set background color to black.
 Block: 
+bootom-*: utility for controlling the placement of positioned elements.
+  related: top-*, right-*, left-*
 Cross Axis: in flexbox runs perpendicular to the main axis.
   - Your flex-direction is by default row, so Cross Axis by default is column.
+fixed: utility to position an element relative to the browser window.
 flex: create a flex container.
   - block means that each element has it's own box.
+flex-col: position flex items vertically.
 Flex Container: 
 Flex Direction: establishes the main-axis whix is the direction flex items are placed in the flex container.
   - by default de direction is row.
@@ -23,5 +31,20 @@ Height: related to the height of its parent
 items-center: make flex items be aligned centered around flex container's Cross Axis (by default height).
 justify-center: control how flex and grid items are positioned along a container's main axis.
 Main Axis: 
+md: : apply the following properties only if the size is smaller than md.
+p-*: control the padding on all sides of an element
+pt-*: utilities to control the padding on top of the element.
+  - related: pt, pr, pb, pl.
+px-*: utility to control the horizontal padding. (left and right), or yet, on x axis.
+py-*: control vertical padding of an element.
+relative: [1] position the element according to the normal flow. [2] act as a position reference for absolute children.
+  - usually is the contrary of static.
+  - used in conjunction with absolute where the Relative Parent act as reference to some Absolute child.
+  - related: static, fixed, absolute, sticky
+static: [1] position the element according to the normal flow. [2] will not act as a position reference for absolute children.
+text-[*px]: set the font size using Arbitrary Values, that is, pixels.
+  related: text-sm, text-sm, text-xl, text-5xl
+text-center: centers the text.
+  - related: text-left, text-center, text-right, text-justify.
 Viewport
 w-full: would set the width of an element to 100% of its parent. but usually that's the default, so not necessary.
