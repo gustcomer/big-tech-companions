@@ -226,6 +226,11 @@ topmargin="?"	Top Margin Size in Pixels (Internet Explorer) (*)
 </html>
 
 ================================================================================
+Facts
+
+- a box is composed by: Content Area, Padding Area, Border area, Margin area, in this specified order.
+
+================================================================================
 Resources
 
   https://www.w3schools.com/html/default.asp
@@ -238,6 +243,7 @@ Glossary
 <aside>: represents a portion of a document whose content is only indirectly related to the document's main content.
   - does not render as anything special in a browser (like inline or block). you can style it as you want. It's purely semantic.
 block-level elements: start on a new line and take up the full width available.
+containing block: the content area of an element's nearest block-level ancestor.
 inline-level element: inline elements do not start on a new line and only take up as much width as necessary.
   - content that participates in inline layout.
 <nav>: defines a set of navigation links.
@@ -245,3 +251,4 @@ inline-level element: inline elements do not start on a new line and only take u
 <span>: inline container used for markup a part of a text, group elements for styling purpose.
   - they are like a div, without any semantic function, but for inline.
   - other inline elements with some semantic: <a>, <img>, <strong>, and <em>.
+user agent: usually your web browser.
