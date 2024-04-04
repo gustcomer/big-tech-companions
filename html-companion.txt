@@ -231,3 +231,17 @@ Resources
   https://www.w3schools.com/html/default.asp
   https://developer.mozilla.org/en-US/docs/Glossary/Block-level_content
   https://github.com/bradtraversy/50projects50days
+
+================================================================================
+Glossary
+
+<aside>: represents a portion of a document whose content is only indirectly related to the document's main content.
+  - does not render as anything special in a browser (like inline or block). you can style it as you want. It's purely semantic.
+block-level elements: start on a new line and take up the full width available.
+inline-level element: inline elements do not start on a new line and only take up as much width as necessary.
+  - content that participates in inline layout.
+<nav>: defines a set of navigation links.
+  - it's purely semantic.
+<span>: inline container used for markup a part of a text, group elements for styling purpose.
+  - they are like a div, without any semantic function, but for inline.
+  - other inline elements with some semantic: <a>, <img>, <strong>, and <em>.
