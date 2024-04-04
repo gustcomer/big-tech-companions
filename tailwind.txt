@@ -12,7 +12,9 @@ TAILWIND GLOSSARY
 Arbitrary Values: use to break out of design systems values and use a Custom Style.
 bg-black: set background color to black.
 Block: 
-bootom-*: utility for controlling the placement of positioned elements.
+border-*: control the width of an element's border.
+  - eg: border-y-* (border top and border bottom), border-l-* (just left border)
+bottom-*: utility for controlling the placement of positioned elements.
   related: top-*, right-*, left-*
 Cross Axis: in flexbox runs perpendicular to the main axis.
   - Your flex-direction is by default row, so Cross Axis by default is column.
@@ -23,11 +25,16 @@ flex-col: position flex items vertically.
 Flex Container: 
 Flex Direction: establishes the main-axis whix is the direction flex items are placed in the flex container.
   - by default de direction is row.
+font-bold: utility used for controlling the Font Weight of an element.
+  - related: font-thin, font-medium, font-semibold, hover:font-bold, font-[1100]
+  - some measures: thin => font-weight: 100, normal: 400, bold: 700, black: 900
+gap-*: change the gap between both rows and columns in grid and flexbox layouts.
 h-full: set the height of an element to 100% of the height of its parent. height: 100%;
   - check: h-screen
 h-screen: set the height of an element to 100% of the viewscreen height. height: 100vh;
   - check: h-full
 Height: related to the height of its parent
+hidden: same thing as display:none.
 items-center: make flex items be aligned centered around flex container's Cross Axis (by default height).
 justify-center: control how flex and grid items are positioned along a container's main axis.
 Main Axis: 
@@ -41,6 +48,8 @@ relative: [1] position the element according to the normal flow. [2] act as a po
   - usually is the contrary of static.
   - used in conjunction with absolute where the Relative Parent act as reference to some Absolute child.
   - related: static, fixed, absolute, sticky
+rounded-tl-2xl: control the Border Radius of an element
+  - eg: rounded-sm (adjusts all borders), rounded-tr-* (adjusts the top right), rounded-l-* (adjusts top left and bottom left).
 static: [1] position the element according to the normal flow. [2] will not act as a position reference for absolute children.
 text-[*px]: set the font size using Arbitrary Values, that is, pixels.
   related: text-sm, text-sm, text-xl, text-5xl
