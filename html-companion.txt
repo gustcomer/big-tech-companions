@@ -248,6 +248,9 @@ inline-level element: inline elements do not start on a new line and only take u
   - content that participates in inline layout.
 <nav>: defines a set of navigation links.
   - it's purely semantic.
+<section>: generic standalone section of a document, which doesn't have a more specific semantic element to represent it.
+  - sections should always have a heading, with very few exceptions.
+  - other semantic tags that helps organize the content of a page: <nav>, <aside>, <body>, <article>, <footer>, <header>
 <span>: inline container used for markup a part of a text, group elements for styling purpose.
   - they are like a div, without any semantic function, but for inline.
   - other inline elements with some semantic: <a>, <img>, <strong>, and <em>.
