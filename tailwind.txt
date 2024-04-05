@@ -23,7 +23,8 @@ bottom-*: utility for controlling the placement of positioned elements.
   related: top-*, right-*, left-*
 Cross Axis: in flexbox runs perpendicular to the main axis.
   - Your flex-direction is by default row, so Cross Axis by default is column.
-Display: block, inline, inline-block, none, flex, grid.
+Display: sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex.
+  - block, inline, inline-block, none, flex, grid.
 fixed: utility to position an element relative to the viewport. It always stays in the same place even if we scroll the page.
 flex: create a flex container.
   - block means that each element has it's own box.
@@ -41,10 +42,13 @@ h-screen: set the height of an element to 100% of the viewscreen height. height:
   - check: h-full
 Height: related to the height of its parent
 hidden: same thing as display:none.
+inset-x-*: sets both the position at right and left. The width will be a consequence.
+  : related: inset-y-*, top, bottom, left, 
 items-center: make flex items be aligned centered around flex container's Cross Axis (by default height).
 justify-center: control how flex and grid items are positioned along a container's main axis.
 Main Axis: 
-md: : apply the following properties only if the size is smaller than md.
+md: : apply the following properties only if the size is greater than md.
+  related: sm:, lg:, xl:, 2xl:
 p-*: control the padding on all sides of an element
 Position: static, relative, fixed, absolute, sticky.
 pt-*: utilities to control the padding on top of the element.
@@ -55,7 +59,6 @@ relative: when we use relative, the top and left coordinates will be relative to
   - without relative, position coordinates such as top, right, won't work.
   - act as a position reference for absolute children.
   - position the element according to the normal flow. Hence the following elements will take it into account when positioning themselves.
-  - usually is the contrary of static.
   - used in conjunction with absolute where the Relative Parent act as reference to some Absolute child.
   - similar to static, but will act as containing block for its children.
   - related: static, fixed, absolute, sticky
@@ -70,5 +73,9 @@ text-[*px]: set the font size using Arbitrary Values, that is, pixels.
   related: text-sm, text-sm, text-xl, text-5xl
 text-center: centers the text.
   - related: text-left, text-center, text-right, text-justify.
+top-*: top position of the element in relation to the containing block.
+translate-x-*: used to translate an element.
+  - it doesn't change the calculated width, length, etc. and that's the diference to top, right, etc.
+  - to use negative values, use -translate-y-6 for instance
 Viewport
 w-full: would set the width of an element to 100% of its parent. but usually that's the default, so not necessary.
