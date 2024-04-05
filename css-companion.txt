@@ -75,3 +75,9 @@ resources
 
   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   https://github.com/bradtraversy/50projects50days
+
+================================================================================
+Glossary
+
+text-overflow: property to cut overflowing text
+  - text-overflow: clip, ellipsis
