@@ -72,12 +72,41 @@ resources
   https://www.w3schools.com/css/
   https://css-tricks.com/
   https://maujor.com/
-
+  https://whatunit.com/
   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   https://github.com/bradtraversy/50projects50days
 
 ================================================================================
 Glossary
 
+Absolute Length Units: px, pt, pc, in, mm, cm.
+cap: height of the capital letter.
+clamp()
+  - useful for font-size responsiveness
+dpi: dots per inch
+em: unit relative to the font-size of the parent element.
+  - (2em means 2 times the size of the current font)
+  - usually it is relative to the parent font size, so in a document 1em could mean diferent things
+  - related: rem.
+  - usefull when we need the font size to be relative to the font-size of the parent element
+ex: height of the letter x
+fr: fractional unit used in grids. 1fr represents 1 part of the available space.
+  - only use it when you want the grid to be fluid, like a calendar, etc.
+  - better than percentages because they don't take into account the gap.
+gap: property that allows to adjust spacing between elements in grid layout
+lh: line height.
+min-width:
+  - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
+  - related: max-width
+px: 1px = 1/96th of 1in.
+  - for low-dpi devices it will be one device pixel (and hence relative length unit)
+  - You can calculate the size of a pixel for any display device dividing the size of the display screen by the resolution. 
+  - for small details such as borders, shadows, etc, you can use pixels.
+Relative Length Units: em, ex, ch, vw, rem, vh, vmin, vmax, %
+rem: unit relative to the font-size of the root element element.
+svh: small vieport height
+  related: dvh: dynamic vieport height; lvh: large viewport height.
 text-overflow: property to cut overflowing text
   - text-overflow: clip, ellipsis
+vh: relative to the viewport's height. 1vh is equal to 1% of the viewport's height.
+vw: relative to the viewport's width. 1vw is equal to 1% of the viewport's width.
