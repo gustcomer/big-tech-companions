@@ -47,10 +47,13 @@ hidden: same thing as display:none.
 inset-x-*: sets both the position at right and left. The width will be a consequence.
   : related: inset-y-*, top, bottom, left, 
 items-center: make flex items be aligned centered around flex container's Cross Axis (by default height).
+  related: justify-center
 justify-center: control how flex and grid items are positioned along a container's main axis.
+  related: items-center
 Main Axis: 
 md: : apply the following properties only if the size is greater than md.
   related: sm:, lg:, xl:, 2xl:
+mx-*: adjust margin-left and margin-right.
 overflow-clip: used to be a shortcut to text-overflow: clip, but browsers added a real overflow: clip property
   - text-clip, in the new tailwind versions.
   - related: text-ellipsis
