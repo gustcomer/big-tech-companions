@@ -1,0 +1,6 @@
+================================================================================
+React Glossary
+
+JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
+  - lets you write HTML-like code in your JavaScript files
+  - stands for JavaScript XML.
