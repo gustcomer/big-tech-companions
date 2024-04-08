@@ -66,3 +66,17 @@ when you stash, the last commit rolls back
 #### How to update the windows local version of git
 
 > git update-git-for-windows
+
+check the tree folder structure of the .git folder (works even in windows cmd)
+  > tree .git
+check the folder structure (first cd to the .git folder)
+  > tree /f
+
+================================================================================
+Git Glossary
+
+Commit History Checkpoints: represented by big hashes.
+.git: hidden folder full with metadata related to git stuff.
+git: decentralized version control system.
+  - it allows you to track snapshots of your project over time.
+git status: check which branch you are, which commit, and if there are any changes to be commited.
