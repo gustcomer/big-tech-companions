@@ -57,6 +57,8 @@ mx-*: adjust margin-left and margin-right.
 overflow-clip: used to be a shortcut to text-overflow: clip, but browsers added a real overflow: clip property
   - text-clip, in the new tailwind versions.
   - related: text-ellipsis
+outline: control the style of an element's outline, default is a solid line.
+  - outline-dashed, outline-dotted, outline-double.
 p-*: control the padding on all sides of an element
 Position: static, relative, fixed, absolute, sticky.
 pt-*: utilities to control the padding on top of the element.

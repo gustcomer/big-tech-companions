@@ -1,6 +1,12 @@
 ================================================================================
 React Glossary
 
+className: prop used to specify a CSS class for an element.
+  - class is a reserved word in JavaScript.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files
   - stands for JavaScript XML.
+'use client': lets you mark what code runs on the client.
+  - will treat the module import as a boundary between server-run and client-run code.
+  - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
+useEffect(): hook that lets you synchronize a component with an external system.
