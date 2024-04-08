@@ -80,6 +80,8 @@ resources
 Glossary
 
 Absolute Length Units: px, pt, pc, in, mm, cm.
+box model: describes how every web element is modeled.
+  - composed of Content Area, Padding, Border, Margin.
 cap: height of the capital letter.
 clamp()
   - useful for font-size responsiveness
@@ -98,6 +100,9 @@ lh: line height.
 min-width:
   - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
   - related: max-width
+outline: it looks like a border, but it's placed outside the border and doesn't take space.
+  - border's are part of the box model while outlines aren't.
+  - use cases: focus
 px: 1px = 1/96th of 1in.
   - for low-dpi devices it will be one device pixel (and hence relative length unit)
   - You can calculate the size of a pixel for any display device dividing the size of the display screen by the resolution. 
