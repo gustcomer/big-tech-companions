@@ -1,0 +1,26 @@
+################################################################################
+NORMAL FLOW
+
+open some command prompt and create the folder you're going to work with
+
+check git version
+  > git --version
+
+update git if necessary
+  > git update-git-for-windows
+no need to reopen the cmd prompt.
+
+go to folder and initiate a git project
+  > git init .
+alternatively, create some folder
+  > git init project-folder
+
+check overall configs
+  > git config --list
+check specific configs
+  > git config --global --list
+  > git config --local --list
+  > git config --system --list
+
+check which branch you are, which commit, and if there are any changes to be commited.
+  > git status
