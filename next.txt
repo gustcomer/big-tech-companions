@@ -7,13 +7,21 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
   - all segments are passed at the params prop in an array
   - app/shop/[...slug]/page.js will route /shop/a/b/c and generate params: { slug: ['a', 'b', 'c'] }
+Core Web Vitals: subset of Web Vitals.
+  - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
+Cumulative Layout Shift (CLS): measure of your site’s overall layout stability.
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
   - they are passed as the params prop to layout, page, route, and generateMetadata functions.
 Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
   - use Dynamic Segments for this purpose.
+<Image>: 
+  - required props: src, width, height, and alt.
+  - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
 Layout: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
+Layout Shifting: when a visible element on your page changes position or size, affecting the position of content around it.
+<Link>: component that extends the HTML <a> element to provide prefetching and client-side navigation between routes.
 Middleware: allows you to run code before on the incoming request. You can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
   - Use the file middleware.ts (or .js) in the root of your project to define Middleware.
   - the matcher config property is used to filter Middleware to run on specific paths.
@@ -25,9 +33,14 @@ Page: special file that is unique to a route allows you to create UI for it.
   - put page.tsx exporting some component as default.
 Params: prop used to capture the value of dynamic segments.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
+Prefetching: when a <Link /> component enters the user's viewport (initially or through scroll) Next.js prefetches and loads the linked route (denoted by the href) and data in the background to improve the performance of client-side navigations.
+redirect(): redirect the user to another URL.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file.
   - besides a normal Layout, it must contain html and body tags.
 Route Groups: organize your route segments and project files into logical groups without affecting the URL path structure.
   - wrap a folder's name in parenthesis: (folderName)
   - you can use layout files specific to the route group.
+Server Action: asynchronous functions that are executed on the server.
+  - place the directive "use server" at the top of an async function.
+Web Vitals: initiative created by Google to provide unified guidance and metrics to measure end-user page experience on the web.
