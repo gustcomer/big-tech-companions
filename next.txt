@@ -3,22 +3,26 @@
 Nextjs glossary
 
 App directory: directory responsible for all the routing.
+Autoprefixer: lib that manages css prefixes like -webkit, -moz.
 Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
   - all segments are passed at the params prop in an array
   - app/shop/[...slug]/page.js will route /shop/a/b/c and generate params: { slug: ['a', 'b', 'c'] }
+Client Components:
+  - they can use hooks, use event listeners and manage state.
 Core Web Vitals: subset of Web Vitals.
   - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
 Cumulative Layout Shift (CLS): measure of your site’s overall layout stability.
+Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
+  - use Dynamic Segments for this purpose.
+  - to use it you name the folder with square brackets, for example, [id] or [slug].
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
   - they are passed as the params prop to layout, page, route, and generateMetadata functions.
-Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
-  - use Dynamic Segments for this purpose.
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
-Layout: special file that is shared between multiple routes and defines UI.
+layout.tsx: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
 Layout Shifting: when a visible element on your page changes position or size, affecting the position of content around it.
 <Link>: component that extends the HTML <a> element to provide prefetching and client-side navigation between routes.
@@ -29,10 +33,11 @@ Nested Dynamic Routes: nested routes with more than one dynamic segment.
   - all dynamic segments will be passed as properties of Param props.
 Nested Routes: ability to create a hierarchical structure of pages that reflects a path hierarchy in the URL.
   - just pile up the folders.
-Page: special file that is unique to a route allows you to create UI for it.
+page.tsx: special file that is unique to a route allows you to create UI for it.
   - put page.tsx exporting some component as default.
-Params: prop used to capture the value of dynamic segments.
+params: prop used to capture the value of dynamic segments as key-value pairs.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
+Postcss: tool for transforming CSS with JavaScript.
 Prefetching: when a <Link /> component enters the user's viewport (initially or through scroll) Next.js prefetches and loads the linked route (denoted by the href) and data in the background to improve the performance of client-side navigations.
 redirect(): redirect the user to another URL.
 Root Layout: defined at the top level of the app directory and applies to all routes.
@@ -41,6 +46,9 @@ Root Layout: defined at the top level of the app directory and applies to all ro
 Route Groups: organize your route segments and project files into logical groups without affecting the URL path structure.
   - wrap a folder's name in parenthesis: (folderName)
   - you can use layout files specific to the route group.
+Routing: Next.js uses a file-system based routing mechanism.
 Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
+Server Components:
+  - they can access the server. but they can't use hooks, event listeners or manage state.
 Web Vitals: initiative created by Google to provide unified guidance and metrics to measure end-user page experience on the web.
