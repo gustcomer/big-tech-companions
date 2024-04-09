@@ -248,6 +248,16 @@ attribute: provide additional information about HTML elements.
   - eg: href attribute of <a>, src, alt, width and height attribute of <img>, style for css, lang attribute of the <html>
 block-level elements: start on a new line and take up the full width available.
 containing block: the content area of an element's nearest block-level ancestor.
+DOM: a W3C standard for accessing documents. A platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+  - Document Object Model.
+  - we have Core DOM, XML DOM, HTML DOM.
+  - check HTML DOM.
+HTML DOM: standard object model and programming interface for HTML.
+  - standard for how to get, change, add, or delete HTML elements.
+  HTML elements: the DOM define them as Objects, it is the general HTML code we see.
+  properties of HTML elements: the attributes of each HTML elements.
+  methods to access HTML elements: the methods browser APIs provide.
+  events for HTML elements:
 <form>: create an HTML form for user input.
   - is a container for different types of input elements, such as: text fields, labels, checkboxes, radio buttons, submit buttons, etc.
   - action="/action_page.php" method="get" importantant examples of attributes.

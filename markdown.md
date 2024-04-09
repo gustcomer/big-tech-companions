@@ -51,6 +51,10 @@ Reference another section of the same document (in github)
   [click on this link](#my-multi-word-header)
 
   ## My Multi Word Header
+
+Reference another section of other document (in github)
+
+  [Custom foo description](otherfile.md#foo)
 ```
 
 ## Usefull Resources
