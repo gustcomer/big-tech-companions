@@ -252,6 +252,8 @@ containing block: the content area of an element's nearest block-level ancestor.
   - is a container for different types of input elements, such as: text fields, labels, checkboxes, radio buttons, submit buttons, etc.
   - action="/action_page.php" method="get" importantant examples of attributes.
   - target="_blank", _self, _parent, _top specifies where to display the response that is received after submitting the form
+Global Attributes: attributes that can be used with all HTML elements.
+  - eg: id, title, hidden, class, etc.
 inline-level element: inline elements do not start on a new line and only take up as much width as necessary.
   - content that participates in inline layout.
 <input>: interactive controls for web-based forms in order to accept data from the user
@@ -276,5 +278,5 @@ inline-level element: inline elements do not start on a new line and only take u
   - usually they are placed inside <form>. They are not treated with <input type="textarea"> because they have some more semantic meaning.
   - it would be weird to treat multiple lines with value="line1\nline2"
   - important attributes: id, name (exacly as normal <input>), rows, cols
-title: 
+title: global attribute that specifies extra information about an element in the form of a tooltip text.
 user agent: usually your web browser.
