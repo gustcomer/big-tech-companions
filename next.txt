@@ -3,11 +3,13 @@
 Nextjs glossary
 
 App directory: directory responsible for all the routing.
+  - to make it work, it has to have a page.tsx file inside the folder representing the routing. Check File Colocation.
 Autoprefixer: lib that manages css prefixes like -webkit, -moz.
 Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
-  - all segments are passed at the params prop in an array
+  - all segments are passed at the params prop in an array form. (remember nested dynamic routes used key-value pairs).
   - app/shop/[...slug]/page.js will route /shop/a/b/c and generate params: { slug: ['a', 'b', 'c'] }
+  - in the case above, if you want to also match app/, you should check Optional Catch-all Segments and use [[...slug]].
 Client Components:
   - they can use hooks, use event listeners and manage state.
 Core Web Vitals: subset of Web Vitals.
@@ -19,6 +21,8 @@ Dynamic Routes: when you don't know the exact segment names ahead of time and wa
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
   - they are passed as the params prop to layout, page, route, and generateMetadata functions.
+File Colocation: practice of organizing and grouping related files together in the same directory.
+  - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
@@ -30,15 +34,24 @@ Middleware: allows you to run code before on the incoming request. You can modif
   - Use the file middleware.ts (or .js) in the root of your project to define Middleware.
   - the matcher config property is used to filter Middleware to run on specific paths.
 Nested Dynamic Routes: nested routes with more than one dynamic segment.
-  - all dynamic segments will be passed as properties of Param props.
+  - all dynamic segments will be passed as properties of Param props in the form of key-value pairs.
+  - other way to capture multiple dynamic segments is using Catch All Segments.
 Nested Routes: ability to create a hierarchical structure of pages that reflects a path hierarchy in the URL.
   - just pile up the folders.
+Not Found Page: 404 not found page when the next router doesn't find any match, or programatically with notFound() function.
+  - you customize the Not Found Page creating a not-found.tsx file.
+not-found.tsx: file responsible for the customization of the Not Found Pages.
+notFound(): function that calls the Not Found Page.
+Optional Catch-all Segments: like catch all segments but will also match the original route;
+  - use double square brackets [[..segmentName]].
 page.tsx: special file that is unique to a route allows you to create UI for it.
   - put page.tsx exporting some component as default.
 params: prop used to capture the value of dynamic segments as key-value pairs.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
 Postcss: tool for transforming CSS with JavaScript.
 Prefetching: when a <Link /> component enters the user's viewport (initially or through scroll) Next.js prefetches and loads the linked route (denoted by the href) and data in the background to improve the performance of client-side navigations.
+Private Folder: indicate that it is a private implementation and should not be considered by the routing system.
+  - prefix the folder name with an underscore _. The folder and all its subfolders are excluded from routing.
 redirect(): redirect the user to another URL.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file.
