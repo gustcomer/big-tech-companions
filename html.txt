@@ -240,18 +240,41 @@ Resources
 ================================================================================
 Glossary
 
+<a>: anchor tag that creates a hyperlink to web pages, files, email addresses, etc.
+  - href="https://example.com" most important attribute.
 <aside>: represents a portion of a document whose content is only indirectly related to the document's main content.
   - does not render as anything special in a browser (like inline or block). you can style it as you want. It's purely semantic.
+attribute: provide additional information about HTML elements.
+  - eg: href attribute of <a>, src, alt, width and height attribute of <img>, style for css, lang attribute of the <html>
 block-level elements: start on a new line and take up the full width available.
 containing block: the content area of an element's nearest block-level ancestor.
+<form>: create an HTML form for user input.
+  - is a container for different types of input elements, such as: text fields, labels, checkboxes, radio buttons, submit buttons, etc.
+  - action="/action_page.php" method="get" importantant examples of attributes.
+  - target="_blank", _self, _parent, _top specifies where to display the response that is received after submitting the form
 inline-level element: inline elements do not start on a new line and only take up as much width as necessary.
   - content that participates in inline layout.
+<input>: interactive controls for web-based forms in order to accept data from the user
+  - eg: <input type="text">, <input type="radio">, <input type="checkbox">, <input type="submit">, <input type="button">.
+  - type= attribute that specify the type of input.
+  - id="some_id" attribute that assigns an identifier to the <input> element. good for referencing from javascript or css selectors. Must be unique
+  - name="fname" attribute used for form handling on the server when a form is submitted. useful in GET, POST requests, etc. It does not have to be unique.
+  - value="30" attribute related to the value of the input.
+<label>: represents a caption for an item, usually an input element, in a user interface.
+  - when a user clicks or touches/taps a label, the browser passes the focus to its associated input.
+  - the for="username" attribute should refence the id attribute (not name) in the input element.
 <nav>: defines a set of navigation links.
   - it's purely semantic.
+<p>: defines a paragraph.
 <section>: generic standalone section of a document, which doesn't have a more specific semantic element to represent it.
   - sections should always have a heading, with very few exceptions.
   - other semantic tags that helps organize the content of a page: <nav>, <aside>, <body>, <article>, <footer>, <header>
 <span>: inline container used for markup a part of a text, group elements for styling purpose.
   - they are like a div, without any semantic function, but for inline.
   - other inline elements with some semantic: <a>, <img>, <strong>, and <em>.
+<textarea>: just like an input type="text".
+  - usually they are placed inside <form>. They are not treated with <input type="textarea"> because they have some more semantic meaning.
+  - it would be weird to treat multiple lines with value="line1\nline2"
+  - important attributes: id, name (exacly as normal <input>), rows, cols
+title: 
 user agent: usually your web browser.
