@@ -8,11 +8,18 @@ className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
 Component: independent chunks of user interfaces.
   - you can have independent, isolated and reusable elements.
+<Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files
   - stands for JavaScript XML.
+<Profiler>: lets you measure rendering performance of a React tree programmatically.
 React: a javascript library for building user interfaces.
 Route Component
+<StrictMode>: lets you find common bugs in your components early during development.
+  - Your components will re-render an extra time to find bugs caused by impure rendering.
+  - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
+  - Your components will be checked for usage of deprecated APIs.
+<Suspense>: lets you display a fallback until its children have finished loading.
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
