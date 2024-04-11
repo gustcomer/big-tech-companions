@@ -26,6 +26,8 @@ File Colocation: practice of organizing and grouping related files together in t
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
+Layout: UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive, and do not re-render.
+  - The component should accept a children prop and this chindren component will be inserted into the UI.
 layout.tsx: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
 Layout Shifting: when a visible element on your page changes position or size, affecting the position of content around it.
@@ -36,6 +38,7 @@ Middleware: allows you to run code before on the incoming request. You can modif
 Nested Dynamic Routes: nested routes with more than one dynamic segment.
   - all dynamic segments will be passed as properties of Param props in the form of key-value pairs.
   - other way to capture multiple dynamic segments is using Catch All Segments.
+Nested Layout: layouts in the folder hierarchy are nested, which means they wrap child layouts via their children prop.
 Nested Routes: ability to create a hierarchical structure of pages that reflects a path hierarchy in the URL.
   - just pile up the folders.
 Not Found Page: 404 not found page when the next router doesn't find any match, or programatically with notFound() function.
@@ -54,7 +57,7 @@ Private Folder: indicate that it is a private implementation and should not be c
   - prefix the folder name with an underscore _. The folder and all its subfolders are excluded from routing.
 redirect(): redirect the user to another URL.
 Root Layout: defined at the top level of the app directory and applies to all routes.
-  - you can't get rid of this layout file.
+  - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
 Route Groups: organize your route segments and project files into logical groups without affecting the URL path structure.
   - wrap a folder's name in parenthesis: (folderName)
