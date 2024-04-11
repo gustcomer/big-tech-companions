@@ -252,12 +252,19 @@ DOM: a W3C standard for accessing documents. A platform and language-neutral int
   - Document Object Model.
   - we have Core DOM, XML DOM, HTML DOM.
   - check HTML DOM.
+<header>: semantic container for introductory content or a set of navigational links.
+  - cannot be placed within a <footer>, <address> or another <header> element.
+  - it usually includes a logo, company name, search feature, and possibly the global navigation or a slogan.
+  - it usually contains a header h1-h6
 HTML DOM: standard object model and programming interface for HTML.
   - standard for how to get, change, add, or delete HTML elements.
   HTML elements: the DOM define them as Objects, it is the general HTML code we see.
   properties of HTML elements: the attributes of each HTML elements.
   methods to access HTML elements: the methods browser APIs provide.
   events for HTML elements:
+<footer>: typically contains authorship information, copyright information, contact information, sitemap.
+back to top links
+related documents
 <form>: create an HTML form for user input.
   - is a container for different types of input elements, such as: text fields, labels, checkboxes, radio buttons, submit buttons, etc.
   - action="/action_page.php" method="get" importantant examples of attributes.
