@@ -59,9 +59,11 @@ redirect(): redirect the user to another URL.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
-Route Groups: organize your route segments and project files into logical groups without affecting the URL path structure.
+Route Group: organize your route segments and project files into logical groups without affecting the URL path structure.
   - wrap a folder's name in parenthesis: (folderName)
   - you can use layout files specific to the route group.
+Route Group Layout: apply a layout to pages grouped by a Route Group.
+  - you can create a specific rout group named (with-specific-layout).
 Routing: Next.js uses a file-system based routing mechanism.
 Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
