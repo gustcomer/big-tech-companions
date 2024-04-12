@@ -4,15 +4,18 @@
     * test
 * [Bind()](javascript.md#bind-function): an object can borrow a method from another object.
 * [Binding]():
+* Conditional (ternary) Operator: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. 
 * [Destructuring]():
 * Global Object: object that always exists in the global scope.
     * web browsers have a Window as its global object.
     * globalThis allows one to access the global object regardless of the current environment.
 * Hoist: a variable can be used before it has been declared. It is the default behavior of moving all declarations to the top of the current scope.
+* startsWith(): method to check if a string starts with a specified string.
 * [Rest operator]():
 * [splice](javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
     * array.splice(index, howmany, item1, ....., itemX)
     * index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.
+* Ternary Operator: check Conditional Operator.
 * this: keyword that refers to an object.
     * In an object method, this refers to the object.
     * Alone, this refers to the global object.
