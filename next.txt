@@ -28,12 +28,15 @@ generateMetadata(): function used to define dynamic metadata.
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
+key prop: string or a number that uniquely identifies items in an array.
 Layout: UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive, and do not re-render.
   - The component should accept a children prop and this chindren component will be inserted into the UI.
 layout.tsx: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
 Layout Shifting: when a visible element on your page changes position or size, affecting the position of content around it.
 <Link>: component that extends the HTML <a> element to provide prefetching and client-side navigation between routes.
+  - eg: <Link href="/blog">Blog</Link>
+  - replace prop: when true, next/link will replace the current history state instead of adding a new URL into the browser’s history.
 Metadata API: allows you to define metadata for each page.
   - 2 methods: export a static metadata object or export a dynamic generateMetadata().
   - deeper page metadata will replace layout metadata if they have the same properties.
@@ -81,4 +84,12 @@ title metadata: define the document title. It can be passed as a string in the k
   default: provides a default title to child elements that don't explicity specify a title.
   template: act as a layout for children pages.
   absolute: will ignore any template title set in parents.
+usePathname(): hook provided by Next.js that supplies the current route name (url after the domain)
+  - it is useful to check which <Link> is active to give proper styling.
+useRouter(): hook that allows you to access the router object inside any function component in your app.
+  - with the router object, you can navigate Programatically.
+  - router.push(/): handles client-side transitions
+  - router.replace(): prevent adding a new URL entry into the history stack.
+  - router.back(): navigate back in history.
+  - router.reload(): reload the current URL.
 Web Vitals: initiative created by Google to provide unified guidance and metrics to measure end-user page experience on the web.
