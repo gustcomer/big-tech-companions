@@ -8,12 +8,19 @@ className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
 Component: independent chunks of user interfaces.
   - you can have independent, isolated and reusable elements.
+Controlled Component: when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
+  - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
+Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
+Higher-Order Component: function that takes a component and returns a new component.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files
   - stands for JavaScript XML.
+One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
 React: a javascript library for building user interfaces.
+Reconciliation: compares the actual Virtual DOM with the previous one to calculate the minimal set of changes needed to update the actual DOM.
+  - it significantly improves performance compared to directly manipulating the DOM.
 Route Component
 <StrictMode>: lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs caused by impure rendering.
@@ -24,4 +31,6 @@ Route Component
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
 useEffect(): hook that lets you synchronize a component with an external system.
-Virtual DOM.
+useState(): hook that lets you add a state variable to your component.
+  - const [state, setState] = useState(initialState)
+Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
