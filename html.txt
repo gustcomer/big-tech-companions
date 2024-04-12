@@ -252,6 +252,13 @@ DOM: a W3C standard for accessing documents. A platform and language-neutral int
   - Document Object Model.
   - we have Core DOM, XML DOM, HTML DOM.
   - check HTML DOM.
+<footer>: typically contains authorship information, copyright information, contact information, sitemap.
+<form>: create an HTML form for user input.
+  - is a container for different types of input elements, such as: text fields, labels, checkboxes, radio buttons, submit buttons, etc.
+  - action="/action_page.php" method="get" importantant examples of attributes.
+  - target="_blank", _self, _parent, _top specifies where to display the response that is received after submitting the form
+Global Attributes: attributes that can be used with all HTML elements.
+  - eg: id, title, hidden, class, etc.
 <header>: semantic container for introductory content or a set of navigational links.
   - cannot be placed within a <footer>, <address> or another <header> element.
   - it usually includes a logo, company name, search feature, and possibly the global navigation or a slogan.
@@ -262,15 +269,6 @@ HTML DOM: standard object model and programming interface for HTML.
   properties of HTML elements: the attributes of each HTML elements.
   methods to access HTML elements: the methods browser APIs provide.
   events for HTML elements:
-<footer>: typically contains authorship information, copyright information, contact information, sitemap.
-back to top links
-related documents
-<form>: create an HTML form for user input.
-  - is a container for different types of input elements, such as: text fields, labels, checkboxes, radio buttons, submit buttons, etc.
-  - action="/action_page.php" method="get" importantant examples of attributes.
-  - target="_blank", _self, _parent, _top specifies where to display the response that is received after submitting the form
-Global Attributes: attributes that can be used with all HTML elements.
-  - eg: id, title, hidden, class, etc.
 inline-level element: inline elements do not start on a new line and only take up as much width as necessary.
   - content that participates in inline layout.
 <input>: interactive controls for web-based forms in order to accept data from the user
@@ -279,6 +277,7 @@ inline-level element: inline elements do not start on a new line and only take u
   - id="some_id" attribute that assigns an identifier to the <input> element. good for referencing from javascript or css selectors. Must be unique
   - name="fname" attribute used for form handling on the server when a form is submitted. useful in GET, POST requests, etc. It does not have to be unique.
   - value="30" attribute related to the value of the input.
+  - onChange={(e) => setInput(e.target.value)} when the element change, it calls some callback function.
 <label>: represents a caption for an item, usually an input element, in a user interface.
   - when a user clicks or touches/taps a label, the browser passes the focus to its associated input.
   - the for="username" attribute should refence the id attribute (not name) in the input element.
