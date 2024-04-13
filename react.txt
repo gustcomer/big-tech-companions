@@ -11,6 +11,8 @@ Component: independent chunks of user interfaces.
 Controlled Component: when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
+Error Boundary: special component that lets you display some fallback UI instead of the part that crashed
+  - By default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
 Higher-Order Component: function that takes a component and returns a new component.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
