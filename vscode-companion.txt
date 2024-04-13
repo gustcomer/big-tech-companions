@@ -11,3 +11,4 @@ shift+alt+arrow -- copy the line upwards or downward
 alt+selection -- select lines in different places
 ctrl+shift+K -- delete the whole line - think about Kill
 ctrl+shift+v -- abrir preview mode, bom pra arquivos markdown .md
+ctrl+B -- toggle sidebar to get more space
