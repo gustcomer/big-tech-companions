@@ -6,6 +6,7 @@
 * [Binding]():
 * Conditional (ternary) Operator: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. 
 * [Destructuring]():
+* ES6 Modules: 
 * Global Object: object that always exists in the global scope.
     * web browsers have a Window as its global object.
     * globalThis allows one to access the global object regardless of the current environment.
