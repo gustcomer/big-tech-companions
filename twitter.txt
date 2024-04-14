@@ -19,4 +19,4 @@ min_replies:1000
 -filter:replies
   exclude replies
 
-from:pickyourpoison since:2019-01-01 until:2019-12-31 -filter:replies
+from:pickyourpoison since:2013-01-01 until:2013-12-31 -filter:replies
