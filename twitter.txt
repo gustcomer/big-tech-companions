@@ -1,4 +1,17 @@
 advanced search
 
-(from:adymitruk) min_faves:300
+from:adymitruk min_faves:300
   find posts from this person with minimum of likes
+
+to:VaughnVernon
+  people responding to the person
+
+since:2019-01-01 YYYY-MM-DD
+
+until:2020-01-01 YYYY-MM-DD
+
+url:amazon
+
+min_retweets:1000
+min_faves:1000
+min_replies:1000
