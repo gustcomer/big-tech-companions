@@ -15,3 +15,8 @@ url:amazon
 min_retweets:1000
 min_faves:1000
 min_replies:1000
+
+-filter:replies
+  exclude replies
+
+from:pickyourpoison since:2019-01-01 until:2019-12-31 -filter:replies
