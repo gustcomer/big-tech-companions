@@ -10,7 +10,12 @@ Component: independent chunks of user interfaces.
   - you can have independent, isolated and reusable elements.
 Controlled Component: when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
+createRoot(domNode): create a React root for displaying content inside a browser DOM element.
+  - import ReactDOM from 'react-dom/client'; const root = ReactDOM.createRoot(document.getElementById('root')); root.render(<Greeting />);
+  - import { createRoot } from 'react-dom/client'; const domNode = document.getElementById('root'); const root = createRoot(domNode); root.render(<App />);
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
+Diffing: concept of comparing the virtual DOMs before and after the modification and ensuring efficient updates.
+  - DOM Diffing
 Error Boundary: special component that lets you display some fallback UI instead of the part that crashed
   - By default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
@@ -36,3 +41,4 @@ useEffect(): hook that lets you synchronize a component with an external system.
 useState(): hook that lets you add a state variable to your component.
   - const [state, setState] = useState(initialState)
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
+  - VDOM
