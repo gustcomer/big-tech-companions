@@ -11,8 +11,13 @@
     * web browsers have a Window as its global object.
     * globalThis allows one to access the global object regardless of the current environment.
 * Hoist: a variable can be used before it has been declared. It is the default behavior of moving all declarations to the top of the current scope.
+* Lexical Scope: concept of determining the scope of a variable based on the place of its declaration.
+    * aka: Scope
+    * Variables should always be declared inside of functions because outside of functions are global variables.
+    * types: Global Scope, Local Scope.
 * startsWith(): method to check if a string starts with a specified string.
 * [Rest operator]():
+* Scope Chain: hierarchy of places the computer must go through — one after the other — to find the lexical scope (origin) of the specific variable that got called.
 * [splice](javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
     * array.splice(index, howmany, item1, ....., itemX)
     * index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.
