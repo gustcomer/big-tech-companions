@@ -16,6 +16,11 @@
     * Variables should always be declared inside of functions because outside of functions are global variables.
     * types: Global Scope, Local Scope.
 * startsWith(): method to check if a string starts with a specified string.
+* Response(): interface of the Fetch API represents the response to a request.
+    * return new Response("Hello world");
+    * return Response.json({ message: 'Hello - GET' });
+    * Response.redirect(url)
+    * Response.error()
 * [Rest operator]():
 * Scope Chain: hierarchy of places the computer must go through — one after the other — to find the lexical scope (origin) of the specific variable that got called.
 * [splice](javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
