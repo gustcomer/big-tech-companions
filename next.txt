@@ -109,6 +109,8 @@ Private Folder: indicate that it is a private implementation and should not be c
 redirect(): redirect the user to another URL.
 reset(): an error component can use the reset() function to prompt the user to attempt to recover from the error. When executed, the function will try to re-render the Error boundary's contents.
   - the cause of an error can sometimes be temporary. In these cases, simply trying again might resolve the issue.
+Response(): interface of the Fetch API represents the response to a request.
+  - check Response() in javascript glossary.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
@@ -117,6 +119,15 @@ Route Group: organize your route segments and project files into logical groups 
   - you can use layout files specific to the route group.
 Route Group Layout: apply a layout to pages grouped by a Route Group.
   - you can create a specific rout group named (with-specific-layout).
+Route Handlers: allow you to create custom request handlers for a given route using the Web Request and Response APIs.
+  - use the file route.ts instead of page.ts in the App folder.
+  - while page routes respond with html, route handlers allow you to create RESTful endpoints and respond with json, for instance.
+  - you don't need to create and configure a separate server! no need to express.js
+  - they run on server-side, can access databases, etc.
+  - while page routes are router in the frontend, route handlers are routing in the backend.
+route.ts: file responsible for route handlers.
+  - export async function GET() {return Response.json({ message: 'Hello - GET' });}
+  - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
 Routing: Next.js uses a file-system based routing mechanism.
 Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
