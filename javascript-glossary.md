@@ -5,6 +5,7 @@
 * [Bind()](javascript.md#bind-function): an object can borrow a method from another object.
 * [Binding]():
 * Conditional (ternary) Operator: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. 
+* [Currying](javascript.md#currying): currying is a functional programming technique used to transform a function with multiple arguments into a sequence of functions, each taking a single argument.
 * [Destructuring]():
 * ES6 Modules: 
 * Global Object: object that always exists in the global scope.
