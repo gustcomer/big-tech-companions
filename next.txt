@@ -21,7 +21,7 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
   - all segments are passed at the params prop in an array form. (remember nested dynamic routes used key-value pairs).
   - app/shop/[...slug]/page.js will route /shop/a/b/c and generate params: { slug: ['a', 'b', 'c'] }
-  - in the case above, if you want to also match app/, you should check Optional Catch-all Segments and use [[...slug]].
+  - in the case above, if you want to also match app/, you should check Optional Catch-all Segments entry and use [[...slug]].
 Client Components:
   - they can use hooks, use event listeners and manage state.
 Core Web Vitals: subset of Web Vitals.
@@ -45,7 +45,7 @@ error.tsx
   - by positioning error.tsx at different levels in the nested folders, you can achieve a more granular level of error handling.
 Error Handling:
   - error boundaries must be client components in Next. 
-  - an prop called error is passed to the Error component. You can get the error message from it.
+  - a prop called error is passed to the Error component. You can get the error message from it.
   - in nested routes, errors bubble up to the closest parent error boundary.
   - taking into account the next structure, inserting an error.tsx will handle errors of the page at the same folder, but won't handle errors in the template nor the layout.
   - to handle errors in the layout or in the template, you should place error.tsx one folder above.
