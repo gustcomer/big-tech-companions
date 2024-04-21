@@ -13,15 +13,16 @@ Controlled Component: when there is feedback, you change the input value, which 
 createRoot(domNode): create a React root for displaying content inside a browser DOM element.
   - import ReactDOM from 'react-dom/client'; const root = ReactDOM.createRoot(document.getElementById('root')); root.render(<Greeting />);
   - import { createRoot } from 'react-dom/client'; const domNode = document.getElementById('root'); const root = createRoot(domNode); root.render(<App />);
+  - probably this is the moment that Virtual DOM is created.
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
 Diffing: concept of comparing the virtual DOMs before and after the modification and ensuring efficient updates.
-  - DOM Diffing
-Error Boundary: special component that lets you display some fallback UI instead of the part that crashed
-  - By default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
+  - aka: DOM Diffing
+Error Boundary: special component that lets you display some fallback UI instead of the part that crashed.
+  - by default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
 Higher-Order Component: function that takes a component and returns a new component.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
-  - lets you write HTML-like code in your JavaScript files
+  - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
