@@ -40,3 +40,34 @@ x.splice(2,1) // removes one element from index 2
 x.splice(3,0,8) // insert number 8 at third index
 x.splice(3,0,[10,20,30]) // insert 10, 20 and 30 at index 3
 ```
+
+### Currying
+
+multiply() function written in the traditional way
+```javascript
+function multiply(x, y, z) {
+    return x * y * z;
+}
+```
+
+multiply() function written with Currying.
+```javascript
+function multiply(x) {
+    return function(y) {
+        return function(z) {
+            return x * y * z;
+        }
+    }
+}
+```
+
+Currying helps in scenarios where you might want to reuse the function with some specific parameter.
+```javascript
+// All at once
+console.log(multiply(2)(3)(4)); // Output: 24
+
+// Step by step
+const multiplyByTwo = multiply(2);
+const multiplyBySix = multiplyByTwo(3);
+console.log(multiplyBySix(4)); // Output: 24
+```
