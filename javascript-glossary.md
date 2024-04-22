@@ -16,6 +16,8 @@
     * aka: Scope
     * Variables should always be declared inside of functions because outside of functions are global variables.
     * types: Global Scope, Local Scope.
+* null: is an assignment value representing the intentional absence of any object value.
+    * null means there is no value.
 * startsWith(): method to check if a string starts with a specified string.
 * Response(): interface of the Fetch API represents the response to a request.
     * return new Response("Hello world");
@@ -35,3 +37,4 @@
     * In a function, in strict mode, this is undefined.
     * In an event, this refers to the element that received the event.
     * Methods like call(), apply(), and bind() can refer this to any object.
+* undefined: means a variable has been declared, but not defined.
