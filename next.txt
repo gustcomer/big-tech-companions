@@ -32,6 +32,10 @@ default.tsx: serves as a fallback to render content when the framework cannot re
   - you should put a default.tsx in the parent folder that calls the slots as well.
   - this file processes slots without specific content for the route inside a slot.
   - I believe that you can put the same route inside different slots.
+Dynamic Page Route: the process of putting a page.tsx inside a folder representing a dynamic route.
+Dynamic Route Handler: similar to Dynamic Page Route. Put a route.ts inside a folder representing a dynamic route.
+  - useful for GET, PATCH, DELETE requests.
+  - for GET: export async function GET(request: Request, { params }: { params: { id: string } })
 Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
   - use Dynamic Segments for this purpose.
   - to use it you name the folder with square brackets, for example, [id] or [slug].
@@ -53,11 +57,14 @@ File Colocation: practice of organizing and grouping related files together in t
   - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
 generateMetadata(): function used to define dynamic metadata.
   - you cannot export a static metadata and a generateMetadata function at the same time.
+GET(): put this function inside a route.ts file to handle a get request.
+  - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
 Independent Route Handling: each slot can have its own loading and error states.
-Intercepting Routes: allows you to load a route from another part of your application within the current layout.
+Intercepting Routes: allows you to load a route from another part of your application within the current layout when navigation through <Link/>.
+  - if you refresh the page or type the address directly, it will show the original page, and not the intercepted one.
   - use case: show login modal when you're navigating, but show login page when you share the link or refresh.
   - define naming a subfolder as /(.)routename , this way it opens /(.)routename when clicking <Link/> and /routname when refreshing or sharing the link.
   - if the route you want to intercept is at the same level of your current route, use /(..)routename.
@@ -102,6 +109,8 @@ Parallel Routes: advanced routing mechanism that uses Slots and allows for the s
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
 params: prop used to capture the value of dynamic segments as key-value pairs.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
+POST(request): put this function inside a route.ts file to handle a post request.
+  - use request parameter to access request body.
 Postcss: tool for transforming CSS with JavaScript.
 Prefetching: when a <Link /> component enters the user's viewport (initially or through scroll) Next.js prefetches and loads the linked route (denoted by the href) and data in the background to improve the performance of client-side navigations.
 Private Folder: indicate that it is a private implementation and should not be considered by the routing system.
@@ -111,6 +120,8 @@ reset(): an error component can use the reset() function to prompt the user to a
   - the cause of an error can sometimes be temporary. In these cases, simply trying again might resolve the issue.
 Response(): interface of the Fetch API represents the response to a request.
   - check Response() in javascript glossary.
+  - there is a better alternative with NextResponse which provide additional convenience methods.
+  - if you want to respond with code, pass a second object parameter with headers and status fields. Check documentation.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
