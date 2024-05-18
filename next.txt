@@ -63,6 +63,7 @@ generateMetadata(): function used to define dynamic metadata.
 GET(): put this function inside a route.ts file to handle a get request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function GET(_request: Request, {params}) {...}
+HTTP Headers: metadata associated with an API request and response.
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
@@ -126,15 +127,23 @@ Prefetching: when a <Link /> component enters the user's viewport (initially or 
 Private Folder: indicate that it is a private implementation and should not be considered by the routing system.
   - prefix the folder name with an underscore _. The folder and all its subfolders are excluded from routing.
 redirect(): redirect the user to another URL.
+  - can be used in Server Components, Route Handlers, and Server Actions.
 Request: interface of the Fetch API representing a resource request
   - it has the Request type and lots of methods to return
   - in Next, it is preferable to use the NextRequest since it provides extra methods.
+Request Headers: metadata sent by the client
+  - 'User-Agent': identifies the browser and operating system. Useful for specific renderings and analytics.
+  - 'Accept': indicates content types the Client can process. The server has the option to respond with one of these.
+  - 'Authorization': header used by the client to authenticate itself to the server.
 reset(): an error component can use the reset() function to prompt the user to attempt to recover from the error. When executed, the function will try to re-render the Error boundary's contents.
   - the cause of an error can sometimes be temporary. In these cases, simply trying again might resolve the issue.
 Response(): interface of the Fetch API represents the response to a request.
   - check Response() in javascript glossary.
   - there is a better alternative with NextResponse which provide additional convenience methods.
   - if you want to respond with code, pass a second object parameter with headers and status fields. Check documentation.
+  - the second argument is the headers object, check documentation if you want to change "Content-Type" to text/html, for instance.
+Response Headers: metadata sent back from the server to the client.
+  - 'Content-Type': header that indicates the media type of the response. eg: text/html, application/json, etc.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
