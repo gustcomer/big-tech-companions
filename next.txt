@@ -32,6 +32,9 @@ default.tsx: serves as a fallback to render content when the framework cannot re
   - you should put a default.tsx in the parent folder that calls the slots as well.
   - this file processes slots without specific content for the route inside a slot.
   - I believe that you can put the same route inside different slots.
+DELETE(): put this function inside a route.ts file to handle a DELETE request.
+  - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
+  - export async function DELETE(_request: Request, {params}) {...}
 Dynamic Page Route: the process of putting a page.tsx inside a folder representing a dynamic route.
 Dynamic Route Handler: similar to Dynamic Page Route. Put a route.ts inside a folder representing a dynamic route.
   - useful for GET, PATCH, DELETE requests.
@@ -112,7 +115,7 @@ params: prop used to capture the value of dynamic segments as key-value pairs.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
 PATCH(): put this function inside a route.ts file to handle a PATCH request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
-  - export async function patch(_request: Request, {params}) {...}
+  - export async function PATCH(_request: Request, {params}) {...}
 POST(request): put this function inside a route.ts file to handle a post request.
   - use request parameter to access request body.
 Postcss: tool for transforming CSS with JavaScript.
