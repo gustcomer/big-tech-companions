@@ -113,6 +113,13 @@ Metadata API: allows you to define metadata for each page.
 Middleware: allows you to run code before on the incoming request. You can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
   - Use the file middleware.ts (or .js) in the root of your project to define Middleware.
   - the matcher config property is used to filter Middleware to run on specific paths.
+  - it offers a robust way to intercept and control the flow of requests and responses within your applications.
+  - aids redirection, URL rewrites, authentication, headers, cookies management, etc
+  - we have different approaches to apply the middleware to a path
+    - configure a matcher in a config file exported in the middleware file
+    - use conditional conditions on request.nextUrl.pathname
+  - we can manipulate the headers with response.headers.set("name","value")
+  - we can manipulate cookies with response.cookies.set("name","value")
 Nested Dynamic Routes: nested routes with more than one dynamic segment.
   - all dynamic segments will be passed as properties of Param props in the form of key-value pairs.
   - other way to capture multiple dynamic segments is using Catch All Segments.
