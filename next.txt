@@ -17,6 +17,15 @@ Nextjs glossary
 App directory: directory responsible for all the routing.
   - to make it work, it has to have a page.tsx file inside the folder representing the routing. Check File Colocation.
 Autoprefixer: lib that manages css prefixes like -webkit, -moz.
+caching: route handlers are cached by default when using the GET method with the Response object in Next.
+  - in development mode, each refresh means a a new Response, we don't cache.
+  - in production mode, the results are cached
+  - to opt out of caching change dynamic mode in Segment Config Option
+  - to do that: export const dynamic = "force-dynamic";
+  - other ways to opt out:
+    - use Request object with the GET method
+    - employ dynamic functions like headers() and cookies()
+    - use any HTTP method other than GET
 Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
   - all segments are passed at the params prop in an array form. (remember nested dynamic routes used key-value pairs).
