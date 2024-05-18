@@ -24,6 +24,16 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - in the case above, if you want to also match app/, you should check Optional Catch-all Segments entry and use [[...slug]].
 Client Components:
   - they can use hooks, use event listeners and manage state.
+Cookies: small pieces of data that a server sends to a user's web browser.
+  - the browser may store the cookie and send it back to the same server with later requests.
+  - use cases: session management, personalizations, tracking and analysis of user behavior.
+  - to set a cookie, send a response with "Set-Cookie" header and name-value: "Set-Cookie": "theme=dark"
+  - to get a cookie from a request, use request.cookies.get("...")
+  - as an alternative, you can use the cookies() function
+cookies(): function to manipulate cookies
+  - eg: cookies().set("resultsPerPage", "20")
+  - and to get the cookies: cookies().get("resultsPerPage")
+  - there are additional functionalities such as "has", delete, etc
 Core Web Vitals: subset of Web Vitals.
   - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
 Cumulative Layout Shift (CLS): measure of your site’s overall layout stability.
