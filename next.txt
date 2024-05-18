@@ -59,6 +59,7 @@ generateMetadata(): function used to define dynamic metadata.
   - you cannot export a static metadata and a generateMetadata function at the same time.
 GET(): put this function inside a route.ts file to handle a get request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
+  - export async function GET(_request: Request, {params}) {...}
 <Image>: 
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
@@ -109,6 +110,9 @@ Parallel Routes: advanced routing mechanism that uses Slots and allows for the s
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
 params: prop used to capture the value of dynamic segments as key-value pairs.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
+PATCH(): put this function inside a route.ts file to handle a PATCH request.
+  - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
+  - export async function patch(_request: Request, {params}) {...}
 POST(request): put this function inside a route.ts file to handle a post request.
   - use request parameter to access request body.
 Postcss: tool for transforming CSS with JavaScript.
