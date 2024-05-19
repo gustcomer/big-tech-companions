@@ -37,6 +37,9 @@ Client-Side Rendering (CSR): component code is transformed into user interface d
   - not optimal for SEO.
   - performance issues since users might see a blank screen or a loading spinner while the page loads.
   - CSR laid the groundwork for interactive applications we see today, but lacks in SEO and performance.
+Code Splitting: breaking up a large JavaScript bundle into smaller, more manageable chunks that can be loaded on-demand or in parallel.
+  - it consists of a kind of Selective Hydration.
+  - you can implement this using React.lazy() functionality.
 Cookies: small pieces of data that a server sends to a user's web browser.
   - the browser may store the cookie and send it back to the same server with later requests.
   - use cases: session management, personalizations, tracking and analysis of user behavior.
@@ -86,8 +89,11 @@ generateMetadata(): function used to define dynamic metadata.
 GET(): put this function inside a route.ts file to handle a get request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function GET(_request: Request, {params}) {...}
+HTML Streaming: technique used to improve the performance of web applications by progressively sending chunks of HTML from the server to the client.
+  - at first it does not include chunking the JavaScript code. To split the JavasScript bundle, check Code Splitting.
 HTTP Headers: metadata associated with an API request and response.
 Hydration: react takes control in the browser, reconstructing the component tree in memory based on the static HTML that was server.
+  - for Selective Hydration and breaking up of the JavaScript bundle, check Code Splitting.
   - initialize application state
   - attach event handlers for actions
   - set up other dynamic functionalities
@@ -110,6 +116,7 @@ Layout: UI that is shared between multiple routes. On navigation, layouts preser
 layout.tsx: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
 Layout Shifting: when a visible element on your page changes position or size, affecting the position of content around it.
+Lazy: React.lazy is a function that allows you to render a dynamic import as a regular component. It is part of React's support for code splitting, enabling you to load components lazily, i.e., only when they are needed.
 <Link>: component that extends the HTML <a> element to provide prefetching and client-side navigation between routes.
   - eg: <Link href="/blog">Blog</Link>
   - replace prop: when true, next/link will replace the current history state instead of adding a new URL into the browser’s history.
@@ -198,6 +205,9 @@ route.ts: file responsible for route handlers.
   - export async function GET() {return Response.json({ message: 'Hello - GET' });}
   - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
 Routing: Next.js uses a file-system based routing mechanism.
+Selective Hydration: allows for the hydration of sections as they become available, before the rest of the HTML and the JavaScript code are fully downloaded.
+  - check Code Splitting.
+  - eg: const MainContent = lazy(() => import('./MainContent.js'));
 Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
 Server Components:
@@ -206,9 +216,10 @@ Server-Side Rendering: the server generate HTML and returns to the Client full H
   - improves SEO
   - users can immediately see the page HTML content instead of a blank screen or loading spinner. Then it requests the referenced JS bundle and when it returns we'll have a full interactive page, this process is called hydration.
   - it is a kind of Server-side solution
-  - as a drawback, you have to fetch every data on the server on the server before you can show anything.
-  - you have to load all the JavaScript before you can hydrate anything. (the component tree in the browser must exactly match the server-generated component tree).
-  - you have to hydrate every component before you can interact with anything.
+  - Drawbacks:
+    - Data fetching must be completed before the server can begin rendering HTML. (Solve with Suspense)
+    - The JavaScript required for the components needs to be fully loaded on the client side before the hydration process can start. (Solve with Selective Hydration)
+    - All components have to be hydrated before they become interactive. (Solve with Selective Hydration).
 Slots: pieces of UI that do not represent routes and are defined with the @folder convention.
   - if you try to access them via route, you'll get a 404.
   - each slot allows for Independent Route Handling.
@@ -221,6 +232,11 @@ Static-Site Generation (SSG): occurs at build time, when the application is depl
   - ideal for content that doesn't change often, like blog posts.
   - it is a kind of Server-side solution.
 Sub-navigation: inside a slot, you can navigate to a different slot, without reloading the whole page.
+Suspense: allows you to wait for some code or data to load before rendering a component.
+  - React doesn't have to wait for the code inside the Suspense component to render the rest of the page. The code for the Suspense is fed later (HTML streaming).
+  - used to handle scenarios where you have asynchronous operations, such as data fetching or code splitting, and you want to provide a fallback UI while waiting for the data or code to become available.
+  - HTML streaming on the server.
+  - selective hydration on the client.
 Template: similar but different from Layout. When a user navigates between routes that share a template, a new instance of the component is mounted.
   - DOM elements are recreated, state is not preserved, effects are re-synchronized.
 template.tsx: name of the file to declare a template.
