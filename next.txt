@@ -154,6 +154,8 @@ Private Folder: indicate that it is a private implementation and should not be c
   - prefix the folder name with an underscore _. The folder and all its subfolders are excluded from routing.
 redirect(): redirect the user to another URL.
   - can be used in Server Components, Route Handlers, and Server Actions.
+Rendering: process that transforms the code you write into user interfaces.
+  - CSS, SSR, RSC: choosing the right time and place to render is vital.
 Request: interface of the Fetch API representing a resource request
   - it has the Request type and lots of methods to return
   - in Next, it is preferable to use the NextRequest since it provides extra methods.
