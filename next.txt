@@ -205,6 +205,7 @@ route.ts: file responsible for route handlers.
   - export async function GET() {return Response.json({ message: 'Hello - GET' });}
   - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
 Routing: Next.js uses a file-system based routing mechanism.
+RSC Architecture: start using Client Components and Server Components in React.
 Selective Hydration: allows for the hydration of sections as they become available, before the rest of the HTML and the JavaScript code are fully downloaded.
   - check Code Splitting.
   - eg: const MainContent = lazy(() => import('./MainContent.js'));
