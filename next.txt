@@ -64,6 +64,10 @@ DELETE(): put this function inside a route.ts file to handle a DELETE request.
 Development Server: focuses on developer experience.
   - pages will be pre-rendered for every request
 Dynamic Page Route: the process of putting a page.tsx inside a folder representing a dynamic route.
+Dynamic Rendering: a Server Rendering Strategy where routes are rendered for each user at request time.
+  - useful when a route has data that is personalized to the user or contains information that can only be known at request time, such as cookies or the URL's search parameters.
+  - during rendering, if a dynamic function such as cookies() headers() searchParams are discovered, Next will switch to dynamically rendering automatically for the whole route.
+  - dynamic routes are represented with a lambda sign.
 Dynamic Route Handler: similar to Dynamic Page Route. Put a route.ts inside a folder representing a dynamic route.
   - useful for GET, PATCH, DELETE requests.
   - for GET: export async function GET(request: Request, { params }: { params: { id: string } })
@@ -263,6 +267,13 @@ Static Rendering: server rendering strategy where we generate HTML pages at the 
 Static-Site Generation (SSG): occurs at build time, when the application is deployed on the server.
   - ideal for content that doesn't change often, like blog posts.
   - it is a kind of Server-side solution.
+Streaming: another Server Side rendering strategy that allows for progressive UI rendering from the server.
+  - it is a Next concept but relies on the Suspense concept from React.
+  - divide the work in chunks and stream it to the client as soon as it's ready.
+  - enables users to see parts of the page immediately, before the entire content has finished rendering.
+  - check HTTP Streaming.
+  - to use it, import Suspense from React and Wrap objects that you want to use it.
+  - don't forget to pass a fallback component.
 Sub-navigation: inside a slot, you can navigate to a different slot, without reloading the whole page.
 Suspense: allows you to wait for some code or data to load before rendering a component.
   - React doesn't have to wait for the code inside the Suspense component to render the rest of the page. The code for the Suspense is fed later (HTML streaming).
