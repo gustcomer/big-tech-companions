@@ -238,6 +238,8 @@ Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
 Server Components:
   - they can access the server. but they can't use hooks, event listeners or manage state.
+server-only: module that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
+  - to enable it, all you have to do is import "server-only" after installing it.
 Server-Side Rendering: the server generate HTML and returns to the Client full HTML+JS reference translating into a non-interactive UI.
   - improves SEO
   - users can immediately see the page HTML content instead of a blank screen or loading spinner. Then it requests the referenced JS bundle and when it returns we'll have a full interactive page, this process is called hydration.
