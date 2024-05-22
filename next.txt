@@ -57,6 +57,8 @@ cookies(): function to manipulate cookies
 Core Web Vitals: subset of Web Vitals.
   - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
 Cumulative Layout Shift (CLS): measure of your site’s overall layout stability.
+Data Fetching: you can fetch data from the Server and the Client components.
+  - to fetch data from the Server Component, use async and await keywords in the component definition.
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
   - it's higly recommended that you have one default.tsx in each slot folder. You usually simply copy the code of the related page.tsx.
   - you should put a default.tsx in the parent folder that calls the slots as well.
