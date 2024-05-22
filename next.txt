@@ -33,6 +33,10 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - in the case above, if you want to also match app/, you should check Optional Catch-all Segments entry and use [[...slug]].
 Client Components:
   - they can use hooks, use event listeners and manage state.
+client-only: package that prevent unintended server side usage of client side code.
+  - client code interact with browser-specific features like DOM, window object, localStorage, etc.
+  - useful when you have a function in some util folder that are intended solely for client use.
+  - ensures that the code stays where it belongs enhancing reliability and mantainability.
 Client-Side Rendering (CSR): component code is transformed into user interface directly in the browser.
   - not optimal for SEO.
   - performance issues since users might see a blank screen or a loading spinner while the page loads.
@@ -118,6 +122,7 @@ Intercepting Routes: allows you to load a route from another part of your applic
   - (..) match segments one level above.
   - (..)(..) match segments two levels above (has bugs).
   - (...) match segments from the root app directory.
+Interleaving: you can place a Server Component inside a Client Component passing the SC as a prop.
 key prop: string or a number that uniquely identifies items in an array.
 Layout: UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive, and do not re-render.
   - The component should accept a children prop and this chindren component will be inserted into the UI.
