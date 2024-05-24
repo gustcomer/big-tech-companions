@@ -1,0 +1,5 @@
+### Screen Splitter
+- this is a Layout Component Pattern from CodeLicks.
+<SplitScreen />: name of the main component
+<Right />: prop passed to <SplitScreen /> to render in the right.
+<Left />: prop passed to <SplitScreen /> to render in the left.
