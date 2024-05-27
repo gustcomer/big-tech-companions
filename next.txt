@@ -14,6 +14,8 @@
 ================================================================================
 Nextjs glossary
 
+[...]: check Catch-all Segments.
+[slug]: check Dynamic Route.
 App directory: directory responsible for all the routing.
   - to make it work, it has to have a page.tsx file inside the folder representing the routing. Check File Colocation.
 Autoprefixer: lib that manages css prefixes like -webkit, -moz.
