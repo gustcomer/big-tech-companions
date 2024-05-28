@@ -102,6 +102,8 @@ File Colocation: practice of organizing and grouping related files together in t
   - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
 First Load JS: size when downloading the page from the server
 First Load JS shared by all: includes global css, some runtime code, framweork code, react code, code related to routes and components.
+font: automatically optimize your fonts, for instance, self-hosting any Google Font.
+  - to use the font, insert fontname.className in the class of the component.
 generateMetadata(): function used to define dynamic metadata.
   - you cannot export a static metadata and a generateMetadata function at the same time.
 GET(): put this function inside a route.ts file to handle a get request.

@@ -80,6 +80,8 @@ resources
 Glossary
 
 Absolute Length Units: px, pt, pc, in, mm, cm.
+@apply: it's a way of using tailwind utility classes inside .css files to create a class from these utility classes.
+  - eg: .cartao { @apply w-60 rounded-md p-2 shadow grid gap-y-2 bg-yellow-400 }
 box model: describes how every web element is modeled.
   - composed of Content Area, Padding, Border, Margin.
 cap: height of the capital letter.
