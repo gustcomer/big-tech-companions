@@ -85,7 +85,10 @@ box model: describes how every web element is modeled.
 cap: height of the capital letter.
 clamp()
   - useful for font-size responsiveness
+CSS Houdini: set of APIs that expose parts of the CSS renderind mechanism.
+  - allows access to the CSS Object Model (CSSOM).
 custom property: allow for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
+  - it's like CSS variables on steroids.
   - @property CSS at-rule is part of the CSS Houdini umbrella of APIs.
 dpi: dots per inch
 em: unit relative to the font-size of the parent element.
