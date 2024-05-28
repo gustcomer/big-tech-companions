@@ -85,6 +85,8 @@ box model: describes how every web element is modeled.
 cap: height of the capital letter.
 clamp()
   - useful for font-size responsiveness
+custom property: allow for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
+  - @property CSS at-rule is part of the CSS Houdini umbrella of APIs.
 dpi: dots per inch
 em: unit relative to the font-size of the parent element.
   - (2em means 2 times the size of the current font)
@@ -97,12 +99,18 @@ fr: fractional unit used in grids. 1fr represents 1 part of the available space.
   - better than percentages because they don't take into account the gap.
 gap: property that allows to adjust spacing between elements in grid layout
 lh: line height.
+@media: check media queries
+  media types: all, print, screen. -- if nothing is defined, all is assumed.
+  media features: device-width, prefers-color-scheme, prefers-reduced-motion
+media queries: allow you to apply CSS styles depending on a device's media type or other characteristics.
 min-width:
   - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
   - related: max-width
 outline: it looks like a border, but it's placed outside the border and doesn't take space.
   - border's are part of the box model while outlines aren't.
   - use cases: focus
+@property: check custom property.
+  - @property at-rule
 px: 1px = 1/96th of 1in.
   - for low-dpi devices it will be one device pixel (and hence relative length unit)
   - You can calculate the size of a pixel for any display device dividing the size of the display screen by the resolution. 
