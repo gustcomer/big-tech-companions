@@ -29,7 +29,7 @@ Caching: route handlers are cached by default when using the GET method with the
     - employ dynamic functions like headers() and cookies()
     - use any HTTP method other than GET
 Caching: by default, Next automatically caches the returned values of fetch in the Data Cache on the server.
-  Next extends the fetch API and automatically caches any values returned by the fetch.
+  - Next extends the fetch API and automatically caches any values returned by the fetch.
 Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
   - all segments are passed at the params prop in an array form. (remember nested dynamic routes used key-value pairs).
@@ -61,6 +61,11 @@ cookies(): function to manipulate cookies
 Core Web Vitals: subset of Web Vitals.
   - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
 Cumulative Layout Shift (CLS): measure of your site’s overall layout stability.
+Data Cache: server-side cache that persists the result of data fetches across incoming server requests and deployments.
+  - it improves app performance and eliminate the need to re-fetch data with every request.
+  - in the Rendering phase, each fetch() checks if there is data on the Data Cache, if there aren't any, then it requests data to the Data Source.
+  - the data is stored in .next/cache/fetch-cache
+  - the Data Cache is a Server Cache, don't confuse it with the browser cache.
 Data Fetching: you can fetch data from the Server and the Client components.
   - to fetch data from the Server Component, use async and await keywords in the component definition.
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
@@ -98,6 +103,7 @@ Error Handling:
   - in nested routes, errors bubble up to the closest parent error boundary.
   - taking into account the next structure, inserting an error.tsx will handle errors of the page at the same folder, but won't handle errors in the template nor the layout.
   - to handle errors in the layout or in the template, you should place error.tsx one folder above.
+fetch(): check Data Fetching.
 File Colocation: practice of organizing and grouping related files together in the same directory.
   - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
 First Load JS: size when downloading the page from the server
