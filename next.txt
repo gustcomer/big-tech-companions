@@ -55,6 +55,7 @@ Cookies: small pieces of data that a server sends to a user's web browser.
   - to get a cookie from a request, use request.cookies.get("...")
   - as an alternative, you can use the cookies() function
 cookies(): function to manipulate cookies
+  - eg: const cookieStore = cookies(); cookieStore.get("theme"); or yet
   - eg: cookies().set("resultsPerPage", "20")
   - and to get the cookies: cookies().get("resultsPerPage")
   - there are additional functionalities such as "has", delete, etc
@@ -115,6 +116,9 @@ generateMetadata(): function used to define dynamic metadata.
 GET(): put this function inside a route.ts file to handle a get request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function GET(_request: Request, {params}) {...}
+headers(): allows you to read the HTTP incoming request headers from a Server Components.
+  - const headersList = headers(); or yet
+  - headers().get('referer')
 HTML Streaming: technique used to improve the performance of web applications by progressively sending chunks of HTML from the server to the client.
   - at first it does not include chunking the JavaScript code. To split the JavasScript bundle, check Code Splitting.
 HTTP Headers: metadata associated with an API request and response.
@@ -179,6 +183,14 @@ Not Found Page: 404 not found page when the next router doesn't find any match, 
   - it creates an ErrorBoundary.
 not-found.tsx: file responsible for the customization of the Not Found Pages.
 notFound(): function that calls the Not Found Page.
+no-store: cache option to opt out of caching for individual data fetches.
+  - const response = await fetch("http://...", {cache: "no-store"})
+  - after you place a no-store fetch request, all subsequent fetches will also have no cache.
+  - place all fetch requests that you want to cache before a fetch with no-store set.
+  - an alternative is to configure a route level configuration
+    - export const fetchCache = "default-cache"; route segment configuration
+  - by default Next will cache fetch requests that occur before any dynamic functions like cookies(), headers(), searchParams are used.
+  - it will not cache requests found after dynamic functions.
 Optional Catch-all Segments: like catch all segments but will also match the original route;
   - use double square brackets [[..segmentName]].
 page.tsx: special file that is unique to a route allows you to create UI for it.
@@ -234,6 +246,16 @@ Route Handlers: allow you to create custom request handlers for a given route us
   - you don't need to create and configure a separate server! no need to express.js
   - they run on server-side, can access databases, etc.
   - while page routes are router in the frontend, route handlers are routing in the backend.
+Route Segment Configuration: allows you to configure the behavior of a Page, Layout or Route Handler  by directly exporting variables.
+  - configuration variables that can be exported:
+    - dynamic: 'auto' | 'force-dynamic' | 'error' | 'force-static'
+    - dynamicParams: boolean
+    - revalidate: false | 0 | number
+    - fetchCache: 'auto' | 'default-cache' | 'only-cache' | 'force-cache' | 'force-no-store' | 'default-no-store' | 'only-no-store'
+      - should only be used if you specifically need to override the default behavior.
+    - runtime: 'nodejs' | 'edge'
+    - preferredRegion: 'auto' | 'global' | 'home' | string | string[]
+    - maxDuration: number
 route.ts: file responsible for route handlers.
   - export async function GET() {return Response.json({ message: 'Hello - GET' });}
   - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
