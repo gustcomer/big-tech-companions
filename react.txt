@@ -34,6 +34,13 @@ One-way data flow: parent components pass data to their children via props, and 
 React: a javascript library for building user interfaces.
 Reconciliation: compares the actual Virtual DOM with the previous one to calculate the minimal set of changes needed to update the actual DOM.
   - it significantly improves performance compared to directly manipulating the DOM.
+Request Memoization: type of cache that extends the fetch API to automatically memoize requests that have the same URL and options.
+  - in a Component Tree, you don't need to fetch data at the top of the tree and forward props to optimize.
+  - while Data Cache is a cache that works accross different renderings, Request Memoization works in the same rendering.
+  - it is a React feature, not a Next.Js feature.
+  - it is used to dedupe requests using React.cache.
+  - only applies to GET method in fetch requests.
+  - only applies within React Component Tree. Does not extend to fetch requests in Route Handlers.
 Route Component
 <StrictMode>: lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs caused by impure rendering.
