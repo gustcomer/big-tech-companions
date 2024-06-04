@@ -244,6 +244,7 @@ Response(): interface of the Fetch API represents the response to a request.
   - the second argument is the headers object, check documentation if you want to change "Content-Type" to text/html, for instance.
 Response Headers: metadata sent back from the server to the client.
   - 'Content-Type': header that indicates the media type of the response. eg: text/html, application/json, etc.
+Revalidation: process of purging the Data Cache and re-fetching the latest data.
 Root Layout: defined at the top level of the app directory and applies to all routes.
   - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
@@ -338,6 +339,13 @@ Suspense: allows you to wait for some code or data to load before rendering a co
 Template: similar but different from Layout. When a user navigates between routes that share a template, a new instance of the component is mounted.
   - DOM elements are recreated, state is not preserved, effects are re-synchronized.
 template.tsx: name of the file to declare a template.
+Time Based Data Revalidation: automatically revalidates data after a certain amount of time has passed.
+  - is a middle ground between caching and no-caching.
+  - to revalidate data at a timed interval, use the next option fetch to set the lifetime of the resource in seconds.
+  - const response = await fetch("...", {next: {revalidate: 10}})
+  - for pages, you can set the revalidate route segment configuration to establish the default revalidation time with:
+  - export const revalidate = 10;
+  - the lowest revalidate time across each layout and page of a single route will determine the revalidation frequency of the entire route.
 title metadata: define the document title. It can be passed as a string in the key-value pair of the metadata, or as an object.
   - the object version has 3 keys: absolute, default and template.
   default: provides a default title to child elements that don't explicity specify a title.
