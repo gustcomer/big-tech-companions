@@ -30,6 +30,11 @@ Caching: route handlers are cached by default when using the GET method with the
     - use any HTTP method other than GET
 Caching: by default, Next automatically caches the returned values of fetch in the Data Cache on the server.
   - Next extends the fetch API and automatically caches any values returned by the fetch.
+Caching Mechanisms:
+  - Request Memoization
+  - Data Cache
+  - Full Route Cache
+  - Router Cache
 Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - add an ellipsis inside the brackets [...folderName]
   - all segments are passed at the params prop in an array form. (remember nested dynamic routes used key-value pairs).
