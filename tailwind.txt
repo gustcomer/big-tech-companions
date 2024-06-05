@@ -30,6 +30,8 @@ Display: sets whether an element is treated as a block or inline box and the lay
 fixed: utility to position an element relative to the viewport. It always stays in the same place even if we scroll the page.
 flex: create a flex container.
   - block means that each element has it's own box.
+flex-x: control how flex items both grow and shrink.
+  - eg: flex-1 stands for flex: 1 1 0%;
 flex-col: position flex items vertically.
 Flex Container: 
 Flex Direction: establishes the main-axis whix is the direction flex items are placed in the flex container.
