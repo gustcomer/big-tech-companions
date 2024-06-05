@@ -1,6 +1,6 @@
 # Javascript Snippets
 
-### Arrow functions
+### Arrow functions #arrow-functions
 
 ```javascript
 const hello = () => {
@@ -8,7 +8,7 @@ const hello = () => {
 }
 ```
 
-### bind() function
+### bind() function #bind-function
 
 The member object borrows the fullname method from person:
 
@@ -29,7 +29,7 @@ const member = {
 let fullName = person.fullName.bind(member);
 ```
 
-### splice() method
+### splice() method #splice-method
 
 Adds and/or removes array elements. Also it overwrites the original array.
 
@@ -41,7 +41,7 @@ x.splice(3,0,8) // insert number 8 at third index
 x.splice(3,0,[10,20,30]) // insert 10, 20 and 30 at index 3
 ```
 
-### Currying
+### Currying #currying
 
 multiply() function written in the traditional way
 ```javascript

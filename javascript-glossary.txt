@@ -1,0 +1,48 @@
+# Javascript Glossary
+
+Arrow functions(javascript.md#arrow-functions): don't have their own bindings to this, arguments, or super, and should not be used as methods.
+  - test
+Bind()(javascript.md#bind-function): an object can borrow a method from another object.
+Binding:
+Conditional (ternary) Operator: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. 
+Currying(javascript.md#currying): currying is a functional programming technique used to transform a function with multiple arguments into a sequence of functions, each taking a single argument.
+Default Exports: export a single value or entity from a module.
+  - eg: export default greet;  import greet from './modulejs'; or more common: import greet from './module';
+  - or yet: export default function greet() {...}
+  - there is no need for curly braces, as opposed in the alternative named exports.
+  - you can name the imported default export anything you like, unlike named exports which require the exact name.
+Destructuring:
+ES6 Modules: 
+Global Object: object that always exists in the global scope.
+  - web browsers have a Window as its global object.
+  - globalThis allows one to access the global object regardless of the current environment.
+Hoist: a variable can be used before it has been declared. It is the default behavior of moving all declarations to the top of the current scope.
+Lexical Scope: concept of determining the scope of a variable based on the place of its declaration.
+  - aka: Scope
+  - Variables should always be declared inside of functions because outside of functions are global variables.
+  - types: Global Scope, Local Scope.
+Named Exports: allow you to export multiple values from a module, each with a specific name.
+  - eg: export function greet() { ... }; import { greet } from './module';
+  - there's a need for the curly braces in the import expression and you can't change the name of the exports.
+null: is an assignment value representing the intentional absence of any object value.
+  - null means there is no value.
+startsWith(): method to check if a string starts with a specified string.
+Response(): interface of the Fetch API represents the response to a request.
+  - return new Response("Hello world");
+  - return Response.json({ message: 'Hello - GET' });
+  - Response.redirect(url)
+  - Response.error()
+Rest operator:
+Scope Chain: hierarchy of places the computer must go through — one after the other — to find the lexical scope (origin) of the specific variable that got called.
+splice(javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
+  - array.splice(index, howmany, item1, ....., itemX)
+  - index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.
+Ternary Operator: check Conditional Operator.
+this: keyword that refers to an object.
+  - In an object method, this refers to the object.
+  - Alone, this refers to the global object.
+  - In a function, this refers to the global object.
+  - In a function, in strict mode, this is undefined.
+  - In an event, this refers to the element that received the event.
+  - Methods like call(), apply(), and bind() can refer this to any object.
+undefined: means a variable has been declared, but not defined.
