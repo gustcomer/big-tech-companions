@@ -99,6 +99,11 @@ em: unit relative to the font-size of the parent element.
   - related: rem.
   - usefull when we need the font size to be relative to the font-size of the parent element
 ex: height of the letter x
+flex: sets how a flex item will grow or shrink to fit the space available in its flex container.
+  - it is a shorthand for flex-grow, flex-shrink, flex-basis.
+flex-basis: sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+flex-grow: flex grow factor, which specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
+flex-shrink: flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according.
 fr: fractional unit used in grids. 1fr represents 1 part of the available space.
   - only use it when you want the grid to be fluid, like a calendar, etc.
   - better than percentages because they don't take into account the gap.
