@@ -1,3 +1,8 @@
+Layout Components: specialized components that focus on organizing other components within a web page.
+  - eg: split screen, lists, modals.
+
+================================================================================
+
 ### Screen Splitter
 - this is a Layout Component Pattern from CodeLicks.
 <SplitScreen />: name of the main component

@@ -31,6 +31,10 @@ Layout Components: specialized components that focus on organizing other compone
   - eg: split screen, lists, modals.
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
+Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
+  - Props are immutable, that is, a component cannot change its own props.
+  - they allow you to customize and configure the behavior and appearance of child components.
+  - usually you receive a prop argument and use prop.argX... but it is more common to see the prop object being destructured.
 React: a javascript library for building user interfaces.
 Reconciliation: compares the actual Virtual DOM with the previous one to calculate the minimal set of changes needed to update the actual DOM.
   - it significantly improves performance compared to directly manipulating the DOM.
