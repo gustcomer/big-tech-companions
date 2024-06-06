@@ -71,3 +71,14 @@ const multiplyByTwo = multiply(2);
 const multiplyBySix = multiplyByTwo(3);
 console.log(multiplyBySix(4)); // Output: 24
 ```
+
+### Destructuring Object #destructuring-object
+
+```javascript
+obj = {a:1, b:2, c:3}
+
+// here the destructuring of the object happens
+{a,b} = obj
+
+// now a=1 and b=2
+```

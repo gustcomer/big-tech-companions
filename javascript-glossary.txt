@@ -11,7 +11,7 @@ Default Exports: export a single value or entity from a module.
   - or yet: export default function greet() {...}
   - there is no need for curly braces, as opposed in the alternative named exports.
   - you can name the imported default export anything you like, unlike named exports which require the exact name.
-Destructuring:
+Destructuring Object(javascript.md#destructuring-object): take an object and extract some of its properties.
 ES6 Modules: 
 Global Object: object that always exists in the global scope.
   - web browsers have a Window as its global object.
