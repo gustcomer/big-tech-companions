@@ -1,0 +1,7 @@
+
+================================================================================
+React Glossary
+
+React.FC: type of Functional Components
+React.JSX.Element: type of single React Element
+React.ReactNode: type of everything React can render.
