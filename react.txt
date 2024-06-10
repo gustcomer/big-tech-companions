@@ -4,6 +4,9 @@
 ================================================================================
 React Glossary
 
+Children: props.children holds the subcomponents that are nested inside the component definition.
+  - they are hold in array form.
+  - if you want more clarity, readibility and flexibility, use Children, as an alternative, if you want more control, pass the subcomponents as props.
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
 Component: independent chunks of user interfaces.
