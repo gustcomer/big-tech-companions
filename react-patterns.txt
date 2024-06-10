@@ -1,3 +1,7 @@
+Container Components: components responsible for data loading and data management in behalf of its children components.
+  - they usually manage data with useState, load data with useEffect and pass data to children as props.
+  - we use Container components because we want our components to be unaware of the source or management of their data.
+  - the children components should simply receive props and display data, without worrying too much.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
 
