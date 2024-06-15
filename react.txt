@@ -33,6 +33,12 @@ Error Boundary: special component that lets you display some fallback UI instead
   - by default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
 Higher-Order Component: function that takes a component and returns a new component.
+  - it's a technique for reusing component logic.
+  - HOCs are used to add additional functionality to a component without modifying it directly.
+  - they are very similar to Decorator Pattern since they add functionality without modifying, and kinda favor composition over inheritance.
+  - commonly used for cross-cutting concerns like authentication, state management and performance optimization.
+  - both HOCs and Render Props are used for sharing logic and functionality between components.
+  - use HOCs when the code involves states and other functions, use Render Props when the code you share is more related to pure JSX.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
@@ -47,6 +53,8 @@ Props(react-ts-snippets.md#props): short for "property" is way of passing data f
   - usually you receive a prop argument and use prop.argX... but it is more common to see the prop object being destructured.
 React: a javascript library for building user interfaces.
 render(): required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
+Render Props: technique where a component accepts a function as a prop and uses that function to determine what to render.
+  - use Render Props when the code you share is more related to JSX and does not involve states and other functions.
 Reconciliation: compares the actual Virtual DOM with the previous one to calculate the minimal set of changes needed to update the actual DOM.
   - it significantly improves performance compared to directly manipulating the DOM.
 Request Memoization: type of cache that extends the fetch API to automatically memoize requests that have the same URL and options.
