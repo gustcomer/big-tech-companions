@@ -12,8 +12,11 @@ Class Components: way to define components. They are ES6 classes that extend fro
   - they have lifecycle methods like componentDidMount(), componentDidUpdate(prevProps, prevState), componentWillUnmount().
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
+Component: modular, reusable and independently deployable pieces of code.
+  - eg: pieces of UI in React. Each microservice.
 Component: independent chunks of user interfaces.
   - you can have independent, isolated and reusable elements.
+Component-Based Architecture: decompose a system into Components.
 componentDidMount(): lifecycle method called after the component is mounted.
   - used for performing side-effects such as fetching data.
 constructor(props): called before the component is mounted and used for initializing state and binding methods.
