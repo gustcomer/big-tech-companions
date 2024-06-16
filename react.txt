@@ -29,6 +29,9 @@ createRoot(domNode): create a React root for displaying content inside a browser
   - import ReactDOM from 'react-dom/client'; const root = ReactDOM.createRoot(document.getElementById('root')); root.render(<Greeting />);
   - import { createRoot } from 'react-dom/client'; const domNode = document.getElementById('root'); const root = createRoot(domNode); root.render(<App />);
   - probably this is the moment that Virtual DOM is created.
+Declarative Paradigm: style of programming where the focus is on what the program should accomplish rather than how it should accomplish it.
+  - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
+  - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
 Diffing: concept of comparing the virtual DOMs before and after the modification and ensuring efficient updates.
   - aka: DOM Diffing
