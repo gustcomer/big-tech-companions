@@ -29,6 +29,7 @@ createRoot(domNode): create a React root for displaying content inside a browser
   - import ReactDOM from 'react-dom/client'; const root = ReactDOM.createRoot(document.getElementById('root')); root.render(<Greeting />);
   - import { createRoot } from 'react-dom/client'; const domNode = document.getElementById('root'); const root = createRoot(domNode); root.render(<App />);
   - probably this is the moment that Virtual DOM is created.
+  - ReactDOM.createRoot(..) replaced ReactDOM.render(..).
 Declarative Paradigm: style of programming where the focus is on what the program should accomplish rather than how it should accomplish it.
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
@@ -58,6 +59,9 @@ Props(react-ts-snippets.md#props): short for "property" is way of passing data f
   - they allow you to customize and configure the behavior and appearance of child components.
   - usually you receive a prop argument and use prop.argX... but it is more common to see the prop object being destructured.
 React: a javascript library for building user interfaces.
+React.FC: [ts] type of Functional Components.
+React.JSX.Element: [ts] type of single React Element.
+React.ReactNode: [ts] type of everything React can render.
 render(): required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
 Render Props: technique where a component accepts a function as a prop and uses that function to determine what to render.
   - use Render Props when the code you share is more related to JSX and does not involve states and other functions.
@@ -70,7 +74,9 @@ Request Memoization: type of cache that extends the fetch API to automatically m
   - it is used to dedupe requests using React.cache.
   - only applies to GET method in fetch requests.
   - only applies within React Component Tree. Does not extend to fetch requests in Route Handlers.
+root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
+serviceWorker: related to Progressive Web Apps (PWA).
 <StrictMode>: lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
