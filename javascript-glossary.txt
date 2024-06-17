@@ -29,6 +29,7 @@ Lexical Scope: concept of determining the scope of a variable based on the place
 Named Exports: allow you to export multiple values from a module, each with a specific name.
   - eg: export function greet() { ... }; import { greet } from './module';
   - there's a need for the curly braces in the import expression and you can't change the name of the exports.
+npx: npm package runner that allows you to run packages without installing them globally.
 null: is an assignment value representing the intentional absence of any object value.
   - null means there is no value.
 startsWith(): method to check if a string starts with a specified string.
