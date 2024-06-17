@@ -19,6 +19,9 @@ Component: independent chunks of user interfaces.
 Component-Based Architecture: decompose a system into Components.
 componentDidMount(): lifecycle method called after the component is mounted.
   - used for performing side-effects such as fetching data.
+Compound Component: design pattern that involves creating a parent component that maintains the state and provides context, and several child components that work together under this parent component.
+  - the Child components are kept under the same file and are named MainComponent.ChildComponent preferably with the dot.
+  - the state is passed to the child components via context and accessed with useContext, and not via props.
 constructor(props): called before the component is mounted and used for initializing state and binding methods.
 Controlled Component: when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
