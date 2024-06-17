@@ -1,3 +1,6 @@
+Compound Component: design pattern that involves creating a parent component that maintains the state and provides context, and several child components that work together under this parent component.
+  - the Child components are kept under the same file and are named MainComponent.ChildComponent preferably with the dot.
+  - the state is passed to the child components via context and accessed with useContext, and not via props.
 Container Components: components responsible for data loading and data management in behalf of its children components.
   - they usually manage data with useState, load data with useEffect and pass data to children as props.
   - we use Container components because we want our components to be unaware of the source or management of their data.
