@@ -7,14 +7,17 @@ React Glossary
 Children: props.children holds the subcomponents that are nested inside the component definition.
   - they are hold in array form.
   - if you want more clarity, readibility and flexibility, use Children, as an alternative, if you want more control, pass the subcomponents as props.
-Class Components: way to define components. They are ES6 classes that extend from React.Component and have a render() method that returns JSX.
+Class Components: way to define components.
+  - they are ES6 classes that extend from React.Component and have a render() method that returns JSX.
   - you can add state via this.state.
   - they have lifecycle methods like componentDidMount(), componentDidUpdate(prevProps, prevState), componentWillUnmount().
+  - they used to be called Stateful Class Component.
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
 Component: modular, reusable and independently deployable pieces of code.
   - eg: pieces of UI in React. Each microservice.
 Component: independent chunks of user interfaces.
+  - in React, it represents a part of the user interface.
   - you can have independent, isolated and reusable elements.
 Component-Based Architecture: decompose a system into Components.
 componentDidMount(): lifecycle method called after the component is mounted.
@@ -80,6 +83,8 @@ Request Memoization: type of cache that extends the fetch API to automatically m
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
 serviceWorker: related to Progressive Web Apps (PWA).
+Stateless Functional Component: components declared via functions.
+  - they used to have no state, but after hooks were introduced, even the functional components now can have state.
 <StrictMode>: lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
