@@ -7,6 +7,7 @@ React Glossary
 Children: props.children holds the subcomponents that are nested inside the component definition.
   - they are hold in array form.
   - if you want more clarity, readibility and flexibility, use Children, as an alternative, if you want more control, pass the subcomponents as props.
+  - to render the children, simply state {props.children} in the return statement of the component.
 Class Components: way to define components.
   - they are ES6 classes that [1] extend from React.Component and [2] have a render() method that returns JSX.
   - you can add state via this.state.
@@ -60,6 +61,7 @@ JSX: a syntax extension for JavaScript, often used with React to describe what t
     - the first element is the html component name, the second are optionals and the third is the children.
   - usually we import React from 'react' to be able to use JSX.
   - JSX differences: Class -> className; for -> htmlFor; camelCase property naming convention.
+  - {} curly braces are a feature of JSX that allows to embed JavaScript expressions within the markup. It allows you to incorporate logic and data into your JSX.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
 Lifecycle Methods: special methods that get called at different stages of a component's lifecycle.
@@ -69,6 +71,8 @@ Props(react-ts-snippets.md#props): short for "property" is way of passing data f
   - Props are immutable, that is, a component cannot change its own props.
   - they allow you to customize and configure the behavior and appearance of child components.
   - usually you receive a prop argument and use prop.argX... but it is more common to see the prop object being destructured.
+  - if you don't know what you're gonne need to render, but want to render it anyway, pass it as children inside the open and closing tags of the component.
+  - in Class Components the props are available through this.props.
 React: a javascript library for building user interfaces.
 React.FC: [ts] type of Functional Components.
 React.JSX.Element: [ts] type of single React Element.
