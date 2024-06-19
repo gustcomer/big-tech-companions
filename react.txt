@@ -8,7 +8,7 @@ Children: props.children holds the subcomponents that are nested inside the comp
   - they are hold in array form.
   - if you want more clarity, readibility and flexibility, use Children, as an alternative, if you want more control, pass the subcomponents as props.
 Class Components: way to define components.
-  - they are ES6 classes that extend from React.Component and have a render() method that returns JSX.
+  - they are ES6 classes that [1] extend from React.Component and [2] have a render() method that returns JSX.
   - you can add state via this.state.
   - they have lifecycle methods like componentDidMount(), componentDidUpdate(prevProps, prevState), componentWillUnmount().
   - they used to be called Stateful Class Component.
@@ -55,6 +55,11 @@ Higher-Order Component: function that takes a component and returns a new compon
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
+  - JSX tags have a tag name, attributes and children.
+  - the alternative to JSX was the React.createElement(..) function.
+    - the first element is the html component name, the second are optionals and the third is the children.
+  - usually we import React from 'react' to be able to use JSX.
+  - JSX differences: Class -> className; for -> htmlFor; camelCase property naming convention.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
 Lifecycle Methods: special methods that get called at different stages of a component's lifecycle.
