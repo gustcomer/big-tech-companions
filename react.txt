@@ -41,6 +41,8 @@ Declarative Paradigm: style of programming where the focus is on what the progra
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
+Destructuring: allows you to extract values from arrays or properties from Objects. In React, you can use them to extract values from props.
+  - in FC, you extract them in the functions parameter. In CC, you extract them in the render() method with const {a, b} = this.props
 Diffing: concept of comparing the virtual DOMs before and after the modification and ensuring efficient updates.
   - aka: DOM Diffing
 Error Boundary: special component that lets you display some fallback UI instead of the part that crashed.
@@ -94,7 +96,9 @@ Route Component
 serviceWorker: related to Progressive Web Apps (PWA).
 State: stores dynamic data about a component.
   - it can be accessed through this.state in Class Components. In Functional Components it is accessed with useState(..) hook.
-  - in Class Components don't update this.state directly, instead, use this.setState({...}).
+  - in Class Components don't update this.state directly, instead, use this.setState({...}). Else, the state is updated but not displayed in the UI.
+  - the calls to setState are asynchronous! and hence, not immediately updated. If you want to execute something after the state is updated, pass the callback as the second parameter.
+  - the setStates are grouped for better performance, so if you want to use multiple setState functions, pass a callback function as first parameter with prevState as parameter. This function can also have props.
 Stateless Functional Component: components declared via functions.
   - they used to have no state, but after hooks were introduced, even the functional components now can have state.
 <StrictMode>: lets you find common bugs in your components early during development.
@@ -111,6 +115,7 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - the dependencies (aka deps) is the second argument to useEffect in the form of an array of dependencies. The effect will run after the initial render and again whenever any of the dependencies change.
   - if you pass an empty array [] as deps, the effect will run only once after the initial render.
   - if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
+  - usually you have to deal with loading states, error states and also racing conditions of multiple asynchronous fetches.
 useState(): hook that lets you add a state variable to your component.
   - const [state, setState] = useState(initialState)
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
