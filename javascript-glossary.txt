@@ -49,6 +49,12 @@ Scope Chain: hierarchy of places the computer must go through — one after the 
 splice(javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
   - array.splice(index, howmany, item1, ....., itemX)
   - index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.
+Tagged Template: [Tagged Function] syntactic sugar that is a function call that uses a template literal from which to get its arguments.
+  - eg: const result = tag`string text ${expression} string text`;
+Template Literal: [Template Strings] more flexible strings that are enclosed by backticks `.
+  - you can embed expressions directly within the string using `${expression}` syntax.
+  - allow you to create multiline strings without the need for special characters like \n.
+  - You can use tagged templates [tagged functions] to parse template literals with a function.
 Ternary Operator: check Conditional Operator.
 this: keyword that refers to an object.
   - In an object method, this refers to the object.
