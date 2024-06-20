@@ -7,6 +7,7 @@ Arrow functions(javascript.md#arrow-functions): don't have their own bindings to
   - it is kinda the inverse of Conventional Function.
   - arrow functions does not have its own 'arguments' object while conventional functions have.
   - arrow functions are anonymous unless assigned to a variable or property. const myFunc = () => {};
+  - the this keyword always represents the object that defined the arrow function. Different from regular functions where the this keyword represents the object that called the function.
 Bind()(javascript.md#bind-function): an object can borrow a method from another object.
 Binding: process of associating functions with specific objects.
   - this is done by controlling the context in which a function is called via the 'this' keyword.
