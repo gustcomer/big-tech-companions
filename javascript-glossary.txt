@@ -39,6 +39,7 @@ Named Exports: allow you to export multiple values from a module, each with a sp
 npx: npm package runner that allows you to run packages without installing them globally.
 null: is an assignment value representing the intentional absence of any object value.
   - null means there is no value.
+pure function: a function that always produces the same output for the same input and has no side effects.
 startsWith(): method to check if a string starts with a specified string.
 Response(): interface of the Fetch API represents the response to a request.
   - return new Response("Hello world");
