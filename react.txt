@@ -122,6 +122,7 @@ State: stores dynamic data about a component.
   - in Class Components don't update this.state directly, instead, use this.setState({...}). Else, the state is updated but not displayed in the UI.
   - the calls to setState are asynchronous! and hence, not immediately updated. If you want to execute something after the state is updated, pass the callback as the second parameter.
   - the setStates are grouped for better performance, so if you want to use multiple setState functions, pass a callback function as first parameter with prevState as parameter. This function can also have props.
+State Lifting: technique used in React to manage shared state between multiple components. When two or more sibling components need to share the same state, the state is often lifted up to their closest common ancestor.
 Stateless Functional Component: components declared via functions.
   - they used to have no state, but after hooks were introduced, even the functional components now can have state.
 <StrictMode>: lets you find common bugs in your components early during development.
