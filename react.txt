@@ -42,6 +42,11 @@ createRoot(domNode): create a React root for displaying content inside a browser
   - import { createRoot } from 'react-dom/client'; const domNode = document.getElementById('root'); const root = createRoot(domNode); root.render(<App />);
   - probably this is the moment that Virtual DOM is created.
   - ReactDOM.createRoot(..) replaced ReactDOM.render(..).
+Data Flow: in React, data flows in a unidirectional manner from parent to child components.
+  - props are used to pass data from a parent component to a child component.
+  - state is a way to manage data that can change over time within a component. Obviously, you can pass a state down the component tree as a prop.
+  - if more than one component need to share state, lift the state up to the nearest common ancestor and pass the state down to its children via props.
+  - you can avoid props drilling and pass data (states) through the component tree using Context API. It's usefull for global data such as user authentication, themes, etc.
 Declarative Paradigm: style of programming where the focus is on what the program should accomplish rather than how it should accomplish it.
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
