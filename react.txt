@@ -90,6 +90,8 @@ Props(react-ts-snippets.md#props): short for "property" is way of passing data f
   - usually you receive a prop argument and use prop.argX... but it is more common to see the prop object being destructured.
   - if you don't know what you're gonne need to render, but want to render it anyway, pass it as children inside the open and closing tags of the component.
   - in Class Components the props are available through this.props. While in functional components you pass it through props parameter.
+Props Drilling: process of passing data from a parent component to a deeply nested child component through multiple layers of intermediate components.
+  - you can solve this issue using Context API or State Management Libraries like Redux, MobX, Recoil.
 React: a javascript library for building user interfaces.
 React.FC: [ts] type of Functional Components.
 React.JSX.Element: [ts] type of single React Element.
@@ -141,3 +143,12 @@ useState(): hook that lets you add a state variable to your component.
   - const [state, setState] = useState(initialState)
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
+
+================================================================================
+React Libraries
+
+MobX: state management library that makes it simple to manage and react to the state changes in your applications.
+Recoil: state management library for React that aims to provide a more flexible and scalable way to manage state compared to traditional solutions like Redux.
+Redux: popular state management library for JavaScript applications, often used with React.
+  - key concepts: Store, Actions, Reducers, Dispatch, Selectors, Middleware.
+Zustand: small, fast, and scalable state management library that simplifies managing global state in React applications.
