@@ -47,6 +47,10 @@ Data Flow: in React, data flows in a unidirectional manner from parent to child 
   - state is a way to manage data that can change over time within a component. Obviously, you can pass a state down the component tree as a prop.
   - if more than one component need to share state, lift the state up to the nearest common ancestor and pass the state down to its children via props.
   - you can avoid props drilling and pass data (states) through the component tree using Context API. It's usefull for global data such as user authentication, themes, etc.
+  - since props are immutable, if you need children to communicate with parents, you need to pass methods from the parent to the child component. Don't forget to bind the 'this' context.
+    - <button onClick={props.handler}>Call Handler</button> -- add this code in the child component
+  - if you want the child compnent to pass parameters to the parent, add parameters to the handler and in the child component transform it into an arrow function with parameters.
+    - <button onClick={() => props.handler('child')}>Call Handler</button>
 Declarative Paradigm: style of programming where the focus is on what the program should accomplish rather than how it should accomplish it.
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
