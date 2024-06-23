@@ -33,6 +33,8 @@ Lexical Scope: concept of determining the scope of a variable based on the place
   - aka: Scope
   - Variables should always be declared inside of functions because outside of functions are global variables.
   - types: Global Scope, Local Scope.
+map:
+  - you can use a index provided by the map as the second argument.
 Named Exports: allow you to export multiple values from a module, each with a specific name.
   - eg: export function greet() { ... }; import { greet } from './module';
   - there's a need for the curly braces in the import expression and you can't change the name of the exports.

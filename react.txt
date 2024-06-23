@@ -101,12 +101,14 @@ key prop: each child in an array or iterator should have a unique "key" prop of 
   - funny thing, in the child components, this key prop will not be accessible. It is reserved.
   - it is useful when iserting new items at the top of the list, since it will only need to mutate the first element and not the entire list.
   - keys give the elements a stable identity.
+  - you could use the index (supplied by the map function as the second parameter) as key, but that's very stupid if you need to insert elements at the top of this list.
+  - you could use the map index as key, if the list were static (never changed) and also never reordered or filtered.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
 Lifecycle Methods: special methods that get called at different stages of a component's lifecycle.
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
-  - you can render lists of other Components, but in this case each child should have a unique "key" prop.
+  - when you use map, each element in the map should have a unique "key" prop.
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
 Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
