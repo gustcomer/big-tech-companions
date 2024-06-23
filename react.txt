@@ -31,6 +31,16 @@ componentDidMount(): lifecycle method called after the component is mounted.
 Compound Component: design pattern that involves creating a parent component that maintains the state and provides context, and several child components that work together under this parent component.
   - the Child components are kept under the same file and are named MainComponent.ChildComponent preferably with the dot.
   - the state is passed to the child components via context and accessed with useContext, and not via props.
+Conditional Rendering:
+  - there are 4 methods [1] if/else [2] element variables [3] ternary conditional operators [4] short circuit operators.
+  [1] if/else: remember that you can't put ifs and elses inside a return statement
+    if (state.isLoggedIn) { return <div>Welcome {user}</div> } else { return <div>Welcome Guest</div>  }
+  [2] element variables: conditionally store JSX in javascript variables and return the message
+    if (state.isLoggedIn) { msg = <div>Welcome {user}</div> } else { msg = <div>Welcome Guest</div> } | return message; or return <div>{message}</div>
+  [3] ternary conditional operator: return statements do support ternary conditional operators
+    return state.isLoggedIn ? ( <div>Welcome {user}</div> ) : ( return <div>Welcome Guest</div> )
+  [4] short circuit operator: it's just syntactic sufar for ifs conditions
+    return state.isLoggedIn && <div>Welcome Vishwas</div>
 constructor(props): called before the component is mounted and used for initializing state and binding methods.
 Controlled Component: when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
@@ -76,6 +86,7 @@ Higher-Order Component: function that takes a component and returns a new compon
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
+  - at the end of the day, JSX is just synctatic sugar for function calls and objects construction.
   - JSX tags have a tag name, attributes and children.
   - the alternative to JSX was the React.createElement(..) function.
     - the first element is the html component name, the second are optionals and the third is the children.
