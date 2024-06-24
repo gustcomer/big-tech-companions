@@ -43,7 +43,11 @@ Conditional Rendering:
     return state.isLoggedIn ? ( <div>Welcome {user}</div> ) : ( return <div>Welcome Guest</div> )
   [4] short circuit operator: it's just syntactic sufar for ifs conditions
     return state.isLoggedIn && <div>Welcome Vishwas</div>
-constructor(props): called before the component is mounted and used for initializing state and binding methods.
+constructor(props): called whenever a new component is created but before the component is mounted.
+  - used for initializing state, binding event handlers.
+  - this is the only place where you can owerwrite directly this.state
+  - do not cause side effects here (eg: http requests).
+  - don't forget to call super(props).
 Controlled Component: form elements (like <input>, <textarea>, and <select>) whose values are controlled by the React state. This way these element values will stay in sync with the component's state.
   - the form element's value is set via a React prop passing some state. <input type="text" value={this.state.inputValue} ... />
   - An onChange event handler is used to update the component's state when the user interacts with the form element. <input type="text" ... onChange={this.handleChange} />.
@@ -178,6 +182,8 @@ Styling React Components
   [3] CSS Modules: is just like the CSS stylesheets but instead of using the class names as string, you use them as properties of a style object.
     - the advantage of CSS Modules is that the class has only local scope, while in CSS stylesheets the scope is also for all of its children components and hence is more error prone.
   [4] CSS in JS Libraries
+super(props): all Class Components extends React.Component, so super calls the constructor of React.Component and passing props to it.
+  - it correctly initializes this.state by calling super(). Don't forget that this is not defined before calling super() when there is inheritance.
 <Suspense>: lets you display a fallback until its children have finished loading.
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
