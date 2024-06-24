@@ -44,7 +44,13 @@ Conditional Rendering:
   [4] short circuit operator: it's just syntactic sufar for ifs conditions
     return state.isLoggedIn && <div>Welcome Vishwas</div>
 constructor(props): called before the component is mounted and used for initializing state and binding methods.
-Controlled Component: when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
+Controlled Component: form elements (like <input>, <textarea>, and <select>) whose values are controlled by the React state. This way these element values will stay in sync with the component's state.
+  - the form element's value is set via a React prop passing some state. <input type="text" value={this.state.inputValue} ... />
+  - An onChange event handler is used to update the component's state when the user interacts with the form element. <input type="text" ... onChange={this.handleChange} />.
+  - the handler method could be handleChange = (event) => { this.setState({ inputValue: event.target.value }); } Don't forget to bind 'this' or use arrow that automatically binds.
+  - in essence, there are 3 steps [1] add the HTML element [2] add state and connect to the input value [3] add onChange and handle method.
+  - there is a cycle of setting the initial value of the input field from the Component's state, the propagating changes to the input value to the state with onChange and then back to the field.
+  - when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
 Core Content Components: primarily focused on displaying the main content and functionality of your application.
   - unlike layout components, which handle the overall structure and layout, core content components deal with the specific data, logic, and presentation of your application's content.
