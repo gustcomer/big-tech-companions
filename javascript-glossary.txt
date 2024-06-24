@@ -17,6 +17,7 @@ Binding: process of associating functions with specific objects.
   - when passing an object's method as a callback function, the context by default will be the global context or undefined. That's we in callback methods we have to bind the method to the 'this' of the object.
 Conditional (ternary) Operator: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. 
 Currying(javascript.md#currying): currying is a functional programming technique used to transform a function with multiple arguments into a sequence of functions, each taking a single argument.
+deep comparison: more thorough examination of the nested structure of objects or arrays than a shallow comparison.
 Default Exports: export a single value or entity from a module.
   - eg: export default greet;  import greet from './modulejs'; or more common: import greet from './module';
   - or yet: export default function greet() {...}
@@ -51,6 +52,10 @@ Response(): interface of the Fetch API represents the response to a request.
   - Response.error()
 Rest operator:
 Scope Chain: hierarchy of places the computer must go through — one after the other — to find the lexical scope (origin) of the specific variable that got called.
+shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
+  - for primitives, "first level" means that the operator checks if they are of the same type and have identical values.
+  - for array or Objects, "first level" checks wheter the share the same reference in memory rather than comparing their contents.
+  - inverse of deep comparison.
 splice(javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
   - array.splice(index, howmany, item1, ....., itemX)
   - index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.
