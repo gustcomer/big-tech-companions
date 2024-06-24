@@ -88,6 +88,8 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
+getDerivedStateFromProps(props, state): static method (does not have this keyword).
+  - it is a Mounting Lifecycle Method.
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic.
   - HOCs are used to add additional functionality to a component without modifying it directly.
@@ -129,6 +131,8 @@ Lifecycle Methods: special methods that get called at different stages of a comp
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
+Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
+  - constructor, getDerivedStateFromProps(), render and componentDidMount()
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
 Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
@@ -139,6 +143,9 @@ Props(react-ts-snippets.md#props): short for "property" is way of passing data f
   - in Class Components the props are available through this.props. While in functional components you pass it through props parameter.
 Props Drilling: process of passing data from a parent component to a deeply nested child component through multiple layers of intermediate components.
   - you can solve this issue using Context API or State Management Libraries like Redux, MobX, Recoil.
+PureComponent: component that performs a shallow comparison on the component's props and state to determine if the component should re-render.
+  - usually react does not perform any kind of comparison on props and state to determine if it should re-render. It always re-render when some setState is called or some parent component re-renders.
+  - This is an optimization technique using shallow copy to avoid unnecessary re-renders and improve the performance of your React application.
 React: a javascript library for building user interfaces.
 React.FC: [ts] type of Functional Components.
 React.JSX.Element: [ts] type of single React Element.
