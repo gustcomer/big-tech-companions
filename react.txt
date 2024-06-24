@@ -156,6 +156,12 @@ Stateless Functional Component: components declared via functions.
   - Your components will re-render an extra time to find bugs caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
   - Your components will be checked for usage of deprecated APIs.
+Styling React Components
+  [1] CSS stylesheets: in this case you simpli import the CSS and the styles will automatically be applied to the Component.
+  [2] Inline Styling: just create an object with properties as keys and values as values and use style={heading} in your components.
+  [3] CSS Modules: is just like the CSS stylesheets but instead of using the class names as string, you use them as properties of a style object.
+    - the advantage of CSS Modules is that the class has only local scope, while in CSS stylesheets the scope is also for all of its children components and hence is more error prone.
+  [4] CSS in JS Libraries
 <Suspense>: lets you display a fallback until its children have finished loading.
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
@@ -176,7 +182,9 @@ Virtual DOM: virtual representation of the actual DOM. When the state of a compo
 React Libraries
 
 MobX: state management library that makes it simple to manage and react to the state changes in your applications.
+react-scripts: is an essential part of Create React App (CRA).
 Recoil: state management library for React that aims to provide a more flexible and scalable way to manage state compared to traditional solutions like Redux.
 Redux: popular state management library for JavaScript applications, often used with React.
   - key concepts: Store, Actions, Reducers, Dispatch, Selectors, Middleware.
+Styled Components: allows you to write CSS in javascript files (CSS in JS lib)
 Zustand: small, fast, and scalable state management library that simplifies managing global state in React applications.
