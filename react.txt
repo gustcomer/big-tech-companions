@@ -111,7 +111,17 @@ key prop: each child in an array or iterator should have a unique "key" prop of 
   - you could use the map index as key, if the list were static (never changed) and also never reordered or filtered.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
-Lifecycle Methods: special methods that get called at different stages of a component's lifecycle.
+Lifecycle Methods: special methods that get called at different stages of a component's lifecycle and can be overwritten. They are available for Class Components.
+  - useEffect hook partially accomplishes what lifecycle methods do.
+  - the methods can be classified in 4 phases 
+    [1] Mounting: when an instance of a component is being created and inserted into the DOM.
+      - constructor, getDerivedStateFromProps(), render and componentDidMount()
+    [2] Updating: when a component is being re-rendered as a result of changes to either its props or state.
+      - getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate()
+    [3] Unmounting: when a component is being removed from the DOM.
+      - componentWillUnmount()
+    [4] Error Handling: when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+      - getDerivedStateFromError() and componentDidCatch()
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
