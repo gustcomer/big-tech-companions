@@ -169,9 +169,11 @@ reducer: function that determines actions in an application imply in changes to 
   - function counterReducer(state, action) { switch action.type ... return newState }.
   - in FC you can useReducer via const [state, dispatch] = useReducer(reducer, initialState);
   - the state is decoupled from actions because to change the application's state you simply call dispatch({ type: 'tick' });
-render(): required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
+render(): it basically read state and props and return JSX.
+  - required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
   - actually this method returns a virtual DOM reflecting the state of the UI, then React compares the new virtual DOM with the previous one and updates the actual DOM accordingly.
   - the process of comparing the new and the old virtual DOMs is called reconciliation, and the differences between the two trees can be called "diffs".
+  - do not change state, interact with DOM or make AJAX calls.
 Render Props: technique where a component accepts a function as a prop and uses that function to determine what to render.
   - use Render Props when the code you share is more related to JSX and does not involve states and other functions.
 Request Memoization: type of cache that extends the fetch API to automatically memoize requests that have the same URL and options.
