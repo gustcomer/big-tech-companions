@@ -192,6 +192,11 @@ Request Memoization: type of cache that extends the fetch API to automatically m
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
 serviceWorker: related to Progressive Web Apps (PWA).
+shouldComponentUpdate(): this is a method that takes nextProps and nextState as arguments and returns a boolean signaling if the component should re-render or not.
+  - this is an exclusively Updating phase Lifecycle method executed right after the getDerivedStateFromProps() and right before the render().
+  - this method is used to optimize performance preventing unnecessary renders.
+  - shouldComponentUpdate() is required because even if setState(..) is called with the same actual state value the Component is re-rendered(), and this is non-optimal.
+  - instead of implementing your own shouldComponentUpdate, you could use PureComponent which implements a shallow prop and state comparison for you.
 State: stores dynamic data about a component.
   - it can be accessed through this.state in Class Components. In Functional Components it is accessed with useState(..) hook.
   - in Class Components don't update this.state directly, instead, use this.setState({...}). Else, the state is updated but not displayed in the UI.
