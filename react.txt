@@ -73,6 +73,7 @@ Data Flow: in React, data flows in a unidirectional manner from parent to child 
     - <button onClick={props.handler}>Call Handler</button> -- add this code in the child component
   - if you want the child compnent to pass parameters to the parent, add parameters to the handler and in the child component transform it into an arrow function with parameters.
     - <button onClick={() => props.handler('child')}>Call Handler</button>
+  - break the data flow means that an update to some prop won't be transmitted to a state.
 Declarative Paradigm: style of programming where the focus is on what the program should accomplish rather than how it should accomplish it.
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
@@ -90,8 +91,12 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
-getDerivedStateFromProps(props, state): static method (does not have this keyword).
-  - it is a Mounting Lifecycle Method.
+getDerivedStateFromProps(props, state): it is a static method (does not have this keyword) that allows a component to update its state based on changes in its props.
+  - it is not recommended to copy a prop directly into state since this breaks the data flow.
+  - during the mounting phase, getDerivedStateFromProps() is called after the constructor and before render().
+  - it is called in the Mounting and Update phases.
+  - the method should return an object that represents the updated state of the component, or null if no state update is necessary.
+  - getDerivedStateFromProps() serves as a safer, static alternative to the deprecated componentWillReceiveProps().
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic.
   - HOCs are used to add additional functionality to a component without modifying it directly.
