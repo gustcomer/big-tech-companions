@@ -54,6 +54,9 @@ componentDidMount(): called immediately after a component is mounted (inserted i
   - if you fetch a data at the constructor and it finishes before first rendering it, the setState() will call an update on an unmounted component and it will throw errors.
   - besides, if the fetched data arrives during the rendering, the render will be interrupted and a new render will eventually be called, messing up the virtual DOM, the diffing and the whole Conciliation process.
   - so the perfect time to fetch some data is after the rendering.
+componentDidUpdate(): 
+componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
+  - deprecated Updating livecycle method that was called after the shouldComponentUpdate() if it returned true and before the re-rendering.
 Controlled Component: form elements (like <input>, <textarea>, and <select>) whose values are controlled by the React state. This way these element values will stay in sync with the component's state.
   - the form element's value is set via a React prop passing some state. <input type="text" value={this.state.inputValue} ... />
   - An onChange event handler is used to update the component's state when the user interacts with the form element. <input type="text" ... onChange={this.handleChange} />.
@@ -103,6 +106,9 @@ getDerivedStateFromProps(props, state): it is a static method (does not have thi
   - it is called in the Mounting and Update phases.
   - the method should return an object that represents the updated state of the component, or null if no state update is necessary.
   - getDerivedStateFromProps() serves as a safer, static alternative to the deprecated componentWillReceiveProps().
+getSnapshotBeforeUpdate(prevProps, prevState): Updating Lifecycle Method that is called after the vDOM has been updated but before the changes are reflected in the actual DOM and you can calculate a snapshot, represented as the return value, to be used later in componentDidUpdate().
+  - to calculate the snapshot you can use the previous Props, previous State, the actual Props, the actual state and the old DOM that for the moment is still the actual, just before the new changes in the vDOM are updated.
+  - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic.
   - HOCs are used to add additional functionality to a component without modifying it directly.
