@@ -48,13 +48,16 @@ constructor(props): called whenever a new component is created but before the co
   - this is the only place where you can owerwrite directly this.state
   - do not cause side effects here (eg: http requests).
   - don't forget to call super(props).
-componentDidMount(): called immediately after a component is mounted (inserted into the actual tree) and perform actions that require the DOM nodes to be already in place.
+componentDidMount(): called immediately after a component is mounted (inserted into the actual tree) and perform side effects which are actions that require the DOM nodes to be already in place.
   - lifecycle method called only during the end of the Mounting phase called after the component is rendered (for the first time).
   - it is the place to set up event listeners since the DOM nodes are already in place.
   - if you fetch a data at the constructor and it finishes before first rendering it, the setState() will call an update on an unmounted component and it will throw errors.
   - besides, if the fetched data arrives during the rendering, the render will be interrupted and a new render will eventually be called, messing up the virtual DOM, the diffing and the whole Conciliation process.
   - so the perfect time to fetch some data is after the rendering.
 componentDidUpdate(): after the component has been effectively updated, you can perform side effects taking into account previous props, previous states, actual props and states and the snapshot from getSnapshotBeforeUpdate.
+  - this is one of the three lifecycle method used to perform side effects (the others are componentDidMount and 
+componentWillUnmount(): invoked immediately before a component is unmounted and destroyed.
+  - It's a place to perform any necessary cleanup, such as canceling network requests, removing event listeners, or invalidating timers.
 componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
   - deprecated Updating livecycle method that was called after the shouldComponentUpdate() if it returned true and before the re-rendering.
 Controlled Component: form elements (like <input>, <textarea>, and <select>) whose values are controlled by the React state. This way these element values will stay in sync with the component's state.
