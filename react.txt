@@ -54,7 +54,7 @@ componentDidMount(): called immediately after a component is mounted (inserted i
   - if you fetch a data at the constructor and it finishes before first rendering it, the setState() will call an update on an unmounted component and it will throw errors.
   - besides, if the fetched data arrives during the rendering, the render will be interrupted and a new render will eventually be called, messing up the virtual DOM, the diffing and the whole Conciliation process.
   - so the perfect time to fetch some data is after the rendering.
-componentDidUpdate(): 
+componentDidUpdate(): after the component has been effectively updated, you can perform side effects taking into account previous props, previous states, actual props and states and the snapshot from getSnapshotBeforeUpdate.
 componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
   - deprecated Updating livecycle method that was called after the shouldComponentUpdate() if it returned true and before the re-rendering.
 Controlled Component: form elements (like <input>, <textarea>, and <select>) whose values are controlled by the React state. This way these element values will stay in sync with the component's state.
@@ -108,7 +108,7 @@ getDerivedStateFromProps(props, state): it is a static method (does not have thi
   - getDerivedStateFromProps() serves as a safer, static alternative to the deprecated componentWillReceiveProps().
 getSnapshotBeforeUpdate(prevProps, prevState): Updating Lifecycle Method that is called after the vDOM has been updated but before the changes are reflected in the actual DOM and you can calculate a snapshot, represented as the return value, to be used later in componentDidUpdate().
   - to calculate the snapshot you can use the previous Props, previous State, the actual Props, the actual state and the old DOM that for the moment is still the actual, just before the new changes in the vDOM are updated.
-  - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes
+  - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes.
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic.
   - HOCs are used to add additional functionality to a component without modifying it directly.
@@ -203,6 +203,11 @@ shouldComponentUpdate(): this is a method that takes nextProps and nextState as 
   - this method is used to optimize performance preventing unnecessary renders.
   - shouldComponentUpdate() is required because even if setState(..) is called with the same actual state value the Component is re-rendered(), and this is non-optimal.
   - instead of implementing your own shouldComponentUpdate, you could use PureComponent which implements a shallow prop and state comparison for you.
+Side Effects: actions that occur as a result of rendering but are not directly related to the output of the render function.
+  - any operations that affect something outside the scope of a function, or operations that interact with the external world in a way that can affect the component or application state.
+  - eg: data fetching, subscriptions (sockets, observables), timers, log, manually updating the DOM (not part of the natural render process), state management.
+  - in Class Components you manage side effects with lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
+  - in Functional Components we use useEffect to manage side effects.
 State: stores dynamic data about a component.
   - it can be accessed through this.state in Class Components. In Functional Components it is accessed with useState(..) hook.
   - in Class Components don't update this.state directly, instead, use this.setState({...}). Else, the state is updated but not displayed in the UI.
