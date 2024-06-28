@@ -30,6 +30,9 @@ Component: independent chunks of user interfaces.
 Component-Based Architecture: decompose a system into Components.
 componentDidMount(): lifecycle method called after the component is mounted.
   - used for performing side-effects such as fetching data.
+componentWillUnmount(): method is invoked immediately before a component is unmounted and destroyed.
+  eg: cancel network requests, remove event handlers, cancel any subscriptions (like observers, sockets), invalidate timers.
+  - obviously this is a bad place to call setState().
 Compound Component: design pattern that involves creating a parent component that maintains the state and provides context, and several child components that work together under this parent component.
   - the Child components are kept under the same file and are named MainComponent.ChildComponent preferably with the dot.
   - the state is passed to the child components via context and accessed with useContext, and not via props.
@@ -48,6 +51,8 @@ constructor(props): called whenever a new component is created but before the co
   - this is the only place where you can owerwrite directly this.state
   - do not cause side effects here (eg: http requests) because you only should do them after the vDOM is rendered and should be done in componentDidMount() instead.
   - don't forget to call super(props).
+componentDidCatch(error, info):
+  - Error Handling Phase Methods.
 componentDidMount(): called immediately after a component is mounted (inserted into the actual tree) and perform side effects which are actions that require the DOM nodes to be already in place.
   - lifecycle method called only during the end of the Mounting phase called after the component is rendered (for the first time).
   - it is the place to set up event listeners since the DOM nodes are already in place.
@@ -104,6 +109,8 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
+getDerivedStateFromError(error):
+  - Error Handling Phase Methods.
 getDerivedStateFromProps(props, state): it is a static method (does not have this keyword) that allows a component to update its state based on changes in its props.
   - it is not recommended to copy a prop directly into state since this breaks the data flow.
   - during the mounting phase, getDerivedStateFromProps() is called after the constructor and before render().
