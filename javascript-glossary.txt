@@ -54,8 +54,9 @@ Rest operator:
 Scope Chain: hierarchy of places the computer must go through — one after the other — to find the lexical scope (origin) of the specific variable that got called.
 shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
   - for primitives, "first level" means that the operator checks if they are of the same type and have identical values.
-  - for array or Objects, "first level" checks wheter the share the same reference in memory rather than comparing their contents.
+  - for array or Objects (Complex Types), "first level" checks wheter the share the same reference in memory rather than comparing their contents.
   - inverse of deep comparison.
+  - var a = [1,2,3]; var b = [1,2,3]; var c = a; (a === b) false -- (a === c) true; for Complex Types, a and c reference the exact same object.
 splice(javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
   - array.splice(index, howmany, item1, ....., itemX)
   - index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.

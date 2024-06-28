@@ -108,7 +108,11 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
-<Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node.
+<Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node instead of an additional <div> tag.
+  - it avoids the message JSX expressions must have one parent element.
+  - there is an Explicit Syntax where you use the enclosing <React.Fragment> tag and there is a Short Syntax where you enclose with <></>.
+  - an example where it could be very useful is inside a component that returns multiple <td>'s to be put inside a <tr>. If we wrap the <td>'s with div it would throw warnings, so we wrap with Fragment.
+  - key attribut is the only attribute accepted by a Fragment. But with the Short Syntax you can't use the key attribute.
 getDerivedStateFromError(error):
   - Error Handling Phase Methods.
 getDerivedStateFromProps(props, state): it is a static method (does not have this keyword) that allows a component to update its state based on changes in its props.
@@ -175,8 +179,13 @@ Props(react-ts-snippets.md#props): short for "property" is way of passing data f
 Props Drilling: process of passing data from a parent component to a deeply nested child component through multiple layers of intermediate components.
   - you can solve this issue using Context API or State Management Libraries like Redux, MobX, Recoil.
 PureComponent: component that performs a shallow comparison on the component's props and state to determine if the component should re-render.
-  - usually react does not perform any kind of comparison on props and state to determine if it should re-render. It always re-render when some setState is called or some parent component re-renders.
+  - usually Components extend Component class from React, but you have the option to extend PureComponent.
+  - instead of re-rendering for every setState(..), start re-rendering only if a shallow comparison show differences on state or props. It always re-render when some setState is called or some parent component re-renders.
   - This is an optimization technique using shallow copy to avoid unnecessary re-renders and improve the performance of your React application.
+  - a Regular Component does not implement the shouldComponentUpdate method, a Pure Component implements shouldComponentUpdate with a shallow props and state comparison.
+  - if you're dealing with arrays or objects, don't push elements into it when dealing with PureComponent, always return a new element.
+  - if a Parent Component is a PureComponent, it won't re-render its child components when there are no changes in props or state.
+  - it's safer to use Regular Components. Only use PureComponent if you see some performance boost hidden somewhere.
 React: a javascript library for building user interfaces.
 React.FC: [ts] type of Functional Components.
 React.JSX.Element: [ts] type of single React Element.
@@ -211,6 +220,10 @@ Request Memoization: type of cache that extends the fetch API to automatically m
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
 serviceWorker: related to Progressive Web Apps (PWA).
+shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
+  - for primitives, "first level" means that the operator checks if they are of the same type and have identical values.
+  - for array or Objects (Complex Types), "first level" checks wheter the share the same reference in memory rather than comparing their contents.
+  - inverse of deep comparison.
 shouldComponentUpdate(): this is a method that takes nextProps and nextState as arguments and returns a boolean signaling if the component should re-render or not.
   - this is an exclusively Updating phase Lifecycle method executed right after the getDerivedStateFromProps() and right before the render().
   - this method is used to optimize performance preventing unnecessary renders.
