@@ -55,7 +55,8 @@ componentDidMount(): called immediately after a component is mounted (inserted i
   - besides, if the fetched data arrives during the rendering, the render will be interrupted and a new render will eventually be called, messing up the virtual DOM, the diffing and the whole Conciliation process.
   - so the perfect time to fetch some data is after the rendering.
 componentDidUpdate(): after the component has been effectively updated, you can perform side effects taking into account previous props, previous states, actual props and states and the snapshot from getSnapshotBeforeUpdate.
-  - this is one of the three lifecycle method used to perform side effects (the others are componentDidMount and 
+  - this is one of the three lifecycle method used to perform side effects (the others are componentDidMount and componentWillUnmount).
+  - don't forget to compare the previous props with the actual props to be sure that you need to re-fetch some data or some other side-effects.
 componentWillUnmount(): invoked immediately before a component is unmounted and destroyed.
   - It's a place to perform any necessary cleanup, such as canceling network requests, removing event listeners, or invalidating timers.
 componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
@@ -112,6 +113,7 @@ getDerivedStateFromProps(props, state): it is a static method (does not have thi
 getSnapshotBeforeUpdate(prevProps, prevState): Updating Lifecycle Method that is called after the vDOM has been updated but before the changes are reflected in the actual DOM and you can calculate a snapshot, represented as the return value, to be used later in componentDidUpdate().
   - to calculate the snapshot you can use the previous Props, previous State, the actual Props, the actual state and the old DOM that for the moment is still the actual, just before the new changes in the vDOM are updated.
   - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes.
+  - one funny thing about getSnapshotBeforeUpdate() is that for hierarchical component trees, all the components will execute their getSnapshotBeforeUpdate() before they start their componentDidUpdate().
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic.
   - HOCs are used to add additional functionality to a component without modifying it directly.
