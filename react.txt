@@ -208,10 +208,11 @@ reducer: function that determines actions in an application imply in changes to 
   - in FC you can useReducer via const [state, dispatch] = useReducer(reducer, initialState);
   - the state is decoupled from actions because to change the application's state you simply call dispatch({ type: 'tick' });
 Refs: way to access and interact with DOM elements or React Components directly.
-  - there are two ways to create refs, the first and more common is Access Refs and the second is Callback Refs.
+  - there are two ways to create refs, the first and more common is Access Refs and the second and older one is Callback Refs.
   - many other use cases such as managing focus, text selection, etc.
   - in Class Components you create a ref using React.createRef() and attach it to a React element via the ref attribute of this element.
   - in Functional Components you create a ref using useRef(..);
+  - with Callback Refs you attach the callback function to the React Element vie the ref attribute and the callback is called with the DOM element itself when the DOM mounts and null on unmount.
 render(): it basically read state and props and return JSX.
   - required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
   - actually this method returns a virtual DOM reflecting the state of the UI, then React compares the new virtual DOM with the previous one and updates the actual DOM accordingly.
