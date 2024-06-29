@@ -166,6 +166,8 @@ Lifecycle Methods: special methods that get called at different stages of a comp
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
+Memoization: performance optimization technique used to avoid unnecessary re-renders of components using shallow comparison.
+  - check React.memo and useMemo().
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
   - constructor, getDerivedStateFromProps(), render and componentDidMount()
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
@@ -186,9 +188,12 @@ PureComponent: component that performs a shallow comparison on the component's p
   - if you're dealing with arrays or objects, don't push elements into it when dealing with PureComponent, always return a new element.
   - if a Parent Component is a PureComponent, it won't re-render its child components when there are no changes in props or state.
   - it's safer to use Regular Components. Only use PureComponent if you see some performance boost hidden somewhere.
+  - PureComponent only works with class components, while React.memo works with Functional Components.
 React: a javascript library for building user interfaces.
 React.FC: [ts] type of Functional Components.
 React.JSX.Element: [ts] type of single React Element.
+React.Memo(): it's a high-order component that works similarly to React.PureComponent. That is, it returns a memoized version of the given component.
+  - you can call the HOC with export default React.memo(ExpensiveComponent), for instance.
 React.ReactNode: [ts] type of everything React can render.
 Reconciliation: process of comparing the actual Virtual DOM with the previous one to calculate the minimal set of changes needed to update the actual DOM and the actual update to the DOM.
   - the whole Reconciliation process consists of Managing the lifecycle of updates, diffing, and applying the changes.
