@@ -26,6 +26,8 @@ Default Exports: export a single value or entity from a module.
 Destructuring Object(javascript.md#destructuring-object): take an object and extract some of its properties.
   - it allows you to extract values from arrays or properties from Objects.
 ES6 Modules: 
+Event Bubbling: when an event is triggered on a specific HTML element, the event propagate through a series of related elements moving up the DOM tree.
+  - the event first triggers on the Event Target and then bubbles up, propagating to any event handlers until it reaches the root of the DOM tree (usually the document object).
 Global Object: object that always exists in the global scope.
   - web browsers have a Window as its global object.
   - globalThis allows one to access the global object regardless of the current environment.

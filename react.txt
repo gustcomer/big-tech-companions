@@ -171,6 +171,12 @@ Memoization: performance optimization technique used to avoid unnecessary re-ren
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
   - constructor, getDerivedStateFromProps(), render and componentDidMount()
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
+Portals: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component, in other words, outside the classical div with id='root'.
+  - often used to handle cases where a component needs to visually break out of its container, such as for modals, tooltips, and dropdowns.
+  - to use a Portal, that is, to render a tree into some DOM node, you use ReactDOM.createPortal(1,2) where the first parameter is the JSX to be rendered and the second is the DOM element you can get with document.getElementById('modal-root').
+  - actually the first argument can be anything React can render, like numbers, strings, JSX and even React components.
+  - a component can perfectly be declared inside some React node tree of components, but the render can be transfered to a Portal.
+  - even though it renders in another DOM node, the rest continues exactly like any normal react component like event bubbling.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
 Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
   - Props are immutable, that is, a component cannot change its own props.
