@@ -215,6 +215,15 @@ Refs: way to access and interact with DOM elements or React Components directly.
   - with Callback Refs you attach the callback function to the React Element vie the ref attribute and the callback is called with the DOM element itself when the DOM mounts and null on unmount.
   - you can add refs to react components, this way it will be possible to call methods on a child component using the ref.
   - I believe it is possible to call methods not only on Class Components but also on Functional Components.
+  - take a look at Forwarding Refs.
+Refs Forwarding: with forward ref you can create a ref on a Parent Component and make it point to some element in the child component.
+  - to do that:
+    1. you simply create a normal ref in the parent component
+    2. pass it down to the child component as ref prop
+    3. wrap the child component in arrow function form in the HOC React.forwardRef()
+    4. take the ref as argument before the prop
+    5.  and pass down the reference to some element inside the child component as ref.
+  - an option to some use cases would be to ref the child component and call some method on it.
 render(): it basically read state and props and return JSX.
   - required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
   - actually this method returns a virtual DOM reflecting the state of the UI, then React compares the new virtual DOM with the previous one and updates the actual DOM accordingly.
@@ -282,7 +291,9 @@ useState(): hook that lets you add a state variable to your component.
   - const [state, setState] = useState(initialState)
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
-
+Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
+  - while HOCs wrap a component with a function, the Wrapper Component wraps a component within its tags.
+  - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
 ================================================================================
 React Libraries
 
