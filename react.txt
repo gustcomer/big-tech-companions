@@ -51,8 +51,12 @@ constructor(props): called whenever a new component is created but before the co
   - this is the only place where you can owerwrite directly this.state
   - do not cause side effects here (eg: http requests) because you only should do them after the vDOM is rendered and should be done in componentDidMount() instead.
   - don't forget to call super(props).
-componentDidCatch(error, info):
-  - Error Handling Phase Methods.
+componentDidCatch(error, info): lifecycle method that allows a component to catch JavaScript errors anywhere in its child component tree and apply sid effects such as log those errors.
+  - it is an Error Handling Phase Methods.
+  - While getDerivedStateFromError is used to update the state to render a fallback UI, componentDidCatch can be used for side effects such as logging the error.
+  - it does not catch errors inside event handlers, in asynchronous code or during server-side rendering.
+  - usually error is an instance of Error containing the thrown error and can be used to get details about the error such as message, stack trace for debugging.
+  - the info is an Object that contains additional information about the component stack at the time the error was thrown. Useful to understand the context in which the error occurred.
 componentDidMount(): called immediately after a component is mounted (inserted into the actual tree) and perform side effects which are actions that require the DOM nodes to be already in place.
   - lifecycle method called only during the end of the Mounting phase called after the component is rendered (for the first time).
   - it is the place to set up event listeners since the DOM nodes are already in place.
@@ -102,8 +106,14 @@ Diffing: concept of comparing the virtual DOMs before and after the modification
   - the result of the Conciliation process is called diff.
   - Diffing is related to the algorithm used to compare two virtual DOMs and is an important step in the Reconciliation process.
   - aka: DOM Diffing
-Error Boundary: special component that lets you display some fallback UI instead of the part that crashed.
+Error Boundary: special component that lets you catch JavaScript errors and display/log some fallback UI instead of the part that crashed.
+  - the Error Boundary is activated in production, but in development mode you want to make errors as high visible as possible (but in dev you'll have the option to close the error).
+  - in class components, it is a CC that implements either one or both of componentDidCatch() or getDerivedStateFromError().
   - by default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
+  - in React it is implemented using componentDidCatch() and the static getDerivedStateFromError() methods.
+  - the Error Boundary component could have an UI to display some error message in case some state hasError is set true with getDerivedStateFromError(error), and display the normal component with the child props in case it has no error.
+  - during development, react automatically logs every error to the console, so there is no need to console.log it again.
+  - the place you put the Error Boundary is important as it controls if the entire app should have the fallback UI or just the component causing the problem.
 Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
@@ -113,8 +123,10 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - there is an Explicit Syntax where you use the enclosing <React.Fragment> tag and there is a Short Syntax where you enclose with <></>.
   - an example where it could be very useful is inside a component that returns multiple <td>'s to be put inside a <tr>. If we wrap the <td>'s with div it would throw warnings, so we wrap with Fragment.
   - key attribut is the only attribute accepted by a Fragment. But with the Short Syntax you can't use the key attribute.
-getDerivedStateFromError(error):
-  - Error Handling Phase Methods.
+getDerivedStateFromError(error): takes the error as an argument and returns an object to update the state so that a specific UI for error could be rendered.
+  - this is an Error Handling Phase Methods.
+  - while getDerivedStateFromError() is used to update the state to render a fallback UI, componentDidCatch() can be used for side effects such as logging the error.
+  - - the Error Boundary component could have an UI to display some error message in case some state hasError is set true with getDerivedStateFromError(error), and display the normal component with the child props in case it has no error.
 getDerivedStateFromProps(props, state): it is a static method (does not have this keyword) that allows a component to update its state based on changes in its props.
   - it is not recommended to copy a prop directly into state since this breaks the data flow.
   - during the mounting phase, getDerivedStateFromProps() is called after the constructor and before render().
