@@ -138,12 +138,13 @@ getSnapshotBeforeUpdate(prevProps, prevState): Updating Lifecycle Method that is
   - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes.
   - one funny thing about getSnapshotBeforeUpdate() is that for hierarchical component trees, all the components will execute their getSnapshotBeforeUpdate() before they start their componentDidUpdate().
 Higher-Order Component: function that takes a component and returns a new component.
-  - it's a technique for reusing component logic.
+  - it's a technique for reusing component logic like state. Lifting the state would be an option to share state and handler, but for components deeply separated it's better to use HOC.
   - HOCs are used to add additional functionality to a component without modifying it directly.
   - they are very similar to Decorator Pattern since they add functionality without modifying, and kinda favor composition over inheritance.
   - commonly used for cross-cutting concerns like authentication, state management and performance optimization.
   - both HOCs and Render Props are used for sharing logic and functionality between components.
   - use HOCs when the code involves states and other functions, use Render Props when the code you share is more related to pure JSX.
+  - usually the function name of the HOC could be withSomething(...) and the parameter to that function could be called WrappedComponent, and the class that is returned by the function could be with pascal case WithSomething. 
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
