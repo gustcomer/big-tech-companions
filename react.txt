@@ -144,7 +144,9 @@ Higher-Order Component: function that takes a component and returns a new compon
   - commonly used for cross-cutting concerns like authentication, state management and performance optimization.
   - both HOCs and Render Props are used for sharing logic and functionality between components.
   - use HOCs when the code involves states and other functions, use Render Props when the code you share is more related to pure JSX.
-  - usually the function name of the HOC could be withSomething(...) and the parameter to that function could be called WrappedComponent, and the class that is returned by the function could be with pascal case WithSomething. 
+  - usually the function name of the HOC could be withSomething(...) and the parameter to that function could be called WrappedComponent, and the class that is returned by the function could be with pascal case WithSomething.
+  - don't forget that when you pass a prop to a Component enhanced with a prop, actually you're passing the prop to the Parent component defined in the HOC, don't forget to pass down the props to the Component being enhanced in case you need it with {...this.props} or something like that.
+  - if you need to pass parameters to the HOC to be used in some method, simply pass the parameter as a second parameter, right after the Component being enhanced.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
