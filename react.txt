@@ -75,6 +75,11 @@ Context: provides a way to pass data through the component tree without having t
     [2] use the Context and provide value: <UserProvider value="Vishwas">...</UserProvider> every component and subcomponent inside the brackets will be able to use the context value.
     [3] consume the context value: kinda strange but, involve with <UserConsumer>{{var} => {return <>..JSX..</>}}</UserConsumer> in the place where you want to use. the function receives the context value as parameter and the function uses it and has to return JSX.
   - examples where it could be useful are language option, UI theme, authentication, etc.
+  - you can provide default context value in the creation of the Context: const UserContext = React.createContext('Def Value'); Now there is no need to create Providers, the Producers will receive the default value if there is no Provider above in the Provider tree.
+contextType: property is used to consume a context in class components in React. It allows you to assign a context to a class component, enabling you to access the context value directly via this.context.
+  - useful for older React codebases that primarily use class components instead of functional components with hooks.
+  - to use it, just assign the context to the contextType property of the class component. ComponentE.contextType = UserContext; outside of the component or static contextType = UserContext; inside the component definition. But this way you can consume only one context.
+  - you can consume more than one Context using multiple nested Consumers, the code is a little awkward because you enclose the child function with Consumer tags but no big deal.
 Controlled Component: form elements (like <input>, <textarea>, and <select>) whose values are controlled by the React state. This way these element values will stay in sync with the component's state.
   - the form element's value is set via a React prop passing some state. <input type="text" value={this.state.inputValue} ... />
   - An onChange event handler is used to update the component's state when the user interacts with the form element. <input type="text" ... onChange={this.handleChange} />.
