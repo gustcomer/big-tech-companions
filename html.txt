@@ -283,6 +283,10 @@ inline-level element: inline elements do not start on a new line and only take u
   - the for="username" attribute should refence the id attribute (not name) in the input element.
 <nav>: defines a set of navigation links.
   - it's purely semantic.
+onClick: event attribute that allows you to specify JavaScript code to run when an element is clicked.
+  - It can be used on many HTML elements, such as buttons, links, images, and divs.
+  - you call the function in the form of string. eg: <button onClick="alert('Button clicked!')">Click Me!</button>
+  - In React, you use camelCase (onClick) and pass a function directly rather than a string. eg: return ( <button onClick={handleClick}>Click Me!</button> );
 <p>: defines a paragraph.
 <section>: generic standalone section of a document, which doesn't have a more specific semantic element to represent it.
   - sections should always have a heading, with very few exceptions.

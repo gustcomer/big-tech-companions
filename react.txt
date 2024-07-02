@@ -128,6 +128,8 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
+Fetch: react components don't know anything about HTTP, they simply read props and state and then render the UI.
+  - to read data from the server you have to get the data to your props or state.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node instead of an additional <div> tag.
   - it avoids the message JSX expressions must have one parent element.
   - there is an Explicit Syntax where you use the enclosing <React.Fragment> tag and there is a Short Syntax where you enclose with <></>.
@@ -157,6 +159,13 @@ Higher-Order Component: function that takes a component and returns a new compon
   - usually the function name of the HOC could be withSomething(...) and the parameter to that function could be called WrappedComponent, and the class that is returned by the function could be with pascal case WithSomething.
   - don't forget that when you pass a prop to a Component enhanced with a prop, actually you're passing the prop to the Parent component defined in the HOC, don't forget to pass down the props to the Component being enhanced in case you need it with {...this.props} or something like that.
   - if you need to pass parameters to the HOC to be used in some method, simply pass the parameter as a second parameter, right after the Component being enhanced.
+Hooks: allow you to use React features without having to write a Class.
+  - using functions avoid the complexity of classes and the whole confusion with the 'this' keyword.
+  - classes don't minify very well, so writing components with functions instead of classes is important.
+  - you can reuse stateful code using hooks, without the need for complicated Components structure. You can reuse code in Class Components with HOCs and Render Props, but that's clumsy because adds to the Components Hierarchy.
+  - Class Components usually have code split among different methods and that's bad. Data fetching for instance is divided between componentDidMount() and componentDidUpdate(). Subscription is divided among componentDidMount() componentWillUnmount().
+  - Hooks, on the other hand, help organize the logic inside a component into reusable isolated units and not life cycles. UseEffect hook, for instance, concentrates all the effects code in just one place.
+Hot Reloading: allows you to update and refresh parts of your application without requiring a full reload.
 JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - lets you write HTML-like code in your JavaScript files.
   - stands for JavaScript XML.
@@ -195,6 +204,10 @@ Memoization: performance optimization technique used to avoid unnecessary re-ren
   - check React.memo and useMemo().
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
   - constructor, getDerivedStateFromProps(), render and componentDidMount()
+onClick: event attribute that allows you to specify JavaScript code to run when an element is clicked.
+  - It can be used on many HTML elements, such as buttons, links, images, and divs.
+  - you use camelCase (onClick) and pass a function directly rather than a string. eg: return ( <button onClick={handleClick}>Click Me!</button> );
+  - in HTML you call the function in the form of string. eg: <button onClick="alert('Button clicked!')">Click Me!</button>
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
 Portals: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component, in other words, outside the classical div with id='root'.
   - often used to handle cases where a component needs to visually break out of its container, such as for modals, tooltips, and dropdowns.
@@ -328,7 +341,10 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
   - usually you have to deal with loading states, error states and also racing conditions of multiple asynchronous fetches.
 useState(): hook that lets you add a state variable to your component.
+  - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
+    eg: const [count, setCount] = useState(0);
   - const [state, setState] = useState(initialState)
+  [1] create a Component [2] create a state variable initialized to 0 [3] create a method that is capable of setting this value. - note that useState performs these 3 steps in one line.
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
 Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
