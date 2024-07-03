@@ -188,7 +188,7 @@ key prop: each child in an array or iterator should have a unique "key" prop of 
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
 Lifecycle Methods: special methods that get called at different stages of a component's lifecycle and can be overwritten. They are available for Class Components.
-  - useEffect hook partially accomplishes what lifecycle methods do.
+  - useEffect hook partially accomplishes what lifecycle methods do with the advantage of keeping related code together and not divided in a method per cycle.
   - the methods can be classified in 4 phases 
     [1] Mounting: when an instance of a component is being created and inserted into the DOM.
       - constructor, getDerivedStateFromProps(), render and componentDidMount()
@@ -198,6 +198,7 @@ Lifecycle Methods: special methods that get called at different stages of a comp
       - componentWillUnmount()
     [4] Error Handling: when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
       - getDerivedStateFromError() and componentDidCatch()
+  - organizing the code per lifetime cycle instead of per functionality is bad because you have to put together code for different functionalities.
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
@@ -342,6 +343,8 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - if you pass an empty array [] as deps, the effect will run only once after the initial render.
   - if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
   - usually you have to deal with loading states, error states and also racing conditions of multiple asynchronous fetches.
+  - Class Components usually have code split among different methods and that's bad. Setting the document title, for instance, is divided between componentDidMount() and componentDidUpdate(). A timer would be divided between componentDidMount() and componentWillUnmount().
+  - useEffect hook partially accomplishes what lifecycle methods do with the advantage of keeping related code together and not divided in a method per cycle.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
