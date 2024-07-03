@@ -349,6 +349,9 @@ useState(): hook that lets you add a state variable to your component.
   [1] create a Component [2] create a state variable initialized to 0 [3] create a method that is capable of setting this value. - note that useState performs these 3 steps in one line.
   - you can use a functional form of the state updates that takes into account the previous state and can be helpful in batched setStates. eg: setCount(prevCount => prevCount + 1);
   - react batches state updates for performance reasons and this could be troublesome to put setState() in for loops or timed operations. Prefer the functional form of the state updater.
+  - for CC the state is always an object, but with useState hook the state doesn't have to be an object.
+  - for states in the form of Objects while setState() in CC automatically merges the passed key-value pair with the rest of the Object, in FC the state updater from useState does not, so you have to use the spread operator ... eg: setName({ ...name, firstName: 'newName' })
+  - for states in the form of Array we would have a similar problem and solve again with spread operator. eg: setItems([...items, {id:.., value:..}])
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
 Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
