@@ -339,12 +339,13 @@ super(props): all Class Components extends React.Component, so super calls the c
 useEffect(): hook that lets you synchronize a component with an external system.
   - it lets you perform side effects in function components and works similar to componentDidMount, componentDidUpdate, componentWillUnmount, etc.
   - side effects in this context are operations that affect something outside the scope of the function, such as data fetching, subscriptions, or manually changing the DOM.
-  - the dependencies (aka deps) is the second argument to useEffect in the form of an array of dependencies. The effect will run after the initial render and again whenever any of the dependencies change.
-  - if you pass an empty array [] as deps, the effect will run only once after the initial render.
-  - if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
   - usually you have to deal with loading states, error states and also racing conditions of multiple asynchronous fetches.
   - Class Components usually have code split among different methods and that's bad. Setting the document title, for instance, is divided between componentDidMount() and componentDidUpdate(). A timer would be divided between componentDidMount() and componentWillUnmount().
   - useEffect hook partially accomplishes what lifecycle methods do with the advantage of keeping related code together and not divided in a method per cycle.
+  [1] without any dependencies, the effect runs after the mount and after every render. useEffect( () => {...} );
+  [2] if you pass an empty array [] as deps, the effect will run only once after the initial render.
+  [3] the dependencies (aka deps) is the second argument to useEffect in the form of an array of dependencies. The effect will run after the initial render and again whenever any of the dependencies change.
+  [4] if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
