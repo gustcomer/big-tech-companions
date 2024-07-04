@@ -129,7 +129,7 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
-Fetch: react components don't know anything about HTTP, they simply read props and state and then render the UI.
+fetch: react components don't know anything about HTTP, they simply read props and state and then render the UI.
   - to read data from the server you have to get the data to your props or state.
 <Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node instead of an additional <div> tag.
   - it avoids the message JSX expressions must have one parent element.
@@ -338,6 +338,10 @@ unmount: when you're displaying a component and it stops being displayed for any
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
+useContext(): allows you to subscribe to React context without introducing nesting code.
+  [1] Create a Context: const ThemeContext = React.createContext('light'); export default ThemeContext;
+  [2] Providing the Context: return ( <ThemeContext.Provider value={theme}>  <Toolbar />  </ThemeContext.Provider> );
+  [3] Consume the Context: import ThemeContext from './ThemeContext'; ... const theme = useContext(ThemeContext); ...
 useEffect(): hook that lets you synchronize a component with an external system.
   - it lets you perform side effects in function components and works similar to componentDidMount, componentDidUpdate, componentWillUnmount, etc.
   - side effects in this context are operations that affect something outside the scope of the function, such as data fetching, subscriptions, or manually changing the DOM.
@@ -352,6 +356,7 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - you can use more than one useEffect, gathering related code in each and making the code more clear.
   - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
+  - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
