@@ -350,6 +350,8 @@ useEffect(): hook that lets you synchronize a component with an external system.
   [4] Cleanup: if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
   - beware of the mental model when leaving the dependency array empty trying to mimic componentDidMount, like in Dan's post. Don't forget to put all that the effect depends directly or indirectly on the dependency array.
   - you can use more than one useEffect, gathering related code in each and making the code more clear.
+  - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
+  - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
