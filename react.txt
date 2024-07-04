@@ -66,6 +66,7 @@ componentDidMount(): called immediately after a component is mounted (inserted i
 componentDidUpdate(): after the component has been effectively updated, you can perform side effects taking into account previous props, previous states, actual props and states and the snapshot from getSnapshotBeforeUpdate.
   - this is one of the three lifecycle method used to perform side effects (the others are componentDidMount and componentWillUnmount).
   - don't forget to compare the previous props with the actual props to be sure that you need to re-fetch some data or some other side-effects.
+  - to conditionally update, use a conditional statement comparing prevState with this.state and prevProps with this.props.
 componentWillUnmount(): invoked immediately before a component is unmounted and destroyed.
   - It's a place to perform any necessary cleanup, such as canceling network requests, removing event listeners, or invalidating timers.
 componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
@@ -333,6 +334,7 @@ Styling React Components
 super(props): all Class Components extends React.Component, so super calls the constructor of React.Component and passing props to it.
   - it correctly initializes this.state by calling super(). Don't forget that this is not defined before calling super() when there is inheritance.
 <Suspense>: lets you display a fallback until its children have finished loading.
+unmount: when you're displaying a component and it stops being displayed for any reason like a conditional display for instance.
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
@@ -342,10 +344,10 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - usually you have to deal with loading states, error states and also racing conditions of multiple asynchronous fetches.
   - Class Components usually have code split among different methods and that's bad. Setting the document title, for instance, is divided between componentDidMount() and componentDidUpdate(). A timer would be divided between componentDidMount() and componentWillUnmount().
   - useEffect hook partially accomplishes what lifecycle methods do with the advantage of keeping related code together and not divided in a method per cycle.
-  [1] without any dependencies, the effect runs after the mount and after every render. useEffect( () => {...} );
-  [2] if you pass an empty array [] as deps, the effect will run only once after the initial render.
-  [3] the dependencies (aka deps) is the second argument to useEffect in the form of an array of dependencies. The effect will run after the initial render and again whenever any of the dependencies change.
-  [4] if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
+  [1] Run Effect After Every Render: without any dependencies, the effect runs after the mount and after every render. useEffect( () => {...} );
+  [2] Run Effects Only Once: if you pass an empty array [] as deps, the effect will run only once after the initial render.
+  [3] Conditionally Run Effect: the dependencies (aka deps) is the second argument to useEffect in the form of an array of dependencies which can be props and states. The effect will run after the initial render and again whenever either the props or state changes.
+  [4] Cleanup: if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
