@@ -348,6 +348,8 @@ useEffect(): hook that lets you synchronize a component with an external system.
   [2] Run Effects Only Once: if you pass an empty array [] as deps, the effect will run only once after the initial render.
   [3] Conditionally Run Effect: the dependencies (aka deps) is the second argument to useEffect in the form of an array of dependencies which can be props and states. The effect will run after the initial render and again whenever either the props or state changes.
   [4] Cleanup: if your effect returns a function, it is the Cleanup Function and React will run it when the component unmounts or before the effect runs again, to clean up the previous effect.
+  - beware of the mental model when leaving the dependency array empty trying to mimic componentDidMount, like in Dan's post. Don't forget to put all that the effect depends directly or indirectly on the dependency array.
+  - you can use more than one useEffect, gathering related code in each and making the code more clear.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
