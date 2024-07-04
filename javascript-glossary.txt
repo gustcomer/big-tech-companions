@@ -46,7 +46,6 @@ null: is an assignment value representing the intentional absence of any object 
   - null means there is no value.
 preventDefault(): event.preventDefault() avoids the default behavior after a form submission that normally would be to Post the data and reload the page.
 pure function: a function that always produces the same output for the same input and has no side effects.
-startsWith(): method to check if a string starts with a specified string.
 Response(): interface of the Fetch API represents the response to a request.
   - return new Response("Hello world");
   - return Response.json({ message: 'Hello - GET' });
@@ -54,6 +53,10 @@ Response(): interface of the Fetch API represents the response to a request.
   - Response.error()
 Rest operator:
 Scope Chain: hierarchy of places the computer must go through — one after the other — to find the lexical scope (origin) of the specific variable that got called.
+setInterval(code, delay): repeatedly calls a function or executes a code snippet with a fixed time delay between each call.
+  eg: nIntervId = setInterval(callback, 1000); - calls callback each second
+  - to stop the callback use clearInterval(nIntervId);
+setTimeout(callback, delay): sets a timer which executes a function or specified piece of code once the timer expires.
 shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
   - for primitives, "first level" means that the operator checks if they are of the same type and have identical values.
   - for array or Objects (Complex Types), "first level" checks wheter the share the same reference in memory rather than comparing their contents.
@@ -62,6 +65,7 @@ shallow comparison: performed using ===, only looks at the first level of an obj
 splice(javascript.md#splice-method): adds and/or removes array elements. Also it overwrites the original array.
   - array.splice(index, howmany, item1, ....., itemX)
   - index: position to add or remove items; howmany: number of items to be removed. item1, ..., itemX: new elements(s) to be added.
+startsWith(): method to check if a string starts with a specified string.
 static methods: methods that do not have this keyword and are accessed on the class itself, not on instances of the class.
 super(): function used to call the parent class's constructor.
   - usually this is not set before the call to super() is made, when there is the extend word.
