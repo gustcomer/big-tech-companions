@@ -342,6 +342,9 @@ unmount: when you're displaying a component and it stops being displayed for any
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
+useCallback(): used to memoize a function. It returns a memoized version of the callback function that only changes if one of the dependencies has changed.
+  - remember that functions are rebuilt after every re-render and even though they have the same behavior, they differ because the comparison depends on reference equality. so all components with callback props like buttons are re-rendered.
+  - just like useEffects, remember not to lie in the dependencies array and tell everything that the function being memoized depends (even harder to track dependencies).
 useContext(): allows you to subscribe to React context without introducing nesting code.
   [1] Create a Context: const ThemeContext = React.createContext('light'); export default ThemeContext;
   [2] Providing the Context: return ( <ThemeContext.Provider value={theme}>  <Toolbar />  </ThemeContext.Provider> );
