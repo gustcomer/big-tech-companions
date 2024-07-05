@@ -363,7 +363,7 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
 useReducer(): alternative to useState to manage state in React when the state logic is complex or involves multiple sub-values.
   - const [state, dispatch] = useReducer(reducer, initialState);
-  - state: the current state
+  - state: the current state.
   - dispatch: a function to send actions to the reducer.
   - newState = reducer(state, action): a function that contains the logic to update the state based on the received action.
     - state: the actual state, that will be changed. (actually since we don't call the reducer function directly we don't have to worry).
@@ -372,6 +372,9 @@ useReducer(): alternative to useState to manage state in React when the state lo
   - initialState: the initial state of the reducer.
   - the useReducer(reducer, initialState) is very similar to the array.reduce(reducer, initialValue) JavaScript method.
   - the useReducer may be used with a version with Simple State & Simple Action instead of follow the redux pattern, which means state with primitive instead of object and action with straightforward string instead of an object with type property.
+  - the useReducer may be used with a Complex State and Action with state as Object and action as Object with type property.
+  - you can use multiple useReducers to group logic, state transitions, etc in the same place.
+  - usually you use useReducer for Local State Management at the Component Level. To share between components and use Global State Management use useReducer+useContext.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
