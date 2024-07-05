@@ -345,6 +345,8 @@ unmount: when you're displaying a component and it stops being displayed for any
 useCallback(): used to memoize a function. It returns a memoized version of the callback function that only changes if one of the dependencies has changed.
   - remember that functions are rebuilt after every re-render and even though they have the same behavior, they differ because the comparison depends on reference equality. so all components with callback props like buttons are re-rendered.
   - just like useEffects, remember not to lie in the dependencies array and tell everything that the function being memoized depends (even harder to track dependencies).
+  - useCallback() gives you referential equality between renders for functions.
+  - useCallback() returns its function uncalled so you can call it later, while useMemo() calls its function and returns the result.
 useContext(): allows you to subscribe to React context without introducing nesting code.
   [1] Create a Context: const ThemeContext = React.createContext('light'); export default ThemeContext;
   [2] Providing the Context: return ( <ThemeContext.Provider value={theme}>  <Toolbar />  </ThemeContext.Provider> );
@@ -364,6 +366,9 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
+useMemo(): useMemo() memoizes the result of a function so that you don't have to call an expensive function in every render.
+  - useMemo gives you referential equality between renders for values.
+  - useCallback() returns its function uncalled so you can call it later, while useMemo() calls its function and returns the result.
 useReducer(): alternative to useState to manage state in React when the state logic is complex or involves multiple sub-values.
   - const [state, dispatch] = useReducer(reducer, initialState);
   - state: the current state.
