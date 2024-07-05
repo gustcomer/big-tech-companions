@@ -375,6 +375,10 @@ useReducer(): alternative to useState to manage state in React when the state lo
   - the useReducer may be used with a Complex State and Action with state as Object and action as Object with type property.
   - you can use multiple useReducers to group logic, state transitions, etc in the same place.
   - usually you use useReducer for Local State Management at the Component Level. To share between components and use Global State Management use useReducer+useContext.
+  - the complex data fetching with data state, loading state and error state can be implemented with useEffect and useReduce, instead of multiple useStates.
+  - the switch cases in the reducer indicate actions or events that trigger state transitions, so the reducer has close liaison with event driven architecture.
+  - useState x useReducer: if your states are primitives use uS, if objects or arrays use uR. If it has only one or two state transitionsuse uS if more uR. If the state transitions are related use uS else use uR.
+  - ... if there is no Business Logic involved use uS, else uR. For local states use uS, for global states use uR.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
