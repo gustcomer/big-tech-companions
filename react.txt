@@ -256,6 +256,10 @@ reducer: function that determines actions in an application imply in changes to 
   - function counterReducer(state, action) { switch action.type ... return newState }.
   - in FC you can useReducer via const [state, dispatch] = useReducer(reducer, initialState);
   - the state is decoupled from actions because to change the application's state you simply call dispatch({ type: 'tick' });
+redux pattern: used for managing and centralizing application state.
+  - Actions: object that must have a 'type' property that indicates the type of action being performed and could possibly have a payload.
+  - Reducers: pure functions that take current state and action and return a new state. The state could be an object but also can be a primitive.
+  - Store: object that holds the state of the application and provides methods to get the state, dispatch actions and subscribe to state changes.
 Refs: way to access and interact with DOM elements or React Components directly.
   - there are two ways to create refs, the first and more common is Access Refs and the second and older one is Callback Refs.
   - many other use cases such as managing focus, text selection, etc.
@@ -357,6 +361,17 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
+useReducer(): alternative to useState to manage state in React when the state logic is complex or involves multiple sub-values.
+  - const [state, dispatch] = useReducer(reducer, initialState);
+  - state: the current state
+  - dispatch: a function to send actions to the reducer.
+  - newState = reducer(state, action): a function that contains the logic to update the state based on the received action.
+    - state: the actual state, that will be changed. (actually since we don't call the reducer function directly we don't have to worry).
+    - action: object containing type property and possibly other stuff such as payload.
+    - usually this function is organized in switch form, possibly with a default case throwing new Error('...');
+  - initialState: the initial state of the reducer.
+  - the useReducer(reducer, initialState) is very similar to the array.reduce(reducer, initialValue) JavaScript method.
+  - the useReducer may be used with a version with Simple State & Simple Action instead of follow the redux pattern, which means state with primitive instead of object and action with straightforward string instead of an object with type property.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
