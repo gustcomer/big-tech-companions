@@ -351,6 +351,7 @@ useContext(): allows you to subscribe to React context without introducing nesti
   [1] Create a Context: const ThemeContext = React.createContext('light'); export default ThemeContext;
   [2] Providing the Context: return ( <ThemeContext.Provider value={theme}>  <Toolbar />  </ThemeContext.Provider> );
   [3] Consume the Context: import ThemeContext from './ThemeContext'; ... const theme = useContext(ThemeContext); ...
+useDebugValue():
 useEffect(): hook that lets you synchronize a component with an external system.
   - it lets you perform side effects in function components and works similar to componentDidMount, componentDidUpdate, componentWillUnmount, etc.
   - side effects in this context are operations that affect something outside the scope of the function, such as data fetching, subscriptions, or manually changing the DOM.
@@ -366,6 +367,8 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
+useImperativeHandle():
+useLayoutEffect():
 useMemo(): useMemo() memoizes the result of a function so that you don't have to call an expensive function in every render.
   - useMemo gives you referential equality between renders for values.
   - useCallback() returns its function uncalled so you can call it later, while useMemo() calls its function and returns the result.
@@ -387,6 +390,9 @@ useReducer(): alternative to useState to manage state in React when the state lo
   - the switch cases in the reducer indicate actions or events that trigger state transitions, so the reducer has close liaison with event driven architecture.
   - useState x useReducer: if your states are primitives use uS, if objects or arrays use uR. If it has only one or two state transitionsuse uS if more uR. If the state transitions are related use uS else use uR.
   - ... if there is no Business Logic involved use uS, else uR. For local states use uS, for global states use uR.
+useRef(): allows you to persist values between renders without causing a re-render when the value changes. Often used for accessing DOM elements directly and for storing mutable values that don't cause a re-render when updated.
+  eg: const myRef = useRef(initialValue); and in the JSX <input ref={myRef} type='text' />
+  - to access the element use myRef.current.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
     eg: const [count, setCount] = useState(0);
