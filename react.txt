@@ -97,6 +97,9 @@ createRoot(domNode): create a React root for displaying content inside a browser
   - import { createRoot } from 'react-dom/client'; const domNode = document.getElementById('root'); const root = createRoot(domNode); root.render(<App />);
   - probably this is the moment that Virtual DOM is created.
   - ReactDOM.createRoot(..) replaced ReactDOM.render(..).
+Custom Hooks: allow you to extract component logic into reusable functions.
+  - it is basically a JavaScript function whose name starts with 'use' and can also call other built-in hooks if required.
+  - hooks help you to share logic and are to functional components as HOCs and render props are to class components.
 Data Flow: in React, data flows in a unidirectional manner from parent to child components.
   - props are used to pass data from a parent component to a child component.
   - state is a way to manage data that can change over time within a component. Obviously, you can pass a state down the component tree as a prop.
