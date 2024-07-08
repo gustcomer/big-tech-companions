@@ -22,6 +22,8 @@ Class Components: way to define components.
   - they used to be called Stateful Class Component.
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
+Commit Phase: all React Elements are applied to the DOM using the react-dom package.
+  - the commit phase is usually very fast, but rendering can be slow.
 Component: modular, reusable and independently deployable pieces of code.
   - eg: pieces of UI in React. Each microservice.
 Component: independent chunks of user interfaces.
@@ -100,6 +102,7 @@ createRoot(domNode): create a React root for displaying content inside a browser
 Custom Hooks: allow you to extract component logic into reusable functions.
   - it is basically a JavaScript function whose name starts with 'use' and can also call other built-in hooks if required.
   - hooks help you to share logic and are to functional components as HOCs and render props are to class components.
+  eg: for a counter hook, instead of allowing the user to access setState which doesn't have any business logic, make a useCounter hook and returns the counter and increment, decrement and reset methods, since these are business related.
 Data Flow: in React, data flows in a unidirectional manner from parent to child components.
   - props are used to pass data from a parent component to a child component.
   - state is a way to manage data that can change over time within a component. Obviously, you can pass a state down the component tree as a prop.
@@ -163,7 +166,7 @@ Higher-Order Component: function that takes a component and returns a new compon
   - usually the function name of the HOC could be withSomething(...) and the parameter to that function could be called WrappedComponent, and the class that is returned by the function could be with pascal case WithSomething.
   - don't forget that when you pass a prop to a Component enhanced with a prop, actually you're passing the prop to the Parent component defined in the HOC, don't forget to pass down the props to the Component being enhanced in case you need it with {...this.props} or something like that.
   - if you need to pass parameters to the HOC to be used in some method, simply pass the parameter as a second parameter, right after the Component being enhanced.
-Hooks: allow you to use React features without having to write a Class.
+Hooks: allow you to use React features without having to write a Class. The function name should start with the word 'use'.
   - using functions avoid the complexity of classes and the whole confusion with the 'this' keyword.
   - classes don't minify very well, so writing components with functions instead of classes is important.
   - you can reuse stateful code using hooks, without the need for complicated Components structure. You can reuse code in Class Components with HOCs and Render Props, but that's clumsy because adds to the Components Hierarchy.
@@ -286,6 +289,12 @@ render(): it basically read state and props and return JSX.
   - the process of comparing the new and the old virtual DOMs is called reconciliation, and the differences between the two trees can be called "diffs".
   - do not perform side effects like change state, interact with DOM or make fetch calls.
   - all the children components lifecycle methods are executed right after the render() execution of the parent component but just before the componentDidMount() of the parent.
+Render Phase: purely computational phase which involves reconciling the new virtual DOM tree with the previous one, computing the differences (diffing), and preparing updates.
+  - for the first render, react traverses the component tree starting at the root component and in each element it call the createElement() method transforming JSX components into a tree of React Elements (vDOM) which are JavaScript objects that describe the structure of your UI.
+  ...when this phase ends and all react JSX components are converted into React Elements for the entire tree, all RE are handed over to the commit phase.
+  - for re-renders, some components will be Flagged as needing updates. These flags can be triggered with useState or useReducer.
+  ...for each of the flagged components react does the conversion from JSX into React Element. Then react compares the react elements in the previous render and in the new render (diffing). A list with all the changes needed to be made to the DOM and handed over to the commit phase.
+  - rendering is not the same as updating the DOM.
 Render Props: technique where a component accepts a function named render (or any other name) that produces JSX and possibly accept arguments, as a prop and uses that function to determine what to render.
   - the render(..) prop function that will be called by the render() method could even have parameters.
   - it's a technique for sharing code between react components using a prop whose value is a function.
@@ -296,6 +305,8 @@ Render Props: technique where a component accepts a function named render (or an
   - use Render Props when the code you share is more related to JSX and does not involve states and other functions.
   - there is a variation of RP where there is not necessary to pass a render(..) function. You simply pass the render function as child of the Container Component in curly braces and access it using this.children.render(..) instead of this.props.render(..).
   - the question of when to use HOCs and when to use render props can be complicated since they do very similar things.
+rendering: process through which React translates the virtual representation of the UI (the virtual DOM) into actual UI elements that can be displayed and interacted with in the browser.
+  - it is divided into two main phases: the render phase and the commit phase.
 Request Memoization: type of cache that extends the fetch API to automatically memoize requests that have the same URL and options.
   - in a Component Tree, you don't need to fetch data at the top of the tree and forward props to optimize.
   - while Data Cache is a cache that works accross different renderings, Request Memoization works in the same rendering.
@@ -328,10 +339,11 @@ State: stores dynamic data about a component.
 State Lifting: technique used in React to manage shared state between multiple components. When two or more sibling components need to share the same state, the state is often lifted up to their closest common ancestor.
 Stateless Functional Component: components declared via functions.
   - they used to have no state, but after hooks were introduced, even the functional components now can have state.
-<StrictMode>: lets you find common bugs in your components early during development.
-  - Your components will re-render an extra time to find bugs caused by impure rendering.
+<StrictMode>: a development-only feature that lets you find common bugs in your components early during development.
+  - Your components will re-render an extra time to find bugs like unexpected side effects caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
   - Your components will be checked for usage of deprecated APIs.
+  - actually, the first double render is useful because people can place side effects outside the useEffect hook, which would be executed before generating the JSX and not after which is the default. To spot these errors, just render twice and check if they are exactly the same.
 Styling React Components
   [1] CSS stylesheets: in this case you simpli import the CSS and the styles will automatically be applied to the Component.
   [2] Inline Styling: just create an object with properties as keys and values as values and use style={heading} in your components.
@@ -341,6 +353,10 @@ Styling React Components
 super(props): all Class Components extends React.Component, so super calls the constructor of React.Component and passing props to it.
   - it correctly initializes this.state by calling super(). Don't forget that this is not defined before calling super() when there is inheritance.
 <Suspense>: lets you display a fallback until its children have finished loading.
+triggering: initiates a state update or a re-render of a component.
+  - there are two reasons for a component to render [1] it's the component's initial render. [2] the component's (or one of its ancestors') state has been update. Remeber that an ancestors state could be another's prop.
+  - usually the initial render is done by calling createRoot with the target DOM node and then calling its render method with your component.
+  - the re-renders are triggered by updating its state with the set function.
 unmount: when you're displaying a component and it stops being displayed for any reason like a conditional display for instance.
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
