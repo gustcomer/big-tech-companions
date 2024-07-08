@@ -81,6 +81,7 @@ Glossary
 
 @: [at-rules, directives] CSS statements that instruct CSS how to behave.
   - General structure: @identifier (RULE);
+: pseudo-classes. they consist of a colon : followed by the pseudo-class name.
 Absolute Length Units: px, pt, pc, in, mm, cm.
 @apply: it's a way of using tailwind utility classes inside .css files to create a class from these utility classes.
   - eg: .cartao { @apply w-60 rounded-md p-2 shadow grid gap-y-2 bg-yellow-400 }
@@ -92,6 +93,8 @@ clamp()
 CSS Houdini: set of APIs that expose parts of the CSS renderind mechanism.
   - allows access to the CSS Object Model (CSSOM).
 custom property: allow for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
+  - define variables using double hyphen prefix --variable-name: value; eg: :root { --primary-color: #3498db; --secondary-color: #2ecc71; --font-size: 16px; }
+  - to access the value of a CSS variable use the var(--variable-name) eg: body { color: var(--primary-color); background-color: var(--secondary-color); font-size: var(--font-size); }
   - it's like CSS variables on steroids.
   - @property CSS at-rule is part of the CSS Houdini umbrella of APIs.
 dpi: dots per inch
@@ -131,11 +134,16 @@ px: 1px = 1/96th of 1in.
   - for small details such as borders, shadows, etc, you can use pixels.
 Relative Length Units: em, ex, ch, vw, rem, vh, vmin, vmax, %
 rem: unit relative to the font-size of the root element element.
+:root : pseudo-class in CSS is used to select the highest-level parent element in the document tree. In an HTML document, this is always the <html> element.
+  - It is similar to the html selector, but it has higher specificity (it overrides the normal html selector).
+  - it ensures that variables and styles are scoped globally.
+  - one of the most common uses is to define CSS variables that are available throughout the entire document.
 svh: small vieport height
   related: dvh: dynamic vieport height; lvh: large viewport height.
 @tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
   eg: @tailwind base; @tailwind components; @tailwind utilities;
 text-overflow: property to cut overflowing text
   - text-overflow: clip, ellipsis
+variables: check Custom Properties because they are the same.
 vh: relative to the viewport's height. 1vh is equal to 1% of the viewport's height.
 vw: relative to the viewport's width. 1vw is equal to 1% of the viewport's width.
