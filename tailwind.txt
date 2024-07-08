@@ -84,6 +84,13 @@ static: not affected by the top, bottom, left, and right properties
   - will not act as a position reference for absolute children.
   - html elements are positioned static by default
 sticky: behaves like static until the scroll reaches it, after that starts behaving like fixed.
+@tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
+  @tailwind base;: includes the base layer of Tailwind CSS. It contains the base styles, which are primarily CSS resets and default styles for HTML elements.
+    - These styles ensure a consistent starting point for your project by normalizing the default browser styles.
+    eg: resetting margins and paddings, setting default font styles, and other foundational styles.
+  @tailwind components;: includes the component layer of Tailwind CSS. It is used for predefined component classes that provide more complex styles than the base layer.
+    - These classes can be used to style common UI components like buttons, forms, cards, etc.
+  @tailwind utilities;: includes the utility layer of Tailwind CSS. It contains all the utility classes that you use to apply specific styles directly to elements.
 text-[*px]: set the font size using Arbitrary Values, that is, pixels.
   related: text-sm, text-sm, text-xl, text-5xl
 text-center: centers the text.
