@@ -126,6 +126,8 @@ min-width:
 outline: it looks like a border, but it's placed outside the border and doesn't take space.
   - border's are part of the box model while outlines aren't.
   - use cases: focus
+prefers-color-scheme:  CSS media feature is used to detect if a user has requested light or dark color themes.
+  - a user indicates their preference through an operating system setting (e.g. light or dark mode) or a user agent setting.
 @property: check custom property.
   - @property at-rule
 px: 1px = 1/96th of 1in.

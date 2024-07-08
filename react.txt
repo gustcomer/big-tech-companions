@@ -344,6 +344,7 @@ Stateless Functional Component: components declared via functions.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
   - Your components will be checked for usage of deprecated APIs.
   - actually, the first double render is useful because people can place side effects outside the useEffect hook, which would be executed before generating the JSX and not after which is the default. To spot these errors, just render twice and check if they are exactly the same.
+  - it is useful to use StrictMode in Development mode. When in production, react will automatically ignore it.
 Styling React Components
   [1] CSS stylesheets: in this case you simpli import the CSS and the styles will automatically be applied to the Component.
   [2] Inline Styling: just create an object with properties as keys and values as values and use style={heading} in your components.
@@ -409,12 +410,13 @@ useReducer(): alternative to useState to manage state in React when the state lo
   - the switch cases in the reducer indicate actions or events that trigger state transitions, so the reducer has close liaison with event driven architecture.
   - useState x useReducer: if your states are primitives use uS, if objects or arrays use uR. If it has only one or two state transitionsuse uS if more uR. If the state transitions are related use uS else use uR.
   - ... if there is no Business Logic involved use uS, else uR. For local states use uS, for global states use uR.
+  - the relation between render and useReducer is pretty similar to the one with useState.
 useRef(): allows you to persist values between renders without causing a re-render when the value changes. Often used for accessing DOM elements directly and for storing mutable values that don't cause a re-render when updated.
   eg: const myRef = useRef(initialValue); and in the JSX <input ref={myRef} type='text' />
   - to access the element use myRef.current.
 useState(): hook that lets you add a state variable to your component.
   - it is a function that accepts as argument the initial value of the state property and returns the current value of the state property and a function that is capable of updating this state property in array form and prone to array destructuring.
-    eg: const [count, setCount] = useState(0);
+  eg: const [count, setCount] = useState(0);
   - const [state, setState] = useState(initialState)
   [1] create a Component [2] create a state variable initialized to 0 [3] create a method that is capable of setting this value. - note that useState performs these 3 steps in one line.
   - you can use a functional form of the state updates that takes into account the previous state and can be helpful in batched setStates. eg: setCount(prevCount => prevCount + 1);
@@ -422,6 +424,12 @@ useState(): hook that lets you add a state variable to your component.
   - for CC the state is always an object, but with useState hook the state doesn't have to be an object.
   - for states in the form of Objects while setState() in CC automatically merges the passed key-value pair with the rest of the Object, in FC the state updater from useState does not, so you have to use the spread operator ... eg: setName({ ...name, firstName: 'newName' })
   - for states in the form of Array we would have a similar problem and solve again with spread operator. eg: setItems([...items, {id:.., value:..}])
+  - useState and Render: The setter function from a useState hook will cause the component to re-render.
+    - The exception is when you update a State Hook to the same value as the current state.
+    - The setState has the same value after the initial render? The component will not re-render.
+    - The setState has the same value after re-renders (with different useStates)? React will render that specific component one more time and then bails out from any subsequent renders.
+  - to re-render after setState, the setState must pass in or return a new reference as the state value.
+  - in resume, react only bails-out a component from the rendering phase in 2 cases: [1] in initial render, if the state set is equal as before. [2] after re-renders it will render one more time and then bail out. Dan says that this is a safety net.
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
 Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
