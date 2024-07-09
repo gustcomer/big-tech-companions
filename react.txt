@@ -91,6 +91,8 @@ Controlled Component: form elements (like <input>, <textarea>, and <select>) who
   - there is a cycle of setting the initial value of the input field from the Component's state, the propagating changes to the input value to the state with onChange and then back to the field.
   - when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
+  - to set initial values you use the initial value of the state, instead of the initial value of the defaultValue or defaultChecked attributes of the html input elements in the case of Uncontrolled Components.
+  - use them in more complex applications where form state management, validation, and dynamic behaviors are necessary
 Core Content Components: primarily focused on displaying the main content and functionality of your application.
   - unlike layout components, which handle the overall structure and layout, core content components deal with the specific data, logic, and presentation of your application's content.
   - eg: article, UserProfile, ProductList, CommentForm.
@@ -358,6 +360,10 @@ triggering: initiates a state update or a re-render of a component.
   - there are two reasons for a component to render [1] it's the component's initial render. [2] the component's (or one of its ancestors') state has been update. Remeber that an ancestors state could be another's prop.
   - usually the initial render is done by calling createRoot with the target DOM node and then calling its render method with your component.
   - the re-renders are triggered by updating its state with the set function.
+Uncontrolled Components: form elements that manage their own state internally by keeping the state within the DOM itself.
+  - you typically use React refs to access the values of uncontrolled components when needed.
+  - to set initial values you use the defaultValue or defaultChecked attributes of the html input elements, instead of the initial value of the state in the case of Controlled Components.
+  - use them for simple forms, scenarios where form state management is not necessary, or when integrating with third-party libraries that manipulate the DOM directly.
 unmount: when you're displaying a component and it stops being displayed for any reason like a conditional display for instance.
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
@@ -438,7 +444,8 @@ Wrapper Component: it's a Component that wraps another component inside its tags
 ================================================================================
 React API
 
-React.cloneElement(element, props, ...children): lets you create a new React element using another element as a starting point.
+React.cloneElement(element, props, ...children): create a React element based on the element, but with different props and children.
+  - we can use it as the base for Container Component Patterns like loaders, but we would have to pass a component as child without props, and then calling it later with other set of props. Typescript wouldn't like it.
 React.isValidElement(value): checks whether a value is a React element.
 
 ================================================================================
