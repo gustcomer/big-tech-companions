@@ -436,6 +436,12 @@ Wrapper Component: it's a Component that wraps another component inside its tags
   - while HOCs wrap a component with a function, the Wrapper Component wraps a component within its tags.
   - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
 ================================================================================
+React API
+
+React.cloneElement(element, props, ...children): lets you create a new React element using another element as a starting point.
+React.isValidElement(value): checks whether a value is a React element.
+
+================================================================================
 React Libraries
 
 MobX: state management library that makes it simple to manage and react to the state changes in your applications.
