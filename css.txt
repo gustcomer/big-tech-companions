@@ -120,6 +120,7 @@ lh: line height.
   media types: all, print, screen. -- if nothing is defined, all is assumed.
   media features: device-width, prefers-color-scheme, prefers-reduced-motion
 media queries: allow you to apply CSS styles depending on a device's media type or other characteristics.
+  - prefers-reduced-motion: CSS media query to detect if a user has requested reduced motion in their system preferences. if yes, disable animations and transitions.
 min-width:
   - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
   - related: max-width
