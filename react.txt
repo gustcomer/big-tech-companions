@@ -79,6 +79,7 @@ Context: provides a way to pass data through the component tree without having t
     [3] consume the context value: kinda strange but, involve with <UserConsumer>{{var} => {return <>..JSX..</>}}</UserConsumer> in the place where you want to use. the function receives the context value as parameter and the function uses it and has to return JSX.
   - examples where it could be useful are language option, UI theme, authentication, etc.
   - you can provide default context value in the creation of the Context: const UserContext = React.createContext('Def Value'); Now there is no need to create Providers, the Producers will receive the default value if there is no Provider above in the Provider tree.
+  - you can create a custom hook out of a context to simplify notation. eg: export function useA11y() { return React.useContext(Context) }
 contextType: property is used to consume a context in class components in React. It allows you to assign a context to a class component, enabling you to access the context value directly via this.context.
   - useful for older React codebases that primarily use class components instead of functional components with hooks.
   - to use it, just assign the context to the contextType property of the class component. ComponentE.contextType = UserContext; outside of the component or static contextType = UserContext; inside the component definition. But this way you can consume only one context.
@@ -247,8 +248,6 @@ PureComponent: component that performs a shallow comparison on the component's p
   - it's safer to use Regular Components. Only use PureComponent if you see some performance boost hidden somewhere.
   - PureComponent only works with class components, while React.memo works with Functional Components.
 React: a javascript library for building user interfaces.
-React.FC: [ts] type of Functional Components.
-React.JSX.Element: [ts] type of single React Element.
 React.Memo(): it's a high-order component that works similarly to React.PureComponent. That is, it returns a memoized version of the given component.
   - you can call the HOC with export default React.memo(ExpensiveComponent), for instance.
 React.ReactNode: [ts] type of everything React can render.

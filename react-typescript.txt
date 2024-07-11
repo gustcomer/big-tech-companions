@@ -1,0 +1,7 @@
+
+================================================================================
+React Typescript Glossary
+
+React.FC: [ts] type of Functional Components.
+React.JSX.Element: [ts] type of single React Element.
+React.PropsWithChildren<{}>
