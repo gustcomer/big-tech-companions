@@ -1,0 +1,9 @@
+================================================================================
+Glossary
+
+Expo: open-source framework mantained by Expo.
+  - Expo is to React-Native how Next.js is to React.
+React Native: open source framework for building native Android and iOS applications using React.
+  - it allows you to use JavaScript to access Android and iOS APIs such as camera and push notifications.
+  - React is a lib for building user interfaces. You use react-dom to pair it with web apps and react-native to pair it with native mobile apps.
+  - iOS apps would require Swift or Objective-C, while Android apps would require Java or Kotlin.
