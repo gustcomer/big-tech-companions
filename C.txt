@@ -1,0 +1,18 @@
+================================================================================
+Releases
+
+| C89 / ANSI C     | 1989              |
+| C90              | 1990              |
+| C95              | 1995              |
+| C99              | 1999              |
+| C11              | 2011              |
+| C17              | 2018              |
+| C2x (expected)   | 2024 (expected)   |
+
+================================================================================
+Glossary
+
+ANSI: American National Standards Institute.
+Symbolic Constant: aka symbolic name. Identifiers that represent constant values.
+  - they can be defined using #define or using 'const' keyword.
+  eg: #define MAX_BUFFER_SIZE 1024
