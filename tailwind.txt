@@ -56,6 +56,7 @@ Main Axis:
 md: : apply the following properties only if the size is greater than md.
   related: sm:, lg:, xl:, 2xl:
 mx-*: adjust margin-left and margin-right.
+  - mx-auto: margin-left: auto; margin-right: auto; evenly distribute the unused horizontal space between the left and the right.
 overflow-clip: used to be a shortcut to text-overflow: clip, but browsers added a real overflow: clip property
   - text-clip, in the new tailwind versions.
   - related: text-ellipsis
