@@ -53,6 +53,7 @@ items-center: make flex items be aligned centered around flex container's Cross 
 justify-center: control how flex and grid items are positioned along a container's main axis.
   related: items-center
 Main Axis: 
+max-w-: set the maximum width of an element
 md: : apply the following properties only if the size is greater than md.
   related: sm:, lg:, xl:, 2xl:
 mx-*: adjust margin-left and margin-right.
@@ -93,7 +94,8 @@ sticky: behaves like static until the scroll reaches it, after that starts behav
     - These classes can be used to style common UI components like buttons, forms, cards, etc.
   @tailwind utilities;: includes the utility layer of Tailwind CSS. It contains all the utility classes that you use to apply specific styles directly to elements.
 text-[*px]: set the font size using Arbitrary Values, that is, pixels.
-  related: text-sm, text-sm, text-xl, text-5xl
+  - related: text-sm, text-sm, text-xl, text-5xl
+  - text-[--text]: set the font size to the value in the variable --text that could be defined in the root.
 text-center: centers the text.
   - related: text-left, text-center, text-right, text-justify.
 text-clip: truncate the text at the limit of the content area.
