@@ -1,0 +1,20 @@
+================================================================================
+Committees
+
+International Organization for Standardization (ISO): international organization for anything founded in 1947.
+  - objective of ISO is to facilitate international trade by providing common standards across different nations.
+  - IT and related like Networks, Health, Transport, Management and Services, Environmental, Energy.
+
+================================================================================
+Popular Standards
+
+ISO/IEC 7498-1: defines the OSI (Open Systems Interconnection) model.
+  - the OSI model is ofter compared to the TCP/IP model which is the basis for the internet. the OSI is more granular and theoretically comprehensive while the TCP/IP model is more practical.
+ISO 9000: Quality management systems. Provides the fundamentals and vocabulary for quality management systems.
+ISO 9001: Specifies the requirements for a quality management system.
+  - it is the standard that organizations can be certified against, and it focuses on customer satisfaction, continuous improvement, and the effective application of the QMS.
+  - organizations can pursue ISO 9001 certification that involves a third-party assessment by a certification body.
+ISO 14000: Environmental management systems.
+ISO 27000: Information security management systems.
+ISO 45001: Occupational health and safety management systems.
+ISO 50001: Energy management systems.
