@@ -1,0 +1,46 @@
+Tree Structure (Traditional)
+================================================================================
+Model
+
+A Tree consists of Nodes with parent-children relationships.
+
+================================================================================
+Glossary
+
+Tree: consists of Nodes with parent-children relationships (Edges).
+  Root: the top node of a tree.
+  Height: maximum depth of any node.
+  Degree: maximum degree of a node in the tree.
+  Size: number of nodes in the tree.
+  Breadth of the Tree: the number of leaves.
+  Subtree: a node and its descendants.
+
+Node: fundamental unit of a tree structure, representing an individual element that stores data and has references (or pointers) to other nodes.
+  Ancestors: parent, grandparent, great-grandparent, etc.
+  Child: Node below.
+  Data: the value or information contained within the node.
+  Leaf: any node that does not have child nodes.
+    aka: Terminal Nodes, Outer Node, Terminal Node, External Node.
+  Edges: the connection of one node to other nodes. It represents parent-children relationships.
+    aka: Links, References, Pointers, Relationships.
+  Parent: upper node.
+  Descendants: children, grandchildren.
+  Neighbor: parent or child.
+  Degree: number of children.
+  Distance between two nodes: number of edges along the shortest path.
+  Internal Node: any node of a tree that has child nodes.
+    aka: Inner Node, Inode, Branch Node.
+  Siblings: children of the same parent.
+  Depth: number of ancestors.
+    or: number of edges along the unique path between it and the root node.
+    aka: Level.
+
+Forest: set of disjoint trees.
+
+
+================================================================================
+Invariants
+
+  each node must be connected to only one parent.
+  the root has no parent.
+  no node can be its own ancestor (there are no cycles or loops).
