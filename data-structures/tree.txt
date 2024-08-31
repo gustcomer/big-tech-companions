@@ -6,7 +6,7 @@ A Tree consists of Nodes with parent-children relationships.
 Each node contains Data and may have Links or Edges to Children of its Parent.
 The Trees have several properties, like Root, Height, Size, etc.
 The Nodes also have several properties, like Degree, Siblings, Depth, etc.
-A Node that has no Child is 
+A Node that has no Child is a Leaf.
 
 ================================================================================
 Glossary
@@ -19,13 +19,14 @@ Tree: consists of Nodes with parent-children relationships (Edges).
   Breadth of the Tree: the number of leaves.
   Subtree: a node and its descendants.
 
-Node: fundamental unit of a tree structure, representing an individual element that stores data and has references (or pointers) to other nodes.
+Node: fundamental unit of a tree structure, representing an individual element that stores data and has references (or pointers) to other nodes. Each Vertex.
   Edges: the connection of one node to other nodes. It represents parent-children relationships.
     aka: Links, References, Pointers, Relationships.
   Data: the value or information contained within the node.
   Ancestors: parent, grandparent, great-grandparent, etc.
   Child: Node below.
   Leaf: any node that does not have child nodes.
+    the Height of a Leaf Node is 0.
     aka: Terminal Nodes, Outer Node, Terminal Node, External Node.
   Parent: upper node.
   Descendants: children, grandchildren.
@@ -33,9 +34,11 @@ Node: fundamental unit of a tree structure, representing an individual element t
   Internal Node: any node of a tree that has child nodes.
     aka: Inner Node, Inode, Branch Node.
   Siblings: children of the same parent.
-  Depth: number of ancestors.
-    or: number of edges along the unique path between it and the root node.
+  Depth: number of ancestors. Number of edges along the unique path between it and the root node.
+    each step from top to bottom is called a Level.
+    the Depth of a root node is 0.
     aka: Level.
+  Height: the length of the longest path from that node to a Leaf.
   Degree: number of children.
   Distance between two nodes: number of edges along the shortest path.
 
@@ -48,3 +51,4 @@ Invariants
   each node must be connected to only one parent.
   the root has no parent.
   no node can be its own ancestor (there are no cycles or loops).
+  for a Node, Height+Depth=Height of the Tree.
