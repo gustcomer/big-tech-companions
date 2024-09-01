@@ -1,0 +1,23 @@
+================================================================================
+Glossary
+
+Carrier Sense Multiple Access with Collision Detection (CSMA/CD):
+Ethernet: family of local area network (LAN) technologies that share some main features.
+  - it operates at both Physical and Data Link layers of the OSI model.
+  - it was the main competitor of Token Ring, but Ethernet won the battle.
+  - it uses a hybrid star-bus topology.
+  - Ethernet medium access method is CSMA/CD.
+Local Area Network (LAN): network that connects computers and devices within a limited geographical area.
+  - can be connected through physical cables (Ethernet) or wirelessly (Wi-Fi).
+  - Switches are the central devices in a LAN.
+Multiprotocol Label Switching (MPLS): 
+Network Layer: third layer in the OSI model.
+Shielded Twisted Pairs (STP):
+Unshielded Twisted Pairs (UTP):
+Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
+
+================================================================================
+Standards
+
+IEEE 802.3: still evolving collection of standards defining the physical layer and data link layer's media access control (MAC) of wired Ethernet.
+  - it also defines a LAN access method using CSMA/CD.
