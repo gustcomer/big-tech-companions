@@ -1,18 +1,42 @@
 ================================================================================
 Glossary
 
+10Base5 (Thicknet): transmission speed of 10Mbps, and up to 500 meters. 
+  - uses a bus topology and coaxial cables, with devices connecting to it with "Vampire Taps" and a AUI (Attachment Unit Interface).
+  - adopted by the 802.3 Ethernet in 1983 and obsolete by mid-1990s, replaced by 10Base-T with twisted pair cables.
+ARP:
+Baseband: transmits digital signals occupying the entire bandwidth of the communication.
+  - LAN and its Ethernet protocol usually uses Baseband.
+  - usualy it uses TDM.
+Broadband: multiple signals or data streams can be transmitted simultaneously over the same communication medium by modulating them onto different frequency ranges (or channels)
 Carrier Sense Multiple Access with Collision Detection (CSMA/CD):
-Ethernet: family of local area network (LAN) technologies that share some main features.
+Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard.
   - it operates at both Physical and Data Link layers of the OSI model.
   - it was the main competitor of Token Ring, but Ethernet won the battle.
   - it uses a hybrid star-bus topology.
   - Ethernet medium access method is CSMA/CD.
+  - what changes in each LAN technologies is just> basic topology, frame type, access method.
+FDM: 
 Local Area Network (LAN): network that connects computers and devices within a limited geographical area.
   - can be connected through physical cables (Ethernet) or wirelessly (Wi-Fi).
   - Switches are the central devices in a LAN.
+Medium Access Method: manner a computer gain and controls access to the network’s physical medium.
+  eg: CSMA/CD, CSMA/CA, Token Passing, Demand Priority.
+Modes of Data Transmission:
+  Simplex: the data travels only in one direction with a Transmitter sending signals to an Emitter.
+  Half-Duplex: when signals travel in both directions, but one at a time.
+  Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
 Network Layer: third layer in the OSI model.
+Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted across a network.
+  Layer 1: bit
+  Layer 2: frame
+  Layer 3: packet
+  Layer 4: TCP segment , UDP datagram.
+  Layer 5-7: message or data.
 Shielded Twisted Pairs (STP):
+Star-Bus Topology:
+TDM:
 Unshielded Twisted Pairs (UTP):
 Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
 
