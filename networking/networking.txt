@@ -10,16 +10,30 @@ Baseband: transmits digital signals occupying the entire bandwidth of the commun
   - usualy it uses TDM.
 Broadband: multiple signals or data streams can be transmitted simultaneously over the same communication medium by modulating them onto different frequency ranges (or channels)
 Carrier Sense Multiple Access with Collision Detection (CSMA/CD):
-Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard.
+Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard. Consisting of the Ethernet 
   - it operates at both Physical and Data Link layers of the OSI model.
   - it was the main competitor of Token Ring, but Ethernet won the battle.
   - it uses a hybrid star-bus topology.
   - Ethernet medium access method is CSMA/CD.
   - what changes in each LAN technologies is just> basic topology, frame type, access method.
+Ethernet Frames: the most used is Ethernet II (DIX frame), but there is also IEEE 802.3.
+  Preamble (7 bytes): sequence of alternating 1s and 0s used for synchronization between the sending and receiving devices.
+  Start Frame Delimiter (SFD) (1 byte): unique byte (10101011 in binary) that indicates the start of the Ethernet frame.
+  Destination MAC Address (6 bytes): Media Access Control (MAC) address of the destination device on the network.
+  Source MAC Address (6 bytes): MAC address of the source device that is sending the frame.
+  EtherType/Length (2 bytes): indicates either the type of protocol encapsulated in the payload (EtherType) or the length of the payload in bytes. Common EtherTypes include IPv4 (0x0800), ARP (0x0806), and IPv6 (0x86DD)
+  Payload/Data (46-1500 bytes): actual data being transmitted. If the payload is less than 46 bytes, padding is added to reach the minimum length.
+  Padding: optional and added when the payload is less then 46 bytes.
+  Frame Check Sequence (FCS) (4 bytes): a CRC checksum
+  aka: layer 2 frame, MAC frame.
 FDM: 
 Local Area Network (LAN): network that connects computers and devices within a limited geographical area.
   - can be connected through physical cables (Ethernet) or wirelessly (Wi-Fi).
   - Switches are the central devices in a LAN.
+MAC Address (Media Access Control): unique identifier assigned to network interface controllers (NIC) for communications at the data link layer.
+  - typically 48 bits long and usually displayed as six pairs of hexadecimal digits 00:1A:2B:3C:4D:5E
+  - the first 24 bits (first three pairs) represent the Organizationally Unique Identifier (OUI).
+  - the last 24 bits (last three pairs) are specific to the Network Interface Controller.
 Medium Access Method: manner a computer gain and controls access to the network’s physical medium.
   eg: CSMA/CD, CSMA/CA, Token Passing, Demand Priority.
 Modes of Data Transmission:
