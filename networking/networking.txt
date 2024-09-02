@@ -42,6 +42,9 @@ Modes of Data Transmission:
   Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
 Network Layer: third layer in the OSI model.
+Organizationally Unique Identifier (OUI): 24-bit number assigned by the IEEE that uniquely identifies a vendor, manufacturer, or organization worldwide.
+  Individual/Group (I/G) bit: last bit (b0) of the first OUI octet within the MAC address that indicates whether the address is an individual (unicast, 0) address or a group (multicast, 1) address.
+  Universal/Local (U/L) bit: indicates whether the MAC address is universally (0) or locally (1) administered. Universally means it is the only MAC in the world.
 Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted across a network.
   Layer 1: bit
   Layer 2: frame
