@@ -42,6 +42,17 @@ Modes of Data Transmission:
   Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
 Network Layer: third layer in the OSI model.
+Open Systems Interconnection (OSI):
+  7 Application
+  6 Presentation: translates data between the application layer and the network format.
+    - this is the layer to put encryption, compression, encoding stuff.
+  5 Session: manages and controls the connections (sessions) between computers. It establishes, maintains, and terminates connections.
+  4 Transport: ensures reliable data transfer between two devices, providing error recovery and flow control. It segments data into smaller pieces, transfers them, and reassembles them at the destination.
+    - it worries with the whole segment of data, reassembling data to form a bigger part, recovering from errors and not overflooding the destination.
+  3 Network: responsible for routing data between devices on different networks.
+    - it assures that a single packet from some ip arrives at another ip. It doesn't care about the combination of packets to form whole pieces.
+  2 Data Link
+  1 Physical
 Organizationally Unique Identifier (OUI): 24-bit number assigned by the IEEE that uniquely identifies a vendor, manufacturer, or organization worldwide.
   Individual/Group (I/G) bit: last bit (b0) of the first OUI octet within the MAC address that indicates whether the address is an individual (unicast, 0) address or a group (multicast, 1) address.
   Universal/Local (U/L) bit: indicates whether the MAC address is universally (0) or locally (1) administered. Universally means it is the only MAC in the world.
