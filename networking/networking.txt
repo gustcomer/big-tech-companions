@@ -4,6 +4,7 @@ Glossary
 10Base5 (Thicknet): transmission speed of 10Mbps, and up to 500 meters. 
   - uses a bus topology and coaxial cables, with devices connecting to it with "Vampire Taps" and a AUI (Attachment Unit Interface).
   - adopted by the 802.3 Ethernet in 1983 and obsolete by mid-1990s, replaced by 10Base-T with twisted pair cables.
+Appliances: network device which offers a turn-key solution to a problem. eg: firewall, routers, switches, load balancers, IDS, UTM, VPN concentrators.
 ARP:
 Baseband: transmits digital signals occupying the entire bandwidth of the communication.
   - LAN and its Ethernet protocol usually uses Baseband.
@@ -102,6 +103,11 @@ PaaS (Platform as a Service): provides the "copper" the operating system and the
   [x]Application [x]Data [o]Runtime [o]MiddleWare [o]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
 SaaS (Software as a Service.): cloud service model that includes nearly everything.
   [o]Application [o]Data [o]Runtime [o]MiddleWare [o]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
+NFV (Network Function Virtualization): involves virtualizing network services that traditionally ran on dedicated hardware (such as routers, firewalls, and load balancers) and running them as software applications on standard servers or virtual machines.
+  - NFVs relies on
+    1 NFVI (NFV Infrastructure): provides the physical and virtualized resources necessary for running VNFs. eg: Servers, Storage, Networking, Hypervisors, Virtual Switches.
+    2 MANO (NFVI Management and Network Orchestration): responsible for orchestrating and managing NFVI resources. It includes tools for provisioning, scaling, and monitoring virtualized resources.
+    3 Virtual Network Functions (VNFs): software-based network services that traditionally ran on dedicated hardware devices, such as routers, firewalls, or load balancers, but are now deployed on virtualized infrastructure. eg: vRouter, vFirewall, vLB, VPN Gateway, vNAT.
 XaaS: I personally use this term to refer to the different service models in cloud computing. SaaS, PaaS, IaaS.
   - they vary in the offering of Application, Data, Runtime, MiddleWare, O/S, Virtualization, Servers, Storage, Networking.
   1 Application: the software that end-users interact with like word processors, CRMs, etc.
