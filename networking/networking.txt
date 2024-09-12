@@ -28,6 +28,7 @@ Ethernet Frames: the most used is Ethernet II (DIX frame), but there is also IEE
   Frame Check Sequence (FCS) (4 bytes): a CRC checksum
   aka: layer 2 frame, MAC frame.
 FDM: 
+Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
 Layer 2 Data Link: [Link Layer] handles communication between devices on the same network. Among the functions we have:
   1-Framing: it divides raw bits into chunks called Frames. In case of ethernet protocol, they are called Ethernet Frames.
   2-Error Detection: usually some kind of CRC checksum is appended to the end of the Frame. It could also use parity check.
@@ -51,6 +52,9 @@ Modes of Data Transmission:
   Half-Duplex: when signals travel in both directions, but one at a time.
   Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
+Network Address Translation (NAT) Router: type of router that modifies the IP addresses of packets as they pass through it and allows multiple devices on a local network to share a single public IP address for communication with external networks, such as the internet.
+  - it enables Internet network clients with private IP addresses to access the internet.
+  - it has functionality akin to that of a Proxy Server.
 Network Layer: third layer in the OSI model.
 Open Systems Interconnection (OSI):
   7 Application
@@ -79,6 +83,15 @@ Shielded Twisted Pairs (STP):
 Star-Bus Topology:
 TDM:
 Unshielded Twisted Pairs (UTP):
+XaaS: I personally use this term to refer to the different service models in cloud computing. SaaS, PaaS, IaaS.
+  - they vary in the offering of Application, Data, Runtime, MiddleWare, O/S, Virtualization, Servers, Storage, Networking.
+  1 Application: the software that end-users interact with like word processors, CRMs, etc.
+  2 Data: information that is generated and stored.
+  3 Runtime: environment in which code runs like Node.js.
+  4 Middleware: software that acts as a bridge between different applications or between an application and the operating system. eg: Message Brokers, Database Connectors.
+  5 Operating System O/S: the software that manages the hardware and provides services for running applications.
+  6 Virtualization: allows multiple operating systems to run on a single physical machine by abstracting the hardware resources into "virtual" resources. eg: VMware, KVM, Hyper-V.
+  7 Servers: physical or virtual machines that run applications, store data, and manage network services.
 Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
 
 ================================================================================
