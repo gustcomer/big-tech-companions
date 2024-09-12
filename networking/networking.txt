@@ -11,9 +11,6 @@ Baseband: transmits digital signals occupying the entire bandwidth of the commun
 Broadband: multiple signals or data streams can be transmitted simultaneously over the same communication medium by modulating them onto different frequency ranges (or channels)
 Carrier Sense Multiple Access with Collision Detection (CSMA/CD):
 CRC
-DaaS (Desktop as a Service): cloud computing service model that delivers a fully managed virtual desktop environment to users over the internet.
-  - the desktop operating system, applications, and user data are hosted in the cloud.
-  - the service provider handles the infrastructure, maintenance, security, and upgrades.
 Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard. Consisting of the Ethernet 
   - it operates at both Physical and Data Link layers of the OSI model.
   - it was the main competitor of Token Ring, but Ethernet won the battle.
@@ -32,8 +29,6 @@ Ethernet Frames: the most used is Ethernet II (DIX frame), but there is also IEE
   aka: layer 2 frame, MAC frame.
 FDM: 
 Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
-IaaS (Infrastructure as a Service): only provides "the copper". The user has to take care of everything from O/S to Application.
-  [x]Application [x]Data [x]Runtime [x]MiddleWare [x]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
 Layer 2 Data Link: [Link Layer] handles communication between devices on the same network. Among the functions we have:
   1-Framing: it divides raw bits into chunks called Frames. In case of ethernet protocol, they are called Ethernet Frames.
   2-Error Detection: usually some kind of CRC checksum is appended to the end of the Frame. It could also use parity check.
@@ -75,8 +70,6 @@ Open Systems Interconnection (OSI):
 Organizationally Unique Identifier (OUI): 24-bit number assigned by the IEEE that uniquely identifies a vendor, manufacturer, or organization worldwide.
   Individual/Group (I/G) bit: last bit (b0) of the first OUI octet within the MAC address that indicates whether the address is an individual (unicast, 0) address or a group (multicast, 1) address.
   Universal/Local (U/L) bit: indicates whether the MAC address is universally (0) or locally (1) administered. Universally means it is the only MAC in the world.
-PaaS (Platform as a Service): provides the "copper" the operating system and the environment to run some programming languages.
-  [x]Application [x]Data [o]Runtime [o]MiddleWare [o]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
 POP3 (Post Office Protocol version 3): protocol used for retrieving emails from a remote mail server to a local client over a TCP/IP connection.
   - operates on port 110 by default. But if SSL/TLS is used to secure the connection, then it operates on port 995.
   - IMAP is another email retrieval protocol, but IMAP doesn't pop the email from the server and you can read them from multiple devices.
@@ -86,12 +79,29 @@ Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted a
   Layer 3: packet
   Layer 4: TCP segment , UDP datagram.
   Layer 5-7: message or data.
-SaaS (Software as a Service.): cloud service model that includes nearly everything.
-  [o]Application [o]Data [o]Runtime [o]MiddleWare [o]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
 Shielded Twisted Pairs (STP):
 Star-Bus Topology:
 TDM:
 Unshielded Twisted Pairs (UTP):
+Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
+
+================================================================================
+Cloud Glossary
+
+DaaS (Desktop as a Service): cloud computing service model that delivers a fully managed virtual desktop environment to users over the internet.
+  - the desktop operating system, applications, and user data are hosted in the cloud.
+  - the service provider handles the infrastructure, maintenance, security, and upgrades.
+Deployment Models: define the environment where cloud services are hosted and delivered.
+  1 Public Cloud: hosted by third-party providers, such as AWS, Google Cloud. Resources (like servers and storage) are shared between multiple organizations (multi-tenant).
+  2 Private Cloud: exclusively used by a single organization (single-tenant).
+  3 Hybrid Cloud: combination of both public and private clouds, allowing data and applications to move between them as needed.
+  4 Community Cloud: Private Cloud shared by multiple organizations that have common goals or regulatory requirements
+IaaS (Infrastructure as a Service): only provides "the copper". The user has to take care of everything from O/S to Application.
+  [x]Application [x]Data [x]Runtime [x]MiddleWare [x]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
+PaaS (Platform as a Service): provides the "copper" the operating system and the environment to run some programming languages.
+  [x]Application [x]Data [o]Runtime [o]MiddleWare [o]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
+SaaS (Software as a Service.): cloud service model that includes nearly everything.
+  [o]Application [o]Data [o]Runtime [o]MiddleWare [o]O/S [o]Virtualization [o]Servers [o]Storage [o]Networking
 XaaS: I personally use this term to refer to the different service models in cloud computing. SaaS, PaaS, IaaS.
   - they vary in the offering of Application, Data, Runtime, MiddleWare, O/S, Virtualization, Servers, Storage, Networking.
   1 Application: the software that end-users interact with like word processors, CRMs, etc.
@@ -103,7 +113,6 @@ XaaS: I personally use this term to refer to the different service models in clo
   7 Servers: physical or virtual machines that run applications, store data, and manage network services.
   8 Storage: where data is held, including hard drives, SSDs, or distributed storage systems. It can be block storage, file storage, or object storage. eg: AWS S3, databases, Google Cloud Storage.
   9 Networking: infrastructure that enables communication between servers, devices, and other resources within a cloud environment. eg: IP addresses, DNS, firewalls, and load balancers.
-Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
 
 ================================================================================
 Standards
