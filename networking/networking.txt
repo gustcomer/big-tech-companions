@@ -11,6 +11,9 @@ Baseband: transmits digital signals occupying the entire bandwidth of the commun
 Broadband: multiple signals or data streams can be transmitted simultaneously over the same communication medium by modulating them onto different frequency ranges (or channels)
 Carrier Sense Multiple Access with Collision Detection (CSMA/CD):
 CRC
+DaaS (Desktop as a Service): cloud computing service model that delivers a fully managed virtual desktop environment to users over the internet.
+  - the desktop operating system, applications, and user data are hosted in the cloud.
+  - the service provider handles the infrastructure, maintenance, security, and upgrades.
 Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard. Consisting of the Ethernet 
   - it operates at both Physical and Data Link layers of the OSI model.
   - it was the main competitor of Token Ring, but Ethernet won the battle.
