@@ -60,6 +60,8 @@ Network Address Translation (NAT) Router: type of router that modifies the IP ad
   - it enables Internet network clients with private IP addresses to access the internet.
   - it has functionality akin to that of a Proxy Server.
 Network Layer: third layer in the OSI model.
+Network Medium: provides the Physical Connection between networked computers. (copper, fiber-optic or wireless).
+  - similar to Transmission Media, but enphasises physical materials (copper, fiber optic, radio waves, microwaves).
 Open Systems Interconnection (OSI):
   7 Application
   6 Presentation: translates data between the application layer and the network format.
@@ -88,8 +90,24 @@ Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted a
 Shielded Twisted Pairs (STP):
 SMTP (Simple Mail Transfer Protocol): used for sending emails from a client to a server or between email servers.
   port 25.
-Star-Bus Topology:
 TDM:
+Topologies:
+  Bus Topology: all devices are connected to a single central cable (the "bus").
+  Star Topology: each device is connected to a central hub or switch.
+    - Hub and Spoke is like a a WAN version of the Star topology. Sometimes referenced as Star/Hub and Spoke.
+  Ring Topology: devices are connected in a circular fashion, where each device has two neighbors.
+  Mesh Topology: every device is connected to every other device.
+  Hybrid Topology: combines elements of the above topologies.
+    Star-Bus Topology: hybrid of star topology, where devices are connected to a central hub, and bus topology, where those hubs are connected to a shared communication backbone (the bus).
+    Star-Ring Topology: combines the star topology’s local fault isolation with the ring topology’s redundancy and efficient traffic management. The central hubs or switches of multiple star networks are connected in a ring
+    Tree Topology: mix of Star and Bus topologies in a hierarchical network structure.
+    Mesh-Star Topology: Star networks are used to connect end devices, and the hub of these stars are connected using a mesh topology.
+    Partial Mesh Topology: like a mesh, but not complete.
+    Point-to-Point with Star Topology
+    Daisy-Chain Topology
+Transmission Media: the pathways that carry data signals between devices in a network.
+  - similar to Network Medium, but it encompasses not only the physical materials (like cables) but also the method by which data signals are sent.
+  types: Guided Media (Twisted Pair Cable, Coaxial Cable, Optical Fiber Cable, Stripline), Unguided Media (Radiowaves, Microwaves, Infrared)
 Unshielded Twisted Pairs (UTP):
 Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
 
@@ -130,11 +148,27 @@ XaaS: I personally use this term to refer to the different service models in clo
 ================================================================================
 Ports Glossary
 
+  21: FTP
+  22: SSH
+  23: Telnet
   25: SMTP
+  53: DNS
+  80: HTTP
   110: POP3 unencrypted
   143: IMAP unencrypted
+  194: IRC
   993: IMAP encrypted
   995: POP3 encrypted
+
+================================================================================
+Physical Media
+
+Cat5e: bandwith 100MHz. Max distance 100m. 
+Cat6
+Cat6a
+Cat7a
+STP (Shielded Twisted Pair): Includes an extra layer of shielding (usually a metal foil or braid) around the twisted pairs or around the entire cable, providing better protection against EMI and radio frequency interference (RFI).
+UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electromagnetic interference (EMI).
 
 ================================================================================
 Standards
