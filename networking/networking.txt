@@ -28,6 +28,10 @@ Ethernet Frames: the most used is Ethernet II (DIX frame), but there is also IEE
   Padding: optional and added when the payload is less then 46 bytes.
   Frame Check Sequence (FCS) (4 bytes): a CRC checksum
   aka: layer 2 frame, MAC frame.
+Ethernet Speed
+  - Original Ethernet: offers speeds up to 10 Mbps.
+  - Fast Ethernet: offers speeds up to 100 Mbps.
+  - Gigabit Ethernet: offers speeds up to 1Gbps.
 FDM: 
 Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
 IMAP (Internet Message Access Protocol): Also used for retrieving email, but unlike POP3, it allows email to be managed directly on the server.
@@ -163,10 +167,15 @@ Ports Glossary
 ================================================================================
 Physical Media
 
-Cat5e: bandwith 100MHz. Max distance 100m. 
-Cat6
-Cat6a
+Cat5: uses only two of the eight possible wires. It's obsolete.
+Cat5e: bandwith 100MHz. Max speed up to 1Gbps (Gigabit Ethernet) for max distance of 100m.
+Cat6: bandwidth 250MHz. Max speed up to 10Gbps for max distance of 55m. It can achieve 1Gbps with 100m.
+Cat6a: bandwidth 500MHz. Max speeds up to 10Gbps for max distance of 100m.
 Cat7a
+RJ (Registered Jack)
+RJ11: primarily used for telephone connections. Typically has 4 or 6 positions (conductors), but usually uses only 2 or 4 wires.
+RJ45: the standard for Ethernet networking, connecting devices using twisted pair cabling like UTP or STP.
+  - aka 8P8C - 8 Positions, 8 Contacts.
 STP (Shielded Twisted Pair): Includes an extra layer of shielding (usually a metal foil or braid) around the twisted pairs or around the entire cable, providing better protection against EMI and radio frequency interference (RFI).
 UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electromagnetic interference (EMI).
 
