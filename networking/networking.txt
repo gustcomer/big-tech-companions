@@ -30,6 +30,9 @@ Ethernet Frames: the most used is Ethernet II (DIX frame), but there is also IEE
   aka: layer 2 frame, MAC frame.
 FDM: 
 Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
+IMAP (Internet Message Access Protocol): Also used for retrieving email, but unlike POP3, it allows email to be managed directly on the server.
+  port 143 (unencrypted).
+  port 993 (encrypted).
 Layer 2 Data Link: [Link Layer] handles communication between devices on the same network. Among the functions we have:
   1-Framing: it divides raw bits into chunks called Frames. In case of ethernet protocol, they are called Ethernet Frames.
   2-Error Detection: usually some kind of CRC checksum is appended to the end of the Frame. It could also use parity check.
@@ -72,6 +75,8 @@ Organizationally Unique Identifier (OUI): 24-bit number assigned by the IEEE tha
   Individual/Group (I/G) bit: last bit (b0) of the first OUI octet within the MAC address that indicates whether the address is an individual (unicast, 0) address or a group (multicast, 1) address.
   Universal/Local (U/L) bit: indicates whether the MAC address is universally (0) or locally (1) administered. Universally means it is the only MAC in the world.
 POP3 (Post Office Protocol version 3): protocol used for retrieving emails from a remote mail server to a local client over a TCP/IP connection.
+  port 110 (unencrypted).
+  port 995 (encrypted).
   - operates on port 110 by default. But if SSL/TLS is used to secure the connection, then it operates on port 995.
   - IMAP is another email retrieval protocol, but IMAP doesn't pop the email from the server and you can read them from multiple devices.
 Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted across a network.
@@ -81,6 +86,8 @@ Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted a
   Layer 4: TCP segment , UDP datagram.
   Layer 5-7: message or data.
 Shielded Twisted Pairs (STP):
+SMTP (Simple Mail Transfer Protocol): used for sending emails from a client to a server or between email servers.
+  port 25.
 Star-Bus Topology:
 TDM:
 Unshielded Twisted Pairs (UTP):
@@ -121,16 +128,13 @@ XaaS: I personally use this term to refer to the different service models in clo
   9 Networking: infrastructure that enables communication between servers, devices, and other resources within a cloud environment. eg: IP addresses, DNS, firewalls, and load balancers.
 
 ================================================================================
-Services Glossary
+Ports Glossary
 
-IMAP (Internet Message Access Protocol): Also used for retrieving email, but unlike POP3, it allows email to be managed directly on the server.
-  port 143 (unencrypted).
-  port 993 (encrypted).
-POP3 (Post Office Protocol): used for retrieving email from a mail server to a client.
-  port 110 (unencrypted).
-  port 995 (encrypted).
-SMTP (Simple Mail Transfer Protocol): used for sending emails from a client to a server or between email servers.
-  port 25.
+  25: SMTP
+  110: POP3 unencrypted
+  143: IMAP unencrypted
+  993: IMAP encrypted
+  995: POP3 encrypted
 
 ================================================================================
 Standards
