@@ -11,7 +11,13 @@ Baseband: transmits digital signals occupying the entire bandwidth of the commun
   - usualy it uses TDM.
 Broadband: multiple signals or data streams can be transmitted simultaneously over the same communication medium by modulating them onto different frequency ranges (or channels)
 Carrier Sense Multiple Access with Collision Detection (CSMA/CD):
+Coaxial Cable (coax): contains a center conductor made of copper that's surrounded by a plastic jacket with a braided shield over it.
 CRC
+DHCP (Dynamic Host Configuration Protocol): network management protocol used to automate the process of configuring devices on IP networks.
+  1 Discovery: A device (client) connects to a network and broadcasts a DHCP discovery message to find a DHCP server.
+  2 Offer: The DHCP server responds with a DHCP offer message, which includes an available IP address and network configuration details.
+  3 Request: The client sends a DHCP request message back to the server, indicating its acceptance of the offered IP address.
+  4 Acknowledgment: The DHCP server sends a DHCP acknowledgment message, confirming the lease of the IP address and providing the client with the necessary network configuration.
 Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard. Consisting of the Ethernet 
   - it operates at both Physical and Data Link layers of the OSI model.
   - it was the main competitor of Token Ring, but Ethernet won the battle.
@@ -60,6 +66,8 @@ Modes of Data Transmission:
   Half-Duplex: when signals travel in both directions, but one at a time.
   Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
+NAT (Network Address Translation): method used in networking to modify network address information in the IP header of packets while they are in transit.
+NAT Table: data structure used by a router or firewall that performs Network Address Translation (NAT) to keep track of the mappings between private IP addresses and ports on the internal network and public IP addresses and ports on the external network.
 Network Address Translation (NAT) Router: type of router that modifies the IP addresses of packets as they pass through it and allows multiple devices on a local network to share a single public IP address for communication with external networks, such as the internet.
   - it enables Internet network clients with private IP addresses to access the internet.
   - it has functionality akin to that of a Proxy Server.
@@ -80,6 +88,8 @@ Open Systems Interconnection (OSI):
 Organizationally Unique Identifier (OUI): 24-bit number assigned by the IEEE that uniquely identifies a vendor, manufacturer, or organization worldwide.
   Individual/Group (I/G) bit: last bit (b0) of the first OUI octet within the MAC address that indicates whether the address is an individual (unicast, 0) address or a group (multicast, 1) address.
   Universal/Local (U/L) bit: indicates whether the MAC address is universally (0) or locally (1) administered. Universally means it is the only MAC in the world.
+Plenum: cables insulated with materials that are higly resistant to fire and produce minimal smoke and toxic fumes if they do burn.
+  - Plenum is the area between a structural ceiling and a dropped or suspended ceiling, or sometimes the space under a raised floor often used for air (HVAC) systems.
 POP3 (Post Office Protocol version 3): protocol used for retrieving emails from a remote mail server to a local client over a TCP/IP connection.
   port 110 (unencrypted).
   port 995 (encrypted).
