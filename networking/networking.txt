@@ -38,6 +38,14 @@ Ethernet Speed
   - Original Ethernet: offers speeds up to 10 Mbps.
   - Fast Ethernet: offers speeds up to 100 Mbps.
   - Gigabit Ethernet: offers speeds up to 1Gbps.
+Ethernet Standards
+  10BASE5 (Thicknet):
+  10BASE2 (Thinnet):
+  10BASE-T (Ethernet): (T) twisted-pair cables. Speed up to 10Mbps. Cat3 cable or higher. 10MHz. 100 meters.
+  100BASE-TX (Fast Ethernet): (X) Extended. Speed up to 100Mbps. Cat5 or higher. 100MHz. 100 meters.
+  1000BASE-T (Gigabit Ethernet): speed up to 1Gbps (1000Mbps). CAT5e or higher. 1000MHz. 100 meters.
+  10GBASE-T (10 Gigabit Ethernet): speed up to 10Gbps. CAT6 or higher. 500MHz. 55 meters (CAT6), 100 meters (CAT6a).
+  40GBASE-T (40 Gigabit Ethernet): speed up to 40Gbps. CAT8 STP. 2000MHz. 30m.
 FDM: 
 Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
 IMAP (Internet Message Access Protocol): Also used for retrieving email, but unlike POP3, it allows email to be managed directly on the server.
@@ -177,6 +185,7 @@ Ports Glossary
 ================================================================================
 Physical Media
 
+BNC (Bayonet Neill-Concelman): type of coaxial connector.
 Cat5: uses only two of the eight possible wires. It's obsolete.
 Cat5e: bandwith 100MHz. Max speed up to 1Gbps (Gigabit Ethernet) for max distance of 100m.
 Cat6: bandwidth 250MHz. Max speed up to 10Gbps for max distance of 55m. It can achieve 1Gbps with 100m.
