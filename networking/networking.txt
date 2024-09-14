@@ -182,6 +182,14 @@ Cat5e: bandwith 100MHz. Max speed up to 1Gbps (Gigabit Ethernet) for max distanc
 Cat6: bandwidth 250MHz. Max speed up to 10Gbps for max distance of 55m. It can achieve 1Gbps with 100m.
 Cat6a: bandwidth 500MHz. Max speeds up to 10Gbps for max distance of 100m.
 Cat7a
+F-type: type of coaxial connector
+RG (Radio Guide)
+  RG-8: associated with 10Base5 (Thicknet) ethernet implementations. Impedance 50 Ohms. Diameter: 9.5mm. Frequency: up to 2GHz.
+  RG-58: associated with 10Base2 (Thinnet) ethernet implementations. Impedance 50 Ohms. Diameter: 4.95mm. Frequency up to 1GHz.
+  RG-59: Impedance 75 Ohms. Diameter: 6.15mm. Frequency up to 1 GHz.
+    associated with short-distance video signal, cable television, CCTV (Closed-circuit television).
+  RG-6 Impedance 75 Ohms. Diameter: 6.9mm. Frequency up to 3 GHz.
+    cable television, satellite TV, broadband internet.
 RJ (Registered Jack)
 RJ11: primarily used for telephone connections. Typically has 4 or 6 positions (conductors), but usually uses only 2 or 4 wires.
 RJ45: the standard for Ethernet networking, connecting devices using twisted pair cabling like UTP or STP.
