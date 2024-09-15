@@ -127,6 +127,8 @@ Topologies:
     Partial Mesh Topology: like a mesh, but not complete.
     Point-to-Point with Star Topology
     Daisy-Chain Topology
+Transceiver: device that both transmits and receives signals in a communication network.
+  eg: convert electrical signals into optical signals for transmission through fiber optic cables and vice versa.
 Transmission Media: the pathways that carry data signals between devices in a network.
   - similar to Network Medium, but it encompasses not only the physical materials (like cables) but also the method by which data signals are sent.
   types: Guided Media (Twisted Pair Cable, Coaxial Cable, Optical Fiber Cable, Stripline), Unguided Media (Radiowaves, Microwaves, Infrared)
@@ -192,6 +194,16 @@ Cat6: bandwidth 250MHz. Max speed up to 10Gbps for max distance of 55m. It can a
 Cat6a: bandwidth 500MHz. Max speeds up to 10Gbps for max distance of 100m.
 Cat7a
 F-type: type of coaxial connector
+Fiber Types
+  Single-Mode Fiber (SMF): small core of 9 microns diameter. Long distance communication up to 40Km. Laser. Yellow sheath.
+  - ideal for backbone installations, large networks, and connections over vast land areas.
+  Multi-Mode Fiber (MMF): bigger core of 50 to 100 microns. Good for something like 2km. Led. Aqua blue or orange sheath.
+  - ideal network infrastructure, patch cables, environments with high levels of EMI.
+Fiber Connectors
+  ST (Straight Tip)
+  SC (Subscriber Connector)
+  LC (Lucent Connector)
+  MTP/MPO (Multi-Fiber Push On)
 RG (Radio Guide)
   RG-8: associated with 10Base5 (Thicknet) ethernet implementations. Impedance 50 Ohms. Diameter: 9.5mm. Frequency: up to 2GHz.
   RG-58: associated with 10Base2 (Thinnet) ethernet implementations. Impedance 50 Ohms. Diameter: 4.95mm. Frequency up to 1GHz.
