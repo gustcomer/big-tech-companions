@@ -48,6 +48,7 @@ Ethernet Standards
   40GBASE-T (40 Gigabit Ethernet): speed up to 40Gbps. CAT8 STP. 2000MHz. 30m.
 FDM: 
 Fibre Channel (FC): high-speed data transfer protocol providing in-order, lossless delivery of raw block data.
+  - primarily used to connect computer data storage to servers in storage area networks.
   - actually it is kinda a suite of protocols from layer 2 (Fibre Channel 8b/10b encoding), layer 3 (Fibre Channel fabric, Fibre Channel zoning, Registered state change notification), layer 4 (LUN masking).
 Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
 IMAP (Internet Message Access Protocol): Also used for retrieving email, but unlike POP3, it allows email to be managed directly on the server.
@@ -216,6 +217,13 @@ Fiber Connectors: fiber always need one cable for transmitting and other cable f
   MTRJ (Mechanical Transfer Registered Jack): combines the benefits of a small form factor with the convenience of an RJ-style plug.
     - Designed for high-density networking environments, it is particularly useful in applications where space savings and simplified cabling are essential.
   MPO (Multi-Fiber Push On): accommodate multiple fibers (usually 12 or 24) in a single rectangular ferrule.
+Form Factors of Fibers: refers to the physical dimensions, shape, and interface of the transceiver module.
+  SFP: Supports up to 4.25 Gbps, used for 1 Gigabit Ethernet and Fibre Channel up to 4 Gbps.
+  SFP+: Enhanced SFP supporting up to 10 Gbps, ideal for 10 Gigabit Ethernet connections.
+  QSFP: Quad SFP combining four channels of 1 Gbps each, totaling 4 Gbps (less common today).
+  QSFP+: Enhanced QSFP supporting 4x10 Gbps channels, totaling 40 Gbps for 40 Gigabit Ethernet.
+  QSFP28: QSFP supporting 4x28 Gbps channels, totaling 100 Gbps for 100 Gigabit Ethernet.
+  QSFP56: QSFP supporting 4x50 Gbps channels, totaling 200 Gbps for 200 Gigabit Ethernet.
 Polish Type: refers to the geometry and finish of the connector's ferrule end-face, which affects insertion loss (signal loss at the connector) and return loss (backreflection).
   Flat Polish: Flat end-face. Typically not color-coded.
   PC (Physical Contact) Polish: Introduces a slight convex curvature to the end-face, ensuring that the fiber cores make direct physical contact. Connector housings are usually beige or black.
@@ -234,6 +242,9 @@ RJ11: primarily used for telephone connections. Typically has 4 or 6 positions (
 RJ45: the standard for Ethernet networking, connecting devices using twisted pair cabling like UTP or STP.
   - aka 8P8C - 8 Positions, 8 Contacts.
 STP (Shielded Twisted Pair): Includes an extra layer of shielding (usually a metal foil or braid) around the twisted pairs or around the entire cable, providing better protection against EMI and radio frequency interference (RFI).
+Transceiver: act like a media converter. Convert or translate data sent by one protocol to another protocol.
+  - can be used to convert the medium, keeping the same protocol (eg: to combat EMI, or increase the distance).
+  - copper to fiber, fiber to copper, coaxial to fiber, copper to coaxial, copper to wireless.
 UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electromagnetic interference (EMI).
 
 ================================================================================
