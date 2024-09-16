@@ -187,6 +187,9 @@ Ports Glossary
 ================================================================================
 Physical Media
 
+Backreflection: portion of light that is reflected back toward the source in a fiber optic system and degradates the signal.
+  - to avoid it check type of polish
+  aka: optical return loss (ORL) or Fresnel reflection.
 BNC (Bayonet Neill-Concelman): type of coaxial connector.
 Cat5: uses only two of the eight possible wires. It's obsolete.
 Cat5e: bandwith 100MHz. Max speed up to 1Gbps (Gigabit Ethernet) for max distance of 100m.
@@ -199,11 +202,24 @@ Fiber Types
   - ideal for backbone installations, large networks, and connections over vast land areas.
   Multi-Mode Fiber (MMF): bigger core of 50 to 100 microns. Good for something like 2km. Led. Aqua blue or orange sheath.
   - ideal network infrastructure, patch cables, environments with high levels of EMI.
-Fiber Connectors
-  ST (Straight Tip)
-  SC (Subscriber Connector)
-  LC (Lucent Connector)
-  MTP/MPO (Multi-Fiber Push On)
+Fiber Connectors: fiber always need one cable for transmitting and other cable for receiving.
+  SC (Subscriber Connector): square-shaped connector with a push-pull mechanism, commonly used for data centers.
+    - widely used in single mode fibers but also compatible with multimode.
+    aka: Stick and Click connector
+  LC (Lucent Connector): Small form factor with a latch locking mechanism. High precision alignment.
+    - Ideal for high-density network applications. Half the size of SC connectors; suitable for single-mode and multimode fibers.
+  ST (Straight Tip): Features a bayonet-style round shapt twist-lock mechanism. Common in network environments like campuses and corporate networks.
+    - Easy to install and remove; used primarily with multimode fibers.
+    aka Stick and Twist connector
+  MTRJ (Mechanical Transfer Registered Jack): combines the benefits of a small form factor with the convenience of an RJ-style plug.
+    - Designed for high-density networking environments, it is particularly useful in applications where space savings and simplified cabling are essential.
+  MPO (Multi-Fiber Push On): accommodate multiple fibers (usually 12 or 24) in a single rectangular ferrule.
+Polish Type: refers to the geometry and finish of the connector's ferrule end-face, which affects insertion loss (signal loss at the connector) and return loss (backreflection).
+  Flat Polish: Flat end-face. Typically not color-coded.
+  PC (Physical Contact) Polish: Introduces a slight convex curvature to the end-face, ensuring that the fiber cores make direct physical contact. Connector housings are usually beige or black.
+    - provide the least effective reduction in back reflection.
+  UPC (Ultra Physical Contact) Polish: enhanced version of PC polish with a finer surface finish and more precise curvature. Connector housings are often blue.
+  Angled Physical Contact (APC) Polish: end-face is polished at an 8-degree angle relative to the fiber axis, creating an angled surface. connector housings are typically green.
 RG (Radio Guide)
   RG-8: associated with 10Base5 (Thicknet) ethernet implementations. Impedance 50 Ohms. Diameter: 9.5mm. Frequency: up to 2GHz.
   RG-58: associated with 10Base2 (Thinnet) ethernet implementations. Impedance 50 Ohms. Diameter: 4.95mm. Frequency up to 1GHz.
