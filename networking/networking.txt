@@ -218,12 +218,12 @@ Fiber Connectors: fiber always need one cable for transmitting and other cable f
     - Designed for high-density networking environments, it is particularly useful in applications where space savings and simplified cabling are essential.
   MPO (Multi-Fiber Push On): accommodate multiple fibers (usually 12 or 24) in a single rectangular ferrule.
 Form Factors of Fibers: refers to the physical dimensions, shape, and interface of the transceiver module.
-  SFP: Supports up to 4.25 Gbps, used for 1 Gigabit Ethernet and Fibre Channel up to 4 Gbps.
-  SFP+: Enhanced SFP supporting up to 10 Gbps, ideal for 10 Gigabit Ethernet connections.
-  QSFP: Quad SFP combining four channels of 1 Gbps each, totaling 4 Gbps (less common today).
-  QSFP+: Enhanced QSFP supporting 4x10 Gbps channels, totaling 40 Gbps for 40 Gigabit Ethernet.
-  QSFP28: QSFP supporting 4x28 Gbps channels, totaling 100 Gbps for 100 Gigabit Ethernet.
-  QSFP56: QSFP supporting 4x50 Gbps channels, totaling 200 Gbps for 200 Gigabit Ethernet.
+  SFP (Small Form Factor Pluggable): supports up to 4.25 Gbps, used for 1 Gigabit Ethernet and Fibre Channel up to 4 Gbps.
+  SFP+ (Small Form Factor Pluggable Plus): Enhanced SFP supporting up to 16 Gbps, ideal for 10 Gigabit Ethernet connections.
+  QSFP (Quad Small Form Factor Pluggable): quad SFP combining four channels of 1 Gbps each, totaling 4 Gbps (less common today).
+  QSFP+ (Quad Small Form Factor Pluggable Plus): Enhanced QSFP supporting 4x10 Gbps channels, totaling 40 Gbps for 40 Gigabit Ethernet.
+  QSFP28 (Quad Small Form Factor Pluggable 28): QSFP supporting 4x28 Gbps channels, totaling 100 Gbps for 100 Gigabit Ethernet.
+  QSFP56 (Quad Small Form Factor Pluggable 56): QSFP supporting 4x50 Gbps channels, totaling 200 Gbps for 200 Gigabit Ethernet.
 Polish Type: refers to the geometry and finish of the connector's ferrule end-face, which affects insertion loss (signal loss at the connector) and return loss (backreflection).
   Flat Polish: Flat end-face. Typically not color-coded.
   PC (Physical Contact) Polish: Introduces a slight convex curvature to the end-face, ensuring that the fiber cores make direct physical contact. Connector housings are usually beige or black.
