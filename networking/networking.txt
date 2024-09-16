@@ -47,6 +47,8 @@ Ethernet Standards
   10GBASE-T (10 Gigabit Ethernet): speed up to 10Gbps. CAT6 or higher. 500MHz. 55 meters (CAT6), 100 meters (CAT6a).
   40GBASE-T (40 Gigabit Ethernet): speed up to 40Gbps. CAT8 STP. 2000MHz. 30m.
 FDM: 
+Fibre Channel (FC): high-speed data transfer protocol providing in-order, lossless delivery of raw block data.
+  - actually it is kinda a suite of protocols from layer 2 (Fibre Channel 8b/10b encoding), layer 3 (Fibre Channel fabric, Fibre Channel zoning, Registered state change notification), layer 4 (LUN masking).
 Firewall: filter that can prevent dangerous traffic originating on one network from passing through to another network.
 IMAP (Internet Message Access Protocol): Also used for retrieving email, but unlike POP3, it allows email to be managed directly on the server.
   port 143 (unencrypted).
