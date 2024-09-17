@@ -196,13 +196,14 @@ Physical Media
 Backreflection: portion of light that is reflected back toward the source in a fiber optic system and degradates the signal.
   - to avoid it check type of polish
   aka: optical return loss (ORL) or Fresnel reflection.
-BNC (Bayonet Neill-Concelman): type of coaxial connector.
 Cat5: uses only two of the eight possible wires. It's obsolete.
 Cat5e: bandwith 100MHz. Max speed up to 1Gbps (Gigabit Ethernet) for max distance of 100m.
 Cat6: bandwidth 250MHz. Max speed up to 10Gbps for max distance of 55m. It can achieve 1Gbps with 100m.
 Cat6a: bandwidth 500MHz. Max speeds up to 10Gbps for max distance of 100m.
 Cat7a
-F-type: type of coaxial connector
+Coaxial Cable Connectors
+  BNC (Bayonet Neill-Concelman): type of coaxial connector.
+  F-type: the most common type of coaxial connector.
 Fiber Types
   Single-Mode Fiber (SMF): small core of 9 microns diameter. Long distance communication up to 40Km. Laser. Yellow sheath.
   - ideal for backbone installations, large networks, and connections over vast land areas.
@@ -214,6 +215,7 @@ Fiber Connectors: fiber always need one cable for transmitting and other cable f
     aka: Stick and Click connector
   LC (Lucent Connector): Small form factor with a latch locking mechanism. High precision alignment.
     - Ideal for high-density network applications. Half the size of SC connectors; suitable for single-mode and multimode fibers.
+    aka: Local Connector, Little Connector.
   ST (Straight Tip): Features a bayonet-style round shapt twist-lock mechanism. Common in network environments like campuses and corporate networks.
     - Easy to install and remove; used primarily with multimode fibers.
     aka Stick and Twist connector
@@ -241,9 +243,12 @@ RG (Radio Guide)
   RG-6 Impedance 75 Ohms. Diameter: 6.9mm. Frequency up to 3 GHz.
     cable television, satellite TV, broadband internet.
 RJ (Registered Jack)
-RJ11: primarily used for telephone connections. Typically has 4 or 6 positions (conductors), but usually uses only 2 or 4 wires.
-RJ45: the standard for Ethernet networking, connecting devices using twisted pair cabling like UTP or STP.
-  - aka 8P8C - 8 Positions, 8 Contacts.
+  RJ11: primarily used for telephone connections. Typically has 4 or 6 positions (conductors), but usually uses only 2 or 4 wires.
+  RJ45: the standard for Ethernet networking, connecting devices using twisted pair cabling like UTP or STP.
+    - aka 8P8C - 8 Positions, 8 Contacts.
+Serial Connectors
+  DB-9
+  DB-25
 STP (Shielded Twisted Pair): Includes an extra layer of shielding (usually a metal foil or braid) around the twisted pairs or around the entire cable, providing better protection against EMI and radio frequency interference (RFI).
 Transceiver: act like a media converter. Convert or translate data sent by one protocol to another protocol.
   - can be used to convert the medium, keeping the same protocol (eg: to combat EMI, or increase the distance).
