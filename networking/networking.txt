@@ -18,6 +18,9 @@ DHCP (Dynamic Host Configuration Protocol): network management protocol used to 
   2 Offer: The DHCP server responds with a DHCP offer message, which includes an available IP address and network configuration details.
   3 Request: The client sends a DHCP request message back to the server, indicating its acceptance of the offered IP address.
   4 Acknowledgment: The DHCP server sends a DHCP acknowledgment message, confirming the lease of the IP address and providing the client with the necessary network configuration.
+DMZ (Demilitarized Zone): physical or logical subnetwork that separates an internal local area network (LAN) from untrusted external networks, typically the internet.
+  - usually a firewall separate the internet from the DMZ, and another firewal separate the DMZ from the local network.
+  - the DMZ is the place to isolate external-facing services such as web servers, email servers, or FTP servers.
 Ethernet: family of local area network (LAN) technologies that share some main features. Defined by the IEEE 802.3 Standard. Consisting of the Ethernet 
   - it operates at both Physical and Data Link layers of the OSI model.
   - it was the main competitor of Token Ring, but Ethernet won the battle.
