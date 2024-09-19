@@ -80,11 +80,6 @@ Modes of Data Transmission:
   Half-Duplex: when signals travel in both directions, but one at a time.
   Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
-NAT (Network Address Translation): method used in networking to modify network address information in the IP header of packets while they are in transit.
-NAT Table: data structure used by a router or firewall that performs Network Address Translation (NAT) to keep track of the mappings between private IP addresses and ports on the internal network and public IP addresses and ports on the external network.
-Network Address Translation (NAT) Router: type of router that modifies the IP addresses of packets as they pass through it and allows multiple devices on a local network to share a single public IP address for communication with external networks, such as the internet.
-  - it enables Internet network clients with private IP addresses to access the internet.
-  - it has functionality akin to that of a Proxy Server.
 Network Layer: third layer in the OSI model.
 Network Medium: provides the Physical Connection between networked computers. (copper, fiber-optic or wireless).
   - similar to Transmission Media, but enphasises physical materials (copper, fiber optic, radio waves, microwaves).
@@ -140,6 +135,32 @@ Transmission Media: the pathways that carry data signals between devices in a ne
   types: Guided Media (Twisted Pair Cable, Coaxial Cable, Optical Fiber Cable, Stripline), Unguided Media (Radiowaves, Microwaves, Infrared)
 Unshielded Twisted Pairs (UTP):
 Wide Area Network (WAN): network that spans a large geographical area connecting smaller LAN or MAN area networks.
+
+================================================================================
+Addressing Glossary
+
+Addressing (IPv4)
+  - 32-bit numeric addresses written in decimal format, divided into four octets (each octet can range from 0 to 255).
+  - Loopback Address: special IP address used for testing network interfaces 127.0.0.1.
+CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
+  - the number after the slash (/) represents the number of bits set to '1'. For example, /24 corresponds to 255.255.255.0.
+NAT (Network Address Translation): method used in networking to modify network address information in the IP header of packets while they are in transit.
+NAT Table: data structure used by a router or firewall that performs Network Address Translation (NAT) to keep track of the mappings between private IP addresses and ports on the internal network and public IP addresses and ports on the external network.
+Network Address Translation (NAT) Router: type of router that modifies the IP addresses of packets as they pass through it and allows multiple devices on a local network to share a single public IP address for communication with external networks, such as the internet.
+  - it enables Internet network clients with private IP addresses to access the internet.
+  - it has functionality akin to that of a Proxy Server.
+Routing Subnets
+  - when a device on one subnet wants to communicate with a device on another subnet, it sends the data to the router.
+  Packet Forwarding: The router receives the packet, checks its routing table, and forwards the packet to the appropriate subnet based on the destination IP address.
+  Address Resolution Protocol (ARP): The router uses ARP to determine the MAC address of the destination device on the subnet. If the MAC address is not already in the router's ARP cache, it sends an ARP request to learn the address.
+Subnet:
+  - two subnets communicate through a router or a level 3 switch. When a device on one subnet wants to communicate with a device on another subnet, it sends the data to the router.
+Subnet Mask: 32-bit number used in IP networking to divide an IP address into network and host portions.
+  Class A: 255.0.0.0 (binary: 11111111.00000000.00000000.00000000) or yet /8
+  Class B: 255.255.0.0 (binary: 11111111.11111111.00000000.00000000) or yet /16
+  Class C: 255.255.255.0 (binary: 11111111.11111111.11111111.00000000) or yet /24
+  eg: the subnet mask 255.255.255.0 translates to 11111111.11111111.11111111.00000000 in binary
+  Class A, B, C, or yet CIDR are ways to represent a subnet mask without the need to show the 32 bits.
 
 ================================================================================
 Cloud Glossary
