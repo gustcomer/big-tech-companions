@@ -142,7 +142,15 @@ Addressing Glossary
 Addresses (IPv4): unique identifier assigned to each device connected to a network that uses the Internet Protocol for communication.
   - usually it is divided into two parts: Network Portion and Host Portion. Depending on the subnet mask there can also be subnet identifier bits borrowed from the Host Portion.
   - 32-bit numeric addresses written in decimal format, divided into four octets (each octet can range from 0 to 255).
-  - Loopback Address: special IP address used for testing network interfaces 127.0.0.1.
+  Special Addresses
+    Private IP Addresses: Reserved for internal use within a network (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).
+    Loopback Address: special IP address used for testing network interfaces 127.0.0.1.
+      - the Address Range is from 127.0.0.0 to 127.255.255.255 but usually 127.0.0.1 is used.
+    Network Address: the first address in a subnet, used to identify the network itself. For example, 192.168.1.0 in a 192.168.1.0/24 network.
+    Broadcast Address: Sends a message to all hosts in a network (e.g., 192.168.1.255 in a /24 subnet).
+      - limited to the local network. Routers do not forward broadcast packets to other networks.
+    Multicast Address: Used to send data to a group of hosts, which have joined a specific multicast group. Multicast is used for applications like streaming media.
+      - Address Range: 224.0.0.0 to 239.255.255.255
 CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
   - the number after the slash (/) represents the number of bits set to '1'. For example, /24 corresponds to 255.255.255.0.
 Default Masks: for Class A, B, and C networks it is 255.0.0.0, 255.255.0.0, and 255.255.255.0.
