@@ -139,7 +139,8 @@ Wide Area Network (WAN): network that spans a large geographical area connecting
 ================================================================================
 Addressing Glossary
 
-Addressing (IPv4)
+Addresses (IPv4): unique identifier assigned to each device connected to a network that uses the Internet Protocol for communication.
+  - usually it is divided into two parts: Network Portion and Host Portion. Depending on the subnet mask there can also be subnet identifier bits borrowed from the Host Portion.
   - 32-bit numeric addresses written in decimal format, divided into four octets (each octet can range from 0 to 255).
   - Loopback Address: special IP address used for testing network interfaces 127.0.0.1.
 CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
@@ -158,7 +159,7 @@ Routing Subnets
 Subnet: it is possible to break a network (for instance a Class C) into smaller subnets.
   - the default subnet mask of a Class C network is 255.255.255.0, but you can borrow bits from the host to create subnet identifiers.
   - two subnets communicate through a router or a level 3 switch. When a device on one subnet wants to communicate with a device on another subnet, it sends the data to the router.
-Subnet Identifier: When you subnet a network, you divide the IP address into three parts:
+Subnet Identifier: When you subnet a network, you borrow bits from the host identifier to create a subnet identifier and divide the IP address into three parts.
   Network Identifier: Identifies the overall network.
   Subnet Identifier: Differentiates subnets within that network.
   Host Identifier: Identifies individual hosts within a subnet.
