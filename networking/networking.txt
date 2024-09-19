@@ -144,6 +144,8 @@ Addressing (IPv4)
   - Loopback Address: special IP address used for testing network interfaces 127.0.0.1.
 CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
   - the number after the slash (/) represents the number of bits set to '1'. For example, /24 corresponds to 255.255.255.0.
+Default Masks: for Class A, B, and C networks it is 255.0.0.0, 255.255.0.0, and 255.255.255.0.
+  aka Natural Masks
 NAT (Network Address Translation): method used in networking to modify network address information in the IP header of packets while they are in transit.
 NAT Table: data structure used by a router or firewall that performs Network Address Translation (NAT) to keep track of the mappings between private IP addresses and ports on the internal network and public IP addresses and ports on the external network.
 Network Address Translation (NAT) Router: type of router that modifies the IP addresses of packets as they pass through it and allows multiple devices on a local network to share a single public IP address for communication with external networks, such as the internet.
