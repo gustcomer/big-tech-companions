@@ -153,8 +153,14 @@ Routing Subnets
   - when a device on one subnet wants to communicate with a device on another subnet, it sends the data to the router.
   Packet Forwarding: The router receives the packet, checks its routing table, and forwards the packet to the appropriate subnet based on the destination IP address.
   Address Resolution Protocol (ARP): The router uses ARP to determine the MAC address of the destination device on the subnet. If the MAC address is not already in the router's ARP cache, it sends an ARP request to learn the address.
-Subnet:
+Subnet: it is possible to break a network (for instance a Class C) into smaller subnets.
+  - the default subnet mask of a Class C network is 255.255.255.0, but you can borrow bits from the host to create subnet identifiers.
   - two subnets communicate through a router or a level 3 switch. When a device on one subnet wants to communicate with a device on another subnet, it sends the data to the router.
+Subnet Identifier: When you subnet a network, you divide the IP address into three parts:
+  Network Identifier: Identifies the overall network.
+  Subnet Identifier: Differentiates subnets within that network.
+  Host Identifier: Identifies individual hosts within a subnet.
+  - if you use the default subnet mask, you'll have only the original network and the Subnet Identifier won't exist.
 Subnet Mask: 32-bit number used in IP networking to divide an IP address into network and host portions.
   Class A: 255.0.0.0 (binary: 11111111.00000000.00000000.00000000) or yet /8
   Class B: 255.255.0.0 (binary: 11111111.11111111.00000000.00000000) or yet /16
