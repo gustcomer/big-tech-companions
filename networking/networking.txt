@@ -153,6 +153,34 @@ Addresses (IPv4): unique identifier assigned to each device connected to a netwo
       - Address Range: 224.0.0.0 to 239.255.255.255
 CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
   - the number after the slash (/) represents the number of bits set to '1'. For example, /24 corresponds to 255.255.255.0.
+Classes: always remember this intervals 0-128-192-224-240-255.
+  Class A Network
+    - Address Range: 0.0.0.0 to 127.255.255.255.
+    - Default Subnet Mask: 255.0.0.0 (or /8)
+    - Number of Networks: 128 (but 0 and 127 are reserved, so effectively 126)
+    - Hosts per Network: Approximately 16 million (2^24 - 2) [24 host bits]
+    - Special Addresses: 10.0.0.0 to 10.255.255.255 is reserved for private use. 127.0.0.0 to 127.255.255.255 is reserved for loopback addresses.
+    - Private IP Address Range: 10.0.0.0 to 10.255.255.255 [10.0.0.0/8 or 10.x.x.x]
+  Class B Network
+    - Address Range: 128.0.0.0 to 191.255.255.255
+    - Default Subnet Mask: 255.240.0.0 (or /12)
+    - Number of Networks: 16,384
+    - Hosts per Network: Approximately 65,000 (2^16 - 2) [16 host bits]
+    - Special Addresses: 172.16.0.0 to 172.31.255.255 is reserved for private use.
+    - Private IP Address Range: 172.16.0.0 to 172.31.255.255 [172.16.0.0/12 or 172.0001xxxx.x.x]
+  Class C Network
+    - Address Range: 192.0.0.0 to 223.255.255.255
+    - Default Subnet Mask: 255.255.0.0 (or /16)
+    - Number of Networks: 2,097,152
+    - Hosts per Network: 254 (2^8 - 2) [8 host bits]
+    - Special Addresses: 192.168.0.0 to 192.168.255.255 is reserved for private use.
+    - Private IP Address Range: 192.168.0.0 to 192.168.255.255 [192.168.0.0/16 or 192.168.x.x]
+  Class D Network
+    - Address Range: 224.0.0.0 to 239.255.255.255
+    - they do not have a subnet mask because they are used for Multicasting and not used for regular network routing (you cannot assign it to a host).
+  Class E Network
+    - Address Range: 240.0.0.0 to 255.255.255.255
+    - These addresses are not routable on the public internet and are typically used for research or experimental purposes.
 Default Masks: for Class A, B, and C networks it is 255.0.0.0, 255.255.0.0, and 255.255.255.0.
   aka Natural Masks
 NAT (Network Address Translation): method used in networking to modify network address information in the IP header of packets while they are in transit.
@@ -160,6 +188,8 @@ NAT Table: data structure used by a router or firewall that performs Network Add
 Network Address Translation (NAT) Router: type of router that modifies the IP addresses of packets as they pass through it and allows multiple devices on a local network to share a single public IP address for communication with external networks, such as the internet.
   - it enables Internet network clients with private IP addresses to access the internet.
   - it has functionality akin to that of a Proxy Server.
+Private IP Addresses: no rout
+  reserved for internal use within a network (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16).
 Routing Subnets
   - when a device on one subnet wants to communicate with a device on another subnet, it sends the data to the router.
   Packet Forwarding: The router receives the packet, checks its routing table, and forwards the packet to the appropriate subnet based on the destination IP address.
@@ -298,3 +328,4 @@ Standards
 
 IEEE 802.3: still evolving collection of standards defining the physical layer and data link layer's media access control (MAC) of wired Ethernet.
   - it also defines a LAN access method using CSMA/CD.
+RFC 1918: specifies the allocation of private IP addresses for use within private networks. It was published in 1996 and helps manage IP address space efficiently without burdening the public address space.
