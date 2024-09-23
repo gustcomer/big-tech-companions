@@ -1,0 +1,31 @@
+The objective is to create a blog using
+  Next.js as react framework
+  Tailwind for css framework
+  eslint as linter
+
+--------------------------------------------------------------------------------
+INITIATING
+
+go to the parent folder of the future project folder
+
+> npx create-next-app@latest
+
+enter the created folder
+
+check if it is ok
+
+--------------------------------------------------------------------------------
+DEPLOY VERCEL
+
+create account with email
+
+connect your github
+
+import git project
+  choose Next.js preset
+  choose ./ as root
+
+configure and press deploy.
+
+--------------------------------------------------------------------------------
+CREATE THE PROJECT YOU LIKE AND COMMIT
