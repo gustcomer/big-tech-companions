@@ -80,6 +80,7 @@ Modes of Data Transmission:
   Half-Duplex: when signals travel in both directions, but one at a time.
   Full-Duplex: two-way communications.
 Multiprotocol Label Switching (MPLS): 
+Network Address Translation (NAT): modify network address information in the IP header of packets. Commonly used to translate private IP addresses to a public IP address.
 Network Layer: third layer in the OSI model.
 Network Medium: provides the Physical Connection between networked computers. (copper, fiber-optic or wireless).
   - similar to Transmission Media, but enphasises physical materials (copper, fiber optic, radio waves, microwaves).
@@ -97,6 +98,7 @@ Open Systems Interconnection (OSI):
 Organizationally Unique Identifier (OUI): 24-bit number assigned by the IEEE that uniquely identifies a vendor, manufacturer, or organization worldwide.
   Individual/Group (I/G) bit: last bit (b0) of the first OUI octet within the MAC address that indicates whether the address is an individual (unicast, 0) address or a group (multicast, 1) address.
   Universal/Local (U/L) bit: indicates whether the MAC address is universally (0) or locally (1) administered. Universally means it is the only MAC in the world.
+Port Address Translation (PAT, NAT Overload): 
 Plenum: cables insulated with materials that are higly resistant to fire and produce minimal smoke and toxic fumes if they do burn.
   - Plenum is the area between a structural ceiling and a dropped or suspended ceiling, or sometimes the space under a raised floor often used for air (HVAC) systems.
 POP3 (Post Office Protocol version 3): protocol used for retrieving emails from a remote mail server to a local client over a TCP/IP connection.
@@ -323,6 +325,21 @@ Transceiver: act like a media converter. Convert or translate data sent by one p
   - copper to fiber, fiber to copper, coaxial to fiber, copper to coaxial, copper to wireless.
 UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electromagnetic interference (EMI).
 
+================================================================================
+Routing
+
+Routing Table: file in a router or a networked computer that lists the routes to particular network destinations. Each table entry has the following columns.
+  Destination Network: The IP address or network that the router is trying to reach.
+  Subnet Mask: Defines the network portion of the destination IP address, used for matching the destination address.
+  Next Hop: The next device (usually another router) where the packet should be forwarded to reach its final destination.
+  Metric: A value that helps the router choose the best path when multiple routes to the same destination exist (lower metrics are preferred). Metrics might represent hop count, bandwidth, delay, or other factors.
+  Interface: The outgoing interface or port on the router used to forward the packet to the next hop.
+  eg:
+    Destination    Subnet Mask    Next Hop      Metric    Interface
+    192.168.1.0    255.255.255.0  192.168.2.1   1         eth0
+    192.168.2.0    255.255.255.0  192.168.3.1   2         eth1
+    0.0.0.0        0.0.0.0        192.168.1.1   0         eth0
+  0.0.0.0/0 (Default Route): If no specific route is found for a packet, it will be sent to the next hop at 192.168.1.1 (the default gateway) via eth0.
 ================================================================================
 Standards
 

@@ -1,0 +1,2 @@
+
+Add a metadata in the layout.tsx
