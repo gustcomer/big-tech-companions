@@ -1,0 +1,37 @@
+================================================================================
+Glossary
+
+AES (Advanced Encryption Standard): symmetric encryption algorithm adopted by the U.S. government in 2001.
+  - operates on block sizes of 128 bits, with key lengths of 128, 192, or 256 bits.
+  - widely used in securing sensitive data and modern cryptographic protocols.
+Asymmetric Encryption: encryption method that uses a pair of keys, one for encryption and another for decryption.
+  - commonly used algorithms: RSA, ECC.
+  - also known as public-key cryptography.
+Ciphertext: encrypted or encoded text that is the result of applying an encryption algorithm to plaintext.
+  - cannot be easily read or understood without the appropriate key for decryption.
+  - contrasts with plaintext, which is readable data.
+Cryptanalysis: the study of analyzing cryptographic systems to break them or understand weaknesses.
+  - involves techniques like frequency analysis, brute-force attacks.
+  - goal is to decrypt ciphertext without the key.
+Insecure Channel: communication medium where data can be intercepted, eavesdropped on, or tampered with by unauthorized parties.
+Plaintext: readable or unencrypted data that is input into an encryption algorithm to produce ciphertext.
+  - can be text, files, or other data in its original form.
+  - contrasts with ciphertext, which is the output of encryption.
+Secure Channel: communication medium that ensures confidentiality, integrity, and authenticity of the data exchanged between parties, preventing eavesdropping or tampering by unauthorized individuals.
+Symmetric Encryption: encryption method that uses the same key for both encryption and decryption.
+  - commonly used algorithms: AES, DES.
+  - faster than asymmetric encryption but requires secure key distribution.
+
+================================================================================
+Foundation
+
+Alice: wants to send a secure message x to Bob over an insecure channel. But doesn't want Oscar to intercept the message.
+Bob: wants to receive the secure message x from Alice.
+Communication over Insecure Channel: Alice wants to send a secure message x to Bob over an insecure channel. But doesn't want Oscar to intercept the message.
+k: key
+key space: the set of all possible keys.
+Oscar: an adversary that can intercept the ciphertext, but cannot read it because the message is encrypted, unless he has the decryption key.
+Symmetric-key Cryptosystem: Alice encrypts her message x using a symmetric algorithm e(), yielding the ciphertext y. Bob receives the ciphertext and decrypts the message with d().
+  - the ciphertext will look like random bits to Oscar and will contain no information whatsoever that is useful to him.
+x (plaintext, cleartext): unencrypted data or message that Alice (the sender) wants to communicate to Bob (the receiver).
+y (cyphertext): encrypted form of the original message x .
