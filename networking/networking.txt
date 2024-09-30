@@ -115,6 +115,8 @@ Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted a
 Shielded Twisted Pairs (STP):
 SMTP (Simple Mail Transfer Protocol): used for sending emails from a client to a server or between email servers.
   port 25.
+Spanning Tree Protocol (STP): network protocol that ensures a loop-free topology in Ethernet networks.
+  - it operates at the Data Link Layer (Layer 2) of the OSI model.
 TDM:
 Topologies:
   Bus Topology: all devices are connected to a single central cable (the "bus").
@@ -153,6 +155,9 @@ Addresses (IPv4): unique identifier assigned to each device connected to a netwo
       - limited to the local network. Routers do not forward broadcast packets to other networks.
     Multicast Address: Used to send data to a group of hosts, which have joined a specific multicast group. Multicast is used for applications like streaming media.
       - Address Range: 224.0.0.0 to 239.255.255.255
+Broadcast Domain: logical area in a computer network where any broadcast sent by a device can be received by all other devices within the same domain.
+  - Switches and hubs do not break up broadcast domains. Routers are used to separate broadcast domains.
+  - in a subnet, the broadcast address is the address where all the host bits are set to 1, while the network bits remain unchanged (the last adrdress of the subnet domain).
 CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
   - the number after the slash (/) represents the number of bits set to '1'. For example, /24 corresponds to 255.255.255.0.
 Classes: always remember this intervals 0-128-192-224-240-255.
@@ -328,18 +333,49 @@ UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electro
 ================================================================================
 Routing
 
+Autonomous System (AS): collection of IP networks and routers under the control of a single organization or entity that presents a common routing policy to the internet.
+  - a network or a group of networks that is managed by one organization and has a unified internal routing strategy.
+Convergence: time it takes for routers to update their routing tables in response to a topology change.
+  - after all routers know each other, we have a Converged Network.
+Hold-down Timer: prevents updates for a specific period of time and speeds up convergence (counterintuitive).
+Poison Reverse: causes a route received on one interface to be advertised back out of that same interface with a metric considered to be infinite.
+  - it has a similar function to Split Horizon.
+Router: forwards traffic between subnets, between an internal and external network, or between two external networks.
+Router Advertisement Method
+  Distance Vector: sends full copy of routing table to its directly-connected neighbors at regular intervals.
+    - it's about the number of router you're going to be connecting through for a particular route.
+    - you would wan't to go through only one router, even if it's slower.
+    - it has slow convergence time.
+  Link State
+  Hybrid
+Routing Loops: occurs when a packet is continuously transmitted within a network, circling between routers without reaching its intended destination.
+  - techniques to prevent Routing Loops (Split Horizon, Poison Reverse). Other mechanisms to prevent could include Time-to-Live (TTL).
+Routing Protocols: algorithms that allow routers to communicate with each other, exchange information, and determine the best path for forwarding data across networks.
+  Internal (Interior Gateway Protocols - IGP): used within a single autonomous system (AS). (eg: RIP, OSPF, EIGRP, IS-IS)
+  External (External Gateway Protocols - EGP): used to route data between different autonomous systems. (eg: BGP)
 Routing Table: file in a router or a networked computer that lists the routes to particular network destinations. Each table entry has the following columns.
   Destination Network: The IP address or network that the router is trying to reach.
   Subnet Mask: Defines the network portion of the destination IP address, used for matching the destination address.
   Next Hop: The next device (usually another router) where the packet should be forwarded to reach its final destination.
   Metric: A value that helps the router choose the best path when multiple routes to the same destination exist (lower metrics are preferred). Metrics might represent hop count, bandwidth, delay, or other factors.
   Interface: The outgoing interface or port on the router used to forward the packet to the next hop.
-  eg:
+  - eg:
     Destination    Subnet Mask    Next Hop      Metric    Interface
     192.168.1.0    255.255.255.0  192.168.2.1   1         eth0
     192.168.2.0    255.255.255.0  192.168.3.1   2         eth1
     0.0.0.0        0.0.0.0        192.168.1.1   0         eth0
-  0.0.0.0/0 (Default Route): If no specific route is found for a packet, it will be sent to the next hop at 192.168.1.1 (the default gateway) via eth0.
+  - 0.0.0.0/0 (Default Route): If no specific route is found for a packet, it will be sent to the next hop at 192.168.1.1 (the default gateway) via eth0.
+    - "if you don't know where to go, just go here"
+  - more specific (longest prefix) entries 
+  - the Routing Tables can contain static entries (static routes) or dynamic entries (dynamic routes) discovered and updated by routing protocols like OSPF or RIP;
+Sources of Routing Information
+  Directly Connected Route: routers physically connected to the router.
+  Static Routes: manually configured by an administrator.
+    - there is always one static router configured in every router 0.0.0.0/0
+  Dynamic Route: learned by exchanging information between routers.
+Split Horizon: prevents a route learned on one interface from being advertised back out of that same interface.
+  - it has a similar function to Poison Reverse.
+
 ================================================================================
 Standards
 
