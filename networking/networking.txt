@@ -335,19 +335,30 @@ Routing
 
 Autonomous System (AS): collection of IP networks and routers under the control of a single organization or entity that presents a common routing policy to the internet.
   - a network or a group of networks that is managed by one organization and has a unified internal routing strategy.
+Border Gateway Protocol (BGP): EGP that uses path vector that uses the number of Autonomous System (AS) hops instead of router hops.
+  - it is the backbone of the internet, as paths move from one ISP to another.
 Convergence: time it takes for routers to update their routing tables in response to a topology change.
   - after all routers know each other, we have a Converged Network.
+Enhanced Interior Gateway Routing Protocol (EIGRP): IGP that used hybrid of distance vector and link state protocols.
+  - is a proprietary Cisco protocol that is popular in Cisco-only networks.
 Hold-down Timer: prevents updates for a specific period of time and speeds up convergence (counterintuitive).
+Hop Count: number of routers from the source router through which data must pass to reach the destination network.
+Intermediate System to Intermediate System (IS-IS): IGP based on Link State that also uses cost and functions like OSPF, but not as widely popular.
+Open Shortest Path First (OSPF): IGP based on Link State (uses Link Speed).
 Poison Reverse: causes a route received on one interface to be advertised back out of that same interface with a metric considered to be infinite.
   - it has a similar function to Split Horizon.
 Router: forwards traffic between subnets, between an internal and external network, or between two external networks.
 Router Advertisement Method
-  Distance Vector: sends full copy of routing table to its directly-connected neighbors at regular intervals.
-    - it's about the number of router you're going to be connecting through for a particular route.
+  Distance Vector: only cares about Hop Count. Sends full copy of routing table to its directly-connected neighbors at regular intervals.
     - you would wan't to go through only one router, even if it's slower.
     - it has slow convergence time.
-  Link State
+    - used in (RIP)
+  Link State: takes link speed into account. (used in OSPF, IS-IS)
+    - requires all routers to know about the paths that all other routers can reach in the network.
+    - used in (OSPF)
   Hybrid
+Routing Information Protocol (RIP): an IGP that uses Distance Vector Protocol (hop counts). It uses hop counts to figure out the fastest paths.
+  - 16 hops is infinite. updates every 30 seconds. runs over UDP
 Routing Loops: occurs when a packet is continuously transmitted within a network, circling between routers without reaching its intended destination.
   - techniques to prevent Routing Loops (Split Horizon, Poison Reverse). Other mechanisms to prevent could include Time-to-Live (TTL).
 Routing Protocols: algorithms that allow routers to communicate with each other, exchange information, and determine the best path for forwarding data across networks.
