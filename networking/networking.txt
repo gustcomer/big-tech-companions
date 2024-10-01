@@ -333,6 +333,21 @@ UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electro
 ================================================================================
 Routing
 
+Administrative Distance (AD): value used by routers to rank the trustworthiness (believability) of a route.
+  - lower AD is considered more believable or trustworthy.
+  - AD table
+    *Directly connected routes: 0 (most trusted, because it's directly on the router)
+    *Static routes: 1 (manually configured routes are highly trusted)
+    External BGP (Border Gateway Protocol): 20
+    *Internal EIGRP (Enhanced Interior Gateway Routing Protocol): 90
+    IGRP (Interior Gateway Routing Protocol): 100
+    *OSPF (Open Shortest Path First): 110
+    IS-IS (Intermediate System to Intermediate System): 115
+    *RIP (Routing Information Protocol): 120 (least trusted among these common protocols)
+    *External EIGRP: 170
+    Internal BGP: 200
+    *Unknown routes: 255 (indicating the route is unreachable)
+  - each route has a metric, and usually the smaller the value of the metric, the better. (Hop Count, Believability, Reliability, Bandwidth, Delay, Costs, ...)
 Autonomous System (AS): collection of IP networks and routers under the control of a single organization or entity that presents a common routing policy to the internet.
   - a network or a group of networks that is managed by one organization and has a unified internal routing strategy.
 Border Gateway Protocol (BGP): EGP that uses path vector that uses the number of Autonomous System (AS) hops instead of router hops.
