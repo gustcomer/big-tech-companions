@@ -160,6 +160,7 @@ Broadcast Domain: logical area in a computer network where any broadcast sent by
   - in a subnet, the broadcast address is the address where all the host bits are set to 1, while the network bits remain unchanged (the last adrdress of the subnet domain).
 CIDR (Classless Inter-Domain Routing): used to specify IP addresses and their associated routing prefix. eg 192.168.1.0/24.
   - the number after the slash (/) represents the number of bits set to '1'. For example, /24 corresponds to 255.255.255.0.
+  - it came afterr Classful Addressing.
 Classes: always remember this intervals 0-128-192-224-240-255.
   Class A Network
     - Address Range: 0.0.0.0 to 127.255.255.255.
@@ -188,6 +189,8 @@ Classes: always remember this intervals 0-128-192-224-240-255.
   Class E Network
     - Address Range: 240.0.0.0 to 255.255.255.255
     - These addresses are not routable on the public internet and are typically used for research or experimental purposes.
+Classful Addressing: addressing architecture that was used in the early stages of IP networking, specifically in IPv4, where IP addresses were divided into fixed blocks or "classes".
+  - classful addressing was used before the introduction of subnetting and Classless Inter-Domain Routing (CIDR).
 Default Masks: for Class A, B, and C networks it is 255.0.0.0, 255.255.0.0, and 255.255.255.0.
   aka Natural Masks
 NAT (Network Address Translation): method used in networking to modify network address information in the IP header of packets while they are in transit.
@@ -374,11 +377,23 @@ Router Advertisement Method
   Hybrid
 Routing Information Protocol (RIP): an IGP that uses Distance Vector Protocol (hop counts). It uses hop counts to figure out the fastest paths.
   - 16 hops is infinite. updates every 30 seconds. runs over UDP
+  RIPv1: older version that does not support subnet information (classful).
+  RIPv2: updated version that supports classless inter-domain routing (CIDR), allowing for the inclusion of subnet masks and providing better flexibility.
 Routing Loops: occurs when a packet is continuously transmitted within a network, circling between routers without reaching its intended destination.
   - techniques to prevent Routing Loops (Split Horizon, Poison Reverse). Other mechanisms to prevent could include Time-to-Live (TTL).
 Routing Protocols: algorithms that allow routers to communicate with each other, exchange information, and determine the best path for forwarding data across networks.
   Internal (Interior Gateway Protocols - IGP): used within a single autonomous system (AS). (eg: RIP, OSPF, EIGRP, IS-IS)
   External (External Gateway Protocols - EGP): used to route data between different autonomous systems. (eg: BGP)
+Routing Protocols
+  +------------------+--------------------------+-------------------+
+  | Routing Protocol | Type                     | Interior/Exterior |
+  +------------------+--------------------------+-------------------+
+  | RIP              | Distance vector          | Interior          |
+  | OSPF             | Link state               | Interior          |
+  | EIGRP            | Advanced distance vector | Interior          |
+  | IS-IS            | Link state               | Interior          |
+  | BGP              | Path vector              | Exterior          |
+  +------------------+--------------------------+-------------------+
 Routing Table: file in a router or a networked computer that lists the routes to particular network destinations. Each table entry has the following columns.
   Destination Network: The IP address or network that the router is trying to reach.
   Subnet Mask: Defines the network portion of the destination IP address, used for matching the destination address.
