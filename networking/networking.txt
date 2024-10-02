@@ -359,12 +359,36 @@ Convergence: time it takes for routers to update their routing tables in respons
   - after all routers know each other, we have a Converged Network.
 Enhanced Interior Gateway Routing Protocol (EIGRP): IGP that used hybrid of distance vector and link state protocols.
   - is a proprietary Cisco protocol that is popular in Cisco-only networks.
+  - supports Classless routing (CIDR or VLSM).
+  - instead of sending the entire routing table to neighboring routers, only sends diffs.
+  - primarily used for IPv4 and IPv6.
+First Hop Redundancy Protocol (FHRP): able to determine when a primary router fails, and then they will immediately direct the packets to a standby router.
+  - encompasses several protocols to ensure network reliability (HSRP, VRRP, GLBP, ...)
+  - provides Reliability, Load Balancing, Seamless transitions.
+  - depends on principles like Virtual IP and Subinterface.
+Gateway Load Balancing Protocol (GLBP): other routing redundancy protocol, but adds load balancing capabilities into the mix.
 Hold-down Timer: prevents updates for a specific period of time and speeds up convergence (counterintuitive).
 Hop Count: number of routers from the source router through which data must pass to reach the destination network.
+Hot Standby Router Protocol (HSRP): redundancy protocol that can establish a fault-tolerant default gateway for devices on a local network segment.
+  - Cisco proprietary First Hop Redundancy Protocol (FHRP) designed to provide redundancy and fault tolerance for IP networks. It allows multiple routers or Layer 3 switches to act as a single virtual router by sharing a virtual IP address and virtual MAC address.
+  - it has an Active Router that handles all requests and a Standby Router that acts when the Active Router fails.
+  Preempting: a higher priority router can take over as the Active Router even if it comes online after the initial election.
+Interior Gateway Protocols (IGP): routing protocol used within a single autonomous system (AS).
 Intermediate System to Intermediate System (IS-IS): IGP based on Link State that also uses cost and functions like OSPF, but not as widely popular.
 Open Shortest Path First (OSPF): IGP based on Link State (uses Link Speed).
 Poison Reverse: causes a route received on one interface to be advertised back out of that same interface with a metric considered to be infinite.
   - it has a similar function to Split Horizon.
+RIPv2
+  +---------------------------+-----------+
+  | Address Family Identifier | Route Tag |
+  +---------------------------+-----------+
+  |              IP Address               | : destination IP address that the routing entry applies to. 
+  |              Subnet Mask              | : specify the subnet mask associated with the IP Address of the route.
+  |              Next Hop                 | : refers to the IP address of the next router (also known as the next hop router) that should be used to reach the destination network listed in the IP Address field.
+  |              Metric                   | : indicates the distance (or cost) to reach the destination network specified by the IP address.
+  +---------------------------------------+
+  Address Family Identifier: specifies the type of network address being used. eg: 2 for IPv4
+  Route Tag (2 bytes): used to carry additional information about the route, like differentiate between internal (local) and external (redistributed) routes.
 Router: forwards traffic between subnets, between an internal and external network, or between two external networks.
 Router Advertisement Method
   Distance Vector: only cares about Hop Count. Sends full copy of routing table to its directly-connected neighbors at regular intervals.
@@ -394,6 +418,8 @@ Routing Protocols
   | IS-IS            | Link state               | Interior          |
   | BGP              | Path vector              | Exterior          |
   +------------------+--------------------------+-------------------+
+Routing Redundancy Protocols: protocols that prevents disruptions in communication by automatically rerouting data traffic in case of a path or device failure.
+  First Hop Redundancy Protocol (FHRP) encompasses a set of protocols to ensure network reliability (HSRP, VRRP, GLBP, ...).
 Routing Table: file in a router or a networked computer that lists the routes to particular network destinations. Each table entry has the following columns.
   Destination Network: The IP address or network that the router is trying to reach.
   Subnet Mask: Defines the network portion of the destination IP address, used for matching the destination address.
@@ -416,6 +442,9 @@ Sources of Routing Information
   Dynamic Route: learned by exchanging information between routers.
 Split Horizon: prevents a route learned on one interface from being advertised back out of that same interface.
   - it has a similar function to Poison Reverse.
+Subinterface: allows a single physical interface on a router or a switch to be subdivided into multiple logical interfaces.
+Virtual IP: IP address that is not bound to a specific device but serves as a representative for one or multiple devices.
+Virtual Router Redundancy Protocol (VRRP): similar to HSRP but is an Open Standard, it allows multiple routers configuration with an Active and several Backups.
 
 ================================================================================
 Standards
