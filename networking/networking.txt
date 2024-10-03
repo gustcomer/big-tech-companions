@@ -447,6 +447,21 @@ Virtual IP: IP address that is not bound to a specific device but serves as a re
 Virtual Router Redundancy Protocol (VRRP): similar to HSRP but is an Open Standard, it allows multiple routers configuration with an Active and several Backups.
 
 ================================================================================
+Switching
+
+802.1x Authentication: ensures only authenticated users can access network services.
+Jumbo Frames: Ethernet frames that are larger than the standard maximum transmission unit (MTU) of 1500 bytes. They can carry payloads of up to 9000 bytes.
+MAC Filtering: controls access to the network device (usually a switch) by limiting which devices can gain access to the network based on the device's unique MAC address.
+  - allow listing: lists which mac addresses are allowed to connect to your switches. Allows specified devices and blocks everyone else.
+  - block listing: all devices arre allowed to connect to your network device excepet the ones listed in the black list. Blocks specified devices and allows everyone else.
+Port Security: controlling which devices (MAC addresses) can access a network through a switch’s physical ports. (the switches ports, not the application ports).
+  - usually it will use a Port-by-Port MAC address filtering. (allow listing and block listing usually refers to the whole switch).
+  - in each port we can implement, for instance, a MAC Filtering for each port.
+Trunking: used to transport traffic for multiple VLANs across a single network link (trunk link).
+  - VLAN trunking works by tagging (802.1Q Tagging) frames with VLAN information so that devices on the other end of the trunk link can properly identify which VLAN the frame belongs to.
+VLAN: method of creating logically separate networks within a single physical network.
+
+================================================================================
 Standards
 
 IEEE 802.3: still evolving collection of standards defining the physical layer and data link layer's media access control (MAC) of wired Ethernet.
