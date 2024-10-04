@@ -450,8 +450,27 @@ Virtual Router Redundancy Protocol (VRRP): similar to HSRP but is an Open Standa
 Switching
 
 802.1x Authentication: ensures only authenticated users can access network services.
+Bridge Protocol Data Units (BPDU): STP uses BPDU packets to exchange information between switches to detect network loops and configure the topology.
+  Hello BPDU is a type of BPDU. After the convergence of STP, the Root Bridge (and only the Root Bridge) sends BPDUs called Hello BPDUs that act like a heartbeat message.
+  - the packet consists of
+  +---------------------+--------------+---------------------------------------------------------+
+  | Field               | Size (bytes) | Description                                             |
+  +---------------------+--------------+---------------------------------------------------------+
+  | Protocol Identifier  | 2            | Identifies the protocol (always 0x0000 for STP).       |
+  | Protocol Version     | 1            | Version of STP (e.g., 0 for STP, 2 for RSTP).          |
+  | BPDU Type            | 1            | Indicates BPDU type (0x00 for Config, 0x80 for TCN).   |
+  | Flags                | 1            | Contains the TC and TCA flags.                         |
+  | Root Bridge ID       | 8            | ID of the root bridge (priority + MAC address).        |
+  | Root Path Cost       | 4            | Cost to reach the root bridge.                         |
+  | Bridge ID            | 8            | ID of the sending bridge (priority + MAC address).     |
+  | Port ID              | 2            | ID of the port sending the BPDU.                       |
+  | Message Age          | 2            | Time since the BPDU was originated by the root bridge. |
+  | Max Age              | 2            | Maximum time before a BPDU is discarded.               |
+  | Hello Time           | 2            | Interval between BPDU transmissions (typically 2 sec). |
+  | Forward Delay        | 2            | Delay for port state transitions (typically 15 sec).   |
+  +----------------------+--------------+--------------------------------------------------------+
 Bridge ID (BID): unique identifier consisting of Bridge Priority + MAC Address used to determine the root bridge in STP.
-  Bridge Priority: 2 bytes, default is 32.768, lower values will increase the chances of the switch being selected as the root bridge.
+  Bridge Priority (Priority Field): 2 bytes, default is 32.768, lower values will increase the chances of the switch being selected as the root bridge.
   MAC Address: 6 bytes, the switch's MAC address is used as part of the BID to ensure uniqueness. If multiple switches have the same priority, the one with the lowest MAC address will become the root bridge.
 Complete Graph: graph where every node is connected to every other node. (full mesh network). It has the maximum amount of links connecting all nodes.
   - Spanning Trees is kinda the inverse.
@@ -470,8 +489,14 @@ Spanning Tree Protocol (STP): IEEE 802.1D, ensures a loop-free topology for Ethe
     1 select one switch as root bridge (the central point of the network).
       the root bridge election is based on a switch Bridge Id (BID).
     2 for each switch, find the shortest past (least path cost) from a switch to a root switch.
+      the ports directing traffic in the root direction are designated RP. The ports receiving traffic from RPs are designated DP. the ports not used are designated BP.
     3 block links (switches ports) that could cause loops while mantaining these links as backups.
       STP can activate a blocked link if an active link breaks.
+  Port Roles
+    Root Port (RP): port on each non-root switch that has the best path to the root bridge. It forwards traffic toward the root bridge.
+    Designated Port (DP): the best port to send data to that segment.
+      - the root bridge only has DPs. It doesn't have any RP or BP.
+    Blocked Port (BP): port that is not forwarding frames to prevent network loops.
 Trunking: used to transport traffic for multiple VLANs across a single network link (trunk link).
   - VLAN trunking works by tagging (802.1Q Tagging) frames with VLAN information so that devices on the other end of the trunk link can properly identify which VLAN the frame belongs to.
 VLAN: method of creating logically separate networks within a single physical network.
