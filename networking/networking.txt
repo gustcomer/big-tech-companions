@@ -469,6 +469,9 @@ Bridge Protocol Data Units (BPDU): STP uses BPDU packets to exchange information
   | Hello Time           | 2            | Interval between BPDU transmissions (typically 2 sec). |
   | Forward Delay        | 2            | Delay for port state transitions (typically 15 sec).   |
   +----------------------+--------------+--------------------------------------------------------+
+  Timers
+    Hello Time: how frequently the root bridge sends configuration BPDUs (default is 2 seconds).
+    Max Age: how long a switch retains a BPDU before discarding it (default is 20 seconds).
 Bridge ID (BID): unique identifier consisting of Bridge Priority + MAC Address used to determine the root bridge in STP.
   Bridge Priority (Priority Field): 2 bytes, default is 32.768, lower values will increase the chances of the switch being selected as the root bridge.
   MAC Address: 6 bytes, the switch's MAC address is used as part of the BID to ensure uniqueness. If multiple switches have the same priority, the one with the lowest MAC address will become the root bridge.
@@ -497,6 +500,12 @@ Spanning Tree Protocol (STP): IEEE 802.1D, ensures a loop-free topology for Ethe
     Designated Port (DP): the best port to send data to that segment.
       - the root bridge only has DPs. It doesn't have any RP or BP.
     Blocked Port (BP): port that is not forwarding frames to prevent network loops.
+  Port States
+    Blocking: A port that is not forwarding packets to prevent a loop.
+    Listening: A port that listens for BPDU messages to ensure no loops exist.
+    Learning: A port that learns MAC addresses but doesn’t forward packets yet.
+    Forwarding: A port that forwards frames and is actively participating in the network.
+    Disabled: A port that is administratively shut down.
 Trunking: used to transport traffic for multiple VLANs across a single network link (trunk link).
   - VLAN trunking works by tagging (802.1Q Tagging) frames with VLAN information so that devices on the other end of the trunk link can properly identify which VLAN the frame belongs to.
 VLAN: method of creating logically separate networks within a single physical network.
