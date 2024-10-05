@@ -475,6 +475,10 @@ Bridge Protocol Data Units (BPDU): STP uses BPDU packets to exchange information
 Bridge ID (BID): unique identifier consisting of Bridge Priority + MAC Address used to determine the root bridge in STP.
   Bridge Priority (Priority Field): 2 bytes, default is 32.768, lower values will increase the chances of the switch being selected as the root bridge.
   MAC Address: 6 bytes, the switch's MAC address is used as part of the BID to ensure uniqueness. If multiple switches have the same priority, the one with the lowest MAC address will become the root bridge.
+Broadcast Domain: network segment in which a broadcast sent by one device can be received by all other devices within that same segment. (eg: ARP requests, DHCP discovery)
+  - related to all devices connected to a switch.
+Collision Domain: network segment where data frames (Layer 2) can "collide" with each other during transmission (typically found in legacy Ethernet networks that use hubs).
+  - collision domains is related to all devices connected to a hub, or to a switch port. On the other hand, broadcast domain is related to all devices connected to a switch.
 Complete Graph: graph where every node is connected to every other node. (full mesh network). It has the maximum amount of links connecting all nodes.
   - Spanning Trees is kinda the inverse.
 Jumbo Frames: Ethernet frames that are larger than the standard maximum transmission unit (MTU) of 1500 bytes. They can carry payloads of up to 9000 bytes.
