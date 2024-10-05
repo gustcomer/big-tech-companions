@@ -73,6 +73,10 @@ MAC Address (Media Access Control): unique identifier assigned to network interf
   - typically 48 bits long and usually displayed as six pairs of hexadecimal digits 00:1A:2B:3C:4D:5E
   - the first 24 bits (first three pairs) represent the Organizationally Unique Identifier (OUI).
   - the last 24 bits (last three pairs) are specific to the Network Interface Controller.
+  Types
+    - Unicast: represents a single device on the network. Most MAC addresses are unicast.
+    - Multicast: used to send data to multiple devices that belong to a specific multicast group. The second-least significant bit of the first byte is set to 1.
+    - Broadcast: a special address (FF:FF:FF:FF:FF:FF) used to send data to all devices on the network.
 Medium Access Method: manner a computer gain and controls access to the network’s physical medium.
   eg: CSMA/CD, CSMA/CA, Token Passing, Demand Priority.
 Modes of Data Transmission:
@@ -479,6 +483,7 @@ Broadcast Domain: network segment in which a broadcast sent by one device can be
   - related to all devices connected to a switch.
 Collision Domain: network segment where data frames (Layer 2) can "collide" with each other during transmission (typically found in legacy Ethernet networks that use hubs).
   - collision domains is related to all devices connected to a hub, or to a switch port. On the other hand, broadcast domain is related to all devices connected to a switch.
+  - half-duplex connections present collisions, so they define collision domains. Full duplex don't because there are no collisions.
 Complete Graph: graph where every node is connected to every other node. (full mesh network). It has the maximum amount of links connecting all nodes.
   - Spanning Trees is kinda the inverse.
 Jumbo Frames: Ethernet frames that are larger than the standard maximum transmission unit (MTU) of 1500 bytes. They can carry payloads of up to 9000 bytes.
@@ -510,6 +515,8 @@ Spanning Tree Protocol (STP): IEEE 802.1D, ensures a loop-free topology for Ethe
     Learning: A port that learns MAC addresses but doesn’t forward packets yet.
     Forwarding: A port that forwards frames and is actively participating in the network.
     Disabled: A port that is administratively shut down.
+Switch
+  store-and-forward: type of network switch that operates by receiving the entire data frame (or packet), storing it temporarily, and performing an error check (usually a cyclic redundancy check CRC).
 Trunking: used to transport traffic for multiple VLANs across a single network link (trunk link).
   - VLAN trunking works by tagging (802.1Q Tagging) frames with VLAN information so that devices on the other end of the trunk link can properly identify which VLAN the frame belongs to.
 VLAN: method of creating logically separate networks within a single physical network.
