@@ -522,6 +522,24 @@ Trunking: used to transport traffic for multiple VLANs across a single network l
 VLAN: method of creating logically separate networks within a single physical network.
 
 ================================================================================
+Wireless
+
+Basic Service Set Identifier (BSSID): unique identifier used in wireless networking to identify a specific access point (AP) within a Wi-Fi network.
+  - it is essentially the MAC address (Media Access Control address) of the access point's wireless interface, represented as a 48-bit hexadecimal number.
+  - Basic Service Set (BSS) refers to the network created by an access point (AP) and the wireless clients associated with it.
+  - The BSSID uniquely identifies each BSS in a wireless network, allowing clients to distinguish between different access points, even if they have the same network name (SSID).
+Extended Service Set Identifier (ESSID): name of a wireless network in an Extended Service Set (ESS), which typically involves multiple access points (APs) working together to provide seamless Wi-Fi coverage over a larger area.
+Service Set Identifier (SSID): common alphanumeric network name that end users can search for to connect to the wireless network.
+Types
+  Ad Hoc/Independent Basic Service Set (IBSS): network where devices connect directly to each other rather than through a central access point.
+    - they usually do not provide internet access and are useful to file transfering, etc.
+    - they allow sharing and collaboration as long as the devices are within range.
+  Infrastructure Wireless Netowrk: more organized, devices are connected to the network through a wireless access point wich will bridge the devices into a wired LAN.
+    - each Access Point has a Basic Service Set Identifier (BSSID) usually set by default to the MAC address of the Access Point.
+  Extended Service Set (ESS): creates a larger network that shares the same SSID to allow for seamless connectivity acress a building.
+
+
+================================================================================
 Standards
 
 IEEE 802.3: still evolving collection of standards defining the physical layer and data link layer's media access control (MAC) of wired Ethernet.
