@@ -1,0 +1,11 @@
+================================================================================
+Glossary
+
+Automation: using software tools and scripts to perform tasks that would otherwise require manual intervention.
+Error Budget: permissible amount of unreliability allowed within the SLOs.
+  eg: if the SLO is 99.9% uptime, the error budget is 0.1% downtime per month.
+Incident Response: processes and practices used to manage and resolve unplanned service disruptions.
+Monitoring: continuously collecting data on system performance and health (e.g., metrics, logs, traces).
+Postmortems: analyses conducted after an incident to understand the root cause, what went well, and what could be improved.
+Service Level Indicators (SLIs): specific metrics that quantify aspects of the service's performance, such as latency, throughput, or error rates.
+Service Level Objectives (SLOs): targets or goals set for SLIs, defining the acceptable level of service performance.
