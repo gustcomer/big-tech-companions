@@ -18,6 +18,7 @@ Plaintext: readable or unencrypted data that is input into an encryption algorit
   - can be text, files, or other data in its original form.
   - contrasts with ciphertext, which is the output of encryption.
 Secure Channel: communication medium that ensures confidentiality, integrity, and authenticity of the data exchanged between parties, preventing eavesdropping or tampering by unauthorized individuals.
+Stream Cipher: encryption algorithms that encrypt data one bit or byte at a time, using a keystream generated from a secret key.
 Symmetric Encryption: encryption method that uses the same key for both encryption and decryption.
   - commonly used algorithms: AES, DES.
   - faster than asymmetric encryption but requires secure key distribution.
