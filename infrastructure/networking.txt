@@ -524,6 +524,10 @@ VLAN: method of creating logically separate networks within a single physical ne
 ================================================================================
 Wireless
 
+Access Point
+  types
+    Autonomous Access Point: standalone device that contains all of the intelligence to handle wireless networking functions independently.
+    Lightweight Access Point: multiple access points connecting back to a centralized controller.
 Basic Service Set Identifier (BSSID): unique identifier used in wireless networking to identify a specific access point (AP) within a Wi-Fi network.
   - it is essentially the MAC address (Media Access Control address) of the access point's wireless interface, represented as a 48-bit hexadecimal number.
   - Basic Service Set (BSS) refers to the network created by an access point (AP) and the wireless clients associated with it.
@@ -537,6 +541,15 @@ Types
   Infrastructure Wireless Netowrk: more organized, devices are connected to the network through a wireless access point wich will bridge the devices into a wired LAN.
     - each Access Point has a Basic Service Set Identifier (BSSID) usually set by default to the MAC address of the Access Point.
   Extended Service Set (ESS): creates a larger network that shares the same SSID to allow for seamless connectivity acress a building.
+    - the SSID of a ESS is called ESSID.
+  Point-to-Point Wireless Networks: connect two distinct locations over long distances using high-gain antennas.
+    - provides highly efficient and offer dedicated bandwidth between two points.
+  Wireless Mesh Networks: each node of the network can connect to multiple other nodes.
+    - it has self-healing capability because they can reconfigure themselves. versatile and resilient form of wireless networking.
+    types
+      1 uses ESS configuration in a wireless network that operates in infrastructure mode.
+      2 involves multiple different types of wireless networks all operating together to provide services to end users.
+    the redundancy in a mesh network ensures that data can be rerouted through alternate paths.
 
 
 ================================================================================
