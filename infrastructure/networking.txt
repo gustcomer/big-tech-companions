@@ -533,11 +533,20 @@ Antenna: device designed to send and receive radio frequency signals.
     Omnidirectional: designed to transmit and receive wireless signals in all directions equally.
     Unidirectional: focuses on a single direction to provide a more concentrated signal beam.
     Yagi: type of directional antenna that can provide high signal gains and uses a narrow beamwidth.
+    Parabolic: type of unidirectional antenna that gives a different curvature to the signal and is often used with microwave signals and satellite TV signals.
 Basic Service Set Identifier (BSSID): unique identifier used in wireless networking to identify a specific access point (AP) within a Wi-Fi network.
   - it is essentially the MAC address (Media Access Control address) of the access point's wireless interface, represented as a 48-bit hexadecimal number.
   - Basic Service Set (BSS) refers to the network created by an access point (AP) and the wireless clients associated with it.
   - The BSSID uniquely identifies each BSS in a wireless network, allowing clients to distinguish between different access points, even if they have the same network name (SSID).
+Channel: physical medium through which the wireless networks can send and receive data.
 Extended Service Set Identifier (ESSID): name of a wireless network in an Extended Service Set (ESS), which typically involves multiple access points (APs) working together to provide seamless Wi-Fi coverage over a larger area.
+Frequency Bands
+  2.4 GHz: most widely used frequencies for wireless networking. Long-range and better penetration through solid objects.
+    - contains frequencies from 2.4 GHz up to 2.495 GHz.
+    - usually the whole band 2.4 GHz up to 2.495 GHz is divided in 14 channels of 22 MHz width.
+      - usually we use channel 11, 13 or 14. the government gave 72MHz to use.
+      - Channel 1, 6 and 11 are the only channels that do not overlap.
+      - States and Canada (1-11), Japan (1-14), Rest of the World (1-13).
 Service Set Identifier (SSID): common alphanumeric network name that end users can search for to connect to the wireless network.
 Wireless
   Types
