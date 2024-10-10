@@ -258,6 +258,37 @@ XaaS: I personally use this term to refer to the different service models in clo
   9 Networking: infrastructure that enables communication between servers, devices, and other resources within a cloud environment. eg: IP addresses, DNS, firewalls, and load balancers.
 
 ================================================================================
+DNS
+
+DNS Hierarchy
+  1. Root zone 2. Top-Level Domain 3. Second-Level Domain 4. Subdomain 5. Host
+Domain Name System (DNS): translates human-readable domain names into machine-readable IP addresses.
+Domain Name: consists of multiple parts, separated by dots.
+  eg: in the domain name www.example.com, www is the subdomain, example is the second-level domain (SLD) and .com is the top-level domain (TLD).
+  so the domain is example.com (TLD+SLD). www indicates that it is a website. Ftp server would be ftp. Mail server would be mail.
+Fully-Qualified Domain Name (FQDN): includes the domain name and the subdomain.
+Host: refers to a specific machine/server.
+Host File: plain text file used by an operating system to map hostnames (domain names) to IP addresses.
+  - manual method of resolving domain names to IP addresses before the system queries external DNS servers.
+IANA (Internet Assigned Numbers Authority): handles administrative tasks like managing IP address allocation, maintaining the DNS root zone, and overseeing protocol parameter assignments.
+ICANN (Internet Corporation for Assigned Names and Numbers): non-profit organization that manage and oversee the systems that enable the internet, such as the Domain Name System (DNS), IP address allocation, etc.
+Root Zone: usually represented by a hidden single dot at the end of a FQDN. It is a small but crucial file that contains the list of all top-level domains (TLDs)
+Subdomain: prefixes to the domain that create additional structure within the domain itself.
+Second-Level Domain (SLD): the portion to the left of the TLD.
+Top-Level Domain (TLD): highest level of the Domain Name System (DNS) hierarchy, appearing at the rightmost part of a domain name. (eg: .com, .edu, .net)
+URI: may refer both to URL or URN.
+URL (Uniform Resource Locator): specifies the FFQDN but also other items such as:
+  Protocol or scheme (eg: http, https). eg https://
+  Hostname (or domain name): the FQDN. eg www.example.com
+  Port (opt, uses default if ommited). eg :8080
+  Path: specific location of the resource. eg /articles/tech/latest
+  Query: (opt) contains parameters that are passed to the server. it begins with a ? followed by one or more key-value pair separated by &. eg ?search=cloud&sort=recent
+  Fragment: (opt) used to jump to a section of a web page. eg #section2
+URN: type of URI that uniquely identifies a resource by name.
+  - sintax is urn:<namespace>:<namespace-specific-string>
+  - used to provide a persistent and location-independent identifier for a resource, ensuring that the resource can be identified even if its location or ownership changes over time.
+
+================================================================================
 Ports Glossary
 
   21: FTP
