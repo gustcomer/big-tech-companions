@@ -260,18 +260,38 @@ XaaS: I personally use this term to refer to the different service models in clo
 ================================================================================
 DNS
 
+DNS (Domain Name System): translates human-readable domain names into machine-readable IP addresses.
 DNS Hierarchy
   1. Root zone 2. Top-Level Domain 3. Second-Level Domain 4. Subdomain 5. Host
-Domain Name System (DNS): translates human-readable domain names into machine-readable IP addresses.
-Domain Name: consists of multiple parts, separated by dots.
+DNS Record Types
+  A: A Record, Address Record. A is short for Address. Maps a hostname to an IPv4 address.
+    example.com   A   93.184.216.34
+  AAAA: Maps a hostname to an IPv6 address.
+    example.com   AAAA   2606:2800:220:1:248:1893:25c8:1946
+  CNAME: short for Canonical Name. Creates an alias for a domain by pointing one domain name to another domain name.
+    www.example.com   CNAME   example.com
+  MX: short for Mail Exchange. Specifies the mail server responsible for receiving email on behalf of the domain. Points a Domain Name to a Host Name.
+    - priority values are used when multiple mail servers are listed; lower values are preferred.
+    example.com   MX   10   mail1.example.com
+  SOA: short for Start of Authority record. Contains information about the domain or zone such as: primary name server, email address, serial number, refresh, retry, and expiration times for DNS information.
+    example.com   SOA   ns1.example.com. admin.example.com. 2024040101 7200 3600 1209600 86400
+Domain Name: consists of multiple parts, separated by dots (TLS+SLD). Eg example.com.
   eg: in the domain name www.example.com, www is the subdomain, example is the second-level domain (SLD) and .com is the top-level domain (TLD).
   so the domain is example.com (TLD+SLD). www indicates that it is a website. Ftp server would be ftp. Mail server would be mail.
+  the Host Name
 Fully-Qualified Domain Name (FQDN): includes the domain name and the subdomain.
 Host: refers to a specific machine/server.
+Host Name: name of an individual device within a domain, which means it may include the subdomain. (TLD+SLD+Subdomain).
 Host File: plain text file used by an operating system to map hostnames (domain names) to IP addresses.
   - manual method of resolving domain names to IP addresses before the system queries external DNS servers.
+  - the host file takes priority over DNS.
 IANA (Internet Assigned Numbers Authority): handles administrative tasks like managing IP address allocation, maintaining the DNS root zone, and overseeing protocol parameter assignments.
 ICANN (Internet Corporation for Assigned Names and Numbers): non-profit organization that manage and oversee the systems that enable the internet, such as the Domain Name System (DNS), IP address allocation, etc.
+Nameserver: handles DNS queries, translating domain names into machine-readable IP addresses.
+  - they are an essential part of the DNS infrastructure
+  Primary Nameserver (master): specific type of authoritative nameserver that holds the original, editable copy of the DNS zone file for a domain.
+  Authoritative Nameserver: DNS server that holds the official DNS records for a domain and is responsible for providing those records in response to queries.
+  Secondary Nameserver (slave): backup or redundant DNS server that also provides authoritative answers for a domain. However, it does not hold an editable version of the zone file. Instead, it regularly synchronizes.
 Root Zone: usually represented by a hidden single dot at the end of a FQDN. It is a small but crucial file that contains the list of all top-level domains (TLDs)
 Subdomain: prefixes to the domain that create additional structure within the domain itself.
 Second-Level Domain (SLD): the portion to the left of the TLD.
@@ -287,6 +307,8 @@ URL (Uniform Resource Locator): specifies the FFQDN but also other items such as
 URN: type of URI that uniquely identifies a resource by name.
   - sintax is urn:<namespace>:<namespace-specific-string>
   - used to provide a persistent and location-independent identifier for a resource, ensuring that the resource can be identified even if its location or ownership changes over time.
+Zone: portion of the DNS namespace managed by a specific DNS server and includes DNS records for all the domains/subdomains within its control.
+Zone Transfer: sends DNS records data from the primary nameserver to a secondary nameserver for synchronization.
 
 ================================================================================
 Ports Glossary
