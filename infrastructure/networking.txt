@@ -289,6 +289,13 @@ DNS Record Types
   NS: indicates which DNS nameserver has the authority.
     example.com NS ns1.example.com
 DNS Resolver: (DNS Cache) makes a local copy of every DNS entry it resolves (for amout of time defined in the TTL) as the user connects to websites.
+DNS Security: DNS is susceptible to various forms of manipulation and attack. Here are some alternatives
+  DNS Security Extensions (DNSSEC): use cryptographic signatures to ensure that the information reaching the device is exactly what the server intended to send. (don't address DNS snooping).
+    - it doesn't encrypt any of the DNS data.
+  DNS over HTTPS (DoH): used to send the DNS queries through the HTTPS protocol, which is the same protocol that secures the data. (address DNS snooping)
+  DNS over TLS (DoT): encapsulates DNS traffic inside of a transport layer security tunnel. (address DNS snooping)
+  - website owners need to embrace DNSSEC. ISP should consider supporting DoH and DoT.
+DNS Snooping: when an attacker monitors DNS queries to infer what websites a user is visiting.
 Domain Name: consists of multiple parts, separated by dots (TLS+SLD). Eg example.com.
   eg: in the domain name www.example.com, www is the subdomain, example is the second-level domain (SLD) and .com is the top-level domain (TLD).
   so the domain is example.com (TLD+SLD). www indicates that it is a website. Ftp server would be ftp. Mail server would be mail.
