@@ -261,7 +261,11 @@ XaaS: I personally use this term to refer to the different service models in clo
 DNS
 
 ARPAnet (Advanced Research Projects Agency Network): first top-level domain that was defined for what would become the internet.
+Authoritative Response: when the DNS reply comes directly from a nameserver authoritative for the queried domain.
+  Non-authoritative: would refer to a response that came recursively from another Nameserver.
 DNS (Domain Name System): translates human-readable domain names into machine-readable IP addresses.
+  - a DNS server uses Recursive Lookup to communicate with several other DNS servers to hunt down the IP address.
+  - there is the alternative of Iterative Lookup where each DNS server responds directly to the client with an address for another DNS server that may have the correct IP address.
 DNS Hierarchy
   1. Root zone 2. Top-Level Domain 3. Second-Level Domain 4. Subdomain 5. Host
 DNS Record Types
@@ -284,6 +288,7 @@ DNS Record Types
     example.com TXT "v=spf1 ip4:192.168.0.1/16 -all"
   NS: indicates which DNS nameserver has the authority.
     example.com NS ns1.example.com
+DNS Resolver: (DNS Cache) makes a local copy of every DNS entry it resolves (for amout of time defined in the TTL) as the user connects to websites.
 Domain Name: consists of multiple parts, separated by dots (TLS+SLD). Eg example.com.
   eg: in the domain name www.example.com, www is the subdomain, example is the second-level domain (SLD) and .com is the top-level domain (TLD).
   so the domain is example.com (TLD+SLD). www indicates that it is a website. Ftp server would be ftp. Mail server would be mail.
@@ -311,6 +316,7 @@ Nameserver: handles DNS queries, translating domain names into machine-readable 
 Root Zone: usually represented by a hidden single dot at the end of a FQDN. It is a small but crucial file that contains the list of all top-level domains (TLDs)
 Subdomain: prefixes to the domain that create additional structure within the domain itself.
 Second-Level Domain (SLD): the portion to the left of the TLD.
+Time-to-Live (TTL): tells the DNS resolver how long to cache a query before requesting a new one. 86.400 seconds (24 hours) is the default.
 Top-Level Domain (TLD): highest level of the Domain Name System (DNS) hierarchy, appearing at the rightmost part of a domain name. (eg: .com, .edu, .net)
 URI: may refer both to URL or URN.
 URL (Uniform Resource Locator): specifies the FFQDN but also other items such as:
