@@ -260,6 +260,7 @@ XaaS: I personally use this term to refer to the different service models in clo
 ================================================================================
 DNS
 
+ARPAnet (Advanced Research Projects Agency Network): first top-level domain that was defined for what would become the internet.
 DNS (Domain Name System): translates human-readable domain names into machine-readable IP addresses.
 DNS Hierarchy
   1. Root zone 2. Top-Level Domain 3. Second-Level Domain 4. Subdomain 5. Host
@@ -275,6 +276,14 @@ DNS Record Types
     example.com   MX   10   mail1.example.com
   SOA: short for Start of Authority record. Contains information about the domain or zone such as: primary name server, email address, serial number, refresh, retry, and expiration times for DNS information.
     example.com   SOA   ns1.example.com. admin.example.com. 2024040101 7200 3600 1209600 86400
+  PTR: short for Pointer. Performs the reverse of an A or AAAA record: it maps an IP address to a domain name and are used in reverse DNS lookups.
+    applications: email server verification, spam prevention, network troubleshooting, firewalls and IDS rules.
+    25.2.0.192.in-addr.arpa   PTR   mail.example.com
+  TXT: adds text into the DNS.
+    often used for verification or security purposes (e.g., SPF records for email).
+    example.com TXT "v=spf1 ip4:192.168.0.1/16 -all"
+  NS: indicates which DNS nameserver has the authority.
+    example.com NS ns1.example.com
 Domain Name: consists of multiple parts, separated by dots (TLS+SLD). Eg example.com.
   eg: in the domain name www.example.com, www is the subdomain, example is the second-level domain (SLD) and .com is the top-level domain (TLD).
   so the domain is example.com (TLD+SLD). www indicates that it is a website. Ftp server would be ftp. Mail server would be mail.
@@ -287,7 +296,14 @@ Host File: plain text file used by an operating system to map hostnames (domain 
   - the host file takes priority over DNS.
 IANA (Internet Assigned Numbers Authority): handles administrative tasks like managing IP address allocation, maintaining the DNS root zone, and overseeing protocol parameter assignments.
 ICANN (Internet Corporation for Assigned Names and Numbers): non-profit organization that manage and oversee the systems that enable the internet, such as the Domain Name System (DNS), IP address allocation, etc.
+in-addr.arpa: special DNS domain used specifically for reverse DNS lookups.
+  .arpa domain is reserved for technical infrastructure
+  in-addr.arpa (INternet ADDRess) is specifically used for reverse DNS lookups for IPv4 addresses.
+  - for ip6 we use ip6.arpa.
+Internal DNS: allows cloud instances on the same network access each other using internal DNS.
+  - to do that it creaes internal A records and also internal PTR records in the reverse zone.
 Nameserver: handles DNS queries, translating domain names into machine-readable IP addresses.
+  they are a type of DNS server that stores all the DNS records for a given domain.
   - they are an essential part of the DNS infrastructure
   Primary Nameserver (master): specific type of authoritative nameserver that holds the original, editable copy of the DNS zone file for a domain.
   Authoritative Nameserver: DNS server that holds the official DNS records for a domain and is responsible for providing those records in response to queries.
@@ -309,6 +325,7 @@ URN: type of URI that uniquely identifies a resource by name.
   - used to provide a persistent and location-independent identifier for a resource, ensuring that the resource can be identified even if its location or ownership changes over time.
 Zone: portion of the DNS namespace managed by a specific DNS server and includes DNS records for all the domains/subdomains within its control.
 Zone Transfer: sends DNS records data from the primary nameserver to a secondary nameserver for synchronization.
+  - the first record to be transfered is the SOA record because it contains a serial number that acts as versioning. (usually this transfer is done with TCP, to be sure). Other stuff on DNS are usually done with UDP.
 
 ================================================================================
 Ports Glossary
