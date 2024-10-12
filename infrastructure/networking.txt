@@ -263,11 +263,21 @@ DNS
 ARPAnet (Advanced Research Projects Agency Network): first top-level domain that was defined for what would become the internet.
 Authoritative Response: when the DNS reply comes directly from a nameserver authoritative for the queried domain.
   Non-authoritative: would refer to a response that came recursively from another Nameserver.
+Authoritative vs Non-Authoritative
+  Non-Authoritative: Recursive Resolvers or DNS Caching Servers, that is, DNS server that does not have the definitive records for a domain and provides DNS responses based on cached data previously retrieved from authoritative DNS servers.
+Designated DNS Server: specific DNS server that is responsible for resolving DNS queries for a particular domain or zone.
 DNS (Domain Name System): translates human-readable domain names into machine-readable IP addresses.
   - a DNS server uses Recursive Lookup to communicate with several other DNS servers to hunt down the IP address.
   - there is the alternative of Iterative Lookup where each DNS server responds directly to the client with an address for another DNS server that may have the correct IP address.
 DNS Hierarchy
   1. Root zone 2. Top-Level Domain 3. Second-Level Domain 4. Subdomain 5. Host
+DNS Namespace: hierarchical structure that defines how domain names are organized and managed within the Domain Name System (DNS).
+  tree-like in structure, with each level of the hierarchy separated by a dot (.).
+  Root (.)
+    +-- TLD (.com)
+          +-- SLD (example.com)
+                +-- Subdomain (www.example.com)
+                      +-- Host (www.example.com)
 DNS Record Types
   A: A Record, Address Record. A is short for Address. Maps a hostname to an IPv4 address.
     example.com   A   93.184.216.34
@@ -320,6 +330,7 @@ Nameserver: handles DNS queries, translating domain names into machine-readable 
   Primary Nameserver (master): specific type of authoritative nameserver that holds the original, editable copy of the DNS zone file for a domain.
   Authoritative Nameserver: DNS server that holds the official DNS records for a domain and is responsible for providing those records in response to queries.
   Secondary Nameserver (slave): backup or redundant DNS server that also provides authoritative answers for a domain. However, it does not hold an editable version of the zone file. Instead, it regularly synchronizes.
+Primary vs. Secondary: the primary DNS server is the authoritative DNS server where changes to the DNS records are made. It serves as the source of truth for secondary servers.
 Root Zone: usually represented by a hidden single dot at the end of a FQDN. It is a small but crucial file that contains the list of all top-level domains (TLDs)
 Subdomain: prefixes to the domain that create additional structure within the domain itself.
 Second-Level Domain (SLD): the portion to the left of the TLD.
@@ -337,6 +348,7 @@ URN: type of URI that uniquely identifies a resource by name.
   - sintax is urn:<namespace>:<namespace-specific-string>
   - used to provide a persistent and location-independent identifier for a resource, ensuring that the resource can be identified even if its location or ownership changes over time.
 Zone: portion of the DNS namespace managed by a specific DNS server and includes DNS records for all the domains/subdomains within its control.
+  - portion of the DNS namespace that is managed by a specific DNS server or set of servers.
 Zone Transfer: sends DNS records data from the primary nameserver to a secondary nameserver for synchronization.
   - the first record to be transfered is the SOA record because it contains a serial number that acts as versioning. (usually this transfer is done with TCP, to be sure). Other stuff on DNS are usually done with UDP.
 
