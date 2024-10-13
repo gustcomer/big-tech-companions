@@ -224,7 +224,7 @@ Subnet Mask: 32-bit number used in IP networking to divide an IP address into ne
   Class A, B, C, or yet CIDR are ways to represent a subnet mask without the need to show the 32 bits.
 
 ================================================================================
-Cloud Glossary
+Cloud
 
 DaaS (Desktop as a Service): cloud computing service model that delivers a fully managed virtual desktop environment to users over the internet.
   - the desktop operating system, applications, and user data are hosted in the cloud.
@@ -256,6 +256,22 @@ XaaS: I personally use this term to refer to the different service models in clo
   7 Servers: physical or virtual machines that run applications, store data, and manage network services.
   8 Storage: where data is held, including hard drives, SSDs, or distributed storage systems. It can be block storage, file storage, or object storage. eg: AWS S3, databases, Google Cloud Storage.
   9 Networking: infrastructure that enables communication between servers, devices, and other resources within a cloud environment. eg: IP addresses, DNS, firewalls, and load balancers.
+
+================================================================================
+DHCP
+
+DHCP Reservation: allows a network administrator to permanently assign a specific IP address to a particular device based on its MAC address.
+DHCP Server: network server that automatically assigns IP addresses and other network configuration parameters to devices on a network.
+DHCP Workflow (DORA)
+  DHCP Discover: client device sends a broadcast message (DHCPDISCOVER) looking for a DHCP server.
+  DHCP Offer: DHCP server responds with an available IP address and configuration information (DHCPOFFER).
+  DHCP Request: client accepts the offer and sends a request to the server (DHCPREQUEST) for the IP address.
+  DHCP Acknowledge: DHCP server acknowledges (DHCPACK) the request and assigns the IP address to the client for the lease duration.
+Dynamic Host Configuration Protocol (DHCP): network management protocol used to dynamically assign IP addresses and other network configuration parameters to devices on a network.
+  - it provides an IP address to every machine on the network and eliminates configuration errors.
+Lease: temporary assignment of an IP address by the DHCP server to a client. It has a Lease Time.
+Scope: list of valid IP addresses available for assignment or lease to a client computer or endpoint device on a given subnet.
+  - you can reserve some IPs to be excluded from your scope range.
 
 ================================================================================
 DNS
