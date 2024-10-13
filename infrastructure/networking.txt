@@ -260,7 +260,14 @@ XaaS: I personally use this term to refer to the different service models in clo
 ================================================================================
 DHCP
 
+DHCP Configuration: with these 4 configuration parameters, the client can get online, get in and out of the network and how to convert names into IPs.
+  IP address
+  Subnet mask
+  Default gateway IP
+  DNS server IP
 DHCP Reservation: allows a network administrator to permanently assign a specific IP address to a particular device based on its MAC address.
+  - in DHCP reservation the IP address is assigned by the DHCP server based on the MAC address.
+  - in Static IP Assignment the IP address is manually configured directly on the device itself. The network administrator must enter the IP address, subnet mask, default gateway, and DNS settings into the device's network settings.
 DHCP Server: network server that automatically assigns IP addresses and other network configuration parameters to devices on a network.
 DHCP Workflow (DORA)
   DHCP Discover: client device sends a broadcast message (DHCPDISCOVER) looking for a DHCP server.
