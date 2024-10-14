@@ -261,16 +261,21 @@ XaaS: I personally use this term to refer to the different service models in clo
 DHCP
 
 Automatic Private IP Address (APIPA): special range of IP addresses that are automatically assigned to a device when it is configured to use DHCP but cannot obtain an IP address from a DHCP server.
+BOOTP (Bootstrap Protocol): early precursor to the more modern DHCP (Dynamic Host Configuration Protocol). It also supports Relay Agents.
+  - it's kinda confusing because it uses static IP assignments but also supports Automatic IP Address Assignment.
+    - actually BOOTP assigns IP addresses based on a predefined mapping. The BOOTP server has a configuration table that associates each client’s MAC address with a specific IP address. The client doesn't need to be manually configured with an IP address.
 DHCP Configuration: with these 4 configuration parameters, the client can get online, get in and out of the network and how to convert names into IPs.
   IP address
   Subnet mask
   Default gateway IP
   DNS server IP
+DHCP Messages
 DHCP Relay: network function that allows DHCP clients and a DHCP server to communicate when they are on different network segments (subnets).
 DHCP Reservation: allows a network administrator to permanently assign a specific IP address to a particular device based on its MAC address.
   - in DHCP reservation the IP address is assigned by the DHCP server based on the MAC address.
   - in Static IP Assignment the IP address is manually configured directly on the device itself. The network administrator must enter the IP address, subnet mask, default gateway, and DNS settings into the device's network settings.
 DHCP Server: network server that automatically assigns IP addresses and other network configuration parameters to devices on a network.
+  - it is a Layer 3 feature, usually it is implemented on plug-and-play routers.
 DHCP Workflow (DORA)
   DHCP Discover: client device sends a broadcast message (DHCPDISCOVER) looking for a DHCP server.
   DHCP Offer: DHCP server responds with an available IP address and configuration information (DHCPOFFER).
@@ -281,6 +286,9 @@ Dynamic Host Configuration Protocol (DHCP): network management protocol that ope
 IP Helper Address: forwards several different kinds of UDP broadcasts across the router and can be used in conjunction with the DHCP relay.
   - configuration used on routers or Layer 3 switches to forward broadcast traffic, particularly DHCP requests, from one subnet to a specified destination IP address on another subnet.
 Lease: temporary assignment of an IP address by the DHCP server to a client. It has a Lease Time.
+RARP (Reverse Address Resolution Protocol): it is the reverse of ARP. It is a legacy network protocol used by a client machine to discover its own IP address by sending a request to a RARP server.
+Relay Agents: network component usually configured in the router that is used to forward client requests to a server located on a different network or subnet.
+  - supported by DHCP and BOOTP. Not supported by RARP.
 Scope: list of valid IP addresses available for assignment or lease to a client computer or endpoint device on a given subnet.
   - you can reserve some IPs to be excluded from your scope range.
 
