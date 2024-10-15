@@ -1,0 +1,65 @@
+================================================================================
+
+Levels
+  100 Entry-Level
+    100-150 CCST - Cisco Certified Support Technician (CCST) Networking Exam
+    100-160 CCST - Cisco Certified Support Technician (CCST) Cybersecurity Exam
+    100-140 CCST - Cisco Certified Support Technician (CCST) IT Support Exam
+  2 Associate
+    200-301 CCNA - CCNA (Cisco Certified Network Associate)
+    200-901 DEVASC -Cisco Certified DevNet Associate
+    200-201 CBROPS - Cisco Certified CyberOps Associate
+  3 Professional
+    CCNP Enterprise
+      350-401 ENCOR (Core Exam)
+      300-410 ENARSI (Concentration Exam)
+      300-415 ENSDWI (Concentration Exam)
+      300-420 ENSLD (Concentration Exam)
+      300-425 ENWLSD (Concentration Exam)
+      300-430 ENWLSI (Concentration Exam)
+      300-435 ENAUTO (Concentration Exam)
+      300-440 ENCC (Concentration Exam)
+      300-445 ENNA (Concentration Exam)
+    CCNP Service Provider
+      350-501 SPCOR (Core Exam)
+      300-510 SPRI (Concentration Exam)
+      300-515 SPVI (Concentration Exam)
+      300-535 SPAUTO (Concentration Exam)
+      300-540 SPCNI (Concentration Exam)
+    CCNP Data Center
+      350-601 DCCOR (Core Exam)
+      300-610 DCID (Concentration Exam)
+      300-615 DCIT (Concentration Exam)
+      300-620 DCACI (Concentration Exam)
+      300-630 DCACIA (Concentration Exam)
+      300-635 DCAUTO (Concentration Exam)
+    CCNP Security
+      350-701 SCOR (Core Exam)
+      300-710 SNCF (Concentration Exam)
+      300-715 SISE (Concentration Exam)
+      300-720 SESA (Concentration Exam)
+      300-725 SWSA (Concentration Exam)
+      300-730 SVPN (Concentration Exam)
+      300-735 SAUTO (Concentration Exam)
+      300-740 SCAZT (Concentration Exam)
+    CCNP Collaboration
+      350-801 CLCOR (Core Exam)
+      300-810 CLICA (Concentration Exam)
+      300-815 CLACCM (Concentration Exam)
+      300-820 CLCEI (Concentration Exam)
+      300-835 CLAUTO (Concentration Exam)
+    Cisco Certified DevNet Professional
+      350-901 DEVCOR (Core Exam)
+      300-435 ENAUTO (Concentration Exam)
+      300-535 SPAUTO (Concentration Exam)
+      300-635 DCAUTO (Concentration Exam)
+      300-735 SAUTO (Concentration Exam)
+      300-835 CLAUTO (Concentration Exam)
+      300-910 DEVOPS (Concentration Exam)
+    Cisco Certified CyberOps Professional
+      350-201 CBRCOR (Core Exam)
+      300-215 CBRFIR (Concentration Exam)
+      300-220 CBTHD (Concentration Exam)
+  4 Expert
+
+
