@@ -61,5 +61,13 @@ Levels
       300-215 CBRFIR (Concentration Exam)
       300-220 CBTHD (Concentration Exam)
   4 Expert
+    CCIE Enterprise Infrastructure - 350-401 ENCOR + CCIE Enterprise Infrastructure lab
+    CCIE Service Provider - 350-501 SPCOR + CCIE Service Provider lab
+    CCIE Security - 350-701 SCOR + CCIE Security lab
+    CCDE Design Expert - 400-007 CCDE Written Exam + CCDE Practical Exam
+    CCIE Enterprise Wireless - 350-401 ENCOR + CCIE Enterprise Wireless lab
+    CCIE Data Center - 350-601 DCCOR + CCIE Data Center lab
+    CCIE Collaboration - 350-801 CLCOR + CCIE Collaboration lab
+    Cisco Certified DevNet Expert - 350-901 DEVCOR + DevNet Expert lab
 
 
