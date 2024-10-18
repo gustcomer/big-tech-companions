@@ -70,4 +70,42 @@ Levels
     CCIE Collaboration - 350-801 CLCOR + CCIE Collaboration lab
     Cisco Certified DevNet Expert - 350-901 DEVCOR + DevNet Expert lab
 
+================================================================================
 
+200-301 CCNA
+
+350-401 ENCOR
+  1.0 Architecture    15%
+    Explain enterprise network design principles, including high-level designs (2-tier, 3-tier, fabric, cloud), high availability (redundancy, FHRP, SSO), wireless network design (deployment models, location services, client density), working principles of Cisco SD-WAN (control/data plane elements, benefits, limitations), Cisco SD-Access (control/data plane elements, traditional campus integration), interpret wired and wireless QoS configurations (components, policies), and describe hardware/software switching mechanisms (CEF, CAM, TCAM, FIB, RIB, adjacency tables).
+  2.0 Virtualization    10%
+    Describe device virtualization technologies (Hypervisor type 1 and 2, virtual machine, virtual switching), configure and verify data path virtualization technologies (VRF, GRE, IPsec tunneling), and explain network virtualization concepts (LISP, VXLAN).
+  3.0 Infrastructure    30%
+    Troubleshoot Layer 2 technologies (static/dynamic 802.1q trunking, EtherChannels), configure and verify Spanning Tree Protocols (RSTP, MST) and enhancements (root guard, BPDU guard), compare Layer 3 routing concepts (EIGRP vs. OSPF), configure OSPFv2/v3 and eBGP environments, describe policy-based routing, explain wireless Layer 1 concepts (RF power, RSSI, SNR), AP modes, discovery/join process, and Layer 2/3 roaming, troubleshoot WLAN configuration using GUI, describe wireless segmentation, interpret IP services (NTP, PTP), configure NAT/PAT, first hop redundancy protocols (HSRP, VRRP), and describe multicast protocols (RPF, PIM, IGMP).
+  4.0 Network Assurance    10%
+    Diagnose network problems using tools like debugs, conditional debugs, traceroute, ping, SNMP, and syslog, configure and verify Flexible NetFlow, SPAN/RSPAN/ERSPAN, and IPSLA, describe Cisco DNA Center workflows for network configuration, monitoring, and management, and configure and verify NETCONF and RESTCONF.
+  5.0 Security    20%
+    Configure and verify device access control (lines, local user authentication, AAA), infrastructure security features (ACLs, CoPP), describe REST API security, configure and verify wireless security features (802.1X, WebAuth, PSK, EAPOL), and describe network security design components (threat defense, endpoint security, next-generation firewall, TrustSec, MACsec, network access control with 802.1X, MAB, WebAuth).
+  6.0 Automation    15%
+    Interpret basic Python components and scripts, construct valid JSON-encoded files, describe the principles and benefits of a data modeling language like YANG, explain APIs for Cisco DNA Center and vManage, interpret REST API response codes and payload results using Cisco DNA Center and RESTCONF, construct an EEM applet for automation, and compare agent-based vs. agentless orchestration tools such as Chef, Puppet, Ansible, and SaltStack.
+
+350-601 DCCOR
+  1.0 Network            25%
+    Apply routing protocols (OSPFv2 and OSPFv3, MP-BGP, PIM, FHRP). Apply switching protocols such as RSTP+, LACP, and vPC. Apply overlay protocols such as VXLAN EVPN. Apply ACI concepts (Fabric setup, Access policies, VMM). Analyze packet flow (unicast, multicast, and broadcast). Describe Cloud service and deployment models (NIST 800-145). Describe software updates and their impacts (Disruptive/nondisruptive, EPLD, Patches). Implement network configuration management. Implement infrastructure monitoring such as NetFlow and SPAN. Explain network assurance concepts such as streaming telemetry. Describe the capabilities and features of Nexus Dashboard.
+  2.0 Compute            25%
+    Implement Cisco Unified Compute System Rack Servers. Implement Cisco Unified Compute System Blade Chassis (Initial setup, Infrastructure management, Network management including VLANs, pools and policies, templates, QoS, Storage management including SAN connectivity, Fibre Channel zoning, VSANs, WWN pools, SAN policies, templates, Server management including Server pools and boot policies). Explain HyperFlex Infrastructure Concepts and benefits (Edge and Hybrid Architecture vs all-flash). Describe firmware and software updates and their impacts on B-Series and C-Series servers. Implement compute configuration management (Backup and restore). Implement infrastructure monitoring such as SPAN and Cisco Intersight.
+  3.0 Storage Network    20%
+    Implement Fibre Channel (Switch fabric initialization, Port channels, FCID, CFS, Zoning, FCNS, Device alias, NPV and NPIV, VSAN). Implement FCoE Unified Fabric. Describe NFS and NAS concepts. Describe software updates and their impacts (Disruptive/nondisruptive and EPLD). Implement infrastructure monitoring.
+  4.0 Automation         15%
+    Implement automation and scripting tools (EEM, Scheduler, Bash Shell and Guest Shell for NX-OS, REST API including NX-API, JSON, and XML encodings, On-box Python). Evaluate automation and orchestration technologies (Ansible, Python, POAP, Cisco Nexus Dashboard Fabric Controller, PowerShell, Terraform).
+  5.0 Security           15%
+    Apply network security (AAA and RBAC, ACI contracts and microsegmentation, First-hop security features, Keychain authentication). Apply compute security (AAA and RBAC). Apply storage security (AAA and RBAC, Port security, Fabric binding).
+
+300-635 DCAUTO (Concentration Exam)
+  1.0 Network Programmability Foundation    10%
+    1.1 Utilize common version control operations with git: add, clone, push, commit, diff, branching, merging conflict 1.2 Describe characteristics of API styles (REST and RPC) 1.3 Describe the challenges encountered and patterns used when consuming APIs synchronously and asynchronously 1.4 Interpret Python scripts containing data types, functions, classes, conditions, and looping 1.5 Describe the benefits of Python virtual environments 1.6 Explain the benefits of using network configuration tools such as Ansible and Terraform for automating data center platforms
+  2.0 Controller Based Data Center Networking    30%
+    Describe ACI target policy, application hosting capabilities, ACI Apps Center application implementation, leverage API inspector for ACI REST API exploration, construct Python scripts to create application policies using ACI REST API and Cobra SDK, create an Ansible playbook for application policy, explain Kubernetes integration benefits with ACI CNI plugin, and construct a Terraform plan for ACI or Nexus Dashboard Fabric Controller.
+  3.0 Data Center Device-centric Networking    30%
+    Describe Day 0 provisioning with NX-OS using Cisco POAP and iPXE, implement on-box programmability and automation with NX-OS using Bash, Linux containers (LXC, Docker), guest shell, EEM, and Python scripting, compare model-driven telemetry (YANG Push, gRPC) with traditional monitoring (SNMP, NetFlow, SYSLOG), construct Python script to consume model-driven telemetry with NX-OS, and implement off-box programmability and automation with NX-OS using NX-API (REST, CLI), NETCONF (native, OpenConfig), and Ansible.
+  4.0 Data Center Compute    30%
+    Configure Cisco UCS with developer tools (UCS PowerTool, UCS Python SDK, Ansible), describe Nexus Dashboard Fabric Controller API capabilities, identify Cisco Intersight API authentication steps, construct Cisco Intersight API calls for managing server policies, service profiles, firmware updates, and interpret a Terraform plan using the Cisco Intersight provider.
