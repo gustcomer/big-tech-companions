@@ -1,3 +1,8 @@
 ================================================================================
 
+Access Control List (ACL): set of rules used to filter network traffic and manage access to resources within a network.
+  - implemented on routers, firewalls and layer 3 switches.
 Cisco DNA (Digital Network Architecture): Cisco's software-defined networking (SDN).
+Next-Generation Firewalls (NGFW): advanced firewalls that go beyond the traditional firewall capabilities of packet filtering and stateful inspection.
+  - Deep Packet Inspection (DPI), Application-Aware Filtering, Intrusion Prevention System (IPS), SSL/TLS Inspection...
+  - while traditional firewalls touch layers 3 and 4, NGFW touches layers 3 through 7.
