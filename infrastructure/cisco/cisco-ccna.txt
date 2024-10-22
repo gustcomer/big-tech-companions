@@ -6,3 +6,6 @@ Cisco DNA (Digital Network Architecture): Cisco's software-defined networking (S
 Next-Generation Firewalls (NGFW): advanced firewalls that go beyond the traditional firewall capabilities of packet filtering and stateful inspection.
   - Deep Packet Inspection (DPI), Application-Aware Filtering, Intrusion Prevention System (IPS), SSL/TLS Inspection...
   - while traditional firewalls touch layers 3 and 4, NGFW touches layers 3 through 7.
+Switched Virtual Interface (SVI): virtual interface that represents a VLAN (Virtual Local Area Network) on a switch.
+  - also known as Layer 3 interface.
+  - it is basically an IP on a switch where we can telnet the switch to configure it.

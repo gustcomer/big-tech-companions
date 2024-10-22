@@ -1,0 +1,112 @@
+================================================================================
+Glossary
+
+Components: icons of elements you can add. Bottom left corner.
+  Network Devices - stuff like switches, routers, hubs.
+
+================================================================================
+lab 001
+David Bombal - Two Switches and Two PCs
+
+01. add 2 switches. go to Network Devices > Switches > 3650-24PS.
+  these are layer 3 switches
+02. change the names to S0 and S1.
+03. add 2 PCs. End Devices > 
+04. change the names to PC1 and PC2
+05. add straight through fast ethernet copper cable. Cabling>Copper Straight-Through.
+  pick FastEthernetx on the PC side. Choose GigabitEthernetx0/1
+06. connect the switches with crossover cables at the GigabitEthernetx0/2 port of each one.
+  in the real life you don't connect the switches with crossover.
+07. connect the second switch to the second PC with copper cable.
+08. Options>Preferences>Always Show Port Labels in Logical Workspace.
+  this option show the ports that are connected.
+  uncheck this option because in this lab we're gonna label ourselves.
+09. if you prefer, add labels yourself
+  Place Note - write - press Esc
+10. if you try to enter the switch CLI, it tells you the Switch is not powered on.
+11. click each switch and add a power supply. The once red little triangles will turn green.
+12. go to the first switch CLI.
+  > Would you like to enter the initial configuration dialog? [yes/no]:
+  > no
+13. > Press RETURN to get started!
+  pressing Enter you'll enter into User mode
+  Switch>
+  you can't do configurations in User Mode
+14. to show a list of commands, press ?. no need to press enter
+15. > show version | > sh ver
+16. to configure the switch, turn to Privilege Mode (or Enable Mode).
+  > enable | > en
+  Switch#
+17. to exit the Enable Mode back to User Mode
+  # exit
+  Enter
+18. to go to Global Configuration Mode, first get into Enable Mode, then
+  > configure terminal | > conf t
+  Switch(config)#
+19 to exit the Global Configuration Mode
+  > end
+20. specify the host name
+  # hostname | host S1 
+21. show the interfaces
+  > show ip interface brief (could also be executed from Privilege Mode)
+22. now we can configure the vlan. go to global config
+  select the vlan interface to configure. (by defaul all ports of a switch are contained in vlan 1)
+  (config)# interface vlan 1 | (config)# int vlan 1
+  S1(config-if)#
+23. in the vlan configuration to bring the interface up we use
+  S1(config-if)# no shutdown | S1(config-if)# no shut
+24. set an ip to the switch. (the address of the vlan is like the address of the network)
+  S1(config-if)# ip add 192.168.1.201 255.255.255.0 | S1(config-if)# ip address 192.168.1.201 255.255.255.0
+25. check if the ip is correctly configured
+  S1# show ip interface brief  | S1#sh ip int br
+26 try to ping yourself
+  S1# ping 192.168.1.201
+27 list the Vlans
+  S1# show vlan
+28 go to switch 2 and 
+  Switch> enable
+  # conf t
+  Switch(config)# host S2
+  S2(config)# int vlan 1
+  S2(config-if)# no shut
+  S2(config-if)# ip address 192.168.1.202 255.255.255.0
+  S2(config-if)#end
+  S2# show ip interface brief
+29 now go to each switch, ping itself and ping the other switch. it should work.
+30 now save the config of each Switch
+  S1# wr
+  or
+  S1# copy running-config startup-config
+31 configure the IP of the PCs manually (instead of DHCP)
+  Config > Static
+  FastEthernet0 set IPv4 to 192.168.1.1 and 255.255.255.0 submask (automatically determined)
+  Desktop > Command Prompt
+    > ipconfig or yet > ipconfig /all to get the mac address
+    > ping 192.168.1.201 and > ping 192.168.1.202
+32 configure the other pc and ping one PC to another
+33 go to simulation, Show All/None, Edit Filters, select only ARP and ICMP.
+34 take a look at ARP cache of the first PC and then clear the ARP table.
+  > arp -a
+  > arp -d
+  > arp -a
+35 check the mac address table of the switch 1
+  S1> show mac address | S1> sh mac a
+36 try to change the mac address of some pc via gui and check if the mac table is updated in the simulator.
+37 clear the mac address of switch 1, then send some traffic (a ping) and check that the mac address table learned again.
+  S1# clear mac ad
+38 check the running configurations of the switch
+  S1# sh run
+39 check if there is a virtual telnet line
+  line vty 0 4 -- it allows 5 lines of telnet (the range from 0 to 4)
+40 try to connect via telnet to the switch S!
+  > telnet 192.168.1.201 -- it wont work because there is no password set, even though the line allocation is on the running configurations.
+41 prepare the switch S1 to accept telnet connections
+  S1(config)# line vty 0 4
+  S1(config-line)#login -- won't work because login is disabled because password is not set.
+  S1(config-line)#password cisco -- set the password to cisco
+42 now it is possible to connect via telnet from PC1 to S1 if the correct password is given
+  > telnet 192.168.1.201 - remember that it is possible to telnet the vlan because we've created an ip address to it.
+43 we can set a password to the enable mode
+  S1(config)# enable password cisco -- now every time i try to enter enable mode, it asks for password
+44 save each switch configuration
+  S1#wr
