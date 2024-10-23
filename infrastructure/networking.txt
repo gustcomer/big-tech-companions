@@ -470,6 +470,8 @@ UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electro
 ================================================================================
 Routing
 
+Routing Protocols can be Link State (OSPF, IS-IS), Distance Vector (EIGRP, RIP).
+
 Administrative Distance (AD): value used by routers to rank the trustworthiness (believability) of a route.
   - lower AD is considered more believable or trustworthy.
   - AD table
@@ -491,6 +493,7 @@ Border Gateway Protocol (BGP): EGP that uses path vector that uses the number of
   - it is the backbone of the internet, as paths move from one ISP to another.
 Convergence: time it takes for routers to update their routing tables in response to a topology change.
   - after all routers know each other, we have a Converged Network.
+Distance Vector: 
 Enhanced Interior Gateway Routing Protocol (EIGRP): IGP that used hybrid of distance vector and link state protocols.
   - is a proprietary Cisco protocol that is popular in Cisco-only networks.
   - supports Classless routing (CIDR or VLSM).
@@ -509,6 +512,11 @@ Hot Standby Router Protocol (HSRP): redundancy protocol that can establish a fau
   Preempting: a higher priority router can take over as the Active Router even if it comes online after the initial election.
 Interior Gateway Protocols (IGP): routing protocol used within a single autonomous system (AS).
 Intermediate System to Intermediate System (IS-IS): IGP based on Link State that also uses cost and functions like OSPF, but not as widely popular.
+Link State Routing Protocol: routers have a full picture of the network topology and calculate the best routes independently.
+  - contrasts to Distance-Vector Routing Protocol where only the distance to destinations via their neighbors is known.
+  - each Router periodically broadcast LSAs to all other routers in the network. The LSAs contain information about the router itself, their directly connected links, the state and cost of these links.
+  - each router build a Topology Database (Link State Database, Topological Database) which contains a complete picture of the network's topology.
+  - after a Router has built its Topological Database, it computes the best path using Shortes Path First (SPF) algorithm developed by Dijkstra.
 Open Shortest Path First (OSPF): IGP based on Link State (uses Link Speed).
 Poison Reverse: causes a route received on one interface to be advertised back out of that same interface with a metric considered to be infinite.
   - it has a similar function to Split Horizon.
@@ -540,8 +548,10 @@ Routing Information Protocol (RIP): an IGP that uses Distance Vector Protocol (h
 Routing Loops: occurs when a packet is continuously transmitted within a network, circling between routers without reaching its intended destination.
   - techniques to prevent Routing Loops (Split Horizon, Poison Reverse). Other mechanisms to prevent could include Time-to-Live (TTL).
 Routing Protocols: algorithms that allow routers to communicate with each other, exchange information, and determine the best path for forwarding data across networks.
+  - they are important because they advertise networks and use various mechanisms to prevent loops.
   Internal (Interior Gateway Protocols - IGP): used within a single autonomous system (AS). (eg: RIP, OSPF, EIGRP, IS-IS)
   External (External Gateway Protocols - EGP): used to route data between different autonomous systems. (eg: BGP)
+  - on the other hand, Routed Protocols are used to move user data across the network, relying on the decisions made by routing protocols.
 Routing Protocols
   +------------------+--------------------------+-------------------+
   | Routing Protocol | Type                     | Interior/Exterior |
