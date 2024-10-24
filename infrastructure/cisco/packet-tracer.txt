@@ -110,3 +110,24 @@ David Bombal - Two Switches and Two PCs
   S1(config)# enable password cisco -- now every time i try to enter enable mode, it asks for password
 44 save each switch configuration
   S1#wr
+
+================================================================================
+lab 002
+David Bombal - Two Switches and Router
+
+01 continue from lab 01
+02 add a router ISR4331 and change the name to R1
+03 get a copper straight through cable and connect the  0/3 to the router on the Gigabit 0/0 and name the connections with label
+04 enter the Router CLI and say no to initial configuration
+05 enter Privilege mode with en, then global config mode with conf t, change the name of the router to R1, go back to privilege mode
+06 show the interfaces on the device with sh ip int brief, check they are all down
+07 up interface G0/0/0 with conf t | int g0/0/0
+08 add an ip address to the interface of the router: ip address 192.168.1.254 255.255.255.0
+09 ping each switch: ping 192.168.1.201 | ping 192.168.1.201 the first pings will be lost to the arp table
+10 check the arp table: sh arp
+11 go to first pc and configure the default gateway to the ip of the router, then go to prompt of each pc and check with ipconfig
+12 create a virtual interface on the router connected to a loopback: conf t | int loop 1 | ip address 192.168.100.254 255.255.255.0 by default it's up
+13 note that pc1 is able to ping this virtual interface on the router because it has gateway set. the pc2 is not able because the gateway is not yet configured.
+14 now configure the default gateway on pc2 and try to ping the virtual interface again
+15 note that the switches aren't able to ping the virtual interface, configure default gateways in each one: ip default-gateway 192.168.1.254 do the same to S2
+16 if you want to kill a ping use CTRL+Shift+6

@@ -470,7 +470,7 @@ UTP (Unshielded Twisted Pair): pairs of wires twisted together to reduce electro
 ================================================================================
 Routing
 
-Routing Protocols can be Link State (OSPF, IS-IS), Distance Vector (EIGRP, RIP).
+Routing Protocols can be Link State (OSPF, IS-IS) or Distance Vector (EIGRP, RIP). 
 
 Administrative Distance (AD): value used by routers to rank the trustworthiness (believability) of a route.
   - lower AD is considered more believable or trustworthy.
@@ -493,7 +493,11 @@ Border Gateway Protocol (BGP): EGP that uses path vector that uses the number of
   - it is the backbone of the internet, as paths move from one ISP to another.
 Convergence: time it takes for routers to update their routing tables in response to a topology change.
   - after all routers know each other, we have a Converged Network.
-Distance Vector: 
+Distance Vector: routers use information received from its directly connected neighbors to determine the best path to a destination.
+  - routers exchange routing tables with neighbors. It is known as Routing by Rumor because they do not have a complete view of the network, only from its neighbors.
+  - they use Bellman-Ford algorithm to solve the shortest distance to a destination and update its routing table.
+  - what happens when a link fails? I believe it updates the metric and start to spread out the changes with periodic updates hop by hop.
+  - link failures can result in routing loops that can be mitigated using mechanisms like split horizon, route poisoning, hold-down timers, etc.
 Enhanced Interior Gateway Routing Protocol (EIGRP): IGP that used hybrid of distance vector and link state protocols.
   - is a proprietary Cisco protocol that is popular in Cisco-only networks.
   - supports Classless routing (CIDR or VLSM).
@@ -547,6 +551,9 @@ Routing Information Protocol (RIP): an IGP that uses Distance Vector Protocol (h
   RIPv2: updated version that supports classless inter-domain routing (CIDR), allowing for the inclusion of subnet masks and providing better flexibility.
 Routing Loops: occurs when a packet is continuously transmitted within a network, circling between routers without reaching its intended destination.
   - techniques to prevent Routing Loops (Split Horizon, Poison Reverse). Other mechanisms to prevent could include Time-to-Live (TTL).
+  Split Horizon: prevents a router from advertising a route back to the neighbor from which it learned the route.
+  Route Poisoning: Marks a failed route as unreachable by setting the distance metric to infinity.
+  Hold-Down Timers: Temporarily prevents a router from accepting any changes to a failed route to allow network stabilization.
 Routing Protocols: algorithms that allow routers to communicate with each other, exchange information, and determine the best path for forwarding data across networks.
   - they are important because they advertise networks and use various mechanisms to prevent loops.
   Internal (Interior Gateway Protocols - IGP): used within a single autonomous system (AS). (eg: RIP, OSPF, EIGRP, IS-IS)
