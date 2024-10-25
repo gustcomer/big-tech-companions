@@ -1,0 +1,17 @@
+================================================================================
+Glossary
+
+> prompt in user mode
+# prompt in enable mode
+(..)# prompt in global config mode
+Components: icons of elements you can add. Bottom left corner.
+  Network Devices - stuff like switches, routers, hubs.
+Command Modes
+IOS-XE: modern, modular version of the Cisco IOS (Internetwork Operating System).
+
+
+================================================================================
+Commands
+
+> show version | > sh ver: shows info about the equipment.
+> enable | > en: change

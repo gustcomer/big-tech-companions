@@ -1,10 +1,4 @@
 ================================================================================
-Glossary
-
-Components: icons of elements you can add. Bottom left corner.
-  Network Devices - stuff like switches, routers, hubs.
-
-================================================================================
 lab 001
 David Bombal - Two Switches and Two PCs
 
