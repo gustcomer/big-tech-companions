@@ -12,6 +12,8 @@ Command Modes
   Global Configuration Mode: (config)# allows you to make system-wide configuration changes. allows you to enter more specific configuration modes (such as interface configuration).
   Interface Configuration Mode: (config-if)# allows you to configure individual network interfaces (Ethernet, Serial, etc). accessed from global configuration mode
 IOS-XE: modern, modular version of the Cisco IOS (Internetwork Operating System).
+running-configuration: current configuration settings stored in the RAM that are actively running on a Cisco device.
+startup-configuration: configuration file that is stored in NVRAM (non-volatile RAM) and is used when the device boots up.
 
 ================================================================================
 Commands IOS
@@ -34,6 +36,8 @@ Commands IOS
 to check the MAC Address of the device you could:
   > show version
 > show mac address-table | > show mac add : used to show the mac address table in switches.
+> clear mac ad
+> show running-config | > sh run : show running configurations of the switch.
 
 ================================================================================
 Windows Prompt Commands
