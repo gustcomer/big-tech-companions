@@ -7,11 +7,38 @@ Glossary
 Components: icons of elements you can add. Bottom left corner.
   Network Devices - stuff like switches, routers, hubs.
 Command Modes
+  user EXEC mode: > initial mode a user enters when logging in. provides limited access to basic monitoring commands but does not allow configuration changes.
+  Privileged EXEC Mode (Enable Mode): # provides access to all monitoring commands and a limited set of configuration commands. From here you can enter config mode.
+  Global Configuration Mode: (config)# allows you to make system-wide configuration changes. allows you to enter more specific configuration modes (such as interface configuration).
+  Interface Configuration Mode: (config-if)# allows you to configure individual network interfaces (Ethernet, Serial, etc). accessed from global configuration mode
 IOS-XE: modern, modular version of the Cisco IOS (Internetwork Operating System).
 
+================================================================================
+Commands IOS
+
+> show version | > sh ver: shows info about the equipment. eg MAC Address of the device.
+> enable | > en: switch from user EXEC mode to privileged EXEC mode.
+> exit: moves you back one level in the command hierarchy.
+> end: takes you all the way back to privileged EXEC mode.
+> configure terminal | > conf t: enter Global Configuration Mode.
+> hostname: used to set or change the name of the device (such as a router or switch).
+> show ip interface brief: provides a summary of the status and configuration of the interfaces on a Cisco device.
+> interface vlan 1: enter Interface Configuration Mode of the VLAN named 1.
+> no shutdown | > no shut: enable an interface that is currently administratively down (disabled).
+> ip add 192.168.1.201 255.255.255.0 : set an ip to a device like switch or router.
+> ping 192.168.1.201 : ping some ip.
+> show vlan : show VLANs.
+> copy running-config startup-config : save settings of a device before quitting.
+> write | wr : save settings of a device before quitting.
+> show mac address | > sh mac a : show the mac address table of the device.
+to check the MAC Address of the device you could:
+  > show version
+> show mac address-table | > show mac add : used to show the mac address table in switches.
 
 ================================================================================
-Commands
+Windows Prompt Commands
 
-> show version | > sh ver: shows info about the equipment.
-> enable | > en: change
+> ipconfig : show network configurations.
+> ipconfig /all : show complete network configurations.
+> arp -a : show the arp table
+> arp -d : exclude hosts

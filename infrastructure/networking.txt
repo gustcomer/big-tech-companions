@@ -77,6 +77,8 @@ MAC Address (Media Access Control): unique identifier assigned to network interf
     - Unicast: represents a single device on the network. Most MAC addresses are unicast.
     - Multicast: used to send data to multiple devices that belong to a specific multicast group. The second-least significant bit of the first byte is set to 1.
     - Broadcast: a special address (FF:FF:FF:FF:FF:FF) used to send data to all devices on the network.
+MAC Address Table: map MAC addresses to the physical ports on the switch. It's like a router but for layer 2, containing the mac address of end points and which next direction (port) it should take to reach it.
+  - if there is more than one switch, it is completely normal to have more than one mac address mapped to a switch port.
 Medium Access Method: manner a computer gain and controls access to the network’s physical medium.
   eg: CSMA/CD, CSMA/CA, Token Passing, Demand Priority.
 Modes of Data Transmission:
@@ -121,6 +123,9 @@ SMTP (Simple Mail Transfer Protocol): used for sending emails from a client to a
   port 25.
 Spanning Tree Protocol (STP): network protocol that ensures a loop-free topology in Ethernet networks.
   - it operates at the Data Link Layer (Layer 2) of the OSI model.
+Switch: networking device that connects devices within a local area network (LAN) and directs data between them. Check Switching section.
+  - operates at Layer 2 (Data Link) of the OSI model, using MAC addresses to forward data frames to the correct destination.
+  - usually have a MAC Address Table to map MAC addresses to the physical ports on the switch.
 TDM:
 Topologies:
   Bus Topology: all devices are connected to a single central cable (the "bus").
