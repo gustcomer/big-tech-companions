@@ -111,7 +111,7 @@ David Bombal - Two Switches and Router
 
 01 continue from lab 01
 02 add a router ISR4331 and change the name to R1
-03 get a copper straight through cable and connect the  0/3 to the router on the Gigabit 0/0 and name the connections with label
+03 get a copper straight through cable and connect the 0/3 to the router on the Gigabit 0/0 and name the connections with label
 04 enter the Router CLI and say no to initial configuration
 05 enter Privilege mode with en, then global config mode with conf t, change the name of the router to R1, go back to privilege mode
 06 show the interfaces on the device with sh ip int brief, check they are all down
@@ -125,3 +125,15 @@ David Bombal - Two Switches and Router
 14 now configure the default gateway on pc2 and try to ping the virtual interface again
 15 note that the switches aren't able to ping the virtual interface, configure default gateways in each one: ip default-gateway 192.168.1.254 do the same to S2
 16 if you want to kill a ping use CTRL+Shift+6
+
+================================================================================
+lab 003
+David Bombal - Set Passwords on Devices
+
+01 enter the first switch and check the CIDR of the LAN with show interface vlan 1. the show ip int brief shows the ip of each vlan but doesn't give a clue about subnet mask.
+02 check the enable password and the telnet password in S1
+03 encrypt the enable password and the telnet password with service password-encryption : this is a weak encryption that uses Type 7 encryption.
+04 use the better option enable secret mypass to make secret passwords. This uses MD5 Hash.
+05 to use MD5 hash in the telnet access is not that easy, you have to set a user and a password.
+06 configure enable password with enable password mypass and telnet password with password mypass in S2. you can use enable password mypass or enable secret mypass.
+07 configure enable password with enable password mypass and telnet password with password mypass on the router.

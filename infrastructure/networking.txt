@@ -5,7 +5,15 @@ Glossary
   - uses a bus topology and coaxial cables, with devices connecting to it with "Vampire Taps" and a AUI (Attachment Unit Interface).
   - adopted by the 802.3 Ethernet in 1983 and obsolete by mid-1990s, replaced by 10Base-T with twisted pair cables.
 Appliances: network device which offers a turn-key solution to a problem. eg: firewall, routers, switches, load balancers, IDS, UTM, VPN concentrators.
-ARP:
+ARP Table: data structure that map IP addresses to MAC addresses
+  Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+  Internet  192.168.1.1             50  0001.1111.1111  ARPA   GigabitEthernet0/0/0
+  Internet  192.168.1.254           -   0060.2FAB.B601  ARPA   GigabitEthernet0/0/0
+  or
+  Interface: 192.168.0.115 --- 0x6
+    Endereço IP           Endereço físico       Tipo
+    192.168.0.1           b0-4e-26-ee-ff-62     dinâmico
+    192.168.0.255         ff-ff-ff-ff-ff-ff     estático
 Baseband: transmits digital signals occupying the entire bandwidth of the communication.
   - LAN and its Ethernet protocol usually uses Baseband.
   - usualy it uses TDM.
@@ -79,6 +87,7 @@ MAC Address (Media Access Control): unique identifier assigned to network interf
     - Broadcast: a special address (FF:FF:FF:FF:FF:FF) used to send data to all devices on the network.
 MAC Address Table: map MAC addresses to the physical ports on the switch. It's like a router but for layer 2, containing the mac address of end points and which next direction (port) it should take to reach it.
   - if there is more than one switch, it is completely normal to have more than one mac address mapped to a switch port.
+  - also known as CAM table (Content Addressable Memory table).
 Medium Access Method: manner a computer gain and controls access to the network’s physical medium.
   eg: CSMA/CD, CSMA/CA, Token Passing, Demand Priority.
 Modes of Data Transmission:
@@ -118,7 +127,8 @@ Protocol Data Unit (PDU): refer to a specific unit of data that is transmitted a
   Layer 3: packet
   Layer 4: TCP segment , UDP datagram.
   Layer 5-7: message or data.
-Shielded Twisted Pairs (STP):
+Router: networking device that forwards data packets between different computer networks.
+  - usually Routers and PCs have an ARP Table.
 SMTP (Simple Mail Transfer Protocol): used for sending emails from a client to a server or between email servers.
   port 25.
 Spanning Tree Protocol (STP): network protocol that ensures a loop-free topology in Ethernet networks.
@@ -126,7 +136,6 @@ Spanning Tree Protocol (STP): network protocol that ensures a loop-free topology
 Switch: networking device that connects devices within a local area network (LAN) and directs data between them. Check Switching section.
   - operates at Layer 2 (Data Link) of the OSI model, using MAC addresses to forward data frames to the correct destination.
   - usually have a MAC Address Table to map MAC addresses to the physical ports on the switch.
-TDM:
 Topologies:
   Bus Topology: all devices are connected to a single central cable (the "bus").
   Star Topology: each device is connected to a central hub or switch.
@@ -467,6 +476,7 @@ Serial Connectors
   DB-9
   DB-25
 STP (Shielded Twisted Pair): Includes an extra layer of shielding (usually a metal foil or braid) around the twisted pairs or around the entire cable, providing better protection against EMI and radio frequency interference (RFI).
+Time Division Multiplexing (TDM): method of transmitting multiple signals over a single communication channel by dividing the time into several intervals (or time slots).
 Transceiver: act like a media converter. Convert or translate data sent by one protocol to another protocol.
   - can be used to convert the medium, keeping the same protocol (eg: to combat EMI, or increase the distance).
   - copper to fiber, fiber to copper, coaxial to fiber, copper to coaxial, copper to wireless.

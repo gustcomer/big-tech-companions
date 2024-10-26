@@ -14,6 +14,8 @@ Command Modes
 IOS-XE: modern, modular version of the Cisco IOS (Internetwork Operating System).
 running-configuration: current configuration settings stored in the RAM that are actively running on a Cisco device.
 startup-configuration: configuration file that is stored in NVRAM (non-volatile RAM) and is used when the device boots up.
+tty: terminal controller.
+vty: virtual terminal.
 
 ================================================================================
 Commands IOS
@@ -38,10 +40,13 @@ to check the MAC Address of the device you could:
 > show mac address-table | > show mac add : used to show the mac address table in switches.
 > clear mac ad
 > show running-config | > sh run : show running configurations of the switch.
-> line vty 0 4 : enable 5 channels of telnet to be used. line is used to configure a terminal line, while vty means virtual terminal. check the running-configurations
+> line vty 0 4 : enter specific config mode of 5 telnet channels to be used. line is used to configure a terminal line, while vty means virtual terminal. check the running-configurations
   notice that it takes you to the specific config of the line
 > login : inside the config-line mode, it allows connections to this line. but usually a password must be set.
 > password mypassword set the password of a line to mypassword
+> enable password cisco : this command in configuration mode allows you to set a password to enter the enable mode.
+> int loop 1 : create a virtual loopback interface in a router, for instance
+  > ip address 192.168.100.254 255.255.255.0 : then, inside the config of the interface, assign an ip to this virtual network.
 
 ================================================================================
 Windows Prompt Commands
