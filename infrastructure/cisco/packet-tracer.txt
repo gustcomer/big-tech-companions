@@ -91,7 +91,7 @@ David Bombal - Two Switches and Two PCs
 38 check the running configurations of the switch
   S1# sh run
 39 check if there is a virtual telnet line
-  line vty 0 4 -- it allows 5 lines of telnet (the range from 0 to 4)
+  line vty 0 4 -- it allows 5 lines of telnet (the range from 0 to 4), in case it is not enabled in the running-configurations
 40 try to connect via telnet to the switch S!
   > telnet 192.168.1.201 -- it wont work because there is no password set, even though the line allocation is on the running configurations.
 41 prepare the switch S1 to accept telnet connections

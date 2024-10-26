@@ -38,6 +38,10 @@ to check the MAC Address of the device you could:
 > show mac address-table | > show mac add : used to show the mac address table in switches.
 > clear mac ad
 > show running-config | > sh run : show running configurations of the switch.
+> line vty 0 4 : enable 5 channels of telnet to be used. line is used to configure a terminal line, while vty means virtual terminal. check the running-configurations
+  notice that it takes you to the specific config of the line
+> login : inside the config-line mode, it allows connections to this line. but usually a password must be set.
+> password mypassword set the password of a line to mypassword
 
 ================================================================================
 Windows Prompt Commands
