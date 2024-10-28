@@ -47,6 +47,7 @@ to check the MAC Address of the device you could:
 > enable password cisco : this command in configuration mode allows you to set a password to enter the enable mode.
 > int loop 1 : create a virtual loopback interface in a router, for instance
   > ip address 192.168.100.254 255.255.255.0 : then, inside the config of the interface, assign an ip to this virtual network.
+> show interface g0/0/0 : show details of some interface of the router
 
 ================================================================================
 Windows Prompt Commands

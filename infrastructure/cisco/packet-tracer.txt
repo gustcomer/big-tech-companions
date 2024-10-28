@@ -137,3 +137,5 @@ David Bombal - Set Passwords on Devices
 05 to use MD5 hash in the telnet access is not that easy, you have to set a user and a password.
 06 configure enable password with enable password mypass and telnet password with password mypass in S2. you can use enable password mypass or enable secret mypass.
 07 configure enable password with enable password mypass and telnet password with password mypass on the router.
+08 enter console configuration [line console 0] and add a password [login, password cisco].
+09 show details of some interface of the router [show interface g0/0/0].
