@@ -613,6 +613,15 @@ Virtual IP: IP address that is not bound to a specific device but serves as a re
 Virtual Router Redundancy Protocol (VRRP): similar to HSRP but is an Open Standard, it allows multiple routers configuration with an Active and several Backups.
 
 ================================================================================
+Security
+
+Availability: ensure that systems, applications, and data are accessible when needed.
+CIA Triad: Confidentiality, Integrity, and Availability, it is a foundational concept in information security.
+  - each element of the C-I-A Triad supports the others, and a weakness in one can affect overall security.
+Confidentiality: prevent unauthorized access to sensitive information.
+Integrity: ensure data accuracy and consistency over its lifecycle.
+
+================================================================================
 Switching
 
 802.1x Authentication: ensures only authenticated users can access network services.
