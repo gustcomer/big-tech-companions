@@ -6,6 +6,7 @@ AES (Advanced Encryption Standard): symmetric encryption algorithm adopted by th
   - widely used in securing sensitive data and modern cryptographic protocols.
 Asymmetric Encryption (Public-Key Cryptography): encryption method that uses a pair of keys, one for encryption and another for decryption.
   - commonly used algorithms: RSA, ECC.
+Brute Force Attack (Exhaustive Keysearch): attacker tries every possible key until they find the correct one.
 Ciphertext (y): encrypted or encoded text that is the result of applying an encryption algorithm to plaintext.
   - cannot be easily read or understood without the appropriate key for decryption.
   - contrasts with plaintext, which is readable data.
@@ -25,6 +26,7 @@ Cryptosystem: structured set of cryptographic algorithms and protocols designed 
 Decryption Function (d): algorithm that reverses the encryption process, transforming ciphertext (encoded data) back into its original plaintext form using cryptographic key k.
 Encryption Function (e): algorithm that transforms plaintext (readable data) into ciphertext (encoded data) using a cryptographic key k.
 Insecure Channel: communication medium where data can be intercepted, eavesdropped on, or tampered with by unauthorized parties.
+Kerckhoffs's Principle: (1883) states that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge.
 Key Space |k|: the set of all possible keys.
 Plaintext (Cleartext, x): readable or unencrypted data that is input into an encryption algorithm to produce ciphertext.
   - can be text, files, or other data in its original form.
@@ -32,6 +34,11 @@ Plaintext (Cleartext, x): readable or unencrypted data that is input into an enc
 Secure Channel: communication medium that ensures confidentiality, integrity, and authenticity of the data exchanged between parties, preventing eavesdropping or tampering by unauthorized individuals.
   - they use cryptographic protocols (like TLS/SSL or IPsec) to encrypt data and often include mechanisms for authentication and integrity verification.
 Stream Cipher: encryption algorithms that encrypt data one bit or byte at a time, using a keystream generated from a secret key.
+Substitution Cipher: method of encryption where each letter or symbol in the plaintext is replaced by another letter or symbol to create the ciphertext.
+  eg: Simple Substitution Cipher, Caesar Cipher, Vigenère Cipher, Playfair Cipher, Affine Cipher.
+  Caesar Cipher: each letter in the plaintext is shifted a fixed number of places in the alphabet, some other methods use other substitution tables.
+  - to break a substitution table with for each letter would take 26! or 2^88 combinations. 2^56 is feasible, but more than that is complicated. The key space is too large!
+  - a Letter Frequencu Analysis could be used to attack.
 Symmetric Encryption: encryption method that uses the same key for both encryption and decryption.
   - commonly used algorithms: AES, DES.
   - faster than asymmetric encryption but requires secure key distribution.
