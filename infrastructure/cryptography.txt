@@ -24,6 +24,7 @@ Cryptology: science of secure communication.
   - it involves cryptography (creating codes and ciphers to protect information, the good guys) and cryptanalysis (breaking or analyzing these codes, the bad guys).
 Cryptosystem: structured set of cryptographic algorithms and protocols designed to secure data through encryption and decryption processes.
 Decryption Function (d): algorithm that reverses the encryption process, transforming ciphertext (encoded data) back into its original plaintext form using cryptographic key k.
+DES (Data Encryption Standard): symmetric encryption created in the 1970s.
 Encryption Function (e): algorithm that transforms plaintext (readable data) into ciphertext (encoded data) using a cryptographic key k.
 Insecure Channel: communication medium where data can be intercepted, eavesdropped on, or tampered with by unauthorized parties.
 Kerckhoffs's Principle: (1883) states that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge.
@@ -31,6 +32,23 @@ Key Space |k|: the set of all possible keys.
 Plaintext (Cleartext, x): readable or unencrypted data that is input into an encryption algorithm to produce ciphertext.
   - can be text, files, or other data in its original form.
   - contrasts with ciphertext, which is the output of encryption.
+RSA (Rivest, Shamir, and Adleman): asymmetric encryption introduced in 1977. Based on the mathematical difficulty of factoring the product of factoring two large prime numbers.
+  - consists of 3 steps Key Generation, Encryption, and Decryption.
+  totient:  function φ(n) that counts how many integers between 1 and n are coprime
+  1 Key Generation
+    - Choose two large prime numbers, p and q.
+    - Compute n = p * q. The value n is used as part of the public and private keys.
+    - Calculate φ(n) = (p - 1)(q - 1), where φ is Euler's totient function.
+    - Choose a public exponent e such that 1 < e < φ(n) and e is coprime with φ(n). Common choices for e are 3, 17, and 65537.
+    - Compute the private exponent d, which satisfies d * e ≡ 1 mod φ(n). This is done using the modular multiplicative inverse.
+    - The public key is (e, n), and the private key is (d, n).
+  2 Encryption
+    - Convert the plaintext into an integer m such that 0 <= m < n.
+    - Compute the ciphertext c using the formula: c = m^e mod n
+    - The ciphertext c is sent to the recipient.
+  3 Decryption
+    - The recipient uses their private key (d, n) to recover the plaintext m using the formula: m = c^d mod n
+    - The plaintext is converted back into its original form.
 Secure Channel: communication medium that ensures confidentiality, integrity, and authenticity of the data exchanged between parties, preventing eavesdropping or tampering by unauthorized individuals.
   - they use cryptographic protocols (like TLS/SSL or IPsec) to encrypt data and often include mechanisms for authentication and integrity verification.
 Stream Cipher: encryption algorithms that encrypt data one bit or byte at a time, using a keystream generated from a secret key.

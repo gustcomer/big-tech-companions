@@ -1,0 +1,27 @@
+install wsl (open command promp as admin)
+> wsl --install
+
+get help
+> wsl --help  or  > wsl -h
+
+list the installed distros
+> wsl --list --verbose  or  > wsl -l -v
+
+get the available distros to install
+> wsl --list --online
+
+install a distro
+> wsl --install -d <DistroName>
+
+deleting a distro
+  first terminate the distro if running
+  > wsl --terminate <distro_name>
+
+  then unregister (removes the distro and all its files)
+  wsl --unregister <distro_name>
+
+to run a distro
+  first set it as default
+  > wsl --set-default Ubuntu-24.04
+
+  
