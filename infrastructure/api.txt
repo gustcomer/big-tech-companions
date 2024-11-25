@@ -1,0 +1,21 @@
+URI (Uniform Resource Identifier): string of characters that uniquely identifies a resource on the Web or within a network-based system.
+  Scheme: Specifies the protocol or mechanism for accessing the resource. Examples: http, https, ftp, mailto.
+  Authority: Identifies the domain or host of the resource. Example: example.com.
+  Path: Indicates the specific resource within the host. Example: /users/123.
+  Query (Optional): Contains additional parameters for the request. Example: ?sort=asc&limit=10.
+  Fragment (Optional): Refers to a subsection or specific part of the resource. Example: #section2.
+URL (Uniform Resource Locator): A subset of URIs, URLs provide a means to locate a resource by describing its access mechanism (e.g., http, ftp) and network location.
+URN (Uniform Resource Name): A subset of URIs that uniquely identifies a resource by name in a namespace without specifying its location. Example: urn:isbn:0451450523.
+
+
+================================================================================
+REST
+
+hypermedia: combination of hypertext and multimidea.
+hypertext: structured text containing links to other text.
+resource: any entity that can be identified, named, and addressed.
+  - they are abstract concepts identified by URIs.
+REST (Representational State Transfer): architectural style for distributed hypermedia systems emphasizing stateless interactions, scalability, and a uniform interface.
+  - it was introduced in 2000 by computer scientist Roy Fielding in his doctoral dissertation.
+REST constraints
+RESTful: An application that adheres to the REST architectural constraints.
