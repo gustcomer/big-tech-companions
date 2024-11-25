@@ -15,7 +15,18 @@ hypermedia: combination of hypertext and multimidea.
 hypertext: structured text containing links to other text.
 resource: any entity that can be identified, named, and addressed.
   - they are abstract concepts identified by URIs.
+  - a resource is the conceptual entity, whereas an endpoint (e.g., an HTTP URL) is the mechanism through which the resource is accessed. The resource exists independently of its representations or methods of access.
 REST (Representational State Transfer): architectural style for distributed hypermedia systems emphasizing stateless interactions, scalability, and a uniform interface.
   - it was introduced in 2000 by computer scientist Roy Fielding in his doctoral dissertation.
-REST constraints
+REST characteristics
+  Statelessness: Each request from client to server must contain all the information needed to understand and process it.
+  Cacheability: Responses must define themselves as cacheable or not, to improve network efficiency.
+  Layered System: The architecture allows for intermediaries to reduce latency, enforce security, or encapsulate legacy systems.
+  Uniform Interface: Simplifies interactions by ensuring consistent methods (e.g., HTTP verbs).
 RESTful: An application that adheres to the REST architectural constraints.
+State: condition or information describing the current status of an entity (e.g., a resource, a system, or an application) at a particular point in time.
+  Application State: state of the client's interaction with the application. typically stored on the client in a RESTful architecture.
+  Resource State: current information or status of a resource on the server. transferred to the client via representations (e.g., JSON, XML, HTML) and can be manipulated via HTTP methods.
+    eg: The state of a resource representing a user might include attributes like name, email, and account status.
+  Session State: Specific to traditional client-server systems, where state is often stored on the server to track user sessions.
+    - in REST, session state is avoided because REST emphasizes statelessness.
