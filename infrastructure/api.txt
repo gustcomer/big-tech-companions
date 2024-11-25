@@ -7,12 +7,19 @@ URI (Uniform Resource Identifier): string of characters that uniquely identifies
 URL (Uniform Resource Locator): A subset of URIs, URLs provide a means to locate a resource by describing its access mechanism (e.g., http, ftp) and network location.
 URN (Uniform Resource Name): A subset of URIs that uniquely identifies a resource by name in a namespace without specifying its location. Example: urn:isbn:0451450523.
 
-
 ================================================================================
 REST
 
+Http Verbs
+  GET: Retrieve the current representation of a resource. Used to fetch resource state without modifying it (read-only operation). idempotent.
+  POST: Submit data to create or modify a resource. Or trigger a server-side process. not idempotent, because repeated POSTs may try to create multiple resources.
+  PUT: Update a resource. Or create a resource if it does not exist. idempotent.
+  DELETE: Remove a resource. idempotent because once deleted, repeated DELETE requests have no additional effect.
+  PATCH: Partially update an existing resource. idempotent.
 hypermedia: combination of hypertext and multimidea.
 hypertext: structured text containing links to other text.
+idempotency: operations that can be performed multiple times without changing the result beyond the initial application.
+  - it ensures that a request produces the same effect whether it's performed once or multiple times.
 resource: any entity that can be identified, named, and addressed.
   - they are abstract concepts identified by URIs.
   - a resource is the conceptual entity, whereas an endpoint (e.g., an HTTP URL) is the mechanism through which the resource is accessed. The resource exists independently of its representations or methods of access.
