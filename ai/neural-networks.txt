@@ -1,0 +1,3 @@
+================================================================================
+
+embeddings: representations of data—such as words, sentences, or images—that transform them into dense, fixed-size vectors in a continuous vector space.
