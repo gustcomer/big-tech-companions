@@ -1,0 +1,9 @@
+================================================================================
+
+Communication Pattern: defines the interaction mechanism between components, focusing on how data flows and is exchanged between them.
+  eg: Request-Response, Publish-Subscribe, Streaming, Polling.
+  different from Structural Architecture that defines the organization of components.
+Request-Response: communication pattern that serves as the backbone of many web-based architectures.
+Structural Architecture: defines the organization and roles of components in a system and how they are logically related to each other.
+  eg: Client/Server, Peer-to-Peer (P2P), Layered Architecture.
+  it's different from Communication Pattern which defines the interaction mechanism between components, focusing on how data flows and is exchanged between them.
