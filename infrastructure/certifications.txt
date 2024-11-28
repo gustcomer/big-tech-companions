@@ -1,0 +1,8 @@
+================================================================================
+
+GIAC (Global Information Assurance Certification): provider and developer of Cyber Security Certifications.
+  GICSP (Global Industrial Cyber Security Professional Certification)
+  GPEN (GIAC Penetration Tester Certification) - good but expensive
+  GXPN (GIAC Exploit Researcher and Advanced Penetration Tester) - good but expensive, multiple choices
+SANS (System Administration, Networking, and Security) Institute: specializes in information security, cybersecurity training, and selling certificates.
+  ICS410: ICS/SCADA Security Essentials™
