@@ -731,6 +731,9 @@ Frequency Bands
       - if we double the number of channels, we can double the bandwidth. We can bond up to 8 channels together.
   6 GHz: new spectrum up for Wi-Fi use that offers even more channels and bandwidth.
     - frequencies from 5.925 to 7.125GHz. it allows for channels of 20, 40, 80 and 160MHz.
+MIMO (Multiple Input, Multiple Output): technology that involves using multiple antennas to enhance capacity, data rates, and signal quality.
+  SU-MIMO: supports one user at a time.
+  MU-MIMO: allows simultaneous communication with multiple users.
 Service Set Identifier (SSID): common alphanumeric network name that end users can search for to connect to the wireless network.
 Wireless
   Types
@@ -749,11 +752,14 @@ Wireless
         1 uses ESS configuration in a wireless network that operates in infrastructure mode.
         2 involves multiple different types of wireless networks all operating together to provide services to end users.
       the redundancy in a mesh network ensures that data can be rerouted through alternate paths.
-Wireless Standards
+Wireless Standards: all wireless standards use CSMA/CA because it is not possible to detect collisions just by monitoring abnormal voltages.
   Wireless a (802.11a): (1999) operates in the 5GHz, speed up to 54Mbps, range around 35 meters up to 75m.
     - the 5GHz used had some issues with other applications that were using similar bands like militar radar systems, medical devices.
   Wireless b (802.11b): (1999) operates in the 2.4GHz, speed up to 11Mbps, range around 50 meters up to 140m.
   Wireless g (802.11g): (2003) operates in the 2.4GHz, speed up to 54Mbps, range around 50 meters up to 140m (similar to b).
+  Wireless n (802.11n): (2009) uses MIMO and operates both in 2.4GHz and 5GHz.
+    - for 2.4GHz range around 100-250m, theoretical speed up to 600Mbps in a 4x4 MIMO configuration
+    - for 5GHz range around 70-200m, theoretical speed is debatable.
   802.11h: (2004) developed to comply with European Regulations for wireless networking.
     Dynamic Frequency Selection (DFS): feature that requires devices to actively monitor the environment for radar signals. If detected, switch to other channels.
     Transmit Power Control (TPC): allows the devices to adjust their transmitting power to the minimum required for maintaining a good quality connection.
@@ -761,6 +767,7 @@ Wireless Standards
 ================================================================================
 Standards
 
-IEEE 802.3: still evolving collection of standards defining the physical layer and data link layer's media access control (MAC) of wired Ethernet.
+IEEE 802.11 (Wireless)
+IEEE 802.3 (Ethernet): still evolving collection of standards defining the physical layer and data link layer's media access control (MAC) of wired Ethernet.
   - it also defines a LAN access method using CSMA/CD.
 RFC 1918: specifies the allocation of private IP addresses for use within private networks. It was published in 1996 and helps manage IP address space efficiently without burdening the public address space.
