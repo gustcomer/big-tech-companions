@@ -3,6 +3,7 @@
 DMZ (Demilitarized Zone): physical or logical network segment designed to expose an organization's external-facing services (e.g., web servers, email servers, or FTP servers) to the public internet while isolating the rest of the internal network from direct exposure.
 EDR (Endpoint Detection and Response): cybersecurity solution designed to monitor, detect, and respond to threats on endpoints (such as laptops, desktops, servers, and mobile devices) in real-time.
 MITRE ATT&CK: framework developed by MITRE Corporation that provides a comprehensive knowledge base of adversary TTPs based on real-world observations of cyberattacks.
+  Enterprise Matrix: maps out tactics, techniques, and sub-techniques adversaries may use to target enterprise environments.
 RTA (Red Team Assessment): security exercise where a Red Team simulates real-world adversarial behavior to test an organization's defenses.
 SBS (Sensitive Business System): systems that are integral to an organization’s functioning, and their failure can result in severe consequences, such as financial loss, reputational damage, or operational disruptions.
 Secure by Design: cybersecurity approach that emphasizes incorporating security principles, mechanisms, and best practices into the design and development of systems, applications, and infrastructure from the outset.
@@ -19,3 +20,5 @@ Shodan: search engine specifically designed to discover and index devices connec
 Institutions
 
 CISA (Cybersecurity and Infrastructure Security Agency): U.S. government agency under the Department of Homeland Security (DHS) that is responsible for safeguarding critical infrastructure from cyber threats.
+
+================================================================================

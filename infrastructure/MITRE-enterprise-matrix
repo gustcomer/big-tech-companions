@@ -1,0 +1,7 @@
+================================================================================
+Phases
+
+01 Reconnaissance: process of gathering information about a target system, organization, or individual to identify vulnerabilities, assets, or entry points that can be exploited during an attack.
+  Active Reconnaissance: directly interacting with the target system to gather information.
+    eg: scanning with nmap, 
+  Passive Reconnaissance: gathering information without directly interacting with the target, reducing the risk of detection.
