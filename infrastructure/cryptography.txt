@@ -6,6 +6,7 @@ AES (Advanced Encryption Standard): symmetric encryption algorithm adopted by th
   - widely used in securing sensitive data and modern cryptographic protocols.
 Asymmetric Encryption (Public-Key Cryptography): encryption method that uses a pair of keys, one for encryption and another for decryption.
   - commonly used algorithms: RSA, ECC.
+Block Cipher: type of encryption algorithm that transforms fixed-size blocks of plaintext data into ciphertext using a cryptographic key. It operates on data in chunks or "blocks," typically of 64 or 128 bits.
 Brute Force Attack (Exhaustive Keysearch): attacker tries every possible key until they find the correct one.
 Ciphertext (y): encrypted or encoded text that is the result of applying an encryption algorithm to plaintext.
   - cannot be easily read or understood without the appropriate key for decryption.
@@ -25,10 +26,26 @@ Cryptology: science of secure communication.
 Cryptosystem: structured set of cryptographic algorithms and protocols designed to secure data through encryption and decryption processes.
 Decryption Function (d): algorithm that reverses the encryption process, transforming ciphertext (encoded data) back into its original plaintext form using cryptographic key k.
 DES (Data Encryption Standard): symmetric encryption created in the 1970s.
+Diffie-Hellman Key Exchange (DHKE): allows two parties to securely establish a shared secret key over an insecure communication channel without directly transmitting the key itself.
+  Steps
+    1. Alice and Bob choose numbers g and n and publish them in the public space.
+      p should be a large prime number.
+      the generator g should be large a primitive root of p.
+    2. Alice picks a large number a, and Bob picks a large number b. a and b don't need to be primes. They should be kept in secret.
+    3. Alice calculates A=(g^a)mod n and Bob calculates B=(g^b)mod p. Then they send each other the result. To find out the a and b is the Discrete Logarithm Problem (DSP) which is hard to solve.
+    4. Alice receives B and calculate the key S=(B^a)mod p. Bob calculates the key S=(A^b)mod p. S=(g^ab)mod p or S=(g^ba)mod p.
+    4. S is used as a symmetric key for other algorithms such as AES or DES.
+  DH Computational Assumption: if g, g^a, g^b are in the public space, it is computationally intractable to Oscar to compute g^ab. (don't confuse with the computation of g^(a+b) which is easy to calculate).
 Encryption Function (e): algorithm that transforms plaintext (readable data) into ciphertext (encoded data) using a cryptographic key k.
 Insecure Channel: communication medium where data can be intercepted, eavesdropped on, or tampered with by unauthorized parties.
 Kerckhoffs's Principle: (1883) states that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge.
 Key Space |k|: the set of all possible keys.
+Modes of Operation: in block ciphers define how encryption is applied to data larger than a single block.
+  ECB (Electronic Codebook)
+  CBC (Cipher Block Chaining)
+  CFB (Cipher Feedback)
+  OFB (Output Feedback)
+  GCM (Galois/Counter Mode)
 Plaintext (Cleartext, x): readable or unencrypted data that is input into an encryption algorithm to produce ciphertext.
   - can be text, files, or other data in its original form.
   - contrasts with ciphertext, which is the output of encryption.
@@ -62,3 +79,6 @@ Symmetric Encryption: encryption method that uses the same key for both encrypti
   - faster than asymmetric encryption but requires secure key distribution.
 Symmetric-key Cryptosystem: Alice encrypts her message x using a symmetric algorithm e(), yielding the ciphertext y. Bob receives the ciphertext and decrypts the message with d().
   - the ciphertext will look like random bits to Oscar and will contain no information whatsoever that is useful to him.
+WPA (Wi-Fi Protected Access): security protocol developed by the Wi-Fi Alliance designed to secure wireless networks.
+  - it addresses the vulnerabilities of the older WEP protocol.
+  - uses Temporal Key Integrity Protocol (TKIP) to replace WEP's weak encryption system.
