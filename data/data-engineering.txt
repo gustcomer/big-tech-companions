@@ -1,0 +1,24 @@
+================================================================================
+Glossary
+
+Data
+  Structured (databases)
+  Semi-structured (XML, JSON)
+  Unstructured (audio, video, images)
+Data Lake: centralized repository that allows storing large volumes of data from different types and sources, whether raw, structured, or unstructured, for future processing and analysis.
+Data Warehouse: centralized repository designed to store, integrate, and analyze large volumes of structured data from various sources.
+  - while data lakes store structured, semi and unstructured data, data warehouses store only structured data.
+ETL (Extract, Transform, Load)
+Parquet: stores data by column rather than by row, making it highly efficient for analytical queries that access only a subset of columns.
+
+================================================================================
+Tools
+
+Amazon Redshift
+AWS Athena
+AWS Glue
+Apache Hadoop
+Apache Spark
+Google BigQuery
+Microsoft Azure Synapse Analytics
+Snowflake
