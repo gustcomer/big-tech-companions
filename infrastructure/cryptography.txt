@@ -1,7 +1,7 @@
 ================================================================================
 Glossary
 
-AES (Advanced Encryption Standard): symmetric encryption algorithm adopted by the U.S. government in 2001.
+AES (Advanced Encryption Standard): symmetric-key block cipher (encryption algorithm) adopted by the U.S. government in 2001.
   - operates on block sizes of 128 bits, with key lengths of 128, 192, or 256 bits.
   - widely used in securing sensitive data and modern cryptographic protocols.
 Asymmetric Encryption (Public-Key Cryptography): encryption method that uses a pair of keys, one for encryption and another for decryption.
@@ -25,7 +25,7 @@ Cryptology: science of secure communication.
   - it involves cryptography (creating codes and ciphers to protect information, the good guys) and cryptanalysis (breaking or analyzing these codes, the bad guys).
 Cryptosystem: structured set of cryptographic algorithms and protocols designed to secure data through encryption and decryption processes.
 Decryption Function (d): algorithm that reverses the encryption process, transforming ciphertext (encoded data) back into its original plaintext form using cryptographic key k.
-DES (Data Encryption Standard): symmetric encryption created in the 1970s.
+DES (Data Encryption Standard): symmetric-key block cipher (encryption algorithm) created in the 1970s.
 Diffie-Hellman Key Exchange (DHKE): allows two parties to securely establish a shared secret key over an insecure communication channel without directly transmitting the key itself.
   Steps
     1. Alice and Bob choose numbers g and n and publish them in the public space.
@@ -37,6 +37,7 @@ Diffie-Hellman Key Exchange (DHKE): allows two parties to securely establish a s
     4. S is used as a symmetric key for other algorithms such as AES or DES.
   DH Computational Assumption: if g, g^a, g^b are in the public space, it is computationally intractable to Oscar to compute g^ab. (don't confuse with the computation of g^(a+b) which is easy to calculate).
 Encryption Function (e): algorithm that transforms plaintext (readable data) into ciphertext (encoded data) using a cryptographic key k.
+Feistel Netowork: 
 Insecure Channel: communication medium where data can be intercepted, eavesdropped on, or tampered with by unauthorized parties.
 Kerckhoffs's Principle: (1883) states that a cryptographic system should be secure even if everything about the system, except the key, is public knowledge.
 Key Space |k|: the set of all possible keys.

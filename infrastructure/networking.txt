@@ -621,6 +621,8 @@ Virtual Router Redundancy Protocol (VRRP): similar to HSRP but is an Open Standa
 ================================================================================
 Security
 
+Authentication Protocols: establish trust by verifying the identity of users, devices, or systems before granting access to resources.
+  Local Authentication: you stored the encrypted password in the same computer you're going to log in.
 Availability: ensure that systems, applications, and data are accessible when needed.
 CIA Triad: Confidentiality, Integrity, and Availability, it is a foundational concept in information security.
   - each element of the C-I-A Triad supports the others, and a weakness in one can affect overall security.
