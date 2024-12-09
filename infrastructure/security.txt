@@ -7,6 +7,8 @@ MITRE ATT&CK: framework developed by MITRE Corporation that provides a comprehen
 RTA (Red Team Assessment): security exercise where a Red Team simulates real-world adversarial behavior to test an organization's defenses.
 SBS (Sensitive Business System): systems that are integral to an organization’s functioning, and their failure can result in severe consequences, such as financial loss, reputational damage, or operational disruptions.
 Secure by Design: cybersecurity approach that emphasizes incorporating security principles, mechanisms, and best practices into the design and development of systems, applications, and infrastructure from the outset.
+SSL
+TLS
 TTPs (tactics, techniques, and procedures): behavioral patterns and methods used by threat actors, such as cybercriminals, nation-state groups, or other adversaries, to achieve their goals during a cyberattack.
 
 ================================================================================

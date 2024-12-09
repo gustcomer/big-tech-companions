@@ -622,7 +622,26 @@ Virtual Router Redundancy Protocol (VRRP): similar to HSRP but is an Open Standa
 Security
 
 Authentication Protocols: establish trust by verifying the identity of users, devices, or systems before granting access to resources.
-  Local Authentication: you stored the encrypted password in the same computer you're going to log in.
+  1 Local Authentication: you stored the encrypted password in the same computer you're going to log in.
+  2 LDAP (Lightweight Directory Access Protocol): database (Directory Services) that is used to centralize information about the clients and the objects on the network.
+    open, vendor-neutral. optimized for read-heavy operations like looking up user credentials, organizational hierarchies, or other directory-like data.
+    actually it is a simplified version of X.500.
+    it uses Port 389 if you use the standard port notation. if you use LDAP Secure (LDPAS) we use port 636 with SSL or TLS tunnel.
+  Directory Service: specialized database optimized for reading and searching, used to store, organize, and manage information about objects like users, devices, groups, and services within an organization.
+    Active Directory Domain Services (AD DS): core service provided by AD
+  Microsoft Active Directory (AD): microsoft's implementation of LLDAP. organizes and manages everything on the network (clients, servers, devices, users).
+  4 Kerberos: focused on authentication and authorization within a Windows domain environment.
+    uses a system of tickets to authenticate users and avoid sending passwords over the network.
+    Key Distribution Center (KDC): comprises of AS+TGS.
+    Authentication Server (AS): validates user credentials and issues a TGT.
+    Ticket Granting Server (TGS): issues tickets for accessing specific services upon receiving a valid TGT.
+    Ticket Granting Ticket (TGT): small, encrypted identification file with a limited validity period.
+      user authentication token issued by the Key Distribution Center (KDC) that is used to request access tokens from the Ticket Granting Service (TGS) for specific resources/systems joined to the domain.
+    Session Key: symmetric key used to encrypt the data exchanged during a session.
+    Windows Domain Controller: server that plays a central role in managing security and access in a Windows domain environment.
+      in Kerberos the Windows Domain Controller acts as a Key Distribution Center (KDC).
+    - the most common port used in Kerberos is the 88.
+    - it is possible to have a primary and secondary domain controller to provide redundancy.
 Availability: ensure that systems, applications, and data are accessible when needed.
 CIA Triad: Confidentiality, Integrity, and Availability, it is a foundational concept in information security.
   - each element of the C-I-A Triad supports the others, and a weakness in one can affect overall security.
