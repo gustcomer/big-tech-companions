@@ -57,6 +57,8 @@ Reference another section of other document (in github)
   [Custom foo description](otherfile.md#foo)
 ```
 
+In vscode you can change to preview mode with ctrl+shift+v.
+
 ## Usefull Resources
 
 - [Basic Syntax](https://www.markdownguide.org/basic-syntax/) - Basic markdown syntax by markdownguide.org
