@@ -48,31 +48,6 @@ Conditional Rendering:
     return state.isLoggedIn ? ( <div>Welcome {user}</div> ) : ( return <div>Welcome Guest</div> )
   [4] short circuit operator: it's just syntactic sufar for ifs conditions
     return state.isLoggedIn && <div>Welcome Vishwas</div>
-constructor(props): called whenever a new component is created but before the component is mounted.
-  - used for initializing state, binding event handlers.
-  - this is the only place where you can owerwrite directly this.state
-  - do not cause side effects here (eg: http requests) because you only should do them after the vDOM is rendered and should be done in componentDidMount() instead.
-  - don't forget to call super(props).
-componentDidCatch(error, info): lifecycle method that allows a component to catch JavaScript errors anywhere in its child component tree and apply sid effects such as log those errors.
-  - it is an Error Handling Phase Methods.
-  - While getDerivedStateFromError is used to update the state to render a fallback UI, componentDidCatch can be used for side effects such as logging the error.
-  - it does not catch errors inside event handlers, in asynchronous code or during server-side rendering.
-  - usually error is an instance of Error containing the thrown error and can be used to get details about the error such as message, stack trace for debugging.
-  - the info is an Object that contains additional information about the component stack at the time the error was thrown. Useful to understand the context in which the error occurred.
-componentDidMount(): called immediately after a component is mounted (inserted into the actual tree) and perform side effects which are actions that require the DOM nodes to be already in place.
-  - lifecycle method called only during the end of the Mounting phase called after the component is rendered (for the first time).
-  - it is the place to set up event listeners since the DOM nodes are already in place.
-  - if you fetch a data at the constructor and it finishes before first rendering it, the setState() will call an update on an unmounted component and it will throw errors.
-  - besides, if the fetched data arrives during the rendering, the render will be interrupted and a new render will eventually be called, messing up the virtual DOM, the diffing and the whole Conciliation process.
-  - so the perfect time to fetch some data is after the rendering.
-componentDidUpdate(): after the component has been effectively updated, you can perform side effects taking into account previous props, previous states, actual props and states and the snapshot from getSnapshotBeforeUpdate.
-  - this is one of the three lifecycle method used to perform side effects (the others are componentDidMount and componentWillUnmount).
-  - don't forget to compare the previous props with the actual props to be sure that you need to re-fetch some data or some other side-effects.
-  - to conditionally update, use a conditional statement comparing prevState with this.state and prevProps with this.props.
-componentWillUnmount(): invoked immediately before a component is unmounted and destroyed.
-  - It's a place to perform any necessary cleanup, such as canceling network requests, removing event listeners, or invalidating timers.
-componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
-  - deprecated Updating livecycle method that was called after the shouldComponentUpdate() if it returned true and before the re-rendering.
 Context: provides a way to pass data through the component tree without having to pass props down manually at every level.
     [1] create the Context: const UserContext = React.createContext(); const UserProvider = UserContext.Provider; const UserConsumer = UserContext.Consumer; export {UserProvider, UserConsumer}
     [2] use the Context and provide value: <UserProvider value="Vishwas">...</UserProvider> every component and subcomponent inside the brackets will be able to use the context value.
@@ -126,39 +101,12 @@ Diffing: concept of comparing the virtual DOMs before and after the modification
   - the result of the Conciliation process is called diff.
   - Diffing is related to the algorithm used to compare two virtual DOMs and is an important step in the Reconciliation process.
   - aka: DOM Diffing
-Error Boundary: special component that lets you catch JavaScript errors and display/log some fallback UI instead of the part that crashed.
-  - the Error Boundary is activated in production, but in development mode you want to make errors as high visible as possible (but in dev you'll have the option to close the error).
-  - in class components, it is a CC that implements either one or both of componentDidCatch() or getDerivedStateFromError().
-  - by default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
-  - in React it is implemented using componentDidCatch() and the static getDerivedStateFromError() methods.
-  - the Error Boundary component could have an UI to display some error message in case some state hasError is set true with getDerivedStateFromError(error), and display the normal component with the child props in case it has no error.
-  - during development, react automatically logs every error to the console, so there is no need to console.log it again.
-  - the place you put the Error Boundary is important as it controls if the entire app should have the fallback UI or just the component causing the problem.
 Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
 fetch: react components don't know anything about HTTP, they simply read props and state and then render the UI.
   - to read data from the server you have to get the data to your props or state.
-<Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node instead of an additional <div> tag.
-  - it avoids the message JSX expressions must have one parent element.
-  - there is an Explicit Syntax where you use the enclosing <React.Fragment> tag and there is a Short Syntax where you enclose with <></>.
-  - an example where it could be very useful is inside a component that returns multiple <td>'s to be put inside a <tr>. If we wrap the <td>'s with div it would throw warnings, so we wrap with Fragment.
-  - key attribut is the only attribute accepted by a Fragment. But with the Short Syntax you can't use the key attribute.
-getDerivedStateFromError(error): takes the error as an argument and returns an object to update the state so that a specific UI for error could be rendered.
-  - this is an Error Handling Phase Methods.
-  - while getDerivedStateFromError() is used to update the state to render a fallback UI, componentDidCatch() can be used for side effects such as logging the error.
-  - - the Error Boundary component could have an UI to display some error message in case some state hasError is set true with getDerivedStateFromError(error), and display the normal component with the child props in case it has no error.
-getDerivedStateFromProps(props, state): it is a static method (does not have this keyword) that allows a component to update its state based on changes in its props.
-  - it is not recommended to copy a prop directly into state since this breaks the data flow.
-  - during the mounting phase, getDerivedStateFromProps() is called after the constructor and before render().
-  - it is called in the Mounting and Update phases.
-  - the method should return an object that represents the updated state of the component, or null if no state update is necessary.
-  - getDerivedStateFromProps() serves as a safer, static alternative to the deprecated componentWillReceiveProps().
-getSnapshotBeforeUpdate(prevProps, prevState): Updating Lifecycle Method that is called after the vDOM has been updated but before the changes are reflected in the actual DOM and you can calculate a snapshot, represented as the return value, to be used later in componentDidUpdate().
-  - to calculate the snapshot you can use the previous Props, previous State, the actual Props, the actual state and the old DOM that for the moment is still the actual, just before the new changes in the vDOM are updated.
-  - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes.
-  - one funny thing about getSnapshotBeforeUpdate() is that for hierarchical component trees, all the components will execute their getSnapshotBeforeUpdate() before they start their componentDidUpdate().
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic like state. Lifting the state would be an option to share state and handler, but for components deeply separated it's better to use HOC.
   - HOCs are used to add additional functionality to a component without modifying it directly.
@@ -197,18 +145,6 @@ key prop: each child in an array or iterator should have a unique "key" prop of 
   - you could use the map index as key, if the list were static (never changed) and also never reordered or filtered.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
-Lifecycle Methods: special methods that get called at different stages of a component's lifecycle and can be overwritten. They are available for Class Components.
-  - useEffect hook partially accomplishes what lifecycle methods do with the advantage of keeping related code together and not divided in a method per cycle.
-  - the methods can be classified in 4 phases 
-    [1] Mounting: when an instance of a component is being created and inserted into the DOM.
-      - constructor, getDerivedStateFromProps(), render and componentDidMount()
-    [2] Updating: when a component is being re-rendered as a result of changes to either its props or state.
-      - getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate()
-    [3] Unmounting: when a component is being removed from the DOM.
-      - componentWillUnmount()
-    [4] Error Handling: when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
-      - getDerivedStateFromError() and componentDidCatch()
-  - organizing the code per lifetime cycle instead of per functionality is bad because you have to put together code for different functionalities.
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
@@ -222,12 +158,6 @@ onClick: event attribute that allows you to specify JavaScript code to run when 
   eg: <button onClick={() => setCount(count + 1)}>Count {count}</button>; note we pass some function definition instead of a function call. And prefer arrow function.
   - in HTML you call the function in the form of string. eg: <button onClick="alert('Button clicked!')">Click Me!</button>
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
-Portals: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component, in other words, outside the classical div with id='root'.
-  - often used to handle cases where a component needs to visually break out of its container, such as for modals, tooltips, and dropdowns.
-  - to use a Portal, that is, to render a tree into some DOM node, you use ReactDOM.createPortal(1,2) where the first parameter is the JSX to be rendered and the second is the DOM element you can get with document.getElementById('modal-root').
-  - actually the first argument can be anything React can render, like numbers, strings, JSX and even React components.
-  - a component can perfectly be declared inside some React node tree of components, but the render can be transfered to a Portal.
-  - even though it renders in another DOM node, the rest continues exactly like any normal react component like event bubbling.
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
 Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
   - Props are immutable, that is, a component cannot change its own props.
@@ -352,8 +282,6 @@ Styling React Components
   [3] CSS Modules: is just like the CSS stylesheets but instead of using the class names as string, you use them as properties of a style object.
     - the advantage of CSS Modules is that the class has only local scope, while in CSS stylesheets the scope is also for all of its children components and hence is more error prone.
   [4] CSS in JS Libraries
-super(props): all Class Components extends React.Component, so super calls the constructor of React.Component and passing props to it.
-  - it correctly initializes this.state by calling super(). Don't forget that this is not defined before calling super() when there is inheritance.
 <Suspense>: lets you display a fallback until its children have finished loading.
 triggering: initiates a state update or a re-render of a component.
   - there are two reasons for a component to render [1] it's the component's initial render. [2] the component's (or one of its ancestors') state has been update. Remeber that an ancestors state could be another's prop.
@@ -367,6 +295,101 @@ unmount: when you're displaying a component and it stops being displayed for any
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
+useDebugValue():
+useImperativeHandle():
+useLayoutEffect():
+Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
+  - VDOM
+Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
+  - while HOCs wrap a component with a function, the Wrapper Component wraps a component within its tags.
+  - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
+
+================================================================================
+React 0.x (aprox May 2013 - March 2016)
+
+constructor(props): called whenever a new component is created but before the component is mounted.
+  - used for initializing state, binding event handlers.
+  - this is the only place where you can owerwrite directly this.state
+  - do not cause side effects here (eg: http requests) because you only should do them after the vDOM is rendered and should be done in componentDidMount() instead.
+  - don't forget to call super(props).
+componentDidCatch(error, info): lifecycle method that allows a component to catch JavaScript errors anywhere in its child component tree and apply sid effects such as log those errors.
+  - it is an Error Handling Phase Methods.
+  - While getDerivedStateFromError is used to update the state to render a fallback UI, componentDidCatch can be used for side effects such as logging the error.
+  - it does not catch errors inside event handlers, in asynchronous code or during server-side rendering.
+  - usually error is an instance of Error containing the thrown error and can be used to get details about the error such as message, stack trace for debugging.
+  - the info is an Object that contains additional information about the component stack at the time the error was thrown. Useful to understand the context in which the error occurred.
+componentDidMount(): called immediately after a component is mounted (inserted into the actual tree) and perform side effects which are actions that require the DOM nodes to be already in place.
+  - lifecycle method called only during the end of the Mounting phase called after the component is rendered (for the first time).
+  - it is the place to set up event listeners since the DOM nodes are already in place.
+  - if you fetch a data at the constructor and it finishes before first rendering it, the setState() will call an update on an unmounted component and it will throw errors.
+  - besides, if the fetched data arrives during the rendering, the render will be interrupted and a new render will eventually be called, messing up the virtual DOM, the diffing and the whole Conciliation process.
+  - so the perfect time to fetch some data is after the rendering.
+componentDidUpdate(): after the component has been effectively updated, you can perform side effects taking into account previous props, previous states, actual props and states and the snapshot from getSnapshotBeforeUpdate.
+  - this is one of the three lifecycle method used to perform side effects (the others are componentDidMount and componentWillUnmount).
+  - don't forget to compare the previous props with the actual props to be sure that you need to re-fetch some data or some other side-effects.
+  - to conditionally update, use a conditional statement comparing prevState with this.state and prevProps with this.props.
+componentWillUnmount(): invoked immediately before a component is unmounted and destroyed.
+  - It's a place to perform any necessary cleanup, such as canceling network requests, removing event listeners, or invalidating timers.
+componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
+  - deprecated Updating livecycle method that was called after the shouldComponentUpdate() if it returned true and before the re-rendering.
+getDerivedStateFromError(error): takes the error as an argument and returns an object to update the state so that a specific UI for error could be rendered.
+  - this is an Error Handling Phase Methods.
+  - while getDerivedStateFromError() is used to update the state to render a fallback UI, componentDidCatch() can be used for side effects such as logging the error.
+  - - the Error Boundary component could have an UI to display some error message in case some state hasError is set true with getDerivedStateFromError(error), and display the normal component with the child props in case it has no error.
+getDerivedStateFromProps(props, state): it is a static method (does not have this keyword) that allows a component to update its state based on changes in its props.
+  - it is not recommended to copy a prop directly into state since this breaks the data flow.
+  - during the mounting phase, getDerivedStateFromProps() is called after the constructor and before render().
+  - it is called in the Mounting and Update phases.
+  - the method should return an object that represents the updated state of the component, or null if no state update is necessary.
+  - getDerivedStateFromProps() serves as a safer, static alternative to the deprecated componentWillReceiveProps().
+getSnapshotBeforeUpdate(prevProps, prevState): Updating Lifecycle Method that is called after the vDOM has been updated but before the changes are reflected in the actual DOM and you can calculate a snapshot, represented as the return value, to be used later in componentDidUpdate().
+  - to calculate the snapshot you can use the previous Props, previous State, the actual Props, the actual state and the old DOM that for the moment is still the actual, just before the new changes in the vDOM are updated.
+  - as major use cases we have: maintain scroll position, capture form input focus state, animate height changes.
+  - one funny thing about getSnapshotBeforeUpdate() is that for hierarchical component trees, all the components will execute their getSnapshotBeforeUpdate() before they start their componentDidUpdate().
+Lifecycle Methods: special methods that get called at different stages of a component's lifecycle and can be overwritten. They are available for Class Components.
+  - useEffect hook partially accomplishes what lifecycle methods do with the advantage of keeping related code together and not divided in a method per cycle.
+  - the methods can be classified in 4 phases 
+    [1] Mounting: when an instance of a component is being created and inserted into the DOM.
+      - constructor, getDerivedStateFromProps(), render and componentDidMount()
+    [2] Updating: when a component is being re-rendered as a result of changes to either its props or state.
+      - getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate()
+    [3] Unmounting: when a component is being removed from the DOM.
+      - componentWillUnmount()
+    [4] Error Handling: when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+      - getDerivedStateFromError() and componentDidCatch()
+  - organizing the code per lifetime cycle instead of per functionality is bad because you have to put together code for different functionalities.
+super(props): all Class Components extends React.Component, so super calls the constructor of React.Component and passing props to it.
+  - it correctly initializes this.state by calling super(). Don't forget that this is not defined before calling super() when there is inheritance.
+
+================================================================================
+React 15 (April  2016)
+
+================================================================================
+React 16 (September 2017)
+
+Error Boundary: special component that lets you catch JavaScript errors and display/log some fallback UI instead of the part that crashed.
+  - the Error Boundary is activated in production, but in development mode you want to make errors as high visible as possible (but in dev you'll have the option to close the error).
+  - in class components, it is a CC that implements either one or both of componentDidCatch() or getDerivedStateFromError().
+  - by default, if your application throws an error during rendering, React will remove its UI from the screen. To prevent this, you can wrap a part of your UI into an error boundary.
+  - in React it is implemented using componentDidCatch() and the static getDerivedStateFromError() methods.
+  - the Error Boundary component could have an UI to display some error message in case some state hasError is set true with getDerivedStateFromError(error), and display the normal component with the child props in case it has no error.
+  - during development, react automatically logs every error to the console, so there is no need to console.log it again.
+  - the place you put the Error Boundary is important as it controls if the entire app should have the fallback UI or just the component causing the problem.
+Portals: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component, in other words, outside the classical div with id='root'.
+  - often used to handle cases where a component needs to visually break out of its container, such as for modals, tooltips, and dropdowns.
+  - to use a Portal, that is, to render a tree into some DOM node, you use ReactDOM.createPortal(1,2) where the first parameter is the JSX to be rendered and the second is the DOM element you can get with document.getElementById('modal-root').
+  - actually the first argument can be anything React can render, like numbers, strings, JSX and even React components.
+  - a component can perfectly be declared inside some React node tree of components, but the render can be transfered to a Portal.
+  - even though it renders in another DOM node, the rest continues exactly like any normal react component like event bubbling.
+<Fragment>: often used via <>...</> syntax, lets you group elements without a wrapper node instead of an additional <div> tag.
+  - it avoids the message JSX expressions must have one parent element.
+  - there is an Explicit Syntax where you use the enclosing <React.Fragment> tag and there is a Short Syntax where you enclose with <></>.
+  - an example where it could be very useful is inside a component that returns multiple <td>'s to be put inside a <tr>. If we wrap the <td>'s with div it would throw warnings, so we wrap with Fragment.
+  - key attribut is the only attribute accepted by a Fragment. But with the Short Syntax you can't use the key attribute.
+
+================================================================================
+React 16.8 (February 2019)
+
 useCallback(): used to memoize a function. It returns a memoized version of the callback function that only changes if one of the dependencies has changed.
   - remember that functions are rebuilt after every re-render and even though they have the same behavior, they differ because the comparison depends on reference equality. so all components with callback props like buttons are re-rendered.
   - just like useEffects, remember not to lie in the dependencies array and tell everything that the function being memoized depends (even harder to track dependencies).
@@ -376,7 +399,6 @@ useContext(): allows you to subscribe to React context without introducing nesti
   [1] Create a Context: const ThemeContext = React.createContext('light'); export default ThemeContext;
   [2] Providing the Context: return ( <ThemeContext.Provider value={theme}>  <Toolbar />  </ThemeContext.Provider> );
   [3] Consume the Context: import ThemeContext from './ThemeContext'; ... const theme = useContext(ThemeContext); ...
-useDebugValue():
 useEffect(): hook that lets you synchronize a component with an external system.
   - it lets you perform side effects in function components and works similar to componentDidMount, componentDidUpdate, componentWillUnmount, etc.
   - side effects in this context are operations that affect something outside the scope of the function, such as data fetching, subscriptions, or manually changing the DOM.
@@ -392,8 +414,6 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
-useImperativeHandle():
-useLayoutEffect():
 useMemo(): useMemo() memoizes the result of a function so that you don't have to call an expensive function in every render.
   - useMemo gives you referential equality between renders for values.
   - useCallback() returns its function uncalled so you can call it later, while useMemo() calls its function and returns the result.
@@ -435,14 +455,16 @@ useState(): hook that lets you add a state variable to your component.
     - The setState has the same value after re-renders (with different useStates)? React will render that specific component one more time and then bails out from any subsequent renders.
   - to re-render after setState, the setState must pass in or return a new reference as the state value.
   - in resume, react only bails-out a component from the rendering phase in 2 cases: [1] in initial render, if the state set is equal as before. [2] after re-renders it will render one more time and then bail out. Dan says that this is a safety net.
-Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
-  - VDOM
-Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
-  - while HOCs wrap a component with a function, the Wrapper Component wraps a component within its tags.
-  - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
+
 ================================================================================
 React API
 
 React.cloneElement(element, props, ...children): create a React element based on the element, but with different props and children.
   - we can use it as the base for Container Component Patterns like loaders, but we would have to pass a component as child without props, and then calling it later with other set of props. Typescript wouldn't like it.
 React.isValidElement(value): checks whether a value is a React element.
+
+================================================================================
+React Timeline
+
+February 2019 - React 16.8
+April 2016 - React 15.0
