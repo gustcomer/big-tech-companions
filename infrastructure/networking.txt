@@ -642,6 +642,7 @@ Authentication Protocols: establish trust by verifying the identity of users, de
       in Kerberos the Windows Domain Controller acts as a Key Distribution Center (KDC).
     - the most common port used in Kerberos is the 88.
     - it is possible to have a primary and secondary domain controller to provide redundancy.
+  5 SSO (Single Sign-On): authentication method that allows a user to access multiple applications or systems with a single set of login credentials (e.g., username and password).
 Availability: ensure that systems, applications, and data are accessible when needed.
 CIA Triad: Confidentiality, Integrity, and Availability, it is a foundational concept in information security.
   - each element of the C-I-A Triad supports the others, and a weakness in one can affect overall security.
