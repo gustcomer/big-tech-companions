@@ -1,0 +1,17 @@
+================================================================================
+change node version
+
+check if nvm is installed
+  > nvm -v
+
+check the node versions that are installed
+  > nvm list
+
+check the node version current in use
+  > node -v
+
+install the latest version
+  > nvm install latest
+
+change to the latest version
+  > nvm use 23.5.0
