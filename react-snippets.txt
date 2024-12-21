@@ -1,0 +1,7 @@
+================================================================================
+
+Create react project from scratch with vite.
+  > npm create vite@latest my-react-app -- --template react
+
+  > npm install
+  > npm run dev
