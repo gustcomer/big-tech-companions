@@ -155,6 +155,10 @@ text-overflow: property to cut overflowing text
 variables: check Custom Properties because they are the same.
 vh: relative to the viewport's height. 1vh is equal to 1% of the viewport's height.
 vw: relative to the viewport's width. 1vw is equal to 1% of the viewport's width.
+white-space: CSS property sets how white space inside an element is handled.
+  normal: Sequences of white space are collapsed to one whitespace. Newline characters in the source are handled as white spaces. Lines are broken as necessary to fill line boxes.
+  pre-wrap: Sequences of white space are preserved. Lines are broken at newline characters, at <br>, and as necessary to fill line boxes.
+  others: nowrap, pre, pre-line, break-spaces.
 
 ================================================================================
 SELECTORS
