@@ -100,12 +100,15 @@ custom property: allow for property type checking and constraining, setting defa
 dpi: dots per inch
 em: unit relative to the font-size of the parent element.
   - (2em means 2 times the size of the current font)
-  - usually it is relative to the parent font size, so in a document 1em could mean diferent things
+  - usual ly it is relative to the parent font size, so in a document 1em could mean diferent things
   - related: rem.
   - usefull when we need the font size to be relative to the font-size of the parent element
 ex: height of the letter x
 flex: sets how a flex item will grow or shrink to fit the space available in its flex container.
   - it is a shorthand for flex-grow, flex-shrink, flex-basis.
+  display: flex; turns the element into a flex container. By default, flex-direction: row;
+  justify-content: flex-start; Items are positioned starting from the left (in left-to-right layouts).
+  align-items: stretch; stretch items vertically to fill the container
 flex-basis: sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
 flex-grow: flex grow factor, which specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
 flex-shrink: flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according.
@@ -113,6 +116,8 @@ fr: fractional unit used in grids. 1fr represents 1 part of the available space.
   - only use it when you want the grid to be fluid, like a calendar, etc.
   - better than percentages because they don't take into account the gap.
 gap: property that allows to adjust spacing between elements in grid layout
+hr: horizontal rule. indicates a thematic break or a shift in topic between paragraphs or sections.
+  - When you use border: 1px solid;, you’re effectively adding borders on all sides of the element (top, right, bottom, left). By using border-top, you ensure the line only appears at the top edge of the <hr>.
 @layer: declares a cascade layer and defines the order of precedence in case of multiple cascade layers.
   - the stylings in the last layer will precede the stylings in the former layers.
 lh: line height.
@@ -136,7 +141,7 @@ px: 1px = 1/96th of 1in.
   - You can calculate the size of a pixel for any display device dividing the size of the display screen by the resolution. 
   - for small details such as borders, shadows, etc, you can use pixels.
 Relative Length Units: em, ex, ch, vw, rem, vh, vmin, vmax, %
-rem: unit relative to the font-size of the root element element.
+rem: unit relative to the font-size of the root element.
 :root : pseudo-class in CSS is used to select the highest-level parent element in the document tree. In an HTML document, this is always the <html> element.
   - It is similar to the html selector, but it has higher specificity (it overrides the normal html selector).
   - it ensures that variables and styles are scoped globally.
@@ -150,3 +155,8 @@ text-overflow: property to cut overflowing text
 variables: check Custom Properties because they are the same.
 vh: relative to the viewport's height. 1vh is equal to 1% of the viewport's height.
 vw: relative to the viewport's width. 1vw is equal to 1% of the viewport's width.
+
+================================================================================
+SELECTORS
+
+* { ... }: universal selector.
