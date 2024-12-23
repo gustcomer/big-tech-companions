@@ -241,7 +241,10 @@ Resources
 Glossary
 
 <a>: anchor tag that creates a hyperlink to web pages, files, email addresses, etc.
-  - href="https://example.com" most important attribute.
+  href="https://example.com" most important attribute, details what it is going to open.
+  target="_blank" defines where it is going to open.
+    _self (default) is the current browsing context.
+    _blank: new tab
 <aside>: represents a portion of a document whose content is only indirectly related to the document's main content.
   - does not render as anything special in a browser (like inline or block). you can style it as you want. It's purely semantic.
 attribute: provide additional information about HTML elements.
