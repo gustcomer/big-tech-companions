@@ -65,7 +65,7 @@ Controlled Component: form elements (like <input>, <textarea>, and <select>) who
   - the handler method could be handleChange = (event) => { this.setState({ inputValue: event.target.value }); } Don't forget to bind 'this' or use arrow that automatically binds.
   - in essence, there are 3 steps [1] add the HTML element [2] add state and connect to the input value [3] add onChange and handle method.
   - there is a cycle of setting the initial value of the input field from the Component's state, the propagating changes to the input value to the state with onChange and then back to the field.
-  - when there is feedback, you change the input value, which is a state, and the component updates the state, which controls the value.
+  - when there is feedback, you change the input value, which is a state, and the component updates the state via the information on the event, and that controls the value.
   - eg: <input value={input} onChange={(e) => setInput(e.target.value)} />
   - to set initial values you use the initial value of the state, instead of the initial value of the defaultValue or defaultChecked attributes of the html input elements in the case of Uncontrolled Components.
   - use them in more complex applications where form state management, validation, and dynamic behaviors are necessary

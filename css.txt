@@ -159,6 +159,7 @@ white-space: CSS property sets how white space inside an element is handled.
   normal: Sequences of white space are collapsed to one whitespace. Newline characters in the source are handled as white spaces. Lines are broken as necessary to fill line boxes.
   pre-wrap: Sequences of white space are preserved. Lines are broken at newline characters, at <br>, and as necessary to fill line boxes.
   others: nowrap, pre, pre-line, break-spaces.
+wrap: usually refers to how user-entered text should be split into lines.
 
 ================================================================================
 SELECTORS
