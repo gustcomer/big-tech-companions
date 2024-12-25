@@ -301,5 +301,13 @@ onClick: event attribute that allows you to specify JavaScript code to run when 
   - usually they are placed inside <form>. They are not treated with <input type="textarea"> because they have some more semantic meaning.
   - it would be weird to treat multiple lines with value="line1\nline2"
   - important attributes: id, name (exacly as normal <input>), rows, cols
+  id: allows the text area to be associated with a label element for accessibility purposes.
+  name: attribute to set the name of the associated data point submitted to the server when the form is submitted.
+  value: property used to get or set the current content.
+  rows, cols: size of the text area in characters.
+  wrap: how user-entered text should be split into lines.
+  placeholder: short hint that describes the expected value of a text area.
+    - note that placeholder and value are different things. Even though the text from the placeholder may appear first in the component, the value usually is "".
 title: global attribute that specifies extra information about an element in the form of a tooltip text.
 user agent: usually your web browser.
+wrap: usually refers to how user-entered text should be split into lines.
