@@ -90,3 +90,15 @@ this: keyword that refers to an object.
   - In an event, this refers to the element that received the event.
   - Methods like call(), apply(), and bind() can refer this to any object.
 undefined: means a variable has been declared, but not defined.
+
+================================================================================
+Browser Environment
+
+window: global object that represents the browser window in which the script is running.
+window.navigator: provides information about the browser and the user’s environment.
+  - navigator is a shorthand for window.navigator.
+  navigator.userAgent
+  navigator.language
+  navigator.platform
+  navigator.onLine
+  navigator.geolocation.getCurrentPosition(successfn, errorfn, options)
