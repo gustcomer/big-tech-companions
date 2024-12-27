@@ -11,6 +11,8 @@ choose a license
 don't create the folder! it will be created with the repo name on github
 git clone https://github.com/gustcomer/reponame.git
 
+to create a shallow copy with just the last commit, use
+git clone --depth 1 https://github.com/facebook/react.git react19
 
 VS Code can do this process of creating the github repo for you
 

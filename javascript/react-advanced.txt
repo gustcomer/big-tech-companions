@@ -1,0 +1,10 @@
+================================================================================
+React 19
+
+Babel
+Build: broader process of preparing your application for deployment.
+  - typically includes compilation but also involves additional steps to optimize the application.
+  - combine all JavaScript, CSS, and other assets into a small number of files (or chunks) for efficient loading.
+Compiler: compiler that optimizes React applications, ensuring that only the minimal parts of components and hooks will re-render when state changes.
+  - usually it transform code from one form to another. For instance, transpile JSX into React.createElements calls.
+  - compiling is just a part of the build process.

@@ -102,3 +102,12 @@ window.navigator: provides information about the browser and the user’s enviro
   navigator.platform
   navigator.onLine
   navigator.geolocation.getCurrentPosition(successfn, errorfn, options)
+
+================================================================================
+Libs, tools.
+
+chokidar: Node.js library designed for monitoring file system changes.
+  - used in development environments where automated tasks need to be triggered when files or directories are added, modified, or deleted.
+flow: static type checker for JavaScript.
+  you should install flow-bin.
+  it allows us to use static type checking and even use templating in typescript style.
