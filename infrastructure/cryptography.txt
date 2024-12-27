@@ -69,6 +69,12 @@ RSA (Rivest, Shamir, and Adleman): asymmetric encryption introduced in 1977. Bas
     - The plaintext is converted back into its original form.
 Secure Channel: communication medium that ensures confidentiality, integrity, and authenticity of the data exchanged between parties, preventing eavesdropping or tampering by unauthorized individuals.
   - they use cryptographic protocols (like TLS/SSL or IPsec) to encrypt data and often include mechanisms for authentication and integrity verification.
+SHA (Secure Hash Algorithm): family of cryptographic hash functions.
+  - it is used in Integrity Checks, Digital Signatures, Password Hashing (specialized algos such as bcrypt, scrypt are preferred), proof of work in block chains.
+  SHA-0: released in 1993, has security weakness and is obsolete.
+  SHA-1: 1995, has a digest size of 160 (produces a 160-bit hash value). Considered insecure because cryptoanalysts discovered practical collisions.
+  SHA-2: 2001, has many variantes such as SHA-256 (256-bit). It is based on the Merkle–Damgård construction.
+  SHA-3: 2015, based on the Keccak algorithm, or sponge construction.
 Stream Cipher: encryption algorithms that encrypt data one bit or byte at a time, using a keystream generated from a secret key.
 Substitution Cipher: method of encryption where each letter or symbol in the plaintext is replaced by another letter or symbol to create the ciphertext.
   eg: Simple Substitution Cipher, Caesar Cipher, Vigenère Cipher, Playfair Cipher, Affine Cipher.
