@@ -1,0 +1,14 @@
+- tldraw
+https://www.tldraw.com/
+
+- excalidraw
+https://excalidraw.com/
+
+Similar to tldraw, but has more options. You can add and play with a library of
+diagrams such as Entity-Relationship diagrams.
+
+It's a very useful web app to write quick diagrams shuch as
+  - architecture stuff
+
+- getemoji
+https://getemoji.com/

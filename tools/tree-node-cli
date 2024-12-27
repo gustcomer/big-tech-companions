@@ -1,6 +1,3 @@
-
-
-- tree-node-cli
 allows you to print the folder structure of some local directory
 https://github.com/yangshun/tree-node-cli
 
@@ -14,18 +11,3 @@ beware of the windows command tree. If you want to use in windows I suggest:
 
 > npx tree-node-cli -L 2 -I "node_modules"
   print 2 levels
-
-- tldraw
-https://www.tldraw.com/
-
-- excalidraw
-https://excalidraw.com/
-
-Similar to tldraw, but has more options. You can add and play with a library of
-diagrams such as Entity-Relationship diagrams.
-
-It's a very useful web app to write quick diagrams shuch as
-  - architecture stuff
-
-- getemoji
-https://getemoji.com/
