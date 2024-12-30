@@ -107,6 +107,7 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
 fetch: react components don't know anything about HTTP, they simply read props and state and then render the UI.
   - to read data from the server you have to get the data to your props or state.
+Fragment <></>: wrapper component used to group multiple children elements without adding an extra DOM node.
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic like state. Lifting the state would be an option to share state and handler, but for components deeply separated it's better to use HOC.
   - HOCs are used to add additional functionality to a component without modifying it directly.
@@ -125,9 +126,7 @@ Hooks: allow you to use React features without having to write a Class. The func
   - Hooks, on the other hand, help organize the logic inside a component into reusable isolated units and not life cycles. UseEffect hook, for instance, concentrates all the effects code in just one place.
   - only call hooks at the top level. don't call hooks inside loops, conditions, or nested functions. only call them within React Functional components.
 Hot Reloading: allows you to update and refresh parts of your application without requiring a full reload.
-JSX: a syntax extension for JavaScript, often used with React to describe what the UI should look like.
-  - lets you write HTML-like code in your JavaScript files.
-  - stands for JavaScript XML.
+JSX: JavaScript XML, lets you write HTML-like code in your JavaScript files. A syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - at the end of the day, JSX is just synctatic sugar for function calls and objects construction.
   - JSX tags have a tag name, attributes and children.
   - the alternative to JSX was the React.createElement(..) function.
@@ -136,6 +135,10 @@ JSX: a syntax extension for JavaScript, often used with React to describe what t
   - JSX differences: Class -> className; for -> htmlFor; camelCase property naming convention.
   - {} curly braces are a feature of JSX that allows to embed JavaScript expressions within the markup. It allows you to incorporate logic and data into your JSX.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
+jsx(): works similarly to createElement(), but is optimized for modern JSX usage and transpilers
+  signature: function jsx(type, props, key). - it returns a ReactElement.
+jsx runtime: set of tools and mechanisms that enable the transformation and interpretation of JSX syntax in React applications.
+  - it handles the conversion of JSX into React.createElement calls.
 key prop: each child in an array or iterator should have a unique "key" prop of the type string.
   - each item in the list rendered using the map operator should have it.
   - funny thing, in the child components, this key prop will not be accessible. It is reserved.
@@ -158,6 +161,9 @@ onClick: event attribute that allows you to specify JavaScript code to run when 
   eg: <button onClick={() => setCount(count + 1)}>Count {count}</button>; note we pass some function definition instead of a function call. And prefer arrow function.
   - in HTML you call the function in the form of string. eg: <button onClick="alert('Button clicked!')">Click Me!</button>
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
+Portal: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+  - useful for modals, dialogs, tooltips, popups, overlays.
+  - use ReactDOM.createPortal to render its children (<div className="modal">...) into a DOM node outside the root (where the React app is typically mounted).
 <Profiler>: lets you measure rendering performance of a React tree programmatically.
 Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
   - Props are immutable, that is, a component cannot change its own props.
@@ -247,6 +253,7 @@ Request Memoization: type of cache that extends the fetch API to automatically m
   - only applies within React Component Tree. Does not extend to fetch requests in Route Handlers.
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
+runtime: any library, framework, or platform that your code runs on.
 serviceWorker: related to Progressive Web Apps (PWA).
 shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
   - for primitives, "first level" means that the operator checks if they are of the same type and have identical values.
@@ -415,6 +422,7 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
 useMemo(): useMemo() memoizes the result of a function so that you don't have to call an expensive function in every render.
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]); note that there is a function and and array of dependencies.
   - useMemo gives you referential equality between renders for values.
   - useCallback() returns its function uncalled so you can call it later, while useMemo() calls its function and returns the result.
 useReducer(): alternative to useState to manage state in React when the state logic is complex or involves multiple sub-values.
@@ -457,6 +465,13 @@ useState(): hook that lets you add a state variable to your component.
   - in resume, react only bails-out a component from the rendering phase in 2 cases: [1] in initial render, if the state set is equal as before. [2] after re-renders it will render one more time and then bail out. Dan says that this is a safety net.
 
 ================================================================================
+React 17.0 October 2020
+
+jsxs: used when a JSX element contains multiple children.
+  - variation of the JSX transformation function introduced as part of the new JSX runtime since React 17.
+  - works alongside jsx and is specifically used to optimize scenarios where a component contains multiple child elements.
+
+================================================================================
 React API
 
 React.cloneElement(element, props, ...children): create a React element based on the element, but with different props and children.
@@ -466,6 +481,7 @@ React.isValidElement(value): checks whether a value is a React element.
 ================================================================================
 React Timeline
 
+October 2020: React 17
 February 2019 - React 16.8
 April 2016 - React 15.0
 
@@ -479,3 +495,15 @@ Redux: popular state management library for JavaScript applications, often used 
   - key concepts: Store, Actions, Reducers, Dispatch, Selectors, Middleware.
 Styled Components: allows you to write CSS in javascript files (CSS in JS lib)
 Zustand: small, fast, and scalable state management library that simplifies managing global state in React applications.
+
+================================================================================
+React Snippets
+
+useMemo: const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]); note that there is a function and and array of dependencies.
+
+jsx(): usually
+    const element = <div>Hello</div>;
+  is compiled to
+    import { jsx } from "react/jsx-runtime";
+    const element = jsx("div", { children: "Hello" });
+  signature: function jsx(type, props, key)
