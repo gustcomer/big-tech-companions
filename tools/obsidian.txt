@@ -1,0 +1,11 @@
+================================================================================
+Glossary
+
+link: connection between two notes or files within a Vault.
+  Internal Links (WikiLinks): links one note to another within the same Vault. syntax: [[Note Name]]
+    Alias: allows you to display a different text in the link. syntax: [[Machine Learning|ML]]
+  External Links: syntax: [Link Text](URL)
+  Heading Links: links to a specific heading within a note. syntax: [[Note Name#Heading]]
+  Block Links: links to a specific block (paragraph, list item, or text) within a note. [[Note Name^block-id]]
+  Embedding Links: allows you to embed content from other notes directly into your current note. syntax: ![[Note Name]]
+vault: physical folder on your computer where all of your notes, files, and other data are stored.
