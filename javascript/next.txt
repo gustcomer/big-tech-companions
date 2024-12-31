@@ -326,6 +326,8 @@ Static Rendering: server rendering strategy where we generate HTML pages at the 
   - static rendering is the default rendering strategy in the app router.
   - all routes are automatically prepared at build time without additional step.
   - for Static Routes, the entire route is prefetched and cached by default.
+Static Page: webpage that is pre-rendered at build time and served as-is to the user without requiring further processing on the server or client-side such as database consultations.
+  - typically generated using Static Site Generation (SSG), a technique that creates HTML files for each page at build time.
 Static-Site Generation (SSG): occurs at build time, when the application is deployed on the server.
   - ideal for content that doesn't change often, like blog posts.
   - it is a kind of Server-side solution.

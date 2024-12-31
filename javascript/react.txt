@@ -277,6 +277,8 @@ State: stores dynamic data about a component.
 State Lifting: technique used in React to manage shared state between multiple components. When two or more sibling components need to share the same state, the state is often lifted up to their closest common ancestor.
 Stateless Functional Component: components declared via functions.
   - they used to have no state, but after hooks were introduced, even the functional components now can have state.
+Static Page: webpage that is pre-rendered at build time and served as-is to the user without requiring further processing on the server or client-side such as database consultations.
+  - typically generated using Static Site Generation (SSG), a technique that creates HTML files for each page at build time.
 <StrictMode>: a development-only feature that lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs like unexpected side effects caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
