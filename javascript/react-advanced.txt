@@ -8,3 +8,12 @@ Build: broader process of preparing your application for deployment.
 Compiler: compiler that optimizes React applications, ensuring that only the minimal parts of components and hooks will re-render when state changes.
   - usually it transform code from one form to another. For instance, transpile JSX into React.createElements calls.
   - compiling is just a part of the build process.
+ReactDOM.createRoot(): replaced the legacy API ReactDOM.render() and enables concurrent rendering by default.
+  - appeared in react 18 and later.
+ReactDOM.render(): old react-dom API that used synchronous rendering.
+  - replaced by the new API ReactDOM.createRoot() that enables concurrent rendering by default.
+ReactDOMRoot: represents the root of a React tree that uses React's new concurrent rendering features.
+  - type of object returned by the ReactDOM.createRoot method.
+  - has a primary method .render() which is used to render a React component tree into the DOM.
+  - appeared in react 18 and later.
+  - Enables concurrent rendering by default.
