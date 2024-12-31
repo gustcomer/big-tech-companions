@@ -282,8 +282,12 @@ inline-level element: inline elements do not start on a new line and only take u
   - value="30" attribute related to the value of the input.
   - onChange={(e) => setInput(e.target.value)} when the element change, it calls some callback function.
 <label>: represents a caption for an item, usually an input element, in a user interface.
+  - composed of Tags <tag>, Attributes <img src="image.jpg" alt="Description"> and Content.
   - when a user clicks or touches/taps a label, the browser passes the focus to its associated input.
   - the for="username" attribute should refence the id attribute (not name) in the input element.
+markup: refers to the use of symbols, tags, or special characters in a document to define its structure, format, or presentation.
+  - commonly used in the context of creating documents, web pages, or structured data.
+  eg: HTML, XML, Markdown, LaTeX.
 <nav>: defines a set of navigation links.
   - it's purely semantic.
 onClick: event attribute that allows you to specify JavaScript code to run when an element is clicked.

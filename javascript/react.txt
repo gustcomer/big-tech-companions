@@ -151,6 +151,9 @@ Layout Components: specialized components that focus on organizing other compone
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
+markup: refers to the use of symbols, tags, or special characters in a document to define its structure, format, or presentation.
+  - commonly used in the context of creating documents, web pages, or structured data.
+  eg: HTML, XML, Markdown, LaTeX.
 Memoization: performance optimization technique used to avoid unnecessary re-renders of components using shallow comparison.
   - check React.memo and useMemo().
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
@@ -291,7 +294,6 @@ Styling React Components
   [3] CSS Modules: is just like the CSS stylesheets but instead of using the class names as string, you use them as properties of a style object.
     - the advantage of CSS Modules is that the class has only local scope, while in CSS stylesheets the scope is also for all of its children components and hence is more error prone.
   [4] CSS in JS Libraries
-<Suspense>: lets you display a fallback until its children have finished loading.
 triggering: initiates a state update or a re-render of a component.
   - there are two reasons for a component to render [1] it's the component's initial render. [2] the component's (or one of its ancestors') state has been update. Remeber that an ancestors state could be another's prop.
   - usually the initial render is done by calling createRoot with the target DOM node and then calling its render method with your component.
@@ -474,6 +476,13 @@ jsxs: used when a JSX element contains multiple children.
   - works alongside jsx and is specifically used to optimize scenarios where a component contains multiple child elements.
 
 ================================================================================
+React 18.0 March 2022
+
+ReactDOM.createRoot(): replaced the legacy API ReactDOM.render() and enables concurrent rendering by default.
+<Suspense>: lets you display a fallback until its children have finished loading.
+  - React 18 officially supported Suspense with concurrent rendering features.
+
+================================================================================
 React API
 
 React.cloneElement(element, props, ...children): create a React element based on the element, but with different props and children.
@@ -483,7 +492,8 @@ React.isValidElement(value): checks whether a value is a React element.
 ================================================================================
 React Timeline
 
-October 2020: React 17
+March 2022 - React 18
+October 2020 - React 17
 February 2019 - React 16.8
 April 2016 - React 15.0
 
