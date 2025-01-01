@@ -106,6 +106,13 @@ Diffing: concept of comparing the virtual DOMs before and after the modification
   - the result of the Conciliation process is called diff.
   - Diffing is related to the algorithm used to compare two virtual DOMs and is an important step in the Reconciliation process.
   - aka: DOM Diffing
+Elements: the smallest building block in React applications. It represents a plain object describing what you want to display on the screen. They are used to construct the Virtual DOM tree in React.
+  - usually a Custom Component created by the user is constructed using various React Elements (such as h1, div, nav, main, etc).
+  - they are immutable, lightweight and are used to construct a Virtual DOM tree in React.
+  - could be create via JSX or createElement() const element = React.createElement('h1', null, 'Hello, world!');
+  - they are Objects composed of
+      type: type of element. eg: 'h1'
+      key: used in React reconciliation process, more specifically in lists.
 Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
