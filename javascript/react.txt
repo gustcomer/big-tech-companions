@@ -32,6 +32,11 @@ Component: independent chunks of user interfaces.
 Component-Based Architecture: decompose a system into Components.
 componentDidMount(): lifecycle method called after the component is mounted.
   - used for performing side-effects such as fetching data.
+Components: independent pieces of code that define the UI and can encapsulate behavior (logic) and appearance (markup).
+  - they are Reusable, Composable, Encapsulated and Declarative.
+  - they accept input data via props and could hold state.
+  - they always have Capitalized Names with PascalCase.
+  - Functional Components are functions that return JSX code. So you don't have to copy and paste snippets of code to add a component to a page, just call the function.
 componentWillUnmount(): method is invoked immediately before a component is unmounted and destroyed.
   eg: cancel network requests, remove event handlers, cancel any subscriptions (like observers, sockets), invalidate timers.
   - obviously this is a bad place to call setState().
