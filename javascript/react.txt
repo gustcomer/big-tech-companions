@@ -170,6 +170,8 @@ Memoization: performance optimization technique used to avoid unnecessary re-ren
   - check React.memo and useMemo().
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
   - constructor, getDerivedStateFromProps(), render and componentDidMount()
+Node: any value that React can render.
+  eg: React Elements, Strings, Numbers, null, undefined, false, Arrays of Nodes, Portals, Fragments, etc.
 onClick: event attribute that allows you to specify JavaScript code to run when an element is clicked.
   - It can be used on many HTML elements, such as buttons, links, images, and divs.
   - you use camelCase (onClick) and pass a function directly rather than a string. eg: return ( <button onClick={handleClick}>Click Me!</button> );
@@ -328,7 +330,7 @@ Wrapper Component: it's a Component that wraps another component inside its tags
   - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
 
 ================================================================================
-React 0.x (aprox May 2013 - March 2016)
+Class Components Related - React 0.x (aprox May 2013 - March 2016)
 
 constructor(props): called whenever a new component is created but before the component is mounted.
   - used for initializing state, binding event handlers.
@@ -355,6 +357,7 @@ componentWillUnmount(): invoked immediately before a component is unmounted and 
   - It's a place to perform any necessary cleanup, such as canceling network requests, removing event listeners, or invalidating timers.
 componentWillUpdate(): deprecated because it was used to perform side-effects right before the re-render, but you never should do that. It was replaced by getSnapshotBeforeUpdate().
   - deprecated Updating livecycle method that was called after the shouldComponentUpdate() if it returned true and before the re-rendering.
+createRef(): method used to create refs in Class Components.
 getDerivedStateFromError(error): takes the error as an argument and returns an object to update the state so that a specific UI for error could be rendered.
   - this is an Error Handling Phase Methods.
   - while getDerivedStateFromError() is used to update the state to render a fallback UI, componentDidCatch() can be used for side effects such as logging the error.
