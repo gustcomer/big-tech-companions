@@ -6,6 +6,8 @@ React Glossary
 
 {}: curly braces are a feature of JSX that allows to embed JavaScript expressions within the markup.
   - It allows you to incorporate logic and data into your JSX.
+Action States: typically refer to different states an application can enter during an asynchronous operation such as fetching data from an API.
+  eg: Idle State, Loading State, Success State, Error State.
 Binding Event Handlers: there are four approaches to bind event handlers
   - [1] bind this to the function on onClick={this.clickHandler.bind(this)}, but this is not optimal to bind at every rerender.
   - [2] use arrow function right on the onClick={() => this.clickHandler()}, but this is also not optimal.
@@ -100,6 +102,9 @@ Declarative Paradigm: style of programming where the focus is on what the progra
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
+Derived States: state that is calculated or derived from existing state or props, rather than being stored explicitly in a component's state.
+  - avoid using Derived States because you'll haventonrecalculate the values at every render and this is bot optimal.
+  - avoid Derived States recalculations at every render with useMemo.
 Destructuring: allows you to extract values from arrays or properties from Objects. In React, you can use them to extract values from props.
   - in FC, you extract them in the functions parameter. In CC, you extract them in the render() method with const {a, b} = this.props
 Diffing: concept of comparing the virtual DOMs before and after the modification and ensuring efficient updates.
@@ -417,7 +422,7 @@ Portals: provide a way to render children into a DOM node that exists outside th
   - key attribut is the only attribute accepted by a Fragment. But with the Short Syntax you can't use the key attribute.
 
 ================================================================================
-React 16.8 (February 2019)
+React Hooks - React 16.8 (February 2019)
 
 useCallback(): used to memoize a function. It returns a memoized version of the callback function that only changes if one of the dependencies has changed.
   - remember that functions are rebuilt after every re-render and even though they have the same behavior, they differ because the comparison depends on reference equality. so all components with callback props like buttons are re-rendered.
@@ -443,6 +448,8 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - the mental model of dependencies is that you have to signal to the useEffect what could change in the scope of the useEffect. You should not lie in the dependencies. Remember the Dan's classic setInterval bizarre example.
   - when you call functions inside the useEffect that are defined outside the useEffect it is easy to forget the states and props that the effect depends on, it is recommended to define these functions inside the useEffect.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
+useFormStatus(): provides status information of the last form submission.
+  this is a hook provided in the react-dom@19 library.
 useMemo(): useMemo() memoizes the result of a function so that you don't have to call an expensive function in every render.
   const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]); note that there is a function and and array of dependencies.
   - useMemo gives you referential equality between renders for values.
@@ -485,6 +492,7 @@ useState(): hook that lets you add a state variable to your component.
     - The setState has the same value after re-renders (with different useStates)? React will render that specific component one more time and then bails out from any subsequent renders.
   - to re-render after setState, the setState must pass in or return a new reference as the state value.
   - in resume, react only bails-out a component from the rendering phase in 2 cases: [1] in initial render, if the state set is equal as before. [2] after re-renders it will render one more time and then bail out. Dan says that this is a safety net.
+useTransition(): lets you render a part of the UI in the background.
 
 ================================================================================
 React 17.0 October 2020
