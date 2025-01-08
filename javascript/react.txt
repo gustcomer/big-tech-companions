@@ -182,7 +182,8 @@ One-way data flow: parent components pass data to their children via props, and 
 Portal: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
   - useful for modals, dialogs, tooltips, popups, overlays.
   - use ReactDOM.createPortal to render its children (<div className="modal">...) into a DOM node outside the root (where the React app is typically mounted).
-<Profiler>: lets you measure rendering performance of a React tree programmatically.
+Profiler: lets you measure rendering performance of a React tree programmatically.
+  - It helps identify performance bottlenecks by collecting timing information about rendering and commit phases of React components.
 Props(react-ts-snippets.md#props): short for "property" is way of passing data from a parent component to a child component.
   - Props are immutable, that is, a component cannot change its own props.
   - they allow you to customize and configure the behavior and appearance of child components.
@@ -303,6 +304,7 @@ Static Page: webpage that is pre-rendered at build time and served as-is to the 
   - Your components will be checked for usage of deprecated APIs.
   - actually, the first double render is useful because people can place side effects outside the useEffect hook, which would be executed before generating the JSX and not after which is the default. To spot these errors, just render twice and check if they are exactly the same.
   - it is useful to use StrictMode in Development mode. When in production, react will automatically ignore it.
+  - Identifies Unsafe Lifecycles, Checks for Unexpected Side Effects, Warns About Legacy String Ref API, Detects Legacy Context API, Ensures Proper Usage of useEffect Cleanup.
 Styling React Components
   [1] CSS stylesheets: in this case you simpli import the CSS and the styles will automatically be applied to the Component.
   [2] Inline Styling: just create an object with properties as keys and values as values and use style={heading} in your components.
