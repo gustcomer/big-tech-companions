@@ -228,22 +228,21 @@ redux pattern: used for managing and centralizing application state.
   - Reducers: pure functions that take current state and action and return a new state. The state could be an object but also can be a primitive.
   - Store: object that holds the state of the application and provides methods to get the state, dispatch actions and subscribe to state changes.
 Refs: way to access and interact with DOM elements or React Components directly.
+  - to reference it you add a ref attribute in the Element you want to reference, and pass the data structure returned by useRef().
   - there are two ways to create refs, the first and more common is Access Refs and the second and older one is Callback Refs.
-  - many other use cases such as managing focus, text selection, etc.
+  - among the most common use cases, we have: manage focus or text selection, trigger animations, and others
   - in Class Components you create a ref using React.createRef() and attach it to a React element via the ref attribute of this element.
+  - outside react we don't have to worry with refs because we directly access the DOM with document.getElementById('...').
+  - usually you use the ref inside useEffect so that you can reference the DOM element at the start of the application, or when something happens
   - in Functional Components you create a ref using useRef(..);
   - with Callback Refs you attach the callback function to the React Element vie the ref attribute and the callback is called with the DOM element itself when the DOM mounts and null on unmount.
   - you can add refs to react components, this way it will be possible to call methods on a child component using the ref.
   - I believe it is possible to call methods not only on Class Components but also on Functional Components.
   - take a look at Forwarding Refs.
-Refs Forwarding: with forward ref you can create a ref on a Parent Component and make it point to some element in the child component.
-  - to do that:
-    1. you simply create a normal ref in the parent component
-    2. pass it down to the child component as ref prop
-    3. wrap the child component in arrow function form in the HOC React.forwardRef()
-    4. take the ref as argument before the prop
-    5.  and pass down the reference to some element inside the child component as ref.
-  - an option to some use cases would be to ref the child component and call some method on it.
+  - If you pass the same React ref to multiple elements, the current property of the ref will end up referencing only the last element that was rendered and assigned the ref.
+Refs Forwarding: with React.forwardRef you can create a ref on a Parent Component and make it point to some element in the child component.
+  - usually it is possible to pass a ref to any React Element via props. But it is not possible to pass them to Custom Components like Functional Components because they don't know how to handle it. They don't know how to call ref.current for instance.
+  - to add ref functionality to Functional Components, for instance, just apply React.forwardRef to the component in question. This way, it will be able to handle ref calls. And because of that, now you can pass the ref via props and be sure that it will be correctly processed.
 render(): it basically read state and props and return JSX.
   - required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
   - actually this method returns a virtual DOM reflecting the state of the UI, then React compares the new virtual DOM with the previous one and updates the actual DOM accordingly.
