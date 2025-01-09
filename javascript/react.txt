@@ -135,6 +135,8 @@ Higher-Order Component: function that takes a component and returns a new compon
   - usually the function name of the HOC could be withSomething(...) and the parameter to that function could be called WrappedComponent, and the class that is returned by the function could be with pascal case WithSomething.
   - don't forget that when you pass a prop to a Component enhanced with a prop, actually you're passing the prop to the Parent component defined in the HOC, don't forget to pass down the props to the Component being enhanced in case you need it with {...this.props} or something like that.
   - if you need to pass parameters to the HOC to be used in some method, simply pass the parameter as a second parameter, right after the Component being enhanced.
+High-Order Functions: functions that take functions as arguments or that return other functions as arguments.
+  - in the context of Functional Components remember that they are functions that return JSX, so the term High Order Components and High Order Functions could be interchangeable.
 Hooks: allow you to use React features without having to write a Class. The function name should start with the word 'use'.
   - using functions avoid the complexity of classes and the whole confusion with the 'this' keyword.
   - classes don't minify very well, so writing components with functions instead of classes is important.
