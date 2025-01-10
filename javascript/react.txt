@@ -24,6 +24,10 @@ Class Components: way to define components.
   - they used to be called Stateful Class Component.
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
+Client Side Rendering (CSR): rendering strategy where the JavaScript code responsible for rendering the web application is executed in the user's browser, rather than on a server.
+  - the client receives a minimal HTML with some <div id="root"> and a bundle.js. Then React takes over the <div id="root"> and dynamically builds and updates the DOM.
+  - the routing is executed on the client-side without a full page reload.
+  - the SEO is poor and the initial waiting time is big, while the response time usually presents low latency since every code is already on the client.
 Commit Phase: all React Elements are applied to the DOM using the react-dom package.
   - the commit phase is usually very fast, but rendering can be slow.
 Component: modular, reusable and independently deployable pieces of code.
@@ -186,6 +190,13 @@ onClick: event attribute that allows you to specify JavaScript code to run when 
   eg: <button onClick={() => setCount(count + 1)}>Count {count}</button>; note we pass some function definition instead of a function call. And prefer arrow function.
   - in HTML you call the function in the form of string. eg: <button onClick="alert('Button clicked!')">Click Me!</button>
 One-way data flow: parent components pass data to their children via props, and children communicate back to parents only through callbacks.
+Performance Metrics
+  First Contentful Paint (FCP): The general layout has been rendered, but the content is still missing.
+    - it only includes the skeleton of the HTML with wireframes of were each content will be, without any interaction or content.
+  Time To Interactive (TTI): React has been downloaded, and our application has been rendered/hydrated. Interactive elements are now fully responsive.
+    - includes the skeleton of the HTML and the iteractivity provided by the bundle.js.
+  Largest Contentful Paint (LCP): The page now includes the stuff the user cares about. We've pulled the data from the database and rendered it in the UI.
+    - includes the skeleton, iteractivity, and all the content located in the database.
 Portal: provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
   - useful for modals, dialogs, tooltips, popups, overlays.
   - use ReactDOM.createPortal to render its children (<div className="modal">...) into a DOM node outside the root (where the React app is typically mounted).
@@ -279,6 +290,8 @@ Request Memoization: type of cache that extends the fetch API to automatically m
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
 runtime: any library, framework, or platform that your code runs on.
+Server Side Rendering (SSR): the server sends the actual HTML document to the user instead of a minimal HTML, then the bundle.js hydrates this HTML with iteractivity, effects, event handlers, etc.
+  - users don't have to stare at an empty white page while the JS bundles are downloaded and parsed.
 serviceWorker: related to Progressive Web Apps (PWA).
 shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
   - for primitives, "first level" means that the operator checks if they are of the same type and have identical values.
@@ -302,6 +315,10 @@ State: stores dynamic data about a component.
 State Lifting: technique used in React to manage shared state between multiple components. When two or more sibling components need to share the same state, the state is often lifted up to their closest common ancestor.
 Stateless Functional Component: components declared via functions.
   - they used to have no state, but after hooks were introduced, even the functional components now can have state.
+Static Site Generation (SSG): pre-rendering web pages at build time, as opposed to dynamically generating them at runtime.
+  - The generated HTML is static and can be served directly by a content delivery network (CDN), making it very fast and efficient.
+  - Pre-rendered HTML improves SEO visibility.
+  - you can understand SSG as a sub-variant of Server Side Rendering. The only difference is that all the HTML is pre-rendered since there are no dynamic content.
 Static Page: webpage that is pre-rendered at build time and served as-is to the user without requiring further processing on the server or client-side such as database consultations.
   - typically generated using Static Site Generation (SSG), a technique that creates HTML files for each page at build time.
 <StrictMode>: a development-only feature that lets you find common bugs in your components early during development.
@@ -554,12 +571,18 @@ April 2016 - React 15.0
 ================================================================================
 React Libs
 
+Apollo: suite of tools provided by the Apollo GraphQL ecosystem, primarily used to interact with GraphQL APIs.
+  - allows developers to query, mutate, and manage state in their React applications using GraphQL.
 MobX: state management library that makes it simple to manage and react to the state changes in your applications.
+React Query: library for managing server state in React applications.
+  - provides tools to fetch, cache, synchronize, and update data efficiently and simplifies working with server-side APIs.
+  - caching, synchronization, error handling, pagination, 
 react-scripts: is an essential part of Create React App (CRA).
 Recoil: state management library for React that aims to provide a more flexible and scalable way to manage state compared to traditional solutions like Redux.
 Redux: popular state management library for JavaScript applications, often used with React.
   - key concepts: Store, Actions, Reducers, Dispatch, Selectors, Middleware.
 Styled Components: allows you to write CSS in javascript files (CSS in JS lib)
+SWR: short for Stale-While-Revalidate. React library developed by Vercel that provides powerful data fetching capabilities with a focus on performance and simplicity.
 Zustand: small, fast, and scalable state management library that simplifies managing global state in React applications.
 
 ================================================================================
