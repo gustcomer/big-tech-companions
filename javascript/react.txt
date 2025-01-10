@@ -24,6 +24,8 @@ Class Components: way to define components.
   - they used to be called Stateful Class Component.
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
+Client Boundary: since all children of a Client Component should also be Client Components, you kind of create a Client Boundary on your component tree.
+  - note that this boundary is defined at the modules/package level.
 Client Components: components that are rendered and executed on the client-side, typically in the browser. Usually they have state, can interact with browser APIs like document, windo, localStorage, are hydrated after the first render and handle events.
   - actually, in SSR, these components are executed both on the server, for the first render, and at the client for each re-render.
   - Client Components can only import other Client Components.
@@ -313,6 +315,8 @@ Side Effects: actions that occur as a result of rendering but are not directly r
   - eg: data fetching, subscriptions (sockets, observables), timers, log, manually updating the DOM (not part of the natural render process), state management.
   - in Class Components you manage side effects with lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
   - in Functional Components we use useEffect to manage side effects.
+Stale Closure: situation where a function captures outdated state or props from the context in which it was created.
+  - to avoid it, use the useEffect dependency array ([]) wisely, use the functional form of setState(), Use a Ref If you need a value to persist and update without re-triggering effects.
 State: stores dynamic data about a component.
   - it can be accessed through this.state in Class Components. In Functional Components it is accessed with useState(..) hook.
   - in Class Components don't update this.state directly, instead, use this.setState({...}). Else, the state is updated but not displayed in the UI.
