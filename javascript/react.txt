@@ -24,6 +24,10 @@ Class Components: way to define components.
   - they used to be called Stateful Class Component.
 className: prop used to specify a CSS class for an element.
   - class is a reserved word in JavaScript.
+Client Components: components that are rendered and executed on the client-side, typically in the browser. Usually they have state, can interact with browser APIs like document, windo, localStorage, are hydrated after the first render and handle events.
+  - actually, in SSR, these components are executed both on the server, for the first render, and at the client for each re-render.
+  - Client Components can only import other Client Components.
+  - note that a Component that has no state can be a Client Component, if it is child of a client component. The Parent component state could be passed as props to the child component.
 Client Side Rendering (CSR): rendering strategy where the JavaScript code responsible for rendering the web application is executed in the user's browser, rather than on a server.
   - the client receives a minimal HTML with some <div id="root"> and a bundle.js. Then React takes over the <div id="root"> and dynamically builds and updates the DOM.
   - the routing is executed on the client-side without a full page reload.
@@ -290,6 +294,8 @@ Request Memoization: type of cache that extends the fetch API to automatically m
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
 runtime: any library, framework, or platform that your code runs on.
+Server Actions: feature in React that allows you to define and execute server-side logic directly from your React components.
+  - typically used for operations like database interactions, API calls, or other server-side tasks.
 Server Side Rendering (SSR): the server sends the actual HTML document to the user instead of a minimal HTML, then the bundle.js hydrates this HTML with iteractivity, effects, event handlers, etc.
   - users don't have to stare at an empty white page while the JS bundles are downloaded and parsed.
 serviceWorker: related to Progressive Web Apps (PWA).
@@ -346,6 +352,12 @@ unmount: when you're displaying a component and it stops being displayed for any
 'use client': lets you mark what code runs on the client.
   - will treat the module import as a boundary between server-run and client-run code.
   - the dependencies will also be evaluated on the client regardless of whether their modules contain a 'use client' directive.
+  - usually Client Components use state variables or effects. All other components should preferably be server components.
+  - for each Client Component you eradicate, you don't need to include their code in the bundle.js
+'use client': signal to React that the component(s) in this file are Client Components, that they should be included in our JS bundles so that they can re-render on the client.
+  - in SSR, client components are executed both in the server, representing the first render, and in the client, for each re-render.
+'use server': directive that marks a function as a Server Action.
+  - this is not used to mark a component as a Server Components. Components are server components by default, there is no need to mark them.
 useDebugValue():
 useImperativeHandle():
 useLayoutEffect():
