@@ -367,6 +367,7 @@ useImperativeHandle():
 useLayoutEffect():
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
+waterfall: one of the most important waterfalls to keep in mind is fetch data (server) → render to HTML (server) → load code (client) → hydrate (client).
 Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
   - while HOCs wrap a component with a function, the Wrapper Component wraps a component within its tags.
   - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
