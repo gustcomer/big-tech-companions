@@ -382,3 +382,10 @@ useRouter(): hook that allows you to access the router object inside any functio
   - router.back(): navigate back in history.
   - router.reload(): reload the current URL.
 Web Vitals: initiative created by Google to provide unified guidance and metrics to measure end-user page experience on the web.
+
+================================================================================
+tools and libs
+
+turbopack: bundler designed to replace tools like Webpack for modern JavaScript and web development.
+  - It is developed by the creators of Webpack and is optimized for performance and scalability.
+  - Turbopack is used to bundle and optimize JavaScript, TypeScript, CSS, and other web assets for both development and production.
