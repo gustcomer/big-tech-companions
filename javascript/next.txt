@@ -22,6 +22,9 @@ Nextjs glossary
 
 [...]: check Catch-all Segments.
 [slug]: check Dynamic Route.
+API Routes: allow you to create server-side endpoints as part of your application. These endpoints can be used to handle HTTP requests and serve as a backend for your application without requiring a separate backend service.
+  - in Vercel or similar platforms, each API route is deployed as a serverless function, which scales automatically.
+  - Next.js API routes are powered by a lightweight library Micro similar to Express, developed by Vercel. Both Micro and Express are lightweight HTTP frameworks designed for handling server-side requests and responses.
 App directory: directory responsible for all the routing.
   - to make it work, it has to have a page.tsx file inside the folder representing the routing. Check File Colocation.
 Autoprefixer: lib that manages css prefixes like -webkit, -moz.
@@ -78,7 +81,7 @@ Data Cache: server-side cache that persists the result of data fetches across in
   - in the Rendering phase, each fetch() checks if there is data on the Data Cache, if there aren't any, then it requests data to the Data Source.
   - the data is stored in .next/cache/fetch-cache
   - the Data Cache is a Server Cache, don't confuse it with the browser cache.
-Data Fetching: you can fetch data from the Server and the Client components.
+Data Fetching: process of retrieving data from an external source, such as an API, database, or file, to be used within a React application. Usually data is fetched from REST API or GraphQL, but also from databases, files, etc.
   - to fetch data from the Server Component, use async and await keywords in the component definition.
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
   - it's higly recommended that you have one default.tsx in each slot folder. You usually simply copy the code of the related page.tsx.
@@ -183,6 +186,8 @@ Nested Dynamic Routes: nested routes with more than one dynamic segment.
 Nested Layout: layouts in the folder hierarchy are nested, which means they wrap child layouts via their children prop.
 Nested Routes: ability to create a hierarchical structure of pages that reflects a path hierarchy in the URL.
   - just pile up the folders.
+Next.js: React-based framework for building web applications. React, in turn, can be considered a library for building user interfaces.
+  - it takes care of Routing, Optimized Rendering, Data Fetching, Bundling, Compiling, Authentication, Deploy, Caching, Styling.
 .next folder: build output directory that keeps static files and is automatically generated when you build or start your Next.js application.
   - within the /server we have an /app corresponding to the router
   - each static generated route is in this folder, and there is a .rsc respective file with the RSC payload
@@ -278,7 +283,11 @@ Route Segment Configuration: allows you to configure the behavior of a Page, Lay
 route.ts: file responsible for route handlers.
   - export async function GET() {return Response.json({ message: 'Hello - GET' });}
   - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
-Routing: Next.js uses a file-system based routing mechanism.
+Routing: process of determining how an application or system directs a request to the appropriate destination.
+  - it defines how requests to specific URLs are mapped to web pages and resources. eg: a POST request to /products would trigger a specific server function return a json resource.
+  - the routing to some address could provide different responses depending on the user agent info.
+  - Next.js uses a file-system based routing mechanism.
+  - Next has its own backend functionalities known as API Routes.
 RSC Architecture: start using Client Components and Server Components in React.
 RSC payload: data and components that are pre-rendered on the server and sent to the client to hydrate the application.
   - the payload is a binary containing
