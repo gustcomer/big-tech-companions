@@ -30,6 +30,7 @@ Client Components: components that are rendered and executed on the client-side,
   - actually, in SSR, these components are executed both on the server, for the first render, and at the client for each re-render.
   - Client Components can only import other Client Components.
   - note that a Component that has no state can be a Client Component, if it is child of a client component. The Parent component state could be passed as props to the child component.
+  - to declare a Client Component, add the "use client" directive at the top of your component file. By default, all Components are Server Components.
 Client Side Rendering (CSR): rendering strategy where the JavaScript code responsible for rendering the web application is executed in the user's browser, rather than on a server.
   - the client receives a minimal HTML with some <div id="root"> and a bundle.js. Then React takes over the <div id="root"> and dynamically builds and updates the DOM.
   - the routing is executed on the client-side without a full page reload.
@@ -321,6 +322,10 @@ Route Component
 runtime: any library, framework, or platform that your code runs on.
 Server Actions: feature in React that allows you to define and execute server-side logic directly from your React components.
   - typically used for operations like database interactions, API calls, or other server-side tasks.
+Server Components: allow certain components to be rendered entirely on the server and then sent as serialized HTML to the client, where they can integrate seamlessly into a React app.
+  - the DOM tree that is rendered on the server is serialized and sent to the client so that the client organizes the DOM tree and still provide the usual client interactivity.
+  - by default, Next treats all components as Server Components. the 'use server' only is used to Server Actions.
+  - they can perform server-side tasks, such as reading files or fetching data directly from a database, but on the other hand, they cannot use React hooks or handle user interactions.
 Server Side Rendering (SSR): the server sends the actual HTML document to the user instead of a minimal HTML, then the bundle.js hydrates this HTML with iteractivity, effects, event handlers, etc.
   - users don't have to stare at an empty white page while the JS bundles are downloaded and parsed.
 serviceWorker: related to Progressive Web Apps (PWA).
