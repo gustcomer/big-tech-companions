@@ -4,3 +4,4 @@ Search Queries: words or phrases users type into a search engine like Google, Bi
   Navigational Queries: queries where the user intends to find a specific website or page. "Facebook login", "YouTube".
   Informational Queries: queries where users seek general knowledge or information without a direct intent to purchase. "What is SEO?" "Best places to visit in Norway"
   Transactional Queries: queries where users show intent to take a specific action, such as making a purchase, signing up, or downloading something.
+  Commercial Investigation Queries: queries where users are researching products, services, or brands before making a decision. "Best smartphones under $500" "Ahrefs vs. SEMrush" "Top-rated hotels in Oslo".
