@@ -35,7 +35,8 @@ Client Side Rendering (CSR): rendering strategy where the JavaScript code respon
   - the routing is executed on the client-side without a full page reload.
   - the SEO is poor and the initial waiting time is big, while the response time usually presents low latency since every code is already on the client.
 Commit Phase: all React Elements are applied to the DOM using the react-dom package.
-  - the commit phase is usually very fast, but rendering can be slow.
+  - phase in React's reconciliation process where changes are applied to the DOM.
+  - the commit phase is usually very fast, but rendering can be slow. Different from Render, Commit make real changes to the DOM.
 Component: modular, reusable and independently deployable pieces of code.
   - eg: pieces of UI in React. Each microservice.
 Component: independent chunks of user interfaces.
@@ -121,6 +122,9 @@ Diffing: concept of comparing the virtual DOMs before and after the modification
   - the result of the Conciliation process is called diff.
   - Diffing is related to the algorithm used to compare two virtual DOMs and is an important step in the Reconciliation process.
   - aka: DOM Diffing
+Effects: side effects that your components need to perform outside of rendering, after rendering and commit phases. They run at the end of a commit after the screen updates.
+  - they are side effects that are caused by rendering rather than by particular events.
+  - check Side Effects.
 Elements: the smallest building block in React applications. It represents a plain object describing what you want to display on the screen. They are used to construct the Virtual DOM tree in React.
   - usually a Custom Component created by the user is constructed using various React Elements (such as h1, div, nav, main, etc).
   - they are immutable, lightweight and are used to construct a Virtual DOM tree in React.
@@ -134,6 +138,7 @@ Event Handling: events occur, at least, every time a user interacts with the UI.
   - in JSX, you pass the handler in curly braces without parenthesis (otherwise it becomes a function call): onClick={clickHandler}. in html you pass as a string: onclick="clickhandler()".
 fetch: react components don't know anything about HTTP, they simply read props and state and then render the UI.
   - to read data from the server you have to get the data to your props or state.
+forwardRef(): check Refs Forwarding.
 Fragment <></>: wrapper component used to group multiple children elements without adding an extra DOM node.
 Higher-Order Component: function that takes a component and returns a new component.
   - it's a technique for reusing component logic like state. Lifting the state would be an option to share state and handler, but for components deeply separated it's better to use HOC.
@@ -227,6 +232,9 @@ PureComponent: component that performs a shallow comparison on the component's p
   - it's safer to use Regular Components. Only use PureComponent if you see some performance boost hidden somewhere.
   - PureComponent only works with class components, while React.memo works with Functional Components.
 React: a javascript library for building user interfaces.
+React Server Components (RSC): architectural pattern in React that enables server-rendering of components.
+  - RSCs extend React's architecture to blend server rendering with client rendering, offering a hybrid model.
+  - RSC allows pieces of the page to be rendered and hydrated separately. There is no one big hydration phase, but many small ones. This is achieved with Server Components and Suspense.
 React.Memo(): it's a high-order component that works similarly to React.PureComponent. That is, it returns a memoized version of the given component.
   - you can call the HOC with export default React.memo(ExpensiveComponent), for instance.
 React.ReactNode: [ts] type of everything React can render.
@@ -262,13 +270,14 @@ Refs: way to access and interact with DOM elements or React Components directly.
 Refs Forwarding: with React.forwardRef you can create a ref on a Parent Component and make it point to some element in the child component.
   - usually it is possible to pass a ref to any React Element via props. But it is not possible to pass them to Custom Components like Functional Components because they don't know how to handle it. They don't know how to call ref.current for instance.
   - to add ref functionality to Functional Components, for instance, just apply React.forwardRef to the component in question. This way, it will be able to handle ref calls. And because of that, now you can pass the ref via props and be sure that it will be correctly processed.
+  - it is usually used in conjunction with useImperativeHandle.
 render(): it basically read state and props and return JSX.
   - required lifecycle method in a class component that returns the React elements to be rendered to the DOM.
   - actually this method returns a virtual DOM reflecting the state of the UI, then React compares the new virtual DOM with the previous one and updates the actual DOM accordingly.
   - the process of comparing the new and the old virtual DOMs is called reconciliation, and the differences between the two trees can be called "diffs".
   - do not perform side effects like change state, interact with DOM or make fetch calls.
   - all the children components lifecycle methods are executed right after the render() execution of the parent component but just before the componentDidMount() of the parent.
-Render Phase: purely computational phase which involves reconciling the new virtual DOM tree with the previous one, computing the differences (diffing), and preparing updates.
+Render Phase: purely computational phase which involves reconciling the new virtual DOM tree with the previous one, computing the differences (diffing), and preparing the necessary updates in a "work-in-progress tree".
   - for the first render, react traverses the component tree starting at the root component and in each element it call the createElement() method transforming JSX components into a tree of React Elements (vDOM) which are JavaScript objects that describe the structure of your UI.
   ...when this phase ends and all react JSX components are converted into React Elements for the entire tree, all RE are handed over to the commit phase.
   - for re-renders, some components will be Flagged as needing updates. These flags can be triggered with useState or useReducer.
@@ -315,6 +324,7 @@ Side Effects: actions that occur as a result of rendering but are not directly r
   - eg: data fetching, subscriptions (sockets, observables), timers, log, manually updating the DOM (not part of the natural render process), state management.
   - in Class Components you manage side effects with lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
   - in Functional Components we use useEffect to manage side effects.
+Side Effects (general programming): changes in the state of a system or observable interactions with the outside world that occur during the execution of a function or expression, beyond returning a value.
 Stale Closure: situation where a function captures outdated state or props from the context in which it was created.
   - to avoid it, use the useEffect dependency array ([]) wisely, use the functional form of setState(), Use a Ref If you need a value to persist and update without re-triggering effects.
 State: stores dynamic data about a component.
@@ -363,7 +373,8 @@ unmount: when you're displaying a component and it stops being displayed for any
 'use server': directive that marks a function as a Server Action.
   - this is not used to mark a component as a Server Components. Components are server components by default, there is no need to mark them.
 useDebugValue():
-useImperativeHandle():
+useImperativeHandle(): allows a component that uses ref, to expose only specific methods when ref.current is called. it allows encapsulation.
+  - in react usually Data is passed from parents to children. Refs is a way to break this rule and allow data from children to be accessed from parents or siblings.
 useLayoutEffect():
 Virtual DOM: virtual representation of the actual DOM. When the state of a component changes, React creates a new Virtual DOM representation and then proceeds to perform a Reconciliation.
   - VDOM
