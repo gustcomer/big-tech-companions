@@ -287,6 +287,9 @@ Routing: process of determining how an application or system directs a request t
   - it defines how requests to specific URLs are mapped to web pages and resources. eg: a POST request to /products would trigger a specific server function return a json resource.
   - the routing to some address could provide different responses depending on the user agent info.
   - Next.js uses a file-system based routing mechanism.
+    1 All routes must live inside the app folder.
+    2 Route files must be named either page.js or page.tsx
+    3 Each folder represents a segment of the URL path.
   - Next has its own backend functionalities known as API Routes.
 RSC Architecture: start using Client Components and Server Components in React.
 RSC payload: data and components that are pre-rendered on the server and sent to the client to hydrate the application.
