@@ -124,6 +124,7 @@ Diffing: concept of comparing the virtual DOMs before and after the modification
   - aka: DOM Diffing
 Effects: side effects that your components need to perform outside of rendering, after rendering and commit phases. They run at the end of a commit after the screen updates.
   - they are side effects that are caused by rendering rather than by particular events.
+  - while Events are user or system interactions, Effects are responses to render cycles.
   - check Side Effects.
 Elements: the smallest building block in React applications. It represents a plain object describing what you want to display on the screen. They are used to construct the Virtual DOM tree in React.
   - usually a Custom Component created by the user is constructed using various React Elements (such as h1, div, nav, main, etc).
@@ -132,6 +133,8 @@ Elements: the smallest building block in React applications. It represents a pla
   - they are Objects composed of
       type: type of element. eg: 'h1'
       key: used in React reconciliation process, more specifically in lists.
+Event: triggered interactions or occurrences that happen in the browser such as user interactions or system-generated events.
+  - while Events are user or system interactions, Effects are responses to render cycles.
 Event Handling: events occur, at least, every time a user interacts with the UI.
   - eg: mouse clicks, mouse overs, key press, change event, so on.
   - in JSX, events are camel cased eg: onClick. in html they are lower case: onclick.
@@ -188,6 +191,9 @@ List Rendering: you can render lists by using map in the JSX but using {} to all
 markup: refers to the use of symbols, tags, or special characters in a document to define its structure, format, or presentation.
   - commonly used in the context of creating documents, web pages, or structured data.
   eg: HTML, XML, Markdown, LaTeX.
+memo(): higher-order component (HOC, a function) used to optimize performance by preventing unnecessary re-renders of a component.
+  - lets you skip rerendering a component when its props are unchanged.
+  - usually children components are re-rendered when parent components are re-rendered. memo() let you skip this case.
 Memoization: performance optimization technique used to avoid unnecessary re-renders of components using shallow comparison.
   - check React.memo and useMemo().
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
@@ -277,6 +283,8 @@ render(): it basically read state and props and return JSX.
   - the process of comparing the new and the old virtual DOMs is called reconciliation, and the differences between the two trees can be called "diffs".
   - do not perform side effects like change state, interact with DOM or make fetch calls.
   - all the children components lifecycle methods are executed right after the render() execution of the parent component but just before the componentDidMount() of the parent.
+Render Cycle: process by which React updates the DOM. what triggers a render cycle are: state updates, props changes, context changes.
+  - the steps in a render phase are: a. Render Phase b. Reconciliation c. Commit phase
 Render Phase: purely computational phase which involves reconciling the new virtual DOM tree with the previous one, computing the differences (diffing), and preparing the necessary updates in a "work-in-progress tree".
   - for the first render, react traverses the component tree starting at the root component and in each element it call the createElement() method transforming JSX components into a tree of React Elements (vDOM) which are JavaScript objects that describe the structure of your UI.
   ...when this phase ends and all react JSX components are converted into React Elements for the entire tree, all RE are handed over to the commit phase.
@@ -302,6 +310,12 @@ Request Memoization: type of cache that extends the fetch API to automatically m
   - it is used to dedupe requests using React.cache.
   - only applies to GET method in fetch requests.
   - only applies within React Component Tree. Does not extend to fetch requests in Route Handlers.
+re-render: a react component re-renders when
+  1. it's state change.
+  2. its props change.
+  3. its context update.
+  4. you force a re-render with forceUpdate().
+  5. its Parent re-renders.
 root DOM node: a div with id="root" that React takes control and starts rendering stuff.
 Route Component
 runtime: any library, framework, or platform that your code runs on.
@@ -470,6 +484,7 @@ Portals: provide a way to render children into a DOM node that exists outside th
 ================================================================================
 React Hooks - React 16.8 (February 2019)
 
+useActionState(): Hook that allows you to update state based on the result of a form action.
 useCallback(): used to memoize a function. It returns a memoized version of the callback function that only changes if one of the dependencies has changed.
   - remember that functions are rebuilt after every re-render and even though they have the same behavior, they differ because the comparison depends on reference equality. so all components with callback props like buttons are re-rendered.
   - just like useEffects, remember not to lie in the dependencies array and tell everything that the function being memoized depends (even harder to track dependencies).
@@ -479,6 +494,7 @@ useContext(): allows you to subscribe to React context without introducing nesti
   [1] Create a Context: const ThemeContext = React.createContext('light'); export default ThemeContext;
   [2] Providing the Context: return ( <ThemeContext.Provider value={theme}>  <Toolbar />  </ThemeContext.Provider> );
   [3] Consume the Context: import ThemeContext from './ThemeContext'; ... const theme = useContext(ThemeContext); ...
+useDeferredValue(): lets you defer updating a part of the UI. the deferred value will “lag behind” the latest value of some state.
 useEffect(): hook that lets you synchronize a component with an external system.
   - it lets you perform side effects in function components and works similar to componentDidMount, componentDidUpdate, componentWillUnmount, etc.
   - side effects in this context are operations that affect something outside the scope of the function, such as data fetching, subscriptions, or manually changing the DOM.
@@ -496,6 +512,9 @@ useEffect(): hook that lets you synchronize a component with an external system.
   - other way to force the useEffect to take a look at the actual state of something would be to use the updater function of the state with the version containing setState.
 useFormStatus(): provides status information of the last form submission.
   this is a hook provided in the react-dom@19 library.
+useInsertionEffect(): perform DOM-related operations before mutations are made to the DOM. Used mainly with css-in-js libs.
+  - it's a hook for very specific use cases and not for the general public.
+useLayoutEffect(): allows you to perform side effects after the DOM has been updated but before the browser has painted the screen.
 useMemo(): useMemo() memoizes the result of a function so that you don't have to call an expensive function in every render.
   const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]); note that there is a function and and array of dependencies.
   - useMemo gives you referential equality between renders for values.
