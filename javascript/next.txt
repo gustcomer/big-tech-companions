@@ -49,6 +49,7 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   - all segments are passed at the params prop in an array form. (remember nested dynamic routes used key-value pairs).
   - app/shop/[...slug]/page.js will route /shop/a/b/c and generate params: { slug: ['a', 'b', 'c'] }
   - in the case above, if you want to also match app/, you should check Optional Catch-all Segments entry and use [[...slug]].
+  eg: Could support languages in the route. Could be useful for categorizations.
 Client Components:
   - they can use hooks, use event listeners and manage state.
 client-only: package that prevent unintended server side usage of client side code.
@@ -287,6 +288,7 @@ Route Types
   - Nested Routes: /info/about
   - Dynamic Routes: /artists/32
   - Nested Dynamic Routes: /artists/12/album/14
+  - Catch-all Segments: /a/b/c/123 ou /en/article1
 route.ts: file responsible for route handlers.
   - export async function GET() {return Response.json({ message: 'Hello - GET' });}
   - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
