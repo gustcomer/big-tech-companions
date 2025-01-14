@@ -104,6 +104,7 @@ Dynamic Route Handler: similar to Dynamic Page Route. Put a route.ts inside a fo
 Dynamic Routes: when you don't know the exact segment names ahead of time and want to create routes from dynamic data.
   - use Dynamic Segments for this purpose.
   - to use it you name the folder with square brackets, for example, [id] or [slug].
+  snippet [https://github.com/gustcomer/schedmusic/commit/a9d6aedc7b8d1c8dea7fe971a6e6ba749c7297d1]
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
   - they are passed as the params prop to layout, page, route, and generateMetadata functions.
@@ -183,9 +184,10 @@ Middleware: allows you to run code before on the incoming request. You can modif
 Nested Dynamic Routes: nested routes with more than one dynamic segment.
   - all dynamic segments will be passed as properties of Param props in the form of key-value pairs.
   - other way to capture multiple dynamic segments is using Catch All Segments.
+  snippet [https://github.com/gustcomer/schedmusic/commit/258f336a77e0d526ebd5c42c4f3bb588cbbfaa4f]
 Nested Layout: layouts in the folder hierarchy are nested, which means they wrap child layouts via their children prop.
 Nested Routes: ability to create a hierarchical structure of pages that reflects a path hierarchy in the URL.
-  - just pile up the folders.
+  - just pile up the folders and don't forget the file page.tsx.
 Next.js: React-based framework for building web applications. React, in turn, can be considered a library for building user interfaces.
   - it takes care of Routing, Optimized Rendering, Data Fetching, Bundling, Compiling, Authentication, Deploy, Caching, Styling.
 .next folder: build output directory that keeps static files and is automatically generated when you build or start your Next.js application.
@@ -280,6 +282,11 @@ Route Segment Configuration: allows you to configure the behavior of a Page, Lay
     - runtime: 'nodejs' | 'edge'
     - preferredRegion: 'auto' | 'global' | 'home' | string | string[]
     - maxDuration: number
+Route Types
+  - Simple Routes: /about
+  - Nested Routes: /info/about
+  - Dynamic Routes: /artists/32
+  - Nested Dynamic Routes: /artists/12/album/14
 route.ts: file responsible for route handlers.
   - export async function GET() {return Response.json({ message: 'Hello - GET' });}
   - If there are page.ts and route.ts files in the same folder, page.ts takes precedence.
