@@ -229,6 +229,8 @@ Prefetching: when a <Link /> component enters the user's viewport (initially or 
   - technique used to preload a route in the background before the user navigates to it.
 Private Folder: indicate that it is a private implementation and should not be considered by the routing system.
   - prefix the folder name with an underscore _. The folder and all its subfolders are excluded from routing.
+  - as an alternative, you can use colocation to place files in the folder of the routes, or place the files outside of the app/ folder.
+  eg: you can put utility functions like format date
 Production Server: optimized build is created once, and you deploy that build.
   - pages are pre-rendered once when we run build command.
 redirect(): redirect the user to another URL.
