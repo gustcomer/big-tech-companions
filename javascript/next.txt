@@ -385,15 +385,43 @@ URL Query Parameters: pass parameters to the request using ?query= notation in t
   - eg: localhost:3000/comments?query=first
   - with request.nextUrl.searchParams we can access all query parameters.
   - usually is used to filtering requests.
+Web Vitals: initiative created by Google to provide unified guidance and metrics to measure end-user page experience on the web.
+
+================================================================================
+Hooks
+
 usePathname(): hook provided by Next.js that supplies the current route name (url after the domain).
-  - it is useful to check which <Link> is active to give proper styling.
+  - it is useful to check which <Link> is active to give proper styling. also useful for breadcrumbs.
+  eg: if you just want to access the values of nested dynamic routes, you could also use nested dynamic routes.
 useRouter(): hook that allows you to access the router object inside any function component in your app.
   - with the router object, you can navigate Programatically.
   - router.push(/): handles client-side transitions
   - router.replace(): prevent adding a new URL entry into the history stack.
   - router.back(): navigate back in history.
   - router.reload(): reload the current URL.
-Web Vitals: initiative created by Google to provide unified guidance and metrics to measure end-user page experience on the web.
+
+================================================================================
+Modules
+
+next/app - Used for defining the root application layout and logic (e.g., AppRouter components).
+next/auth (if using next-auth) - Handles authentication and session management.
+next/cache - Cache helpers for server-side rendering.
+next/config - Access runtime configuration defined in next.config.js.
+next/constants - Access shared constants (e.g., environment detection).
+next/data - (For App Router) Used for fetching server-side or static data.
+next/fetch - Enhanced fetch API for App Router.
+next/font - Handles custom and Google Fonts with automatic optimization.
+next/head - Allows you to modify the <head> of a page (e.g., for metadata, title, and meta tags).
+next/headers - Manage request and response headers in App Router.
+next/image - Offers optimized image rendering with lazy loading and resizing.
+next/layouts - Handles layouts in the App Router.
+next/link - Enables client-side navigation between routes.
+next/middleware - Specific to middleware creation.
+next/navigation - Provides client-side navigation utilities (e.g., useRouter, usePathname, useSearchParams).
+next/router (for legacy routing) - Access the router instance and manage navigation programmatically.
+next/script - Optimizes the loading of third-party scripts.
+next/server - Provides utilities for middleware and server-side features.
+next/server - Utilities for server-side tasks and middleware.
 
 ================================================================================
 tools and libs
