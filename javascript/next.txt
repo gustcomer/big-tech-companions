@@ -160,6 +160,8 @@ Interleaving: you can place a Server Component inside a Client Component passing
 key prop: string or a number that uniquely identifies items in an array.
 Layout: UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive, and do not re-render.
   - The component should accept a children prop and this chindren component will be inserted into the UI.
+  eg: set a header and footer that appears on every page.
+  check: Nested Layout, Multiple Root Layout
 layout.tsx: special file that is shared between multiple routes and defines UI.
   - export some component as default and with children props.
 Layout Shifting: when a visible element on your page changes position or size, affecting the position of content around it.
@@ -182,6 +184,8 @@ Middleware: allows you to run code before on the incoming request. You can modif
     - use conditional conditions on request.nextUrl.pathname
   - we can manipulate the headers with response.headers.set("name","value")
   - we can manipulate cookies with response.cookies.set("name","value")
+Multiple Root Layout: approach where an application has different top-level layout components depending on the section or type of page being rendered.
+  - specific things like login page, dashboards, etc usualy don't share the same header and footer of the usual pages.
 Nested Dynamic Routes: nested routes with more than one dynamic segment.
   - all dynamic segments will be passed as properties of Param props in the form of key-value pairs.
   - other way to capture multiple dynamic segments is using Catch All Segments.
@@ -265,10 +269,11 @@ Root Layout: defined at the top level of the app directory and applies to all ro
   - you can't get rid of this layout file. If you delete, it will reappear.
   - besides a normal Layout, it must contain html and body tags.
 Route Group: organize your route segments and project files into logical groups without affecting the URL path structure.
-  - wrap a folder's name in parenthesis: (folderName)
+  - wrap a folder's name in parenthesis: (folderName). the name in the parenthesis won't be part of the url, and act as an organization folder.
   - you can use layout files specific to the route group.
-Route Group Layout: apply a layout to pages grouped by a Route Group.
+Route Group Layout: help in organizing related routes together. Also apply a layout to pages grouped by a Route Group.
   - you can create a specific rout group named (with-specific-layout).
+  - just divide all the routes in Route Groups, and for each Route Group use a different root layout.
 Route Handlers: allow you to create custom request handlers for a given route using the Web Request and Response APIs.
   - use the file route.ts instead of page.ts in the App folder.
   - while page routes respond with html, route handlers allow you to create RESTful endpoints and respond with json, for instance.
