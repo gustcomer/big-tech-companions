@@ -171,9 +171,13 @@ Lazy: React.lazy is a function that allows you to render a dynamic import as a r
   - replace prop: when true, next/link will replace the current history state instead of adding a new URL into the browser’s history.
 loading.tsx: this file allows us to create loading states that are displayed to users while a specific route segment's content is loading.
   - loading has to do with React Suspense.
-Metadata API: allows you to define metadata for each page.
+Metadata API: allows you to define metadata for each page. It can be done in page.tsx or layout.tsx.
   - 2 methods: export a static metadata object or export a dynamic generateMetadata().
-  - deeper page metadata will replace layout metadata if they have the same properties.
+    - the generateMetadata() is much more complicated but on the other hand we can generate dynamic metadata like titles.
+  - deeper page metadata will replace layout metadata if they have the same properties. Makes the content look good when sharing, and halp indexing by search engines.
+  - while layout metadata will apply to all pages, page metadata apply only to the specific page. They follow a top-down order, meaning that page metadata will override layout metadata.
+  - the metadata is rendered on the server so it should be placed on Server Components.
+  check generateMetadata()
 Middleware: allows you to run code before on the incoming request. You can modify the response by rewriting, redirecting, modifying the request or response headers, or responding directly.
   - Use the file middleware.ts (or .js) in the root of your project to define Middleware.
   - the matcher config property is used to filter Middleware to run on specific paths.
