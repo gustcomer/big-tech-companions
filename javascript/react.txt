@@ -364,7 +364,7 @@ Static Site Generation (SSG): pre-rendering web pages at build time, as opposed 
   - The generated HTML is static and can be served directly by a content delivery network (CDN), making it very fast and efficient.
   - Pre-rendered HTML improves SEO visibility.
   - you can understand SSG as a sub-variant of Server Side Rendering. The only difference is that all the HTML is pre-rendered since there are no dynamic content.
-  - SSG still needs hydration to make the static HTML page generated at build time interactive.
+  - SSG still needs hydration to make the static HTML page generated at build time interactive. Specially if you use react state or event handlers. That means that the static html generated at build time is served together with a bundle.js.
 Static Page: webpage that is pre-rendered at build time and served as-is to the user without requiring further processing on the server or client-side such as database consultations.
   - typically generated using Static Site Generation (SSG), a technique that creates HTML files for each page at build time.
 Streaming: process available in frameworks like Next.js of sending parts of an application's server-rendered HTML to the client in chunks as they become available, rather than waiting for the entire HTML to be generated.
