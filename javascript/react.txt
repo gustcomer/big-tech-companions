@@ -37,7 +37,7 @@ Client Side Rendering (CSR): rendering strategy where the JavaScript code respon
   - the SEO is poor and the initial waiting time is big, while the response time usually presents low latency since every code is already on the client.
 Code Splitting: technique that allows you to split your application into smaller bundles that can be loaded dynamically. This improves performance by reducing the initial load time of your app.
   - you can do this using lazy() to load the component only when it is needed and Suspense to show a fallback UI.
-  eg: think of components that only show up after some checkbox is selected. Or modals that conditionally appear at other moments. Infinite scrolls. etc.
+  eg: think of components that only show up after some checkbox is selected. Or modals that conditionally appear at other moments. Infinite scrolls. Dashboards. etc.
 Commit Phase: all React Elements are applied to the DOM using the react-dom package.
   - phase in React's reconciliation process where changes are applied to the DOM.
   - the commit phase is usually very fast, but rendering can be slow. Different from Render, Commit make real changes to the DOM.
@@ -189,6 +189,8 @@ key prop: each child in an array or iterator should have a unique "key" prop of 
   - you could use the map index as key, if the list were static (never changed) and also never reordered or filtered.
 Layout Components: specialized components that focus on organizing other components within a web page.
   - eg: split screen, lists, modals.
+lazy(): function in React that allows you to lazily load components using dynamic import(). It is useful for Code Splitting.
+  - lazy() and SSR don't work well because lazy relies on dynamic imports (import()) that are resolved at runtime on the client while SSR executes on the server. It could also result in Hydration Mismatch.
 List Rendering: you can render lists by using map in the JSX but using {} to allow javascript expressions inside the JSX.
   - return (<div>{names.map(name => <h2>{name}</h2>)}</div>); or yet const nameList = names.map(name => <h2>{name}</h2>);
   - when you use map, each element in the map should have a unique "key" prop.
@@ -329,7 +331,8 @@ Server Components: allow certain components to be rendered entirely on the serve
   - the DOM tree that is rendered on the server is serialized and sent to the client so that the client organizes the DOM tree and still provide the usual client interactivity.
   - by default, Next treats all components as Server Components. the 'use server' only is used to Server Actions.
   - they can perform server-side tasks, such as reading files or fetching data directly from a database, but on the other hand, they cannot use React hooks or handle user interactions.
-Server Side Rendering (SSR): the server sends the actual HTML document to the user instead of a minimal HTML, then the bundle.js hydrates this HTML with iteractivity, effects, event handlers, etc.
+Server Side Rendering (SSR): refers to the process of attaching event listeners and making a server-rendered HTML page interactive on the client side.
+  - the server sends the actual HTML document to the user instead of a minimal HTML, then the bundle.js hydrates this HTML with iteractivity, effects, event handlers, etc.
   - users don't have to stare at an empty white page while the JS bundles are downloaded and parsed.
 serviceWorker: related to Progressive Web Apps (PWA).
 shallow comparison: performed using ===, only looks at the first level of an object or array, and does not compare any nested objects or arrays.
@@ -361,8 +364,13 @@ Static Site Generation (SSG): pre-rendering web pages at build time, as opposed 
   - The generated HTML is static and can be served directly by a content delivery network (CDN), making it very fast and efficient.
   - Pre-rendered HTML improves SEO visibility.
   - you can understand SSG as a sub-variant of Server Side Rendering. The only difference is that all the HTML is pre-rendered since there are no dynamic content.
+  - SSG still needs hydration to make the static HTML page generated at build time interactive.
 Static Page: webpage that is pre-rendered at build time and served as-is to the user without requiring further processing on the server or client-side such as database consultations.
   - typically generated using Static Site Generation (SSG), a technique that creates HTML files for each page at build time.
+Streaming: process available in frameworks like Next.js of sending parts of an application's server-rendered HTML to the client in chunks as they become available, rather than waiting for the entire HTML to be generated.
+  - while SSR involves rendering the entire HTML on the server and then sending it to the client, with streaming, the server sends partial HTML as soon as it's ready.
+  - the Next getServerSideProps feature is only possible with React 18's renderToPipeableStream feature.
+  - while Streaming is a server-side technique where HTML is sent to the client in chunks as it becomes available, lazy() is a client-side feature that enables lazy loading (load only when it's needed).
 <StrictMode>: a development-only feature that lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs like unexpected side effects caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
