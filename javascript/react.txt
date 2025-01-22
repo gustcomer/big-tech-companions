@@ -35,6 +35,9 @@ Client Side Rendering (CSR): rendering strategy where the JavaScript code respon
   - the client receives a minimal HTML with some <div id="root"> and a bundle.js. Then React takes over the <div id="root"> and dynamically builds and updates the DOM.
   - the routing is executed on the client-side without a full page reload.
   - the SEO is poor and the initial waiting time is big, while the response time usually presents low latency since every code is already on the client.
+Code Splitting: technique that allows you to split your application into smaller bundles that can be loaded dynamically. This improves performance by reducing the initial load time of your app.
+  - you can do this using lazy() to load the component only when it is needed and Suspense to show a fallback UI.
+  eg: think of components that only show up after some checkbox is selected. Or modals that conditionally appear at other moments. Infinite scrolls. etc.
 Commit Phase: all React Elements are applied to the DOM using the react-dom package.
   - phase in React's reconciliation process where changes are applied to the DOM.
   - the commit phase is usually very fast, but rendering can be slow. Different from Render, Commit make real changes to the DOM.
