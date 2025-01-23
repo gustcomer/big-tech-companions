@@ -167,6 +167,8 @@ Hooks: allow you to use React features without having to write a Class. The func
   - Hooks, on the other hand, help organize the logic inside a component into reusable isolated units and not life cycles. UseEffect hook, for instance, concentrates all the effects code in just one place.
   - only call hooks at the top level. don't call hooks inside loops, conditions, or nested functions. only call them within React Functional components.
 Hot Reloading: allows you to update and refresh parts of your application without requiring a full reload.
+Hydration: refers to the process of attaching event listeners and making a server-rendered HTML page interactive on the client side.
+  - used in Server-Side Rendering (SSR) and Static Site Generation (SSG) workflows.
 JSX: JavaScript XML, lets you write HTML-like code in your JavaScript files. A syntax extension for JavaScript, often used with React to describe what the UI should look like.
   - at the end of the day, JSX is just synctatic sugar for function calls and objects construction.
   - JSX tags have a tag name, attributes and children.
