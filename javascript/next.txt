@@ -169,6 +169,7 @@ Lazy: React.lazy is a function that allows you to render a dynamic import as a r
 <Link>: component that extends the HTML <a> element to provide prefetching and client-side navigation between routes.
   - eg: <Link href="/blog">Blog</Link>
   - replace prop: when true, next/link will replace the current history state instead of adding a new URL into the browser’s history.
+    eg: it means that the actual page containing the Link with replace won't be added to the history. Good to avoid Login pages, form pages, etc.
 loading.tsx: this file allows us to create loading states that are displayed to users while a specific route segment's content is loading.
   - loading has to do with React Suspense.
 Metadata API: allows you to define metadata for each page. It can be done in page.tsx or layout.tsx.
@@ -404,6 +405,7 @@ Hooks
 usePathname(): hook provided by Next.js that supplies the current route name (url after the domain).
   - it is useful to check which <Link> is active to give proper styling. also useful for breadcrumbs.
   eg: if you just want to access the values of nested dynamic routes, you could also use nested dynamic routes.
+  eg: for http://localhost:3000/forgot-password the path would be /forgot-password
 useRouter(): hook that allows you to access the router object inside any function component in your app.
   - with the router object, you can navigate Programatically.
   - router.push(/): handles client-side transitions
@@ -428,7 +430,8 @@ next/image - Offers optimized image rendering with lazy loading and resizing.
 next/layouts - Handles layouts in the App Router.
 next/link - Enables client-side navigation between routes.
 next/middleware - Specific to middleware creation.
-next/navigation - Provides client-side navigation utilities (e.g., useRouter, usePathname, useSearchParams).
+next/navigation - Provides client-side navigation utilities
+  eg: useRouter(), usePathname(), useSearchParams()
 next/router (for legacy routing) - Access the router instance and manage navigation programmatically.
 next/script - Optimizes the loading of third-party scripts.
 next/server - Provides utilities for middleware and server-side features.
