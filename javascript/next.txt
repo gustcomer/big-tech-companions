@@ -226,8 +226,11 @@ page.tsx: special file that is unique to a route allows you to create UI for it.
 Parallel Routes: advanced routing mechanism that uses Slots and allows for the simultaneous rendering of multiple pages within the same layout.
   - useful for highly dynamic sections of an app, such as dashboards and feeds on social sites.
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
-params: prop used to capture the value of dynamic segments as key-value pairs.
+params: props used to capture the value of dynamic segments as key-value pairs.
+  - promise that resolves to an object containing the dynamic route parameters (like id).
+    - params are used in dynamic routes, and usually dynamic routes fetch things and may take a while, that's why we use Promises.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
+  - for query parameters, check searchParams.
 PATCH(): put this function inside a route.ts file to handle a PATCH request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function PATCH(_request: Request, {params}) {...}
