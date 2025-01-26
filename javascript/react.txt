@@ -117,6 +117,8 @@ Declarative Paradigm: style of programming where the focus is on what the progra
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
 Declarative Programming: you describe what each part of your UI should look like and React takes care of rendering the UI accordingly.
+deduplication of fetch: it is very common to have multiple components accessing the same data, that means, duplication of fetch calls.
+  - some deduplication is needed and this is usually achieved with the Data Loader Pattern.
 Derived States: state that is calculated or derived from existing state or props, rather than being stored explicitly in a component's state.
   - avoid using Derived States because you'll haventonrecalculate the values at every render and this is bot optimal.
   - avoid Derived States recalculations at every render with useMemo.
@@ -206,6 +208,8 @@ Memoization: performance optimization technique used to avoid unnecessary re-ren
   - check React.memo and useMemo().
 Mounting Lifecycle Methods: methods which are called when the instance of a component is being created and inserted into the DOM.
   - constructor, getDerivedStateFromProps(), render and componentDidMount()
+n+1 problem: refers to a performance issue that occurs when a system makes N+1 queries instead of a single, optimized query.
+  eg: You have a list of items (e.g., users) to display, and for each user, you need additional data (e.g., their profile information). Instead of fetching all the data in one batch, your application fetches the list of users and then makes an additional request for each user to get their profile information.
 Node: any value that React can render.
   eg: React Elements, Strings, Numbers, null, undefined, false, Arrays of Nodes, Portals, Fragments, etc.
   - while React Element is a specific object returned by React.createElement or JSX, a React Node is a broader term that encompasses anything React can render (elements, strings, numbers, arrays, null, etc.)
