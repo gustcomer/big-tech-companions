@@ -397,6 +397,8 @@ Styling React Components
   [3] CSS Modules: is just like the CSS stylesheets but instead of using the class names as string, you use them as properties of a style object.
     - the advantage of CSS Modules is that the class has only local scope, while in CSS stylesheets the scope is also for all of its children components and hence is more error prone.
   [4] CSS in JS Libraries
+Transition: rendering process where updates are marked as non-urgent, allowing React to keep the UI responsive by handling them at a lower priority.
+  - this is achieved using the useTransition hook.
 triggering: initiates a state update or a re-render of a component.
   - there are two reasons for a component to render [1] it's the component's initial render. [2] the component's (or one of its ancestors') state has been update. Remeber that an ancestors state could be another's prop.
   - usually the initial render is done by calling createRoot with the target DOM node and then calling its render method with your component.
@@ -586,7 +588,7 @@ useState(): hook that lets you add a state variable to your component.
     - The setState has the same value after re-renders (with different useStates)? React will render that specific component one more time and then bails out from any subsequent renders.
   - to re-render after setState, the setState must pass in or return a new reference as the state value.
   - in resume, react only bails-out a component from the rendering phase in 2 cases: [1] in initial render, if the state set is equal as before. [2] after re-renders it will render one more time and then bail out. Dan says that this is a safety net.
-useTransition(): lets you render a part of the UI in the background.
+useTransition(): allows you to mark components as non-urgent, allowing React to keep the UI responsive by handling them at a lower priority.
 
 ================================================================================
 React 17.0 October 2020
