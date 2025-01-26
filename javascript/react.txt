@@ -589,6 +589,8 @@ useState(): hook that lets you add a state variable to your component.
   - to re-render after setState, the setState must pass in or return a new reference as the state value.
   - in resume, react only bails-out a component from the rendering phase in 2 cases: [1] in initial render, if the state set is equal as before. [2] after re-renders it will render one more time and then bail out. Dan says that this is a safety net.
 useTransition(): allows you to mark components as non-urgent, allowing React to keep the UI responsive by handling them at a lower priority.
+  - it is a powerful feature for updating state without blocking user input.
+  - usually there is a startTransition function that marks setFilteredItems as a low-priority update.
 
 ================================================================================
 React 17.0 October 2020
