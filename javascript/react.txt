@@ -105,6 +105,8 @@ Custom Hooks: allow you to extract component logic into reusable functions.
   - it is basically a JavaScript function whose name starts with 'use' and can also call other built-in hooks if required.
   - hooks help you to share logic and are to functional components as HOCs and render props are to class components.
   eg: for a counter hook, instead of allowing the user to access setState which doesn't have any business logic, make a useCounter hook and returns the counter and increment, decrement and reset methods, since these are business related.
+debouncing: technique used to delay the execution of a function until after a specified time has passed since the last time it was invoked.
+  - it is used when some input is changing rapidly, so it waits for inactivity, then runs the function once.
 Data Flow: in React, data flows in a unidirectional manner from parent to child components.
   - props are used to pass data from a parent component to a child component.
   - state is a way to manage data that can change over time within a component. Obviously, you can pass a state down the component tree as a prop.
