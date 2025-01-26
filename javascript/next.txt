@@ -52,6 +52,7 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   eg: Could support languages in the route. Could be useful for categorizations.
 Client Components:
   - they can use hooks, use event listeners and manage state.
+  - client components can't be async, but can use async functions inside useEffect().
 client-only: package that prevent unintended server side usage of client side code.
   - client code interact with browser-specific features like DOM, window object, localStorage, etc.
   - useful when you have a function in some util folder that are intended solely for client use.
@@ -327,6 +328,7 @@ RSC payload: data and components that are pre-rendered on the server and sent to
   - for a Server Component we can even find the rendered html in this .rsc json file.
   - for Client Component the payload includes placeholders (instructions) about where the components should be rendered along with references to the js files.
   - we can find some of the js code related to components in /static/chunks/app/...
+searchParams: promise that resolves to an object containing the query parameters.
 Selective Hydration: allows for the hydration of sections as they become available, before the rest of the HTML and the JavaScript code are fully downloaded.
   - check Code Splitting.
   - eg: const MainContent = lazy(() => import('./MainContent.js'));
@@ -334,6 +336,7 @@ Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
 Server Components:
   - they can access the server. but they can't use hooks, event listeners or manage state.
+  - server components can be async and fetch data directly without useEffect.
 server-only: module that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
   - to enable it, all you have to do is import "server-only" after installing it.
 Server-Side Rendering: the server generate HTML and returns to the Client full HTML+JS reference translating into a non-interactive UI.
