@@ -113,6 +113,9 @@ Data Flow: in React, data flows in a unidirectional manner from parent to child 
   - if you want the child compnent to pass parameters to the parent, add parameters to the handler and in the child component transform it into an arrow function with parameters.
     - <button onClick={() => props.handler('child')}>Call Handler</button>
   - break the data flow means that an update to some prop won't be transmitted to a state.
+Data Loader Pattern: method to optimize and batch data fetching operations, reducing the number of redundant database or API calls.
+  - useful in GraphQL and other API-driven applications to prevent the N+1 query problem, where multiple database queries are issued unnecessarily.
+  - basically it uses batching and caching to promote deduplication.
 Declarative Paradigm: style of programming where the focus is on what the program should accomplish rather than how it should accomplish it.
   - contrasts with imperative programming where you write explicit instructions on how to perform tasks.
   - eg: React, SQL, HTML, CSS, Functional Programming Languages like Haskell or Lisp.
