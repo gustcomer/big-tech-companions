@@ -8,6 +8,8 @@ React Glossary
   - It allows you to incorporate logic and data into your JSX.
 Action States: typically refer to different states an application can enter during an asynchronous operation such as fetching data from an API.
   eg: Idle State, Loading State, Success State, Error State.
+Batching: when React groups multiple state updates into a single re-render for better performance.
+  - with Automatic Batching, these updates are batched automatically.
 Binding Event Handlers: there are four approaches to bind event handlers
   - [1] bind this to the function on onClick={this.clickHandler.bind(this)}, but this is not optimal to bind at every rerender.
   - [2] use arrow function right on the onClick={() => this.clickHandler()}, but this is also not optimal.
