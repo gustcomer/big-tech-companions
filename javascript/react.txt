@@ -380,6 +380,8 @@ Streaming: process available in frameworks like Next.js of sending parts of an a
   - while SSR involves rendering the entire HTML on the server and then sending it to the client, with streaming, the server sends partial HTML as soon as it's ready.
   - the Next getServerSideProps feature is only possible with React 18's renderToPipeableStream feature.
   - while Streaming is a server-side technique where HTML is sent to the client in chunks as it becomes available, lazy() is a client-side feature that enables lazy loading (load only when it's needed).
+  - it allows to immediately show content to the user as soon as each Promise is processed.
+  - it can be executed with Suspense since if you divide the suspenses in the page, they will be processed independently.
 <StrictMode>: a development-only feature that lets you find common bugs in your components early during development.
   - Your components will re-render an extra time to find bugs like unexpected side effects caused by impure rendering.
   - Your components will re-run Effects an extra time to find bugs caused by missing Effect cleanup.
