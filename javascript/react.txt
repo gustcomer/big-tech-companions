@@ -429,6 +429,8 @@ waterfall: one of the most important waterfalls to keep in mind is fetch data (s
 Wrapper Component: it's a Component that wraps another component inside its tags and treat the inside component as its child component.
   - while HOCs wrap a component with a function, the Wrapper Component wraps a component within its tags.
   - HOCs add or modify behavior and are used to share logic, whereas Wrapper Components typically focus on layout, structure, or context and help organizing and structuring the UI.
+Wrapper Hell: situation where a component tree is deeply nested due to excessive use of wrappers, such as Higher-Order Components (HOCs), Context Providers, Styled Components, Div wrappers.
+  aka: Provider Hell, HOC Hell.
 
 ================================================================================
 Class Components Related - React 0.x (aprox May 2013 - March 2016)
@@ -517,6 +519,8 @@ Portals: provide a way to render children into a DOM node that exists outside th
 ================================================================================
 React Hooks - React 16.8 (February 2019)
 
+use(): allows you to suspend execution until a Promise is resolved, making data fetching more declarative.
+  - sometimes you wanna use async/await but other times you wanna use use(). It works on the server and on the client for different use cases.
 useActionState(): Hook that allows you to update state based on the result of a form action.
 useCallback(): used to memoize a function. It returns a memoized version of the callback function that only changes if one of the dependencies has changed.
   - remember that functions are rebuilt after every re-render and even though they have the same behavior, they differ because the comparison depends on reference equality. so all components with callback props like buttons are re-rendered.
