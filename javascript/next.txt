@@ -232,6 +232,8 @@ params: props used to capture the value of dynamic segments as key-value pairs.
     - params are used in dynamic routes, and usually dynamic routes fetch things and may take a while, that's why we use Promises.
   - it is passed as prop to layout, page, route, and generateMetadata functions.
   - for query parameters, check searchParams.
+  - usually it is seen together with params.
+  - to use in server components, use async await. To use in client components, use use() hook.
 PATCH(): put this function inside a route.ts file to handle a PATCH request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function PATCH(_request: Request, {params}) {...}
@@ -329,6 +331,8 @@ RSC payload: data and components that are pre-rendered on the server and sent to
   - for Client Component the payload includes placeholders (instructions) about where the components should be rendered along with references to the js files.
   - we can find some of the js code related to components in /static/chunks/app/...
 searchParams: promise that resolves to an object containing the query parameters.
+  - usually it is seen together with params.
+  - to use in server components, use async await. To use in client components, use use() hook.
 Selective Hydration: allows for the hydration of sections as they become available, before the rest of the HTML and the JavaScript code are fully downloaded.
   - check Code Splitting.
   - eg: const MainContent = lazy(() => import('./MainContent.js'));
