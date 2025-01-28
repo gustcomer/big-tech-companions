@@ -171,6 +171,11 @@ Lazy: React.lazy is a function that allows you to render a dynamic import as a r
   - eg: <Link href="/blog">Blog</Link>
   - replace prop: when true, next/link will replace the current history state instead of adding a new URL into the browser’s history.
     eg: it means that the actual page containing the Link with replace won't be added to the history. Good to avoid Login pages, form pages, etc.
+Loading UI: allows you to handle loading states efficiently using loading.tsx in the App Router. It's kinda the Suspense feature, but native to Next.js
+  - part of the user experience when dealing with asynchronous operations, such as data fetching, lazy-loaded components, and route transitions.
+  - the loading component wraps the page.tsx component in a Suspense boundary.
+  - it is important because it gives instant feedback when users navigate somewhere new.
+  - shared layouts can still be used, like navigation menus, sidebars, etc. (but not Layouts).
 loading.tsx: this file allows us to create loading states that are displayed to users while a specific route segment's content is loading.
   - loading has to do with React Suspense.
 Metadata API: allows you to define metadata for each page. It can be done in page.tsx or layout.tsx.
@@ -248,7 +253,7 @@ Private Folder: indicate that it is a private implementation and should not be c
   eg: you can put utility functions like format date
 Production Server: optimized build is created once, and you deploy that build.
   - pages are pre-rendered once when we run build command.
-redirect(): redirect the user to another URL.
+redirect(): function that redirect the user to another URL.
   - can be used in Server Components, Route Handlers, and Server Actions.
 Rendering: process that transforms the code you write into user interfaces.
   - CSS, SSR, RSC: choosing the right time and place to render is vital.
@@ -389,6 +394,8 @@ Suspense: allows you to wait for some code or data to load before rendering a co
   - selective hydration on the client.
 Template: similar but different from Layout. When a user navigates between routes that share a template, a new instance of the component is mounted.
   - DOM elements are recreated, state is not preserved, effects are re-synchronized.
+  - while with Layouts the objects persist, with Templates you get fresh instances of a structure.
+  - to use a template it's similar to layout, but use a template.tsx file.
 template.tsx: name of the file to declare a template.
 Time Based Data Revalidation: automatically revalidates data after a certain amount of time has passed.
   - is a middle ground between caching and no-caching.
@@ -416,9 +423,9 @@ usePathname(): hook provided by Next.js that supplies the current route name (ur
   - it is useful to check which <Link> is active to give proper styling. also useful for breadcrumbs.
   eg: if you just want to access the values of nested dynamic routes, you could also use nested dynamic routes.
   eg: for http://localhost:3000/forgot-password the path would be /forgot-password
-useRouter(): hook that allows you to access the router object inside any function component in your app.
+useRouter(): hook that allows you to access the router object inside any function component in your app. It allows you to navigate programatically instead of using links.
   - with the router object, you can navigate Programatically.
-  - router.push(/): handles client-side transitions
+  - router.push(/): handles client-side transitions.
   - router.replace(): prevent adding a new URL entry into the history stack.
   - router.back(): navigate back in history.
   - router.reload(): reload the current URL.
@@ -441,7 +448,7 @@ next/layouts - Handles layouts in the App Router.
 next/link - Enables client-side navigation between routes.
 next/middleware - Specific to middleware creation.
 next/navigation - Provides client-side navigation utilities
-  eg: useRouter(), usePathname(), useSearchParams()
+  eg: useRouter(), usePathname(), useSearchParams(), notFound() redirect()
 next/router (for legacy routing) - Access the router instance and manage navigation programmatically.
 next/script - Optimizes the loading of third-party scripts.
 next/server - Provides utilities for middleware and server-side features.
