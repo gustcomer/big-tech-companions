@@ -1,11 +1,11 @@
 list of special files:
 
-<Layout>
-  <Template>
-    <ErrorBoundary fallback={<Error />}>
-      <Suspense fallback={<Loading />}>
-        <ErrorBoundary fallback={<NotFound />}>
-          <Page />
+<Layout>                                              layout.tsx
+  <Template>                                          template.tsx
+    <ErrorBoundary fallback={<Error />}>              error.tsx
+      <Suspense fallback={<Loading />}>               loading.tsx
+        <ErrorBoundary fallback={<NotFound />}>       not-found.tsx
+          <Page />                                    page.tsx
         </ErrorBoundary>
       </Suspense>
     </ErrorBoundary>
@@ -111,7 +111,7 @@ Dynamic Routes: when you don't know the exact segment names ahead of time and wa
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
   - they are passed as the params prop to layout, page, route, and generateMetadata functions.
-error.tsx
+error.tsx: file in the file based routing that define an Error Boundary. They must be client components.
   - the error component automatically creates a React Error Boundary that wraps a nested child segment or page.js component.
   - this error component receives and error object with an Error object containing information about the error.
   - also it receives a reset method, reset: () => void, that allows to retry if we end up in the Error Boundary (the Error Page).
@@ -121,6 +121,7 @@ Error Handling: it is possible to throw Errors when dealing with App routes or A
   - a prop called error is passed to the Error component. You can get the error message from it.
   - in nested routes, errors bubble up to the closest parent error boundary.
   - taking into account the next structure, inserting an error.tsx will handle errors of the page at the same folder, but won't handle errors in the template nor the layout. To handle errors in the layout or in the template, you should place error.tsx one folder above.
+  - the error component also receives a reset() method, which allows to retry the rendering of the component without reloading the whole page.
 fetch(): check Data Fetching.
 File Colocation: practice of organizing and grouping related files together in the same directory.
   - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
