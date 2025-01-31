@@ -111,11 +111,11 @@ Dynamic Routes: when you don't know the exact segment names ahead of time and wa
 Dynamic Segment: when you don't know exact names of segment parts of the dynamic route, you can use Dynamic Segments to capture this dynamic data.
   - created by wrapping a folder's name in square brackets: [folderName]
   - they are passed as the params prop to layout, page, route, and generateMetadata functions.
-error.tsx: file in the file based routing that define an Error Boundary. They must be client components.
-  - the error component automatically creates a React Error Boundary that wraps a nested child segment or page.js component.
-  - this error component receives and error object with an Error object containing information about the error.
-  - also it receives a reset method, reset: () => void, that allows to retry if we end up in the Error Boundary (the Error Page).
-  - by positioning error.tsx at different levels in the nested folders, you can achieve a more granular level of error handling.
+Error
+  Expected Errors: errors that can occur during the normal operation of the application, such as those from server-side form validation or failed requests.
+    - you can use the useActionState() hook to manage the state of Server Functions and handle expected errors.
+  Uncaught Exceptions: unexpected errors that indicate bugs or issues that should not occur during the normal flow of your application.
+    - these should be handled by throwing errors, which will then be caught by error boundaries. Handle them using Error Boundaries via error.js
 Error Handling: it is possible to throw Errors when dealing with App routes or API routes. To process the errors accordingly, we use the file error.tsx in the file based routing.
   - error boundaries must be client components in Next. 
   - a prop called error is passed to the Error component. You can get the error message from it.
@@ -124,6 +124,11 @@ Error Handling: it is possible to throw Errors when dealing with App routes or A
   reset(): the error component also receives a reset() method, which allows to retry the rendering of the component without reloading the whole page, needless to say that it happens client side. This is used with temporary simple errors.
     - but there is a catch. The reset() method executes on the client, but Client Components have parts executed on the server and parts executed on the Client.
     - there are workarounds to this problem like changing the key to force a re-render on the server and even a bizarre one with startTransition().
+error.tsx: file in the file based routing that define an Error Boundary. They must be client components.
+  - the error component automatically creates a React Error Boundary that wraps a nested child segment or page.js component.
+  - this error component receives and error object with an Error object containing information about the error.
+  - also it receives a reset method, reset: () => void, that allows to retry if we end up in the Error Boundary (the Error Page).
+  - by positioning error.tsx at different levels in the nested folders, you can achieve a more granular level of error handling.
 fetch(): check Data Fetching.
 File Colocation: practice of organizing and grouping related files together in the same directory.
   - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
