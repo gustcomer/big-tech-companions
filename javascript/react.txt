@@ -340,6 +340,7 @@ Route Component
 runtime: any library, framework, or platform that your code runs on.
 Server Actions: feature in React that allows you to define and execute server-side logic directly from your React components.
   - typically used for operations like database interactions, API calls, or other server-side tasks.
+  - use Server Actions when when you need to handle user interactions that modify data on the server (form submission, button clicks, etc). Use Server Components when you need to fetch and render data on the server before sending it to the client.
 Server Components: allow certain components to be rendered entirely on the server and then sent as serialized HTML to the client, where they can integrate seamlessly into a React app.
   - the DOM tree that is rendered on the server is serialized and sent to the client so that the client organizes the DOM tree and still provide the usual client interactivity.
   - by default, Next treats all components as Server Components. the 'use server' only is used to Server Actions.

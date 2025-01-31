@@ -351,6 +351,7 @@ Selective Hydration: allows for the hydration of sections as they become availab
   - eg: const MainContent = lazy(() => import('./MainContent.js'));
 Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
+  - check react:Server Actions
 Server Components:
   - they can access the server. but they can't use hooks, event listeners or manage state.
   - server components can be async and fetch data directly without useEffect.
