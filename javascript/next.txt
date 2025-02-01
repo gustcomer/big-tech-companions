@@ -116,6 +116,12 @@ Error
     - you can use the useActionState() hook to manage the state of Server Functions and handle expected errors.
   Uncaught Exceptions: unexpected errors that indicate bugs or issues that should not occur during the normal flow of your application.
     - these should be handled by throwing errors, which will then be caught by error boundaries. Handle them using Error Boundaries via error.js
+Error Boundary: in React it is a special type of component that catches JavaScript errors anywhere in its child component tree, logs those errors, and prevents the entire application from crashing due to an unhandled exception.
+  - errors always bubble up to find the closest parent error boundary.
+  - an error.tsx file handles errors not just for its own folder, but for all the nested child segments below it too. Place error.tsx files at different levels in your route folder to control exactly how detailed your error handling gets.
+  - there's a catch with errors in Layouts and Templates. These errors won't be catch by the error.tsx because of the Component hyerarchy. Layouts and templates sits above the error boundary in the component tree.
+    - you should place the error.tsx up one level in the hierarchy.
+    - for errors in the root layout, check error.tsx:global-error.tsx
 Error Handling: it is possible to throw Errors when dealing with App routes or API routes. To process the errors accordingly, we use the file error.tsx in the file based routing.
   - error boundaries must be client components in Next. 
   - a prop called error is passed to the Error component. You can get the error message from it.
@@ -129,6 +135,7 @@ error.tsx: file in the file based routing that define an Error Boundary. They mu
   - this error component receives and error object with an Error object containing information about the error.
   - also it receives a reset method, reset: () => void, that allows to retry if we end up in the Error Boundary (the Error Page).
   - by positioning error.tsx at different levels in the nested folders, you can achieve a more granular level of error handling.
+  global-error.tsx: special file used for handling global error boundaries across your application. In this file, stuff like the <html> and <body> tags need also to be included. It should be simple, only html and css, so that no new errors are included.
 fetch(): check Data Fetching.
 File Colocation: practice of organizing and grouping related files together in the same directory.
   - but in the App folder responsible for the routing, the route only has visibility if it has a page.tsx file and an export default component.
