@@ -244,9 +244,10 @@ Optional Catch-all Segments: like catch all segments but will also match the ori
   - use double square brackets [[..segmentName]].
 page.tsx: special file that is unique to a route allows you to create UI for it.
   - put page.tsx exporting some component as default.
-Parallel Routes: advanced routing mechanism that uses Slots and allows for the simultaneous rendering of multiple pages within the same layout.
+Parallel Routes: advanced routing mechanism that uses Slots and allows for the simultaneous rendering of multiple pages within URL path using the same layout.
   - useful for highly dynamic sections of an app, such as dashboards and feeds on social sites.
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
+  - each slot works independently like Concurrent Rendering.
 params: props used to capture the value of dynamic segments as key-value pairs.
   - promise that resolves to an object containing the dynamic route parameters (like id).
     - params are used in dynamic routes, and usually dynamic routes fetch things and may take a while, that's why we use Promises.
@@ -376,10 +377,10 @@ Server-Side Rendering: the server generate HTML and returns to the Client full H
     - Static Rendering.
     - Dynamic Rendering.
     - Streaming.
-Slots: pieces of UI that do not represent routes and are defined with the @folder convention.
+Slots: used in Parallel Routes, they are pieces of UI that do not represent routes and are defined with the @folder convention.
+  - they allow you to define named sections inside a layout where independent UI components (routes) can be rendered.
   - if you try to access them via route, you'll get a 404.
-  - each slot allows for Independent Route Handling.
-  - each slot allows for Sub-navigation, that is, they function as a mini-application.
+  - each slot allows for Independent Route Handling. each slot allows for Sub-navigation, that is, they function as a mini-application.
   - you can place routes inside a slot folder, in that case, when accessing via <Link/> the rest of the slots will stay with current state.
   - if you access a slot inside a route refreshing the page, all non defined slots will fallback on a default.tsx, or throw a 404 if any of them don't have one.
 Static Content: rendered as a hollow circle. Route pre-rendered at build time as static content.
