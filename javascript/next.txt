@@ -248,6 +248,8 @@ Parallel Routes: advanced routing mechanism that uses Slots and allows for the s
   - useful for highly dynamic sections of an app, such as dashboards and feeds on social sites.
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
   - each slot works independently like Concurrent Rendering.
+  Unmatched Routes: they may happen if we navigate using the URL directly. Some slots may have the URL and others don't. Using <Link> this problem simply doesn't happen.
+    - to solve this problem, we may define @slot/default.tsx files for the slots that don't have the URL defined.
 params: props used to capture the value of dynamic segments as key-value pairs.
   - promise that resolves to an object containing the dynamic route parameters (like id).
     - params are used in dynamic routes, and usually dynamic routes fetch things and may take a while, that's why we use Promises.
