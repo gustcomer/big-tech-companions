@@ -248,6 +248,7 @@ Parallel Routes: advanced routing mechanism that uses Slots and allows for the s
   - useful for highly dynamic sections of an app, such as dashboards and feeds on social sites.
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
   - each slot works independently like Concurrent Rendering.
+  - you can also use Conditional Rendering with Slots, just treat them as normal components.
   Unmatched Routes: they may happen if we navigate using the URL directly. Some slots may have the URL and others don't. Using <Link> this problem simply doesn't happen.
     - to solve this problem, we may define @slot/default.tsx files for the slots that don't have the URL defined.
   Slots: used in Parallel Routes, they are pieces of UI that do not represent routes and are defined with the @folder convention.
