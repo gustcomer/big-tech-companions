@@ -62,6 +62,8 @@ componentWillUnmount(): method is invoked immediately before a component is unmo
 Compound Component: design pattern that involves creating a parent component that maintains the state and provides context, and several child components that work together under this parent component.
   - the Child components are kept under the same file and are named MainComponent.ChildComponent preferably with the dot.
   - the state is passed to the child components via context and accessed with useContext, and not via props.
+Concurrent Rendering: allows rendering multiple UI updates in a non-blocking manner. It enables React to prepare multiple versions of the UI at the same time and prioritize updates based on user interactions and system performance.
+  - conterpart to Synchronous Rendering.
 Conditional Rendering:
   - there are 4 methods [1] if/else [2] element variables [3] ternary conditional operators [4] short circuit operators.
   [1] if/else: remember that you can't put ifs and elses inside a return statement
