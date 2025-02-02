@@ -1,6 +1,8 @@
 ================================================================================
 Interesting Projects that use Next
 
+https://github.com/vercel/next.js/tree/canary/examples -- official next list of examples
+https://github.com/timlrx/tailwind-nextjs-starter-blog -- complete blog application
 https://github.com/makeplane/plane -- open source project management solution
 https://github.com/formbricks/formbricks -- open source survey tool
 https://twenty.com/ -- open source CRM
@@ -23,3 +25,6 @@ create project with last version of Next
 
 run the server in dev mode
   > npm run dev
+
+Cleaning up a brand new Next.js installation
+  https://github.com/gustcomer/cidacipe/commit/88a68a2b31caa18f6911e3e6cf443360f55f5d19
