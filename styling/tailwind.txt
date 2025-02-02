@@ -76,8 +76,6 @@ relative: when we use relative, the top and left coordinates will be relative to
   - used in conjunction with absolute where the Relative Parent act as reference to some Absolute child.
   - similar to static, but will act as containing block for its children.
   - related: static, fixed, absolute, sticky
-rounded-tl-2xl: control the Border Radius of an element
-  - eg: rounded-sm (adjusts all borders), rounded-tr-* (adjusts the top right), rounded-l-* (adjusts top left and bottom left).
 selection: is related to a pseudo-element responsible for styling selected elements.
   - eg: selection:bg-cyan-* selection:text-cyan-* 
   - it can style the background of the selection, the selected text, etc
@@ -85,7 +83,6 @@ static: not affected by the top, bottom, left, and right properties
   - position the element according to the normal flow.
   - will not act as a position reference for absolute children.
   - html elements are positioned static by default
-sticky: behaves like static until the scroll reaches it, after that starts behaving like fixed.
 @tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
   @tailwind base;: includes the base layer of Tailwind CSS. It contains the base styles, which are primarily CSS resets and default styles for HTML elements.
     - These styles ensure a consistent starting point for your project by normalizing the default browser styles.
@@ -93,6 +90,14 @@ sticky: behaves like static until the scroll reaches it, after that starts behav
   @tailwind components;: includes the component layer of Tailwind CSS. It is used for predefined component classes that provide more complex styles than the base layer.
     - These classes can be used to style common UI components like buttons, forms, cards, etc.
   @tailwind utilities;: includes the utility layer of Tailwind CSS. It contains all the utility classes that you use to apply specific styles directly to elements.
+Viewport
+
+================================================================================
+API
+
+rounded-tl-2xl: control the Border Radius of an element
+  - eg: rounded-sm (adjusts all borders), rounded-tr-* (adjusts the top right), rounded-l-* (adjusts top left and bottom left).
+sticky: behaves like static until the scroll reaches it, after that starts behaving like fixed.
 text-[*px]: set the font size using Arbitrary Values, that is, pixels.
   - related: text-sm, text-sm, text-xl, text-5xl
   - text-[--text]: set the font size to the value in the variable --text that could be defined in the root.
@@ -106,5 +111,4 @@ top-*: top position of the element in relation to the containing block.
 translate-x-*: used to translate an element.
   - it doesn't change the calculated width, length, etc. and that's the diference to top, right, etc.
   - to use negative values, use -translate-y-6 for instance
-Viewport
 w-full: would set the width of an element to 100% of its parent. but usually that's the default, so not necessary.
