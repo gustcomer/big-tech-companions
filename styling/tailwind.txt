@@ -9,20 +9,28 @@ centers some text
 ================================================================================
 TAILWIND GLOSSARY
 
+Arbitrary Values: use to break out of design systems values and use a Custom Style.
+selection: is related to a pseudo-element responsible for styling selected elements.
+  - eg: selection:bg-cyan-* selection:text-cyan-* 
+  - it can style the background of the selection, the selected text, etc
+@tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
+  @tailwind base;: includes the base layer of Tailwind CSS. It contains the base styles, which are primarily CSS resets and default styles for HTML elements.
+    - These styles ensure a consistent starting point for your project by normalizing the default browser styles.
+    eg: resetting margins and paddings, setting default font styles, and other foundational styles.
+  @tailwind components;: includes the component layer of Tailwind CSS. It is used for predefined component classes that provide more complex styles than the base layer.
+    - These classes can be used to style common UI components like buttons, forms, cards, etc.
+  @tailwind utilities;: includes the utility layer of Tailwind CSS. It contains all the utility classes that you use to apply specific styles directly to elements.
+Viewport
+
+================================================================================
+Pure CSS related
+
 absolute: when we use absolute, the top and left coordinates will be relative to the containing block (usually will be the browser itself).
   - the absolute element no longer exist in the document flow, and the following elements won't take it into account when positioning themselves.
   - used in conjunction with relative.
   - position: absolute. relates to Position.
-antialiased: control the font smoothing of an element.
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-Arbitrary Values: use to break out of design systems values and use a Custom Style.
-bg-black: set background color to black.
 block: line breaks both before and after the element when in the normal flow.
   - display:block. Relativo a Display.
-border-*: control the width of an element's border.
-  - eg: border-y-* (border top and border bottom), border-l-* (just left border)
-bottom-*: utility for controlling the placement of positioned elements.
-  related: top-*, right-*, left-*
 Cross Axis: in flexbox runs perpendicular to the main axis.
   - Your flex-direction is by default row, so Cross Axis by default is column.
 Display: sets whether an element is treated as a block or inline box and the layout used for its children, such as flow layout, grid or flex.
@@ -36,6 +44,31 @@ flex-col: position flex items vertically.
 Flex Container: 
 Flex Direction: establishes the main-axis whix is the direction flex items are placed in the flex container.
   - by default de direction is row.
+Height: related to the height of its parent
+Main Axis: 
+Position: static, relative, fixed, absolute, sticky.
+relative: when we use relative, the top and left coordinates will be relative to the normal flow (usually the element above).
+  - without relative, position coordinates such as top, right, won't work.
+  - act as a position reference for absolute children.
+  - position the element according to the normal flow. Hence the following elements will take it into account when positioning themselves.
+  - used in conjunction with absolute where the Relative Parent act as reference to some Absolute child.
+  - similar to static, but will act as containing block for its children.
+  - related: static, fixed, absolute, sticky
+static: not affected by the top, bottom, left, and right properties
+  - position the element according to the normal flow.
+  - will not act as a position reference for absolute children.
+  - html elements are positioned static by default
+
+================================================================================
+Tailwind API
+
+antialiased: control the font smoothing of an element.
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+bg-black: set background color to black.
+border-*: control the width of an element's border.
+  - eg: border-y-* (border top and border bottom), border-l-* (just left border)
+bottom-*: utility for controlling the placement of positioned elements.
+  related: top-*, right-*, left-*
 font-bold: utility used for controlling the Font Weight of an element.
   - related: font-thin, font-medium, font-semibold, hover:font-bold, font-[1100]
   - some measures: thin => font-weight: 100, normal: 400, bold: 700, black: 900
@@ -44,7 +77,6 @@ h-full: set the height of an element to 100% of the height of its parent. height
   - check: h-screen
 h-screen: set the height of an element to 100% of the viewscreen height. height: 100vh;
   - check: h-full
-Height: related to the height of its parent
 hidden: same thing as display:none.
 inset-x-*: sets both the position at right and left. The width will be a consequence.
   : related: inset-y-*, top, bottom, left, 
@@ -52,49 +84,21 @@ items-center: make flex items be aligned centered around flex container's Cross 
   related: justify-center
 justify-center: control how flex and grid items are positioned along a container's main axis.
   related: items-center
-Main Axis: 
 max-w-: set the maximum width of an element
 md: : apply the following properties only if the size is greater than md.
   related: sm:, lg:, xl:, 2xl:
 mx-*: adjust margin-left and margin-right.
   - mx-auto: margin-left: auto; margin-right: auto; evenly distribute the unused horizontal space between the left and the right.
+outline: control the style of an element's outline, default is a solid line.
+  - outline-dashed, outline-dotted, outline-double.
 overflow-clip: used to be a shortcut to text-overflow: clip, but browsers added a real overflow: clip property
   - text-clip, in the new tailwind versions.
   - related: text-ellipsis
-outline: control the style of an element's outline, default is a solid line.
-  - outline-dashed, outline-dotted, outline-double.
 p-*: control the padding on all sides of an element
-Position: static, relative, fixed, absolute, sticky.
 pt-*: utilities to control the padding on top of the element.
   - related: pt, pr, pb, pl.
 px-*: utility to control the horizontal padding. (left and right), or yet, on x axis.
 py-*: control vertical padding of an element.
-relative: when we use relative, the top and left coordinates will be relative to the normal flow (usually the element above).
-  - without relative, position coordinates such as top, right, won't work.
-  - act as a position reference for absolute children.
-  - position the element according to the normal flow. Hence the following elements will take it into account when positioning themselves.
-  - used in conjunction with absolute where the Relative Parent act as reference to some Absolute child.
-  - similar to static, but will act as containing block for its children.
-  - related: static, fixed, absolute, sticky
-selection: is related to a pseudo-element responsible for styling selected elements.
-  - eg: selection:bg-cyan-* selection:text-cyan-* 
-  - it can style the background of the selection, the selected text, etc
-static: not affected by the top, bottom, left, and right properties
-  - position the element according to the normal flow.
-  - will not act as a position reference for absolute children.
-  - html elements are positioned static by default
-@tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
-  @tailwind base;: includes the base layer of Tailwind CSS. It contains the base styles, which are primarily CSS resets and default styles for HTML elements.
-    - These styles ensure a consistent starting point for your project by normalizing the default browser styles.
-    eg: resetting margins and paddings, setting default font styles, and other foundational styles.
-  @tailwind components;: includes the component layer of Tailwind CSS. It is used for predefined component classes that provide more complex styles than the base layer.
-    - These classes can be used to style common UI components like buttons, forms, cards, etc.
-  @tailwind utilities;: includes the utility layer of Tailwind CSS. It contains all the utility classes that you use to apply specific styles directly to elements.
-Viewport
-
-================================================================================
-API
-
 rounded-tl-2xl: control the Border Radius of an element
   - eg: rounded-sm (adjusts all borders), rounded-tr-* (adjusts the top right), rounded-l-* (adjusts top left and bottom left).
 sticky: behaves like static until the scroll reaches it, after that starts behaving like fixed.
