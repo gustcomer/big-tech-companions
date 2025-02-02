@@ -148,6 +148,7 @@ generateMetadata(): function used to define dynamic metadata.
 GET(): put this function inside a route.ts file to handle a get request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function GET(_request: Request, {params}) {...}
+globals.css: this is not an official next file, but it is delivered with the create-next-app. It is used in the root app folder to keep styles that apply globally accross the entire application. It is imported once at the layout.css at the root level.
 headers(): allows you to read the HTTP incoming request headers from a Server Components.
   - const headersList = headers(); or yet
   - headers().get('referer')
