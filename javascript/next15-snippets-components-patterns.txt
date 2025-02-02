@@ -1,0 +1,13 @@
+================================================================================
+Interesting Projects that use Next
+
+https://github.com/makeplane/plane
+
+================================================================================
+Some snippets
+
+create project with last version of Next
+  > npx create-next-app@latest
+
+run the server in dev mode
+  > npm run dev
