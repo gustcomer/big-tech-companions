@@ -1,7 +1,19 @@
 ================================================================================
 Interesting Projects that use Next
 
-https://github.com/makeplane/plane
+https://github.com/makeplane/plane -- open source project management solution
+https://github.com/formbricks/formbricks -- open source survey tool
+https://twenty.com/ -- open source CRM
+https://github.com/dubinc/dub -- link management
+https://github.com/calcom/cal.com -- scheduling solutions
+https://infisical.com/ -- secret management tool
+https://github.com/lukevella/rallly -- group meetings schedule
+https://github.com/elie222/inbox-zero -- ajuda a esvaziar a caixa de emails
+https://github.com/unkeyed/unkey -- open source key management
+https://github.com/documenso/documenso -- document signing tool
+https://github.com/baptisteArno/typebot.io -- build chat bots
+https://github.com/Blazity/next-enterprise -- next.js enterprise boilerplate
+https://github.com/unicodeveloper/awesome-nextjs -- curated list of next stuff
 
 ================================================================================
 Some snippets
