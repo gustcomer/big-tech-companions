@@ -244,6 +244,8 @@ Optional Catch-all Segments: like catch all segments but will also match the ori
   - use double square brackets [[..segmentName]].
 page.tsx: special file that is unique to a route allows you to create UI for it.
   - put page.tsx exporting some component as default.
+Page Routes: the way pages are mapped to URLs using the filesystem-based routing system. They usually serve HTML code, instead of json or other types returned by APIs like RESTful.
+  - Page Routes and Route Handlers may conflict, in this case the route.ts always prevail. Avoid these situations by ading /api to the URL path, for instance.
 Parallel Routes: advanced routing mechanism that uses Slots and allows for the simultaneous rendering of multiple pages within URL path using the same layout.
   - useful for highly dynamic sections of an app, such as dashboards and feeds on social sites.
   - you can have routes inside slots and this brings Unmatched Routes in other slots specially on page reloads. Treat it with default.tsx.
