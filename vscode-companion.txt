@@ -12,3 +12,26 @@ alt+selection -- select lines in different places
 ctrl+shift+K -- delete the whole line - think about Kill
 ctrl+shift+v -- abrir preview mode, bom pra arquivos markdown .md
 ctrl+B -- toggle sidebar to get more space
+
+================================================================================
+My Snippets
+
+.tsx
+  rfc -- react functional component
+
+================================================================================
+Creating Snippets
+
+File > Preferences > Configure Snippets then pick something like tsx.
+
+{
+  "Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "export default function $1() {",
+      "  return <></>;",
+      "}"
+    ],
+    "description": "Create Functional Component"
+  }
+}
