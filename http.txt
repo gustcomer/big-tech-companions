@@ -1,0 +1,27 @@
+================================================================================
+
+Authorization
+Body
+Caching
+CORS
+Headers
+HTTP: HyperText Transfer Protocol
+HTTP/1.1
+HTTP/2
+HTTP/3
+HyperText
+Methods
+  GET
+  POST
+  PUT
+  PATCH
+  DELETE
+  HEAD
+  OPTIONS
+QUIC
+Request Headers
+Request Structure
+Response Headers
+Response Structure
+Stateless
+Status Codes
