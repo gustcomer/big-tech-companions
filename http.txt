@@ -25,3 +25,8 @@ Response Headers
 Response Structure
 Stateless
 Status Codes
+
+================================================================================
+Resources
+
+  - https://developer.mozilla.org/pt-BR/docs/Web/HTTP
