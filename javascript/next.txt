@@ -29,17 +29,13 @@ API Routes: allow you to create server-side endpoints as part of your applicatio
 App directory: directory responsible for all the routing.
   - to make it work, it has to have a page.tsx file inside the folder representing the routing. Check File Colocation.
 Autoprefixer: lib that manages css prefixes like -webkit, -moz.
-Caching: route handlers are cached by default when using the GET method with the Response object in Next.
-  - in development mode, each refresh means a a new Response, we don't cache.
-  - in production mode, the results are cached
-  - to opt out of caching change dynamic mode in Segment Config Option
-  - to do that: export const dynamic = "force-dynamic";
-  - other ways to opt out:
-    - use Request object with the GET method
-    - employ dynamic functions like headers() and cookies()
-    - use any HTTP method other than GET
-Caching: by default, Next automatically caches the returned values of fetch in the Data Cache on the server.
-  - Next extends the fetch API and automatically caches any values returned by the fetch.
+Caching: route handlers are not cached by default but you can opt into caching when using the GET method.
+  - in development mode, each refresh means a a new Response, we don't cache. You have to test cache with builds.
+  - to update the data from time to time, use revalidate. This is ISR (Incremental Static Regeneration).
+  - export const dynamic = "force-static"; is a way to force cache.
+  - export const dynamic = "force-dynamic"; is a way to opt out of cache.
+  - PUT, DELETE and PATCH methods are never cached.
+  - if you're using dynamic functions like headers(), cookies() or working with the request object in your GET method, caching won't be applied.
 Caching Mechanisms:
   - Request Memoization
   - Data Cache
@@ -168,6 +164,10 @@ Intercepting Routes: allows you to load a route from another part of your applic
   - (..)(..) match segments two levels above (has bugs).
   - (...) match segments from the root app directory.
 Interleaving: you can place a Server Component inside a Client Component passing the SC as a prop.
+ISR (Incremental Static Regeneration): allows you to update static content without rebuilding the entire application.
+  - it is enabled by using the revalidate option in Server Components.
+  - if a user visits the site, next check if revalidate interval is expired. If the content is stale, it triggers a regeneration of the page.
+    - the user that triggered the regeneration will still get the cached version, but future requests will then see the updated version.
 key prop: string or a number that uniquely identifies items in an array.
 Layout: UI that is shared between multiple routes. On navigation, layouts preserve state, remain interactive, and do not re-render.
   - The component should accept a children prop and this chindren component will be inserted into the UI.
