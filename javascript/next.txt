@@ -69,12 +69,7 @@ Cookies: small pieces of data that a server sends to a user's web browser.
   - the browser may store the cookie and send it back to the same server with later requests.
   - use cases: session management, personalizations, tracking and analysis of user behavior.
   - to set a cookie, send a response with "Set-Cookie" header and name-value: "Set-Cookie": "theme=dark"
-  - to get a cookie from a request, use request.cookies.get("...")
-  - as an alternative, you can use the cookies() function
-cookies(): function to manipulate cookies
-  - eg: const cookieStore = cookies(); cookieStore.get("theme"); or yet
-  - eg: cookies().set("resultsPerPage", "20")
-  - and to get the cookies: cookies().get("resultsPerPage")
+cookies(): function to manipulate cookies. you can use the cookies() function or alternatively, the request.cookies.get("...").
   - there are additional functionalities such as "has", delete, etc
 Core Web Vitals: subset of Web Vitals.
   - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
@@ -149,9 +144,8 @@ GET(): put this function inside a route.ts file to handle a get request.
   - you can respond the request with return Response.json(...) or with return NextResponse.json({data})
   - export async function GET(_request: Request, {params}) {...}
 globals.css: this is not an official next file, but it is delivered with the create-next-app. It is used in the root app folder to keep styles that apply globally accross the entire application. It is imported once at the layout.css at the root level.
-headers(): allows you to read the HTTP incoming request headers from a Server Components.
-  - const headersList = headers(); or yet
-  - headers().get('referer')
+headers: allows you to read the HTTP incoming request headers from a Server Components. Useful for more advanced tasks that use the http protocol, such as authorization, cookies, etc.
+  - you can use the Header() function with the NextRequest (next/server) object, or the async header() function.
 HTML Streaming: technique used to improve the performance of web applications by progressively sending chunks of HTML from the server to the client.
   - at first it does not include chunking the JavaScript code. To split the JavasScript bundle, check Code Splitting.
 HTTP Headers: metadata associated with an API request and response.
@@ -476,8 +470,7 @@ next/navigation - Provides client-side navigation utilities
   eg: useRouter(), usePathname(), useSearchParams(), notFound() redirect()
 next/router (for legacy routing) - Access the router instance and manage navigation programmatically.
 next/script - Optimizes the loading of third-party scripts.
-next/server - Provides utilities for middleware and server-side features.
-next/server - Utilities for server-side tasks and middleware.
+next/server - Provides utilities for middleware and server-side features. (NextRequest, NextResponse)
 
 ================================================================================
 tools and libs
