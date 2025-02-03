@@ -278,6 +278,8 @@ Production Server: optimized build is created once, and you deploy that build.
   - pages are pre-rendered once when we run build command.
 redirect(): function that redirect the user to another URL.
   - can be used in Server Components, Route Handlers, and Server Actions.
+  - you can use redirects with Route Handlers, Middlewares and next.config.js.
+  - for permanent redirects it returns a 301 code. For temporary redirects it returns a 307 code.
 Rendering: process that transforms the code you write into user interfaces.
   - CSS, SSR, RSC: choosing the right time and place to render is vital.
 Request: interface of the Fetch API representing a resource request
