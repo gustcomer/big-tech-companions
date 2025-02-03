@@ -3,7 +3,8 @@
 Authorization
 Body
 Caching
-Cookies: small text files stored on a user's device by a web browser when visiting a website. They are not part of http but they are intrinsically connected.
+Cookies: small text files stored on a user's device by a web browser when visiting a website.
+  - they are not part of http but they are intrinsically connected because they are accessed via http.
   types
     Session Cookies: Temporary cookies that are deleted when you close your browser.
     Persistent Cookies: Stored on the device for a set period, even after closing the browser.
