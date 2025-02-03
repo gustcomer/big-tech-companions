@@ -31,12 +31,18 @@ Methods
   DELETE
   HEAD
   OPTIONS
-MIME Types
+MIME Types (Multipurpose Internet Mail Extensions): standard that indicates the nature and format of a file or data being transmitted over the internet.
+  - commonly used in HTTP headers, email attachments, and other content delivery protocols to help the receiving system understand how to handle the data properly.
+  text/plain	Plain text, text/html	HTML document, image/jpeg	JPEG image, image/png	PNG image, application/json	JSON file, application/pdf	PDF document, application/javascript	JavaScript file
+  audio/mpeg	MP3 audio file, video/mp4	MP4 video file, application/zip	ZIP archive, application/gzip	GZIP compressed file
 QUIC
 Request Structure
 Response Structure
 Stateless
 Status Codes
+Token: piece of data used for authentication, authorization, validation, or security in various computing systems. It can represent a user's session, a cryptographic key, or an API credential.
+  Bearer Token: "bearer" means that whoever holds (or "bears") the token can access protected resources without additional verification, making it crucial to handle securely.
+    - widely implemented in OAuth 2.0 for API authentication.
 
 ================================================================================
 Resources
