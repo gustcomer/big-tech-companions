@@ -4,7 +4,20 @@ Authorization
 Body
 Caching
 CORS
-Headers
+Headers: represent the metadata associated with an API request and response.
+  Request Headers: key-value sent by the client (browser, API client, etc), to the server.
+    - they contain essential information about the request, which helps the server understand and process it correctly.
+    eg: Host, User-Agent, Accept, Authorization, Content-Type
+    Host: specifies the domain name of the server. (Host: example.com)
+    User-Agent: give information about the client such as browser, OS. (User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64))
+    Accept: specifies the response format the client expects. (Accept: application/json)
+    Authorization: Sends credentials for authentication. (Authorization: Bearer eyJhbGciOiJIUzI1)
+    Content-Type: defines the media type of the request body. (Content-Type: application/json)
+  Response Headers: sent back from the server to the client. They provide information about the server and the data being sent in the response.
+    eg: Content-Type, Set-Cookie, Cache-Control, Location, Expires.
+    Content-Type: specifies the MIME type of the response body.
+    Cache-Control: defines caching policies for the response. (Cache-Control: no-cache, no-store, must-revalidate)
+    Expires: sets an expiration date for cached content.
 HTTP: HyperText Transfer Protocol
 HTTP/1.1
 HTTP/2
@@ -18,10 +31,9 @@ Methods
   DELETE
   HEAD
   OPTIONS
+MIME Types
 QUIC
-Request Headers
 Request Structure
-Response Headers
 Response Structure
 Stateless
 Status Codes
