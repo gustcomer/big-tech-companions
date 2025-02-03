@@ -28,3 +28,9 @@ run the server in dev mode
 
 Cleaning up a brand new Next.js installation
   https://github.com/gustcomer/cidacipe/commit/88a68a2b31caa18f6911e3e6cf443360f55f5d19
+
+================================================================================
+Some Components
+
+Navbar
+  https://github.com/gustcomer/cidacipe/commit/0a93c5fb073d341ce53d64bcaef56e677fe2a914
