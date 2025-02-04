@@ -1,6 +1,9 @@
 - every time you see a repeating pattern, that is a candidate for a component.
 - you should think carefully about component granularity.
 
+the evolution of rendering
+  CSR -> SSR -> SSR with Suspense -> RSC
+
 ================================================================================
 React Glossary
 

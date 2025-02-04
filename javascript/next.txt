@@ -60,6 +60,9 @@ Client-Side Rendering (CSR): consists of rendering React components directly in 
   - not optimal for SEO.
   - performance issues since users might see a blank screen or a loading spinner while the page loads.
   - CSR laid the groundwork for interactive applications we see today, but lacks in SEO and performance.
+  drawbacks
+    - SEO: because the crawler will see only <div id='root'>.
+    - performance of UI/UX: because your browser has to download the bundle, fetch data, build the UI, make everything interactive and only then show something.
 Code Splitting: breaking up a large JavaScript bundle into smaller, more manageable chunks that can be loaded on-demand or in parallel.
   - it consists of a kind of Selective Hydration.
   - you can implement this using React.lazy() functionality.
@@ -351,6 +354,8 @@ Routing: process of determining how an application or system directs a request t
     3 Each folder represents a segment of the URL path.
   - Next has its own backend functionalities known as API Routes.
 RSC Architecture: start using Client Components and Server Components in React.
+  - it is an advance in rendering. CSR -> SSR -> SSR with Suspense -> RSC
+  - now, instead of treat everything like Client Components, we can also choose what will be rendered only on the server and be kept out of any js bundle (even if splitted with Suspense), or any hydration process (even selective hydration).
 RSC payload: data and components that are pre-rendered on the server and sent to the client to hydrate the application.
   - the payload is a binary containing
     - the rendered HTML in the server.
@@ -383,13 +388,13 @@ Server-Side Rendering (SSR): consists of rendering the components on the Server.
   - users can immediately see the page HTML content instead of a blank screen or loading spinner. Then it requests the referenced JS bundle and when it returns we'll have a full interactive page, this process is called hydration.
   - it is a kind of Server-side solution
   - Drawbacks:
-    - Data fetching must be completed before the server can begin rendering HTML. (Solve with Suspense)
-    - The JavaScript required for the components needs to be fully loaded on the client side before the hydration process can start. (Solve with Selective Hydration)
-    - All components have to be hydrated before they become interactive. (Solve with Selective Hydration).
+    - Data fetching must be completed before the server can begin rendering HTML. (solve Streaming (Suspense))
+    - The JavaScript required for the components needs to be fully loaded on the client side before the hydration process can start. (Solve with Selective Hydration (Suspense))
+    - All components have to be hydrated before they become interactive. (Solve with Selective Hydration (Suspense)).
   - Server Rendering Strategies
-    - Static Rendering.
-    - Dynamic Rendering.
-    - Streaming.
+    - Static Rendering - SSG.
+    - Dynamic Rendering - SSR.
+    - Streaming - SSR with Suspense.
   - while SSG generates all the HTML at once at build time since the HTML is the same for all visitors, SSR renders page on-demand, where the HTML depends for instance on who's logged in.
 Server-Side Solutions: both Static Site Generation (SSG) and Server-Side Rendering(SSR) are Server-Side Solutions.
 Static Content: rendered as a hollow circle. Route pre-rendered at build time as static content.
