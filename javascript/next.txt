@@ -376,9 +376,10 @@ Selective Hydration: allows for the hydration of sections as they become availab
 Server Action: asynchronous functions that are executed on the server.
   - place the directive "use server" at the top of an async function.
   - check react:Server Actions
-Server Components:
-  - they can access the server. but they can't use hooks, event listeners or manage state.
+Server Components: allow for rendering UI on the server.
+  - they can access the server. but they can't use hooks, event listeners, manage state, access browser APIs, handle user interaction.
   - server components can be async and fetch data directly without useEffect.
+  - advantages: zero bundle size, direct access to server-side resources, improved security, better SEO.
 server-only: module that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
   - to enable it, all you have to do is import "server-only" after installing it.
 Server-Side Rendering (SSR): consists of rendering the components on the Server. The client makes a request, HTML is generated on the server and sent. Then JS is sent to the client to hydrate the HTML sent by the server, that is, to turn raw HTML into interactive UI.
@@ -387,7 +388,7 @@ Server-Side Rendering (SSR): consists of rendering the components on the Server.
   - improves SEO
   - users can immediately see the page HTML content instead of a blank screen or loading spinner. Then it requests the referenced JS bundle and when it returns we'll have a full interactive page, this process is called hydration.
   - it is a kind of Server-side solution
-  - Drawbacks:
+  drawbacks
     - Data fetching must be completed before the server can begin rendering HTML. (solve Streaming (Suspense))
     - The JavaScript required for the components needs to be fully loaded on the client side before the hydration process can start. (Solve with Selective Hydration (Suspense))
     - All components have to be hydrated before they become interactive. (Solve with Selective Hydration (Suspense)).
