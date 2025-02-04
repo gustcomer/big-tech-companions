@@ -74,6 +74,9 @@ cookies(): function to manipulate cookies. you can use the cookies() function or
   - there are additional functionalities such as "has", delete, etc
 Core Web Vitals: subset of Web Vitals.
   - consists of Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS).
+chunks
+  usually RSC payloads are related to components and JavaScript chunks are related with client-side hydration.
+  Main chunks, Page-Level Chunks, Component Chunks, Component Chunks, Vendor Chunks, Server Chunks (Server Actions & RSC), Client Chunks, Middleware and API Route Chunks, Error Boundary and Fallback Chunks.
 Cumulative Layout Shift (CLS): measure of your site’s overall layout stability.
 Data Cache: server-side cache that persists the result of data fetches across incoming server requests and deployments.
   - it improves app performance and eliminate the need to re-fetch data with every request.
@@ -416,6 +419,7 @@ Static Page: webpage that is pre-rendered at build time and served as-is to the 
 Static-Site Generation (SSG): occurs at build time, when the application is deployed on the server.
   - ideal for content that doesn't change often, like blog posts.
   - it is a kind of Server-side solution.
+  - In production, pages are pre-rendered once during the build. In development, pages are pre-rendered on every request.
 Streaming: another Server Side rendering strategy that allows for progressive UI rendering from the server.
   - it is a Next concept but relies on the Suspense concept from React.
   - divide the work in chunks and stream it to the client as soon as it's ready.
