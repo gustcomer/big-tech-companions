@@ -98,8 +98,9 @@ Development Server: focuses on developer experience.
 Dynamic Page Route: the process of putting a page.tsx inside a folder representing a dynamic route.
 Dynamic Rendering: a Server Rendering Strategy where routes are rendered for each user at request time.
   - useful when a route has data that is personalized to the user or contains information that can only be known at request time, such as cookies or the URL's search parameters.
-  - during rendering, if a dynamic function such as cookies() headers() searchParams are discovered, Next will switch to dynamically rendering automatically for the whole route.
-  - dynamic routes are represented with a lambda sign.
+  - during rendering, if a dynamic function such as cookies(), headers(), searchParams props, connection(), draftMode(), after() are discovered, Next will switch to dynamically rendering automatically for the whole route.
+  - dynamic routes are represented with an stylized f sign.
+  - instead of automatically detection, you can force a route to by dynamically rendered with "export const dynamic = 'force-dynamic'"
 Dynamic Route Handler: similar to Dynamic Page Route. Put a route.ts inside a folder representing a dynamic route.
   - useful for GET, PATCH, DELETE requests.
   - for GET: export async function GET(request: Request, { params }: { params: { id: string } })
@@ -414,6 +415,7 @@ Static Rendering: server rendering strategy where we generate HTML pages at the 
   - all routes are automatically prepared at build time without additional step.
   - for Static Routes, the entire route is prefetched and cached by default.
   - I believe it is the same thing, or uses, SSG.
+    - but in some places it is undestood that Static Rendering is when you have a static page and SSG is when you use generateStaticParams to transform a dynamic route in a set of static pages.
 Static Page: webpage that is pre-rendered at build time and served as-is to the user without requiring further processing on the server or client-side such as database consultations.
   - typically generated using Static Site Generation (SSG), a technique that creates HTML files for each page at build time.
 Static-Site Generation (SSG): occurs at build time, when the application is deployed on the server.
