@@ -50,6 +50,7 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
 Client Components:
   - they can use hooks, use event listeners and manage state.
   - client components can't be async, but can use async functions inside useEffect().
+  use cases: add interactivity, handle event listeners, manage state and lifecycle effects, work with browser-specific APIs, implement custom hooks.
 client-only: package that prevent unintended server side usage of client side code.
   - client code interact with browser-specific features like DOM, window object, localStorage, etc.
   - useful when you have a function in some util folder that are intended solely for client use.
@@ -394,6 +395,7 @@ Server Components: allow for rendering UI on the server.
   - they can access the server. but they can't use hooks, event listeners, manage state, access browser APIs, handle user interaction.
   - server components can be async and fetch data directly without useEffect.
   - advantages: zero bundle size, direct access to server-side resources, improved security, better SEO.
+  use cases: fetch data, access backend resources directly, keep sensitive information segure on the server, handle large dependencies server-side.
 server-only: module that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
   - to enable it, all you have to do is import "server-only" after installing it.
 Server-Side Rendering (SSR): consists of rendering the components on the Server. The client makes a request, HTML is generated on the server and sent. Then JS is sent to the client to hydrate the HTML sent by the server, that is, to turn raw HTML into interactive UI.
