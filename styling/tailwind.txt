@@ -116,3 +116,8 @@ translate-x-*: used to translate an element.
   - it doesn't change the calculated width, length, etc. and that's the diference to top, right, etc.
   - to use negative values, use -translate-y-6 for instance
 w-full: would set the width of an element to 100% of its parent. but usually that's the default, so not necessary.
+
+================================================================================
+Resources
+
+https://github.com/aniftyco/awesome-tailwindcss#readme
