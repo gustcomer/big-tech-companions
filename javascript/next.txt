@@ -179,7 +179,9 @@ Intercepting Routes: allows you to load a route from another part of your applic
   - (..) match segments one level above.
   - (..)(..) match segments two levels above (has bugs).
   - (...) match segments from the root app directory.
-Interleaving: you can place a Server Component inside a Client Component passing the SC as a prop.
+Interleaving: you can place a Server Component inside a Client Component if you pass the Server Component as a prop.
+
+  use case: Context providers, which should be client components but are too up on the Component Tree.
 ISR (Incremental Static Regeneration): allows you to update static content without rebuilding the entire application.
   - it is enabled by using the revalidate option in Server Components.
   - if a user visits the site, next check if revalidate interval is expired. If the content is stale, it triggers a regeneration of the page.
