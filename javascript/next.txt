@@ -67,6 +67,8 @@ Client-Side Rendering (CSR): consists of rendering React components directly in 
 Code Splitting: breaking up a large JavaScript bundle into smaller, more manageable chunks that can be loaded on-demand or in parallel.
   - it consists of a kind of Selective Hydration.
   - you can implement this using React.lazy() functionality.
+Context Providers: 
+  - they are an interesting topic because they can only be Client Components. However, they are placed too high in the tree, which would make them ideal candidates to be Server Components.
 Cookies: small pieces of data that a server sends to a user's web browser.
   - the browser may store the cookie and send it back to the same server with later requests.
   - use cases: session management, personalizations, tracking and analysis of user behavior.
