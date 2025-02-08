@@ -93,6 +93,7 @@ Data Cache: server-side cache that persists the result of data fetches across in
 Data Fetching: process of retrieving data from an external source, such as an API, database, or file, to be used within a React application. Usually data is fetched from REST API or GraphQL, but also from databases, files, etc.
   - the App Router in Next is built on top of RSC, so you can perform data fetching in Client Components as well as in Server Components. But there are advantages to perform it on Server Components.
   - to fetch data from the Server Component, use async and await keywords in the component definition.
+  - use Client Side data fetching only when absolutely necessary, such as data for that depends on user interactions. Use Server Components whenever possible.
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
   - it's higly recommended that you have one default.tsx in each slot folder. You usually simply copy the code of the related page.tsx.
   - you should put a default.tsx in the parent folder that calls the slots as well.
@@ -408,6 +409,7 @@ Server Action: asynchronous functions that are executed on the server.
 Server Components: allow for rendering UI on the server.
   - they can access the server. but they can't use hooks, event listeners, manage state, access browser APIs, handle user interaction.
   - server components can be async and fetch data directly without useEffect.
+    - we usually put async on server components because they usually perform blocking operations.
   - advantages: zero bundle size, direct access to server-side resources, improved security, better SEO.
   use cases: fetch data, access backend resources directly, keep sensitive information segure on the server, handle large dependencies server-side.
 server-only package: utility that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
