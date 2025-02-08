@@ -49,7 +49,10 @@ Catch-all Segments: extend dynamic segments to to catch-all subsequent segments.
   eg: Could support languages in the route. Could be useful for categorizations.
 Client Components:
   - they can use hooks, use event listeners and manage state.
+  - in theory you should favor server components, because client components are heavier and take place on the bundle sent to the client.
+  - when you mark a component as Client Component, it affects all child components in the component tree. They all will be marked as Client Components.
   - client components can't be async, but can use async functions inside useEffect().
+  placement: you should position client components lower in your component tree.
   use cases: add interactivity, handle event listeners, manage state and lifecycle effects, work with browser-specific APIs, implement custom hooks.
 client-only package: utility that prevent unintended server side usage of client side code.
   - client code interact with browser-specific features like DOM, window object, localStorage, etc.
