@@ -91,6 +91,7 @@ Data Cache: server-side cache that persists the result of data fetches across in
   - the data is stored in .next/cache/fetch-cache
   - the Data Cache is a Server Cache, don't confuse it with the browser cache.
 Data Fetching: process of retrieving data from an external source, such as an API, database, or file, to be used within a React application. Usually data is fetched from REST API or GraphQL, but also from databases, files, etc.
+  - the App Router in Next is built on top of RSC, so you can perform data fetching in Client Components as well as in Server Components. But there are advantages to perform it on Server Components.
   - to fetch data from the Server Component, use async and await keywords in the component definition.
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
   - it's higly recommended that you have one default.tsx in each slot folder. You usually simply copy the code of the related page.tsx.
