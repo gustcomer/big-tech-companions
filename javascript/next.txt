@@ -51,10 +51,11 @@ Client Components:
   - they can use hooks, use event listeners and manage state.
   - client components can't be async, but can use async functions inside useEffect().
   use cases: add interactivity, handle event listeners, manage state and lifecycle effects, work with browser-specific APIs, implement custom hooks.
-client-only: package that prevent unintended server side usage of client side code.
+client-only package: utility that prevent unintended server side usage of client side code.
   - client code interact with browser-specific features like DOM, window object, localStorage, etc.
   - useful when you have a function in some util folder that are intended solely for client use.
   - ensures that the code stays where it belongs enhancing reliability and mantainability.
+  - it is better to catch an error at build time than at run-time.
 Client-Side Rendering (CSR): consists of rendering React components directly in the client's browser. The server sends a minimal html, then sends a .js bundle file which takes care of constructing all. If any fetch is needed, the client will be requesting to the server.
   - is used to generate SPA, pages which a minimal html is sent once and all the rest is taken care of by the js bundle.
   - component code is transformed into user interface directly in the browser.
@@ -400,7 +401,8 @@ Server Components: allow for rendering UI on the server.
   - server components can be async and fetch data directly without useEffect.
   - advantages: zero bundle size, direct access to server-side resources, improved security, better SEO.
   use cases: fetch data, access backend resources directly, keep sensitive information segure on the server, handle large dependencies server-side.
-server-only: module that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
+server-only package: utility that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
+  - it is better to catch an error at build time than at run-time.
   - to enable it, all you have to do is import "server-only" after installing it.
 Server-Side Rendering (SSR): consists of rendering the components on the Server. The client makes a request, HTML is generated on the server and sent. Then JS is sent to the client to hydrate the HTML sent by the server, that is, to turn raw HTML into interactive UI.
   - the server generate HTML and returns to the Client full HTML+JS reference translating into a non-interactive UI.
