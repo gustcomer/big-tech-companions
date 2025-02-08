@@ -186,7 +186,12 @@ Intercepting Routes: allows you to load a route from another part of your applic
   - (..)(..) match segments two levels above (has bugs).
   - (...) match segments from the root app directory.
 Interleaving: you can place a Server Component inside a Client Component if you pass the Server Component as a prop.
-
+  - all components lower in the tree of a Client Component will also be client components, the exception is if they are passed as props or child prop.
+    - what matters in the component tree is where they are created, not where they are rendered.
+    - see that passing a component as child is a way to create both components at the same level of the tree but make one component render the other at a deeper level.
+  - if you invoke a server component inside a client component, it throws an error. But if you pass the server component as children props to the client component, it works fine.
+    - at the end of the day, the server component code will be processed at the server and be sent already processed to the client.
+    - in the case of invoking the SC inside the CC, the SC would be sent in the bundle.js to the client and it would try to process the JSX there.
   use case: Context providers, which should be client components but are too up on the Component Tree.
 ISR (Incremental Static Regeneration): allows you to update static content without rebuilding the entire application.
   - it is enabled by using the revalidate option in Server Components.
