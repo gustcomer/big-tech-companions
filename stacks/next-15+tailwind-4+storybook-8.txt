@@ -1,0 +1,20 @@
+
+> npx create-next-app my-nextjs-project
+
+> code .
+
+> npm run dev
+
+delete default files but keep tailwind
+  https://github.com/gustcomer/cidacipe/commit/88a68a2b31caa18f6911e3e6cf443360f55f5d19
+
+> npx storybook@latest init
+
+if storybook throws an error about missing module of ajv
+  > npm install --save-dev ajv@^7
+
+if you need to remove the node modules folder and the package-lock.json
+  > rmdir /s /q node_modules
+  > del /f /q package-lock.json
+  > npm install
+

@@ -1,0 +1,4 @@
+================================================================================
+
+Control: feature that allows you to interactively edit a component's props (properties) from the Storybook UI.
+Storybook: frontend workshop for building UI components and pages in isolation.
