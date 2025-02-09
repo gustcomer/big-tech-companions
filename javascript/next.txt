@@ -97,6 +97,7 @@ Data Fetching: process of retrieving data from an external source, such as an AP
   Sequencial: the fetch on one component depends on the data fetched on the other. It is like a join sentence in sql.
     - the best approach is to wrap the second component with Suspense.
     eg: you fetch all Posts of a blog and then you take the authorId and fetch data about the author.
+  Parallel: to run fetches in parallel you usually create functions for each fetch and wait them together with await Promise.all(_,_).
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
   - it's higly recommended that you have one default.tsx in each slot folder. You usually simply copy the code of the related page.tsx.
   - you should put a default.tsx in the parent folder that calls the slots as well.
@@ -226,7 +227,7 @@ Loading UI: allows you to handle loading states efficiently using loading.tsx in
 loading.tsx: this file allows us to create loading states that are displayed to users while a specific route segment's content is loading.
   - you can show an Instant Loading State from the server while the content of a route segment loads.
   - basically it waits for the first html sent by the server, that is, the SSR.
-  - loading has to do with React Suspense.
+  - loading has to do with React Suspense, but serves the whole page of the route, while Suspense works at component level.
 Metadata API: allows you to define metadata for each page. It can be done in page.tsx or layout.tsx.
   - 2 methods: export a static metadata object or export a dynamic generateMetadata().
     - the generateMetadata() is much more complicated but on the other hand we can generate dynamic metadata like titles.
@@ -412,8 +413,9 @@ Selective Hydration: allows for the hydration of sections as they become availab
   - check Code Splitting.
   - eg: const MainContent = lazy(() => import('./MainContent.js'));
 Server Action: asynchronous functions that are executed on the server.
-  - place the directive "use server" at the top of an async function.
-  - check react:Server Actions
+  - place the directive "use server" at the top of an async function. Or at the top of the file to mark all exports of that file as Server Actions.
+  - they are usually used together with Forms. You define some server function and assign it to the action field of the form.
+  - check react:Server Actions.
 Server Components: allow for rendering UI on the server.
   - they can access the server. but they can't use hooks, event listeners, manage state, access browser APIs, handle user interaction.
   - server components can be async and fetch data directly without useEffect.
