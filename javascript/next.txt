@@ -94,6 +94,9 @@ Data Fetching: process of retrieving data from an external source, such as an AP
   - the App Router in Next is built on top of RSC, so you can perform data fetching in Client Components as well as in Server Components. But there are advantages to perform it on Server Components.
   - to fetch data from the Server Component, use async and await keywords in the component definition.
   - use Client Side data fetching only when absolutely necessary, such as data for that depends on user interactions. Use Server Components whenever possible.
+  Sequencial: the fetch on one component depends on the data fetched on the other. It is like a join sentence in sql.
+    - the best approach is to wrap the second component with Suspense.
+    eg: you fetch all Posts of a blog and then you take the authorId and fetch data about the author.
 default.tsx: serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL due to unmatched routes inside slots.
   - it's higly recommended that you have one default.tsx in each slot folder. You usually simply copy the code of the related page.tsx.
   - you should put a default.tsx in the parent folder that calls the slots as well.
@@ -218,6 +221,8 @@ Loading UI: allows you to handle loading states efficiently using loading.tsx in
   - it is important because it gives instant feedback when users navigate somewhere new.
   - shared layouts can still be used, like navigation menus, sidebars, etc. (but not Layouts).
 loading.tsx: this file allows us to create loading states that are displayed to users while a specific route segment's content is loading.
+  - you can show an Instant Loading State from the server while the content of a route segment loads.
+  - basically it waits for the first html sent by the server, that is, the SSR.
   - loading has to do with React Suspense.
 Metadata API: allows you to define metadata for each page. It can be done in page.tsx or layout.tsx.
   - 2 methods: export a static metadata object or export a dynamic generateMetadata().
@@ -411,6 +416,7 @@ Server Components: allow for rendering UI on the server.
   - server components can be async and fetch data directly without useEffect.
     - we usually put async on server components because they usually perform blocking operations.
   - advantages: zero bundle size, direct access to server-side resources, improved security, better SEO.
+  - they don't need useEffect because you only fetch once, don't need to update nothing after it is fetched.
   use cases: fetch data, access backend resources directly, keep sensitive information segure on the server, handle large dependencies server-side.
 server-only package: utility that provides a build-time error if developers accidentaly import a module that should stay in the server into a Client Component.
   - it is better to catch an error at build time than at run-time.
@@ -461,6 +467,8 @@ Suspense: allows you to wait for some code or data to load before rendering a co
   - used to handle scenarios where you have asynchronous operations, such as data fetching or code splitting, and you want to provide a fallback UI while waiting for the data or code to become available.
   - HTML streaming on the server.
   - selective hydration on the client.
+  - What happens if you apply Suspense to a Server Component?
+    - if the SC is rendered on the server, Suspense doesn't have any real effect. But it may have some interesting effects if the SC is used with Streaming or if the SC fetch data with fetch().
 Template: similar but different from Layout. When a user navigates between routes that share a template, a new instance of the component is mounted.
   - DOM elements are recreated, state is not preserved, effects are re-synchronized.
   - while with Layouts the objects persist, with Templates you get fresh instances of a structure.
