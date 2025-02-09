@@ -181,6 +181,9 @@ Hydration: react takes control in the browser, reconstructing the component tree
   - required props: src, width, height, and alt.
   - fill(prop): causes the image to fill the parent element, which is useful when the width and height are unknown.
 Independent Route Handling: each slot can have its own loading and error states.
+Instant Loading State: it's like a fallback but related to pages because it provides immediate feedback when navigating between pages.
+  - Instead of displaying a blank screen or waiting for data to load, Next.js shows a lightweight UI to indicate that something is happening in the background.
+  - implemented in the loading.tsx file.
 Intercepting Routes: allows you to load a route from another part of your application within the current layout when navigation through <Link/>.
   - if you refresh the page or type the address directly, it will show the original page, and not the intercepted one.
   - use case: show login modal when you're navigating, but show login page when you share the link or refresh.
