@@ -73,6 +73,10 @@ font-bold: utility used for controlling the Font Weight of an element.
   - related: font-thin, font-medium, font-semibold, hover:font-bold, font-[1100]
   - some measures: thin => font-weight: 100, normal: 400, bold: 700, black: 900
 gap-*: change the gap between both rows and columns in grid and flexbox layouts.
+gradients: give an element a linear gradient background.
+  bg-gradient-to-*: used to color with gradient.
+    t-top, tr-top right, r-right, br-bottom right, b-bottom, bl-bottom left, l-left, tl-top left.
+  - use it together with from-*-* to-*-*. eg: from-cyan-500 to-blue-500
 h-full: set the height of an element to 100% of the height of its parent. height: 100%;
   - check: h-screen
 h-screen: set the height of an element to 100% of the viewscreen height. height: 100vh;
@@ -89,6 +93,8 @@ md: : apply the following properties only if the size is greater than md.
   related: sm:, lg:, xl:, 2xl:
 mx-*: adjust margin-left and margin-right.
   - mx-auto: margin-left: auto; margin-right: auto; evenly distribute the unused horizontal space between the left and the right.
+object-cover: controls how an image or other media element (like a video) is resized to fit its container.
+  css> object-fit: cover; -- ensures that the media fills its container while maintaining its aspect ratio.
 outline: control the style of an element's outline, default is a solid line.
   - outline-dashed, outline-dotted, outline-double.
 overflow-clip: used to be a shortcut to text-overflow: clip, but browsers added a real overflow: clip property

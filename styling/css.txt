@@ -85,6 +85,7 @@ Glossary
 Absolute Length Units: px, pt, pc, in, mm, cm.
 @apply: it's a way of using tailwind utility classes inside .css files to create a class from these utility classes.
   - eg: .cartao { @apply w-60 rounded-md p-2 shadow grid gap-y-2 bg-yellow-400 }
+aspect ratio: proportional relationship between the width and height of an element.
 box model: describes how every web element is modeled.
   - composed of Content Area, Padding, Border, Margin.
 cap: height of the capital letter.
@@ -129,6 +130,9 @@ media queries: allow you to apply CSS styles depending on a device's media type 
 min-width:
   - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
   - related: max-width
+object-fit: control how an element like an image or a video fits within its container.
+  object-fit: cover - ensures that the content fills the entire container while maintaining its aspect ratio.
+  other values: fill, contain, cover, none.
 outline: it looks like a border, but it's placed outside the border and doesn't take space.
   - border's are part of the box model while outlines aren't.
   - use cases: focus

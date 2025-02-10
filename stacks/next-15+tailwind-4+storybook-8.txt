@@ -18,3 +18,5 @@ if you need to remove the node modules folder and the package-lock.json
   > del /f /q package-lock.json
   > npm install
 
+usually next comes with tailwind 3 installed, to update to 4 use
+  > npx @tailwindcss/upgrade@next
