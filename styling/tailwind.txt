@@ -95,6 +95,7 @@ mx-*: adjust margin-left and margin-right.
   - mx-auto: margin-left: auto; margin-right: auto; evenly distribute the unused horizontal space between the left and the right.
 object-cover: controls how an image or other media element (like a video) is resized to fit its container.
   css> object-fit: cover; -- ensures that the media fills its container while maintaining its aspect ratio.
+opacity-*: control the opacity of an element in %. 100 is solid, 0 is invisible. 
 outline: control the style of an element's outline, default is a solid line.
   - outline-dashed, outline-dotted, outline-double.
 overflow-clip: used to be a shortcut to text-overflow: clip, but browsers added a real overflow: clip property
@@ -107,7 +108,7 @@ p-*: control the padding on all sides of an element
   py-*: control vertical padding of an element.
 rounded-tl-2xl: control the Border Radius of an element
   - eg: rounded-sm (adjusts all borders), rounded-tr-* (adjusts the top right), rounded-l-* (adjusts top left and bottom left).
-sticky: behaves like static until the scroll reaches it, after that starts behaving like fixed.
+sticky: behaves like static until the scroll reache s it, after that starts behaving like fixed.
 text-[*px]: set the font size using Arbitrary Values, that is, pixels.
   - related: text-sm, text-sm, text-xl, text-5xl
   - text-[--text]: set the font size to the value in the variable --text that could be defined in the root.
