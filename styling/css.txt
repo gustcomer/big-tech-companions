@@ -1,88 +1,9 @@
-CSS Simple Selectors
-
-  Element Selectors
-    p {...} - selects all p elements
-  
-  Id Selectors
-    #para1 {...} - applies the rules to all id="para1"
-  
-  Class Selectors
-    .center {} - applies to all elements with class="center"
-
-Combinator Selectors
-
-  element+class selectors
-    p.center {} - only <p> elements with class="center"
-
-  Universal Selectors
-    * {} - all HTML elements on the page
-  
-  Grouping Selectors
-    h1, h2, p {...}
-
-Pseudo-class Selectors
-  selector:pseudo-class { ... }
-  pseudo-classes represent special state of an element
-  
-  :link - unvisited
-  :visited - visited
-  :hover - mouse over
-  :active - selected
-  :first-child
-  :lang - specific languages
-  ...
-
-Pseudo-elements
-  specify parts of an element
-
-  ::after	p::after	Insert something after the content of each <p> element
-  ::before	p::before	Insert something before the content of each <p> element
-  ::first-letter	p::first-letter	Selects the first letter of each <p> element
-  ::first-line	p::first-line	Selects the first line of each <p> element
-  ::marker	::marker	Selects the markers of list items
-  ::selection	p::selection	Selects the portion of an element that is selected by a user
-
-Attribute Selectors
-  have specific attributes or attribute values
-
-  CSS [attribute] Selector
-    a[target] { ... }
-  
-  CSS [attribute="value"] Selector - specified attribute and value
-    a[target="_blank"] { ... }
-  
-  CSS [attribute~="value"] Selector - elements with an attribute value containing a specified word
-    [title~="flower"] { ... }
-  
-  CSS [attribute|="value"] Selector - elements with the specified attribute or followed by a hyphen
-    [class|="top"] { ... }
-  
-  CSS [attribute^="value"] Selector - select elements starting with the specified attribute value
-    [class^="top"] { ... }
-
-  CSS [attribute$="value"] Selector - attribute value ends with a specified value
-    [class$="test"] { ... }
-  
-  CSS [attribute*="value"] Selector - attribute value contains a specified value.
-    [class*="te"] { ... }
-  
-  
-
-resources
-  https://www.w3schools.com/css/
-  https://css-tricks.com/
-  https://maujor.com/
-  https://whatunit.com/
-  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-  https://github.com/bradtraversy/50projects50days
-
 ================================================================================
 Glossary
 
 @: [at-rules, directives] CSS statements that instruct CSS how to behave.
   - General structure: @identifier (RULE);
 : pseudo-classes. they consist of a colon : followed by the pseudo-class name.
-Absolute Length Units: px, pt, pc, in, mm, cm.
 @apply: it's a way of using tailwind utility classes inside .css files to create a class from these utility classes.
   - eg: .cartao { @apply w-60 rounded-md p-2 shadow grid gap-y-2 bg-yellow-400 }
 aspect ratio: proportional relationship between the width and height of an element.
@@ -99,29 +20,43 @@ custom property: allow for property type checking and constraining, setting defa
   - it's like CSS variables on steroids.
   - @property CSS at-rule is part of the CSS Houdini umbrella of APIs.
 dpi: dots per inch
-em: unit relative to the font-size of the parent element.
-  - (2em means 2 times the size of the current font)
-  - usual ly it is relative to the parent font size, so in a document 1em could mean diferent things
-  - related: rem.
-  - usefull when we need the font size to be relative to the font-size of the parent element
-ex: height of the letter x
-flex: sets how a flex item will grow or shrink to fit the space available in its flex container.
-  - it is a shorthand for flex-grow, flex-shrink, flex-basis.
-  display: flex; turns the element into a flex container. By default, flex-direction: row;
-  justify-content: flex-start; Items are positioned starting from the left (in left-to-right layouts).
-  align-items: stretch; stretch items vertically to fill the container
-flex-basis: sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
-flex-grow: flex grow factor, which specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
-flex-shrink: flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according.
-fr: fractional unit used in grids. 1fr represents 1 part of the available space.
-  - only use it when you want the grid to be fluid, like a calendar, etc.
-  - better than percentages because they don't take into account the gap.
-gap: property that allows to adjust spacing between elements in grid layout
+flex
+  flex: sets how a flex item will grow or shrink to fit the space available in its flex container.
+    - it is a shorthand for flex-grow, flex-shrink, flex-basis.
+    display: flex; turns the element into a flex container. By default, flex-direction: row;
+    justify-content: flex-start; Items are positioned starting from the left (in left-to-right layouts).
+    align-items: stretch; stretch items vertically to fill the container
+  flex-basis: sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+  flex-grow: flex grow factor, which specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
+  flex-shrink: flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according.
+grid
+  gap: property that allows to adjust spacing between elements in grid layout
+  fr: fractional unit used in grids. 1fr represents 1 part of the available space.
+    - only use it when you want the grid to be fluid, like a calendar, etc.
+    - better than percentages because they don't take into account the gap.
 hr: horizontal rule. indicates a thematic break or a shift in topic between paragraphs or sections.
   - When you use border: 1px solid;, you’re effectively adding borders on all sides of the element (top, right, bottom, left). By using border-top, you ensure the line only appears at the top edge of the <hr>.
 @layer: declares a cascade layer and defines the order of precedence in case of multiple cascade layers.
   - the stylings in the last layer will precede the stylings in the former layers.
 lh: line height.
+measures
+  Absolute Length Units: px, pt, pc, in, mm, cm.
+    px: 1px = 1/96th of 1in.
+      - for low-dpi devices it will be one device pixel (and hence relative length unit)
+      - You can calculate the size of a pixel for any display device dividing the size of the display screen by the resolution. 
+      - for small details such as borders, shadows, etc, you can use pixels.
+  Relative Length Units: em, ex, ch, vw, rem, vh, vmin, vmax, %
+    rem: unit relative to the font-size of the root element.
+    em: unit relative to the font-size of the parent element.
+      - (2em means 2 times the size of the current font)
+      - usual ly it is relative to the parent font size, so in a document 1em could mean diferent things
+      - related: rem.
+      - usefull when we need the font size to be relative to the font-size of the parent element
+    svh: small vieport height
+      related: dvh: dynamic vieport height; lvh: large viewport height.
+    vh: relative to the viewport's height. 1vh is equal to 1% of the viewport's height.
+    vw: relative to the viewport's width. 1vw is equal to 1% of the viewport's width.
+    ex: height of the letter x
 @media: at rule that check media queries. It will apply its content if the device meets the criteria of the condition defined using a media query.
   media types: all, print, screen. -- if nothing is defined, all is assumed.
   media features: device-width, prefers-color-scheme, prefers-reduced-motion
@@ -140,25 +75,61 @@ prefers-color-scheme:  CSS media feature is used to detect if a user has request
   - a user indicates their preference through an operating system setting (e.g. light or dark mode) or a user agent setting.
 @property: check custom property.
   - @property at-rule
-px: 1px = 1/96th of 1in.
-  - for low-dpi devices it will be one device pixel (and hence relative length unit)
-  - You can calculate the size of a pixel for any display device dividing the size of the display screen by the resolution. 
-  - for small details such as borders, shadows, etc, you can use pixels.
-Relative Length Units: em, ex, ch, vw, rem, vh, vmin, vmax, %
-rem: unit relative to the font-size of the root element.
 :root : pseudo-class in CSS is used to select the highest-level parent element in the document tree. In an HTML document, this is always the <html> element.
   - It is similar to the html selector, but it has higher specificity (it overrides the normal html selector).
   - it ensures that variables and styles are scoped globally.
   - one of the most common uses is to define CSS variables that are available throughout the entire document.
-svh: small vieport height
-  related: dvh: dynamic vieport height; lvh: large viewport height.
+Selectors
+  * { ... }: universal selector.
+  Element Selectors
+    p {...} - selects all p elements
+  Id Selectors
+    #para1 {...} - applies the rules to all id="para1"
+  Class Selectors
+    .center {} - applies to all elements with class="center"
+  Attribute Selectors
+    have specific attributes or attribute values
+    CSS [attribute] Selector
+      a[target] { ... }
+    CSS [attribute="value"] Selector - specified attribute and value
+      a[target="_blank"] { ... }
+    CSS [attribute~="value"] Selector - elements with an attribute value containing a specified word
+      [title~="flower"] { ... }
+    CSS [attribute|="value"] Selector - elements with the specified attribute or followed by a hyphen
+      [class|="top"] { ... }
+    CSS [attribute^="value"] Selector - select elements starting with the specified attribute value
+      [class^="top"] { ... }
+    CSS [attribute$="value"] Selector - attribute value ends with a specified value
+      [class$="test"] { ... }
+    CSS [attribute*="value"] Selector - attribute value contains a specified value.
+      [class*="te"] { ... }
+  Combinator Selectors
+    element+class selectors
+      p.center {} - only <p> elements with class="center"
+    Universal Selectors
+      * {} - all HTML elements on the page
+    Grouping Selectors
+      h1, h2, p {...}
+  Pseudo-elements: specify parts of an element
+    ::after	p::after	Insert something after the content of each <p> element
+    ::before	p::before	Insert something before the content of each <p> element
+    ::first-letter	p::first-letter	Selects the first letter of each <p> element
+    ::first-line	p::first-line	Selects the first line of each <p> element
+    ::marker	::marker	Selects the markers of list items
+    ::selection	p::selection	Selects the portion of an element that is selected by a user
+  Pseudo-class Selectors: represent special state of an element
+    selector:pseudo-class { ... }
+    :link - unvisited
+    :visited - visited
+    :hover - mouse over
+    :active - selected
+    :first-child
+    :lang - specific languages
 @tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
   eg: @tailwind base; @tailwind components; @tailwind utilities;
 text-overflow: property to cut overflowing text
   - text-overflow: clip, ellipsis
 variables: check Custom Properties because they are the same.
-vh: relative to the viewport's height. 1vh is equal to 1% of the viewport's height.
-vw: relative to the viewport's width. 1vw is equal to 1% of the viewport's width.
 white-space: CSS property sets how white space inside an element is handled.
   normal: Sequences of white space are collapsed to one whitespace. Newline characters in the source are handled as white spaces. Lines are broken as necessary to fill line boxes.
   pre-wrap: Sequences of white space are preserved. Lines are broken at newline characters, at <br>, and as necessary to fill line boxes.
@@ -166,6 +137,10 @@ white-space: CSS property sets how white space inside an element is handled.
 wrap: usually refers to how user-entered text should be split into lines.
 
 ================================================================================
-SELECTORS
-
-* { ... }: universal selector.
+resources
+  https://www.w3schools.com/css/
+  https://css-tricks.com/
+  https://maujor.com/
+  https://whatunit.com/
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  https://github.com/bradtraversy/50projects50days
