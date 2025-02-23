@@ -59,7 +59,11 @@ measures
   media features: device-width, prefers-color-scheme, prefers-reduced-motion
 media queries: allow you to apply CSS styles depending on a device's media type or other characteristics.
   - prefers-reduced-motion: CSS media query to detect if a user has requested reduced motion in their system preferences. if yes, disable animations and transitions.
-nesting
+nesting: practice of writing CSS rules inside other CSS rules
+  - by default, when you nest something, it's like a descendant selector since it adds an space. To use with pseudoclasses or class selectors, don't forget to ue ampersand &.
+  descendant nesting -- { ... .myclass{..} }
+  pseudoclass nesting -- { ... &:hover{} }
+  - a great example of nesting is with media queries. You can nest all your media queries inside <html>, for instance.
 object-fit: control how an element like an image or a video fits within its container.
   object-fit: cover - ensures that the content fills the entire container while maintaining its aspect ratio.
   other values: fill, contain, cover, none.
@@ -99,11 +103,12 @@ Selectors
   Combinator Selectors
     (single space) Descendant Combinator -- div p -- Selects all <p> elements inside <div> elements.
     > Child combinator -- div > p -- Selects every <p> element that are direct children of a <div> element.
-    | Namespace separator -- ns | h2 -- Selects all <h2> elements in namespace ns.
+    | Namespace separator -- ns | h2 -- Selects all <h2> elements in namespace ns. (namespaces are more used in <svg>).
     + Next-sibling combinator -- 	div + p -- Selects the first <p> element that is placed immediately after <div> elements.
     , Grouping Selector -- div, p -- Selects all <div> elements and all <p> elements.
     ~ Subsequent-sibling combinator -- p ~ ul -- Selects all <ul> elements that are preceded by a <p> element.
     & Nesting Selector - Applies styles for an element within the context of another element
+    . Class Selector -- div.class1 - select all divs with class1 Can be seen as a combinator selector.
   Pseudo-elements: specify parts of an element
     ::after	p::after	Insert something after the content of each <p> element
     ::before	p::before	Insert something before the content of each <p> element
