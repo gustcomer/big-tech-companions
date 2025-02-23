@@ -10,8 +10,13 @@ aspect ratio: proportional relationship between the width and height of an eleme
 box model: describes how every web element is modeled.
   - composed of Content Area, Padding, Border, Margin.
 cap: height of the capital letter.
-clamp()
-  - useful for font-size responsiveness
+Combinator: sign that explains the relationship between selectors.
+  (single space) Descendant Combinator -- div p -- Selects all <p> elements inside <div> elements.
+  > Child combinator -- div > p -- Selects every <p> element that are direct children of a <div> element.
+  | Namespace separator -- ns | h2 -- Selects all <h2> elements in namespace ns.
+  + Next-sibling combinator -- 	div + p -- Selects the first <p> element that is placed immediately after <div> elements.
+  , Selector list -- div, p -- Selects all <div> elements and all <p> elements.
+  ~ Subsequent-sibling combinator -- p ~ ul -- Selects all <ul> elements that are preceded by a <p> element.
 CSS Houdini: set of APIs that expose parts of the CSS renderind mechanism.
   - allows access to the CSS Object Model (CSSOM).
 custom property: allow for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
@@ -38,7 +43,6 @@ hr: horizontal rule. indicates a thematic break or a shift in topic between para
   - When you use border: 1px solid;, you’re effectively adding borders on all sides of the element (top, right, bottom, left). By using border-top, you ensure the line only appears at the top edge of the <hr>.
 @layer: declares a cascade layer and defines the order of precedence in case of multiple cascade layers.
   - the stylings in the last layer will precede the stylings in the former layers.
-lh: line height.
 measures
   Absolute Length Units: px, pt, pc, in, mm, cm.
     px: 1px = 1/96th of 1in.
@@ -62,9 +66,7 @@ measures
   media features: device-width, prefers-color-scheme, prefers-reduced-motion
 media queries: allow you to apply CSS styles depending on a device's media type or other characteristics.
   - prefers-reduced-motion: CSS media query to detect if a user has requested reduced motion in their system preferences. if yes, disable animations and transitions.
-min-width:
-  - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
-  - related: max-width
+nesting
 object-fit: control how an element like an image or a video fits within its container.
   object-fit: cover - ensures that the content fills the entire container while maintaining its aspect ratio.
   other values: fill, contain, cover, none.
@@ -80,36 +82,27 @@ prefers-color-scheme:  CSS media feature is used to detect if a user has request
   - it ensures that variables and styles are scoped globally.
   - one of the most common uses is to define CSS variables that are available throughout the entire document.
 Selectors
-  * { ... }: universal selector.
-  Element Selectors
-    p {...} - selects all p elements
-  Id Selectors
-    #para1 {...} - applies the rules to all id="para1"
-  Class Selectors
-    .center {} - applies to all elements with class="center"
+  Simple Selectors
+    Universal Selector -- * { ... }: 
+    Element Selectors -- p {...} - selects all p elements
+    Id Selectors -- #para1 {...} - applies the rules to all id="para1"
+    Class Selectors -- .center {} - applies to all elements with class="center"
   Attribute Selectors
-    have specific attributes or attribute values
-    CSS [attribute] Selector
-      a[target] { ... }
-    CSS [attribute="value"] Selector - specified attribute and value
-      a[target="_blank"] { ... }
-    CSS [attribute~="value"] Selector - elements with an attribute value containing a specified word
-      [title~="flower"] { ... }
-    CSS [attribute|="value"] Selector - elements with the specified attribute or followed by a hyphen
-      [class|="top"] { ... }
-    CSS [attribute^="value"] Selector - select elements starting with the specified attribute value
-      [class^="top"] { ... }
-    CSS [attribute$="value"] Selector - attribute value ends with a specified value
-      [class$="test"] { ... }
-    CSS [attribute*="value"] Selector - attribute value contains a specified value.
-      [class*="te"] { ... }
+    CSS [attribute] Selector -- a[target] { ... } -- specified attribute
+    CSS [attribute="value"] Selector -- a[target="_blank"] { ... } -- specified attribute and value -- 
+    CSS [attribute~="value"] Selector -- [title~="flower"] { ... } -- elements with an attribute value containing a specified word 
+    CSS [attribute|="value"] Selector -- [class|="top"] { ... } -- elements with the specified attribute or followed by a hyphen
+    CSS [attribute^="value"] Selector -- [class^="top"] { ... } -- select elements starting with the specified attribute value
+    CSS [attribute$="value"] Selector -- [class$="test"] { ... } -- attribute value ends with a specified value
+    CSS [attribute*="value"] Selector -- [class*="te"] { ... } -- attribute value contains a specified value.
   Combinator Selectors
-    element+class selectors
-      p.center {} - only <p> elements with class="center"
-    Universal Selectors
-      * {} - all HTML elements on the page
-    Grouping Selectors
-      h1, h2, p {...}
+    (single space) Descendant Combinator -- div p -- Selects all <p> elements inside <div> elements.
+    > Child combinator -- div > p -- Selects every <p> element that are direct children of a <div> element.
+    | Namespace separator -- ns | h2 -- Selects all <h2> elements in namespace ns.
+    + Next-sibling combinator -- 	div + p -- Selects the first <p> element that is placed immediately after <div> elements.
+    , Grouping Selector -- div, p -- Selects all <div> elements and all <p> elements.
+    ~ Subsequent-sibling combinator -- p ~ ul -- Selects all <ul> elements that are preceded by a <p> element.
+    & Nesting Selector - Applies styles for an element within the context of another element
   Pseudo-elements: specify parts of an element
     ::after	p::after	Insert something after the content of each <p> element
     ::before	p::before	Insert something before the content of each <p> element
@@ -127,14 +120,24 @@ Selectors
     :lang - specific languages
 @tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
   eg: @tailwind base; @tailwind components; @tailwind utilities;
-text-overflow: property to cut overflowing text
-  - text-overflow: clip, ellipsis
 variables: check Custom Properties because they are the same.
 white-space: CSS property sets how white space inside an element is handled.
   normal: Sequences of white space are collapsed to one whitespace. Newline characters in the source are handled as white spaces. Lines are broken as necessary to fill line boxes.
   pre-wrap: Sequences of white space are preserved. Lines are broken at newline characters, at <br>, and as necessary to fill line boxes.
   others: nowrap, pre, pre-line, break-spaces.
 wrap: usually refers to how user-entered text should be split into lines.
+
+================================================================================
+API
+
+clamp()
+  - useful for font-size responsiveness
+lh: line height.
+min-width:
+  - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
+  - related: max-width
+text-overflow: property to cut overflowing text
+  - text-overflow: clip, ellipsis
 
 ================================================================================
 resources
