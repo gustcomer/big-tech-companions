@@ -126,6 +126,10 @@ Selectors
     :lang - specific languages
 @tailwind: used in Tailwind CSS to include different layers of styles that Tailwind provides. It is connected to @layer.
   eg: @tailwind base; @tailwind components; @tailwind utilities;
+transforms: allow you to move, rotate, scale, and skew elements.
+  2D: translate(), rotate(), scale(), skew(), matrix(), scaleX(), scaleY(), skewX(), skewY().
+  3D: rotate3d(), scale3d(), matrix3d(), translate3d(), rotateX(), rotateY(), rotateZ(), perspective(), etc.
+  - while transform should be nested so that the transformation occurs when the user hovers something, transition should be place above on the base class, so that the base class know how to process the transform.
 variables: check Custom Properties because they are the same.
 white-space: CSS property sets how white space inside an element is handled.
   normal: Sequences of white space are collapsed to one whitespace. Newline characters in the source are handled as white spaces. Lines are broken as necessary to fill line boxes.
