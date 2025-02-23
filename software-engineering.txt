@@ -1,0 +1,6 @@
+================================================================================
+
+Components: modular, reusable, and independent pieces of software that encapsulate a specific functionality and interact with other components through well-defined interfaces.
+  UI Components: reusable, self-contained building blocks used to construct graphical interfaces.
+    - used in web, mobile, and desktop applications.
+    eg: they could encapsulate HTML, CSS, and JavaScript (or other UI logic) to define how users interact with a system.
