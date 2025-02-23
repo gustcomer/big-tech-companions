@@ -76,6 +76,7 @@ overflow: controls how content is handled when it overflows its container width 
   overflow: scroll – Always adds a scrollbar, even if the content fits within the container.
   overflow: auto – Adds a scrollbar only when the content overflows.
   overflow: clip – Similar to hidden, but without allowing interaction with the clipped content.
+    - you can define a overflow-clip-margin so that the text overflows just a little bit.
   overflow: overlay – Works like auto, but scrollbars overlay the content instead of affecting layout.
   overflow-x: scroll, overflow-y: hidden - you can define overflow separately for horizontal and vertical scrolling.
 prefers-color-scheme:  CSS media feature is used to detect if a user has requested light or dark color themes.
@@ -146,6 +147,8 @@ lh: line height.
 min-width:
   - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
   - related: max-width
+overflow-anchor: allows you to not loose the scroll position when new overflowed data appears.
+overflow-clip-margin:
 text-overflow: property to cut overflowing text
   - text-overflow: clip, ellipsis
 
