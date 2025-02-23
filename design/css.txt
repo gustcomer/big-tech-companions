@@ -10,13 +10,6 @@ aspect ratio: proportional relationship between the width and height of an eleme
 box model: describes how every web element is modeled.
   - composed of Content Area, Padding, Border, Margin.
 cap: height of the capital letter.
-Combinator: sign that explains the relationship between selectors.
-  (single space) Descendant Combinator -- div p -- Selects all <p> elements inside <div> elements.
-  > Child combinator -- div > p -- Selects every <p> element that are direct children of a <div> element.
-  | Namespace separator -- ns | h2 -- Selects all <h2> elements in namespace ns.
-  + Next-sibling combinator -- 	div + p -- Selects the first <p> element that is placed immediately after <div> elements.
-  , Selector list -- div, p -- Selects all <div> elements and all <p> elements.
-  ~ Subsequent-sibling combinator -- p ~ ul -- Selects all <ul> elements that are preceded by a <p> element.
 CSS Houdini: set of APIs that expose parts of the CSS renderind mechanism.
   - allows access to the CSS Object Model (CSSOM).
 custom property: allow for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
@@ -73,6 +66,14 @@ object-fit: control how an element like an image or a video fits within its cont
 outline: it looks like a border, but it's placed outside the border and doesn't take space.
   - border's are part of the box model while outlines aren't.
   - use cases: focus
+overflow: controls how content is handled when it overflows its container width or height. Should a scroll appear?
+  overflow: visible (default) – Content overflows the container and is not clipped.
+  overflow: hidden – Content is clipped and does not show outside the container.
+  overflow: scroll – Always adds a scrollbar, even if the content fits within the container.
+  overflow: auto – Adds a scrollbar only when the content overflows.
+  overflow: clip – Similar to hidden, but without allowing interaction with the clipped content.
+  overflow: overlay – Works like auto, but scrollbars overlay the content instead of affecting layout.
+  overflow-x: scroll, overflow-y: hidden - you can define overflow separately for horizontal and vertical scrolling.
 prefers-color-scheme:  CSS media feature is used to detect if a user has requested light or dark color themes.
   - a user indicates their preference through an operating system setting (e.g. light or dark mode) or a user agent setting.
 @property: check custom property.
