@@ -34,6 +34,9 @@ grid
     - better than percentages because they don't take into account the gap.
 hr: horizontal rule. indicates a thematic break or a shift in topic between paragraphs or sections.
   - When you use border: 1px solid;, you’re effectively adding borders on all sides of the element (top, right, bottom, left). By using border-top, you ensure the line only appears at the top edge of the <hr>.
+images: you can add images to your document with <img> tag or background-image css property if they are more decorative.
+<img>:
+  - object-fit you can control how the image being imported fills its <img> container.
 @layer: declares a cascade layer and defines the order of precedence in case of multiple cascade layers.
   - the stylings in the last layer will precede the stylings in the former layers.
 measures
@@ -147,6 +150,12 @@ lh: line height.
 min-width:
   - useful in flex context where thinks should grow and shrink, but keeping a minimum and maximum
   - related: max-width
+object-fit: controls how an image fills its container.
+  object-fit: cover -- keeps the aspect ratio of the content and ensures the image cover the entire <img> container but will be cropped in height or width. 
+  object-fit: contain -- keeps the aspect ratio of the content and scales the image to fit within the container while maintaining aspect ratio. This means that some spaces may apper in the corner of the height or the width.
+  object-fit: fill (default behaviour) -- it stretches the image deforming its aspect ratio so that it fills the entire width and height of the container.
+  object-fit: none -- keeps the image’s original size, can overflow container
+  object-fit: scale-down -- chooses the smaller of none or contain.
 overflow-anchor: allows you to not loose the scroll position when new overflowed data appears.
 overflow-clip-margin:
 text-overflow: property to cut overflowing text
