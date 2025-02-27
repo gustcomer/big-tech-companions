@@ -144,6 +144,12 @@ wrap: usually refers to how user-entered text should be split into lines.
 ================================================================================
 API
 
+borders
+  border-style: dotted, dashed, solid, double, etc.
+  border-width: 5px, medium, thick.
+  border-color: red, etc.
+  border (shorthand): 5px solid red;
+  border-radius: 5px;
 clamp()
   - useful for font-size responsiveness
 lh: line height.
