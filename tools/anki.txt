@@ -1,0 +1,17 @@
+================================================================================
+
+cartões
+  novos: cartões que eu nunca vi antes.
+  aprendizado: já vi o cartão, mas está no processo de memorização (memória curta).
+  revisão: ja passou da fase de aprendizado e entra no ciclo de revisão espaçada (memória longa).
+  reaprendizado: errei o cartão e ele voltou ao estágio de aprendizado.
+numerozinhos
+  azul: cartões novos, que você ainda não estudou.
+  vermelho: cartões para reaprender, ou seja, cartões que você errou e foram colocados de volta para reaprendizado.
+  verde: cartões para revisar hoje, ou seja, que já foram estudados e estão agendados para revisão.
+
+================================================================================
+Configurações
+
+Intervalo de Graduação: define o tempo que um cartão do tipo "Aprendizado" (Learning) levará para ser promovido à fase de "Revisão" (Review), caso você acerte a resposta.
+Novos Cartões/Dia: número máximo de cartões novos que o Anki vai mostrar por dia. Um “cartão novo” é aquele que você nunca viu antes, ou seja, está sendo apresentado pela primeira vez.
