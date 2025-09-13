@@ -35,3 +35,9 @@ File > Preferences > Configure Snippets then pick something like tsx.
     "description": "Create Functional Component"
   }
 }
+
+================================================================================
+Bookmark extension
+
+add bookmark
+  - right click on the line number.
